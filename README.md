@@ -2,9 +2,9 @@ Scalakurs NTNU
 ==============
 
 Tidspunkt:
-9.  oktober
-30. oktober
-11. november
+* 9.  oktober - 17.00 - 20.00
+* 30. oktober
+* 11. november
 
 16.00 - 19.00 + bespisning
 
@@ -44,5 +44,5 @@ Oppgaver i [Typseafe activator](http://typesafe.com/platform/getstarted) - Torbj
 
 Notater
 =======
-[Twitter Scala school](http://twitter.github.io/scala_school/)
-[Sjur og Arilds workshop](https://github.com/arild/scala-workshop)
+* [Twitter Scala school](http://twitter.github.io/scala_school/)
+* [Sjur og Arilds workshop](https://github.com/arild/scala-workshop)
