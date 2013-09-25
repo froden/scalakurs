@@ -1,5 +1,5 @@
-Scalakurs NTNU
-==============
+Scalakurs
+=========
 
 Tidspunkt:
 * 9.  oktober - 17.00 - 20.00
