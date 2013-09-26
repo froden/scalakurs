@@ -1,0 +1,36 @@
+Introslides
+
+Forside + tittel + navn + bekk
+
+Hva er Scala: Moderne, statisk typet, objektorientert og funksjonelt språk på JVM-en
+* Mer moderne språk enn Java og utnytter mulighetene som et avansert typessytem gir
+
+Slide med bilde av Martin Odersky: Med Lydklipp?
+* Scala ble oppfunnet i 2001 av Martin Odersky sammen med teamet hans på EPFL-universitet i Lausanne i Sveits
+* Martin Odersky er Professor i programmeringsspråk og er mannen bak Java-kompilatoren og Java generics
+
+Eksempel på syntaks: Elegant og konsis syntaks
+* Samme uttrykkskraft som i dynamiske språk (Ruby), men med typesikkerhet
+* Typeinferens
+* Fleksibel syntaks => DSL
+
+Ytelse
+* Kompilert
+* Kjører på JVM
+* Omtrent samme ytelse som Java
+* ...noen ganger bedre
+* Pose og sekk (syntaks og ytelse)
+
+Funksjonelt
+* Fullblods funksjonelt språk
+* Funksjoner er "first class"
+* Pattern matching
+* For comprehensions
+
+Objektorientert
+* Alt er objekter (ikke primitiver vs objekter)
+* Traits mixin composition
+
+Biblioteker og community
+
+Firmaer som bruker Scala

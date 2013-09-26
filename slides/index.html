@@ -4,10 +4,10 @@
 	<head>
 		<meta charset="utf-8">
 
-		<title>reveal.js - The HTML Presentation Framework</title>
+		<title>Scalakurs</title>
 
-		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
-		<meta name="author" content="Hakim El Hattab">
+		<meta name="description" content="Introduksjonskurs til Scala">
+		<meta name="author" content="Bekk">
 
 		<meta name="apple-mobile-web-app-capable" content="yes" />
 		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
@@ -36,7 +36,148 @@
 
 			<!-- Any section element inside of this container is displayed as a slide -->
 			<div class="slides">
-				<section>
+
+                <section>
+                    <h1>SCALA</h1>
+                    <h3>Introduksjonskurs</h3>
+                    <p>
+                        <small>Faggruppe for Scala & JVM</small>
+                    </p>
+                    <a class="image" href="http://bekk.no" target="_blank">
+                        <img src="images/bekk-logo-small.png" alt="Bekk">
+                    </a>
+                    <aside class="notes">
+                        <ul>
+                            <li>blabla</li>
+                        </ul>
+                    </aside>
+                </section>
+
+                <section>
+                    <h2>SCALA</h2>
+                    <p><em>Et moderne, statisk typet, objekt-funksjonelt programmeringsspråk på JVM-en</em></p>
+                    <img src="images/scala_button.jpg" alt="Scala">
+                    <aside class="notes">
+                        <ul>
+                            <li>Mer moderne språk enn Java</li>
+                            <li>Hybrid objektorientert og funksjonelt språk og påstår å forene det beste fra to verdener</li>
+                            <li>Kompilerer til samme JVM bytekode som Java</li>
+                            <li>Fungerer sømløst med alt av eksisterende javabiblioteker</li>
+                        </ul>
+                    </aside>
+                </section>
+
+                <section>
+                    <h2>Martin Odersky</h2>
+                    <img src="images/martind-odersky.jpg" height="450" alt="Martin Odersky"><br>
+                    <aside class="notes">
+                        <ul>
+                            <li>Scala ble oppfunnet i 2001 av Martin Odersky sammen med teamet hans på EPFL-universitet i Lausanne i Sveits</li>
+                            <li>Martin Odersky er Professor i programmeringsspråk og er mannen bak Java-kompilatoren og Java generics</li>
+                        </ul>
+                    </aside>
+                </section>
+
+                <section>
+                    <h2>Hvorfor Scala?</h2>
+                    <ul>
+                        <li>Elegant, konsis syntaks</li>
+                        <li>Funksjonelt og objektorientert</li>
+                        <li>Avansert typesystem</li>
+                        <li>Høy ytelse</li>
+                    </ul>
+                    <aside class="notes">
+                        <ul>
+                            <li>Syntaxen i Scala gir samme uttrykkskraft som man ofte forbinder med dynamiske språk som Ruby</li>
+                            <li>Kjører på JVM</li>
+                            <li>For en Java virtual machine så er Scala-programmer bare vanlig bytekode</li>
+                            <li>Mye raskere enn de dynamiske JVM-språkene jruby, groovy, clojure, jython</li>
+                        </ul>
+                    </aside>
+                </section>
+
+                <section>
+                    <h2>Community</h2>
+                    <a class="image" href="http://scaladays.org" target="_blank">
+                        <img height="100" src="images/scaladays.png" alt="scaladays.org">
+                    </a>
+                    <a class="image" href="http://twitter.com" target="_blank">
+                        <img height="100" src="images/twitter.jpg" alt="twitter.com">
+                    </a>
+                    <a class="image" href="http://akka.io" target="_blank">
+                        <img height="100" src="images/akka.png" alt="akka.io">
+                    </a>
+                    <a class="image" href="http://github.com" target="_blank">
+                        <img height="100" src="images/github.png" alt="github.com">
+                    </a>
+                    <a class="image" href="http://playframework.com" target="_blank">
+                        <img height="100" src="images/play.png" alt="playframework.com">
+                    </a>
+                    <a class="image" href="http://typesafe.com" target="_blank">
+                        <img height="100" src="images/typesafe.png" alt="typesafe.com">
+                    </a>
+                    <a class="image" href="http://scala-lang.org" target="_blank">
+                        <img height="100" src="images/scala.png" alt="scala-lang.org">
+                    </a>
+                    <a class="image" href="http://liftweb.net/" target="_blank">
+                        <img height="100" src="images/lift.png" alt="liftweb.net">
+                    </a>
+                    <a class="image" href="http://2013.flatmap.no/" target="_blank">
+                        <img height="100" src="images/flatmap.png" alt="2013.flatmap.no">
+                    </a>
+                    <a class="image" href="http://stackoverflow.com/" target="_blank">
+                        <img height="100" src="images/stackoverflow.png" alt="stackoverflow.com">
+                    </a>
+                    <a class="image" href="http://www.meetup.com/scalabin/" target="_blank">
+                        <img height="100" src="images/meetup.jpg" alt="meetup.com/scalabin">
+                    </a>
+                    <aside class="notes">
+                        <ul>
+                            <li>Scala har et stort community med mange engasjerte og meget dyktige folk</li>
+                            <li>Det finnes mange bra rammeverk skrevet i og for Scala. Det blir stadig flere.</li>
+                            <li>AKKA - actor framwork for concurrent systemer</li>
+                            <li>Play2 - Scalas svar på Rails</li>
+                            <li>Lift - Et view first basert web-rammeverk</li>
+                            <li>Etter hvert meget god IDE-støtte både for IntelliJ og Eclipse</li>
+                            <li>Man finner som regel svar på det man lurer på ved å google</li>
+                        </ul>
+                    </aside>
+                </section>
+
+                <section>
+                    <h2>Hvem bruker Scala?</h2>
+                    <img src="images/bekk-logo-small.png" alt="Bekk"><br>
+                    <img style="padding: 10px; background: white;" src="images/clients-big.png" alt="Bruker scala">
+                    <aside class="notes">
+                        <ul>
+                            <li>Men er det noen som bruker Scala i produksjon?</li>
+                            <li>Bekk har for tiden ett rent Scala-prosjekt</li>
+                            <li>Flere som bruker det til mindre ting</li>
+                            <li>Flere vurderer å ta det i bruk</li>
+                            <li>Linkedin</li>
+                            <li>Twitter</li>
+                            <li>Foursquare</li>
+                            <li>The Guardian</li>
+                        </ul>
+                    </aside>
+                </section>
+
+                <section>
+                    <p style="font-size: 1.5em;"><q cite="http://twitter.com/al3x"><strong>Basically</strong>, it's the future</q></p>
+                    <p><a href="http://twitter.com/al3x">@al3x</a></p>
+                    <aside class="notes">
+                        <ul>
+                            <li>Basically its the future</li>
+                            <li>Alex fra twitter er enig med meg at Scala er verdt å satse på</li>
+                            <li>Jeg mener Scala er et meget attraktivt alternativ til Java</li>
+                            <li>Og det er modent nok til å ta det i bruk på prosjekter i dag!</li>
+                        </ul>
+                    </aside>
+                </section>
+
+
+                <!--
+                <section>
 					<h1>Reveal.js</h1>
 					<h3>HTML Presentations Made Easy</h3>
 					<p>
@@ -56,7 +197,6 @@
 					</aside>
 				</section>
 
-				<!-- Example of nested vertical slides -->
 				<section>
 					<section>
 						<h2>Vertical Slides</h2>
@@ -345,6 +485,7 @@ function linkify( selector ) {
 					<h1>THE END</h1>
 					<h3>BY Hakim El Hattab / hakim.se</h3>
 				</section>
+				-->
 
 			</div>
 
@@ -358,7 +499,7 @@ function linkify( selector ) {
 			// Full list of configuration options available here:
 			// https://github.com/hakimel/reveal.js#configuration
 			Reveal.initialize({
-				controls: true,
+				controls: false,
 				progress: true,
 				history: true,
 				center: true,
