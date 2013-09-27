@@ -1,11 +1,33 @@
-[0m[[0minfo[0m] [0mUpdating {file:/Users/torbjorn/Development/scala/scalakurs-ntnu-del1/project/}scalakurs-ntnu-del1-build...[0m
-[0m[[0mdebug[0m] [0m:: resolving dependencies :: default#scalakurs-ntnu-del1-build;0.1-SNAPSHOT[0m
+[0m[[0minfo[0m] [0mUpdating {file:/Users/torbjorn/Development/scala/scalakurs/oppgaver/del-1/project/}del-1-build...[0m
+[0m[[0mdebug[0m] [0m:: resolving dependencies :: default#del-1-build;0.1-SNAPSHOT[0m
 [0m[[0mdebug[0m] [0m	confs: [compile, runtime, test, provided, optional, compile-internal, runtime-internal, test-internal, plugin, sources, docs, pom, scala-tool][0m
 [0m[[0mdebug[0m] [0m	validate = true[0m
 [0m[[0mdebug[0m] [0m	refresh = false[0m
 [0m[[0mdebug[0m] [0mresolving dependencies for configuration 'compile'[0m
-[0m[[0mdebug[0m] [0m== resolving dependencies for default#scalakurs-ntnu-del1-build;0.1-SNAPSHOT [compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies default#scalakurs-ntnu-del1-build;0.1-SNAPSHOT->com.typesafe.sbteclipse#sbteclipse-plugin;2.3.0 [compile->default(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies for default#del-1-build;0.1-SNAPSHOT [compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#del-1-build;0.1-SNAPSHOT->default#global-plugins;0.0 [compile->default(compile)][0m
+[0m[[0minfo[0m] [0mResolving default#global-plugins;0.0 ...[0m
+[0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: default#global-plugins;0.0 {compile=[default(compile)]}[0m
+[0m[[0mdebug[0m] [0m	found default#global-plugins;0.0 in inter-project[0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#global-plugins;0.0->com.github.mpeltonen#sbt-idea;1.5.1 [compile->default(compile)][0m
+[0m[[0minfo[0m] [0mResolving com.github.mpeltonen#sbt-idea;1.5.1 ...[0m
+[0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: com.github.mpeltonen#sbt-idea;1.5.1 {compile=[default(compile)]}[0m
+[0m[[0mdebug[0m] [0msbt-chain: module revision found in cache: com.github.mpeltonen#sbt-idea;1.5.1[0m
+[0m[[0mdebug[0m] [0m	typesafe-ivy-releases: revision in cache: com.github.mpeltonen#sbt-idea;1.5.1[0m
+[0m[[0mdebug[0m] [0m	found com.github.mpeltonen#sbt-idea;1.5.1 in sbt-chain[0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#global-plugins;0.0->com.github.mpeltonen#sbt-idea;1.5.1 [compile->runtime][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#global-plugins;0.0->com.github.mpeltonen#sbt-idea;1.5.1 [compile->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.github.mpeltonen#sbt-idea;1.5.1->commons-io#commons-io;2.0.1 [compile->master(*)][0m
+[0m[[0minfo[0m] [0mResolving commons-io#commons-io;2.0.1 ...[0m
+[0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: commons-io#commons-io;2.0.1 {compile=[compile(*), master(*)], runtime=[runtime(*)]}[0m
+[0m[[0mdebug[0m] [0msbt-chain: module revision found in cache: commons-io#commons-io;2.0.1[0m
+[0m[[0mdebug[0m] [0m	typesafe-ivy-releases: revision in cache: commons-io#commons-io;2.0.1[0m
+[0m[[0mdebug[0m] [0m	found commons-io#commons-io;2.0.1 in sbt-chain[0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.github.mpeltonen#sbt-idea;1.5.1->commons-io#commons-io;2.0.1 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.github.mpeltonen#sbt-idea;1.5.1->commons-io#commons-io;2.0.1 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.github.mpeltonen#sbt-idea;1.5.1->commons-io#commons-io;2.0.1 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#global-plugins;0.0->com.github.mpeltonen#sbt-idea;1.5.1 [compile->master][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#del-1-build;0.1-SNAPSHOT->com.typesafe.sbteclipse#sbteclipse-plugin;2.3.0 [compile->default(compile)][0m
 [0m[[0minfo[0m] [0mResolving com.typesafe.sbteclipse#sbteclipse-plugin;2.3.0 ...[0m
 [0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: com.typesafe.sbteclipse#sbteclipse-plugin;2.3.0 {compile=[default(compile)]}[0m
 [0m[[0mdebug[0m] [0msbt-chain: module revision found in cache: com.typesafe.sbteclipse#sbteclipse-plugin;2.3.0[0m
@@ -52,28 +74,23 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scalaz#scalaz-effect_2.10;7.0.2->org.scala-lang#scala-library;2.10.1 [runtime->runtime(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scalaz#scalaz-effect_2.10;7.0.2->org.scala-lang#scala-library;2.10.1 [runtime->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.sbteclipse#sbteclipse-core;2.3.0->org.scalaz#scalaz-effect_2.10;7.0.2 [compile->master][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies default#scalakurs-ntnu-del1-build;0.1-SNAPSHOT->com.github.mpeltonen#sbt-idea;1.5.1 [compile->default(compile)][0m
-[0m[[0minfo[0m] [0mResolving com.github.mpeltonen#sbt-idea;1.5.1 ...[0m
-[0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: com.github.mpeltonen#sbt-idea;1.5.1 {compile=[default(compile)]}[0m
-[0m[[0mdebug[0m] [0msbt-chain: module revision found in cache: com.github.mpeltonen#sbt-idea;1.5.1[0m
-[0m[[0mdebug[0m] [0m	typesafe-ivy-releases: revision in cache: com.github.mpeltonen#sbt-idea;1.5.1[0m
-[0m[[0mdebug[0m] [0m	found com.github.mpeltonen#sbt-idea;1.5.1 in sbt-chain[0m
-[0m[[0mdebug[0m] [0m== resolving dependencies default#scalakurs-ntnu-del1-build;0.1-SNAPSHOT->com.github.mpeltonen#sbt-idea;1.5.1 [compile->runtime][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies default#scalakurs-ntnu-del1-build;0.1-SNAPSHOT->com.github.mpeltonen#sbt-idea;1.5.1 [compile->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.github.mpeltonen#sbt-idea;1.5.1->commons-io#commons-io;2.0.1 [compile->master(*)][0m
-[0m[[0minfo[0m] [0mResolving commons-io#commons-io;2.0.1 ...[0m
-[0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: commons-io#commons-io;2.0.1 {compile=[compile(*), master(*)], runtime=[runtime(*)]}[0m
-[0m[[0mdebug[0m] [0msbt-chain: module revision found in cache: commons-io#commons-io;2.0.1[0m
-[0m[[0mdebug[0m] [0m	typesafe-ivy-releases: revision in cache: commons-io#commons-io;2.0.1[0m
-[0m[[0mdebug[0m] [0m	found commons-io#commons-io;2.0.1 in sbt-chain[0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.github.mpeltonen#sbt-idea;1.5.1->commons-io#commons-io;2.0.1 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.github.mpeltonen#sbt-idea;1.5.1->commons-io#commons-io;2.0.1 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.github.mpeltonen#sbt-idea;1.5.1->commons-io#commons-io;2.0.1 [runtime->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies default#scalakurs-ntnu-del1-build;0.1-SNAPSHOT->com.github.mpeltonen#sbt-idea;1.5.1 [compile->master][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#del-1-build;0.1-SNAPSHOT->com.github.mpeltonen#sbt-idea;1.5.1 [compile->default(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#del-1-build;0.1-SNAPSHOT->com.github.mpeltonen#sbt-idea;1.5.1 [compile->runtime][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#del-1-build;0.1-SNAPSHOT->com.github.mpeltonen#sbt-idea;1.5.1 [compile->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#del-1-build;0.1-SNAPSHOT->com.github.mpeltonen#sbt-idea;1.5.1 [compile->master][0m
 [0m[[0mdebug[0m] [0mresolving dependencies for configuration 'runtime'[0m
-[0m[[0mdebug[0m] [0m== resolving dependencies for default#scalakurs-ntnu-del1-build;0.1-SNAPSHOT [runtime][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies for default#scalakurs-ntnu-del1-build;0.1-SNAPSHOT [compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies default#scalakurs-ntnu-del1-build;0.1-SNAPSHOT->com.typesafe.sbteclipse#sbteclipse-plugin;2.3.0 [compile->default(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies for default#del-1-build;0.1-SNAPSHOT [runtime][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies for default#del-1-build;0.1-SNAPSHOT [compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#del-1-build;0.1-SNAPSHOT->default#global-plugins;0.0 [compile->default(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#global-plugins;0.0->com.github.mpeltonen#sbt-idea;1.5.1 [compile->default(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#global-plugins;0.0->com.github.mpeltonen#sbt-idea;1.5.1 [compile->runtime][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#global-plugins;0.0->com.github.mpeltonen#sbt-idea;1.5.1 [compile->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.github.mpeltonen#sbt-idea;1.5.1->commons-io#commons-io;2.0.1 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.github.mpeltonen#sbt-idea;1.5.1->commons-io#commons-io;2.0.1 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.github.mpeltonen#sbt-idea;1.5.1->commons-io#commons-io;2.0.1 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.github.mpeltonen#sbt-idea;1.5.1->commons-io#commons-io;2.0.1 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#global-plugins;0.0->com.github.mpeltonen#sbt-idea;1.5.1 [compile->master][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#del-1-build;0.1-SNAPSHOT->com.typesafe.sbteclipse#sbteclipse-plugin;2.3.0 [compile->default(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.sbteclipse#sbteclipse-plugin;2.3.0->com.typesafe.sbteclipse#sbteclipse-core;2.3.0 [compile->default(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.sbteclipse#sbteclipse-core;2.3.0->org.scalaz#scalaz-core_2.10;7.0.2 [compile->default(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.sbteclipse#sbteclipse-core;2.3.0->org.scalaz#scalaz-core_2.10;7.0.2 [compile->runtime][0m
@@ -95,19 +112,24 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scalaz#scalaz-effect_2.10;7.0.2->org.scala-lang#scala-library;2.10.1 [runtime->runtime(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scalaz#scalaz-effect_2.10;7.0.2->org.scala-lang#scala-library;2.10.1 [runtime->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.sbteclipse#sbteclipse-core;2.3.0->org.scalaz#scalaz-effect_2.10;7.0.2 [compile->master][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies default#scalakurs-ntnu-del1-build;0.1-SNAPSHOT->com.github.mpeltonen#sbt-idea;1.5.1 [compile->default(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies default#scalakurs-ntnu-del1-build;0.1-SNAPSHOT->com.github.mpeltonen#sbt-idea;1.5.1 [compile->runtime][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies default#scalakurs-ntnu-del1-build;0.1-SNAPSHOT->com.github.mpeltonen#sbt-idea;1.5.1 [compile->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.github.mpeltonen#sbt-idea;1.5.1->commons-io#commons-io;2.0.1 [compile->master(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.github.mpeltonen#sbt-idea;1.5.1->commons-io#commons-io;2.0.1 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.github.mpeltonen#sbt-idea;1.5.1->commons-io#commons-io;2.0.1 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.github.mpeltonen#sbt-idea;1.5.1->commons-io#commons-io;2.0.1 [runtime->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies default#scalakurs-ntnu-del1-build;0.1-SNAPSHOT->com.github.mpeltonen#sbt-idea;1.5.1 [compile->master][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#del-1-build;0.1-SNAPSHOT->com.github.mpeltonen#sbt-idea;1.5.1 [compile->default(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#del-1-build;0.1-SNAPSHOT->com.github.mpeltonen#sbt-idea;1.5.1 [compile->runtime][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#del-1-build;0.1-SNAPSHOT->com.github.mpeltonen#sbt-idea;1.5.1 [compile->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#del-1-build;0.1-SNAPSHOT->com.github.mpeltonen#sbt-idea;1.5.1 [compile->master][0m
 [0m[[0mdebug[0m] [0mresolving dependencies for configuration 'test'[0m
-[0m[[0mdebug[0m] [0m== resolving dependencies for default#scalakurs-ntnu-del1-build;0.1-SNAPSHOT [test][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies for default#scalakurs-ntnu-del1-build;0.1-SNAPSHOT [runtime][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies for default#scalakurs-ntnu-del1-build;0.1-SNAPSHOT [compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies default#scalakurs-ntnu-del1-build;0.1-SNAPSHOT->com.typesafe.sbteclipse#sbteclipse-plugin;2.3.0 [compile->default(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies for default#del-1-build;0.1-SNAPSHOT [test][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies for default#del-1-build;0.1-SNAPSHOT [runtime][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies for default#del-1-build;0.1-SNAPSHOT [compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#del-1-build;0.1-SNAPSHOT->default#global-plugins;0.0 [compile->default(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#global-plugins;0.0->com.github.mpeltonen#sbt-idea;1.5.1 [compile->default(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#global-plugins;0.0->com.github.mpeltonen#sbt-idea;1.5.1 [compile->runtime][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#global-plugins;0.0->com.github.mpeltonen#sbt-idea;1.5.1 [compile->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.github.mpeltonen#sbt-idea;1.5.1->commons-io#commons-io;2.0.1 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.github.mpeltonen#sbt-idea;1.5.1->commons-io#commons-io;2.0.1 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.github.mpeltonen#sbt-idea;1.5.1->commons-io#commons-io;2.0.1 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.github.mpeltonen#sbt-idea;1.5.1->commons-io#commons-io;2.0.1 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#global-plugins;0.0->com.github.mpeltonen#sbt-idea;1.5.1 [compile->master][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#del-1-build;0.1-SNAPSHOT->com.typesafe.sbteclipse#sbteclipse-plugin;2.3.0 [compile->default(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.sbteclipse#sbteclipse-plugin;2.3.0->com.typesafe.sbteclipse#sbteclipse-core;2.3.0 [compile->default(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.sbteclipse#sbteclipse-core;2.3.0->org.scalaz#scalaz-core_2.10;7.0.2 [compile->default(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.sbteclipse#sbteclipse-core;2.3.0->org.scalaz#scalaz-core_2.10;7.0.2 [compile->runtime][0m
@@ -129,26 +151,22 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scalaz#scalaz-effect_2.10;7.0.2->org.scala-lang#scala-library;2.10.1 [runtime->runtime(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scalaz#scalaz-effect_2.10;7.0.2->org.scala-lang#scala-library;2.10.1 [runtime->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.sbteclipse#sbteclipse-core;2.3.0->org.scalaz#scalaz-effect_2.10;7.0.2 [compile->master][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies default#scalakurs-ntnu-del1-build;0.1-SNAPSHOT->com.github.mpeltonen#sbt-idea;1.5.1 [compile->default(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies default#scalakurs-ntnu-del1-build;0.1-SNAPSHOT->com.github.mpeltonen#sbt-idea;1.5.1 [compile->runtime][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies default#scalakurs-ntnu-del1-build;0.1-SNAPSHOT->com.github.mpeltonen#sbt-idea;1.5.1 [compile->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.github.mpeltonen#sbt-idea;1.5.1->commons-io#commons-io;2.0.1 [compile->master(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.github.mpeltonen#sbt-idea;1.5.1->commons-io#commons-io;2.0.1 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.github.mpeltonen#sbt-idea;1.5.1->commons-io#commons-io;2.0.1 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.github.mpeltonen#sbt-idea;1.5.1->commons-io#commons-io;2.0.1 [runtime->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies default#scalakurs-ntnu-del1-build;0.1-SNAPSHOT->com.github.mpeltonen#sbt-idea;1.5.1 [compile->master][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#del-1-build;0.1-SNAPSHOT->com.github.mpeltonen#sbt-idea;1.5.1 [compile->default(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#del-1-build;0.1-SNAPSHOT->com.github.mpeltonen#sbt-idea;1.5.1 [compile->runtime][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#del-1-build;0.1-SNAPSHOT->com.github.mpeltonen#sbt-idea;1.5.1 [compile->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#del-1-build;0.1-SNAPSHOT->com.github.mpeltonen#sbt-idea;1.5.1 [compile->master][0m
 [0m[[0mdebug[0m] [0mresolving dependencies for configuration 'provided'[0m
-[0m[[0mdebug[0m] [0m== resolving dependencies for default#scalakurs-ntnu-del1-build;0.1-SNAPSHOT [provided][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies default#scalakurs-ntnu-del1-build;0.1-SNAPSHOT->org.scala-lang#scala-library;2.10.2 [provided->default(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies for default#del-1-build;0.1-SNAPSHOT [provided][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#del-1-build;0.1-SNAPSHOT->org.scala-lang#scala-library;2.10.2 [provided->default(compile)][0m
 [0m[[0minfo[0m] [0mResolving org.scala-lang#scala-library;2.10.2 ...[0m
-[0m[[0mdebug[0m] [0msbt-chain: Checking cache for: sbt.ivyint.MergedDescriptors@7341d044[0m
+[0m[[0mdebug[0m] [0msbt-chain: Checking cache for: sbt.ivyint.MergedDescriptors@7943fbd6[0m
 [0m[[0mdebug[0m] [0msbt-chain: module revision found in cache: org.scala-lang#scala-library;2.10.2[0m
 [0m[[0mdebug[0m] [0m	typesafe-ivy-releases: revision in cache: org.scala-lang#scala-library;2.10.2[0m
 [0m[[0mdebug[0m] [0m	found org.scala-lang#scala-library;2.10.2 in sbt-chain[0m
-[0m[[0mdebug[0m] [0m== resolving dependencies default#scalakurs-ntnu-del1-build;0.1-SNAPSHOT->org.scala-lang#scala-library;2.10.2 [provided->runtime][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies default#scalakurs-ntnu-del1-build;0.1-SNAPSHOT->org.scala-lang#scala-library;2.10.2 [provided->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies default#scalakurs-ntnu-del1-build;0.1-SNAPSHOT->org.scala-lang#scala-library;2.10.2 [provided->master][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies default#scalakurs-ntnu-del1-build;0.1-SNAPSHOT->org.scala-sbt#sbt;0.13.0 [provided->default(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#del-1-build;0.1-SNAPSHOT->org.scala-lang#scala-library;2.10.2 [provided->runtime][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#del-1-build;0.1-SNAPSHOT->org.scala-lang#scala-library;2.10.2 [provided->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#del-1-build;0.1-SNAPSHOT->org.scala-lang#scala-library;2.10.2 [provided->master][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#del-1-build;0.1-SNAPSHOT->org.scala-sbt#sbt;0.13.0 [provided->default(compile)][0m
 [0m[[0minfo[0m] [0mResolving org.scala-sbt#sbt;0.13.0 ...[0m
 [0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: org.scala-sbt#sbt;0.13.0 {provided=[default(compile)]}[0m
 [0m[[0mdebug[0m] [0msbt-chain: module revision found in cache: org.scala-sbt#sbt;0.13.0[0m
@@ -691,11 +709,20 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-sbt#sbt;0.13.0->org.scala-lang#scala-library;2.10.2 [compile->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-sbt#sbt;0.13.0->org.scala-lang#scala-library;2.10.2 [compile->master][0m
 [0m[[0mdebug[0m] [0mresolving dependencies for configuration 'optional'[0m
-[0m[[0mdebug[0m] [0m== resolving dependencies for default#scalakurs-ntnu-del1-build;0.1-SNAPSHOT [optional][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies for default#del-1-build;0.1-SNAPSHOT [optional][0m
 [0m[[0mdebug[0m] [0mresolving dependencies for configuration 'compile-internal'[0m
-[0m[[0mdebug[0m] [0m== resolving dependencies for default#scalakurs-ntnu-del1-build;0.1-SNAPSHOT [compile-internal][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies for default#scalakurs-ntnu-del1-build;0.1-SNAPSHOT [compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies default#scalakurs-ntnu-del1-build;0.1-SNAPSHOT->com.typesafe.sbteclipse#sbteclipse-plugin;2.3.0 [compile->default(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies for default#del-1-build;0.1-SNAPSHOT [compile-internal][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies for default#del-1-build;0.1-SNAPSHOT [compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#del-1-build;0.1-SNAPSHOT->default#global-plugins;0.0 [compile->default(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#global-plugins;0.0->com.github.mpeltonen#sbt-idea;1.5.1 [compile->default(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#global-plugins;0.0->com.github.mpeltonen#sbt-idea;1.5.1 [compile->runtime][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#global-plugins;0.0->com.github.mpeltonen#sbt-idea;1.5.1 [compile->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.github.mpeltonen#sbt-idea;1.5.1->commons-io#commons-io;2.0.1 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.github.mpeltonen#sbt-idea;1.5.1->commons-io#commons-io;2.0.1 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.github.mpeltonen#sbt-idea;1.5.1->commons-io#commons-io;2.0.1 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.github.mpeltonen#sbt-idea;1.5.1->commons-io#commons-io;2.0.1 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#global-plugins;0.0->com.github.mpeltonen#sbt-idea;1.5.1 [compile->master][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#del-1-build;0.1-SNAPSHOT->com.typesafe.sbteclipse#sbteclipse-plugin;2.3.0 [compile->default(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.sbteclipse#sbteclipse-plugin;2.3.0->com.typesafe.sbteclipse#sbteclipse-core;2.3.0 [compile->default(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.sbteclipse#sbteclipse-core;2.3.0->org.scalaz#scalaz-core_2.10;7.0.2 [compile->default(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.sbteclipse#sbteclipse-core;2.3.0->org.scalaz#scalaz-core_2.10;7.0.2 [compile->runtime][0m
@@ -723,21 +750,17 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scalaz#scalaz-effect_2.10;7.0.2->org.scala-lang#scala-library;2.10.2 [runtime->runtime(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scalaz#scalaz-effect_2.10;7.0.2->org.scala-lang#scala-library;2.10.2 [runtime->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.sbteclipse#sbteclipse-core;2.3.0->org.scalaz#scalaz-effect_2.10;7.0.2 [compile->master][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies default#scalakurs-ntnu-del1-build;0.1-SNAPSHOT->com.github.mpeltonen#sbt-idea;1.5.1 [compile->default(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies default#scalakurs-ntnu-del1-build;0.1-SNAPSHOT->com.github.mpeltonen#sbt-idea;1.5.1 [compile->runtime][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies default#scalakurs-ntnu-del1-build;0.1-SNAPSHOT->com.github.mpeltonen#sbt-idea;1.5.1 [compile->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.github.mpeltonen#sbt-idea;1.5.1->commons-io#commons-io;2.0.1 [compile->master(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.github.mpeltonen#sbt-idea;1.5.1->commons-io#commons-io;2.0.1 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.github.mpeltonen#sbt-idea;1.5.1->commons-io#commons-io;2.0.1 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.github.mpeltonen#sbt-idea;1.5.1->commons-io#commons-io;2.0.1 [runtime->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies default#scalakurs-ntnu-del1-build;0.1-SNAPSHOT->com.github.mpeltonen#sbt-idea;1.5.1 [compile->master][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies for default#scalakurs-ntnu-del1-build;0.1-SNAPSHOT [optional][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies for default#scalakurs-ntnu-del1-build;0.1-SNAPSHOT [provided][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies default#scalakurs-ntnu-del1-build;0.1-SNAPSHOT->org.scala-lang#scala-library;2.10.2 [provided->default(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies default#scalakurs-ntnu-del1-build;0.1-SNAPSHOT->org.scala-lang#scala-library;2.10.2 [provided->runtime][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies default#scalakurs-ntnu-del1-build;0.1-SNAPSHOT->org.scala-lang#scala-library;2.10.2 [provided->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies default#scalakurs-ntnu-del1-build;0.1-SNAPSHOT->org.scala-lang#scala-library;2.10.2 [provided->master][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies default#scalakurs-ntnu-del1-build;0.1-SNAPSHOT->org.scala-sbt#sbt;0.13.0 [provided->default(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#del-1-build;0.1-SNAPSHOT->com.github.mpeltonen#sbt-idea;1.5.1 [compile->default(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#del-1-build;0.1-SNAPSHOT->com.github.mpeltonen#sbt-idea;1.5.1 [compile->runtime][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#del-1-build;0.1-SNAPSHOT->com.github.mpeltonen#sbt-idea;1.5.1 [compile->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#del-1-build;0.1-SNAPSHOT->com.github.mpeltonen#sbt-idea;1.5.1 [compile->master][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies for default#del-1-build;0.1-SNAPSHOT [optional][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies for default#del-1-build;0.1-SNAPSHOT [provided][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#del-1-build;0.1-SNAPSHOT->org.scala-lang#scala-library;2.10.2 [provided->default(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#del-1-build;0.1-SNAPSHOT->org.scala-lang#scala-library;2.10.2 [provided->runtime][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#del-1-build;0.1-SNAPSHOT->org.scala-lang#scala-library;2.10.2 [provided->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#del-1-build;0.1-SNAPSHOT->org.scala-lang#scala-library;2.10.2 [provided->master][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#del-1-build;0.1-SNAPSHOT->org.scala-sbt#sbt;0.13.0 [provided->default(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-sbt#sbt;0.13.0->org.scala-sbt#main;0.13.0 [compile->default(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-sbt#main;0.13.0->org.scala-sbt#actions;0.13.0 [compile->default(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-sbt#actions;0.13.0->org.scala-sbt#classpath;0.13.0 [compile->default(compile)][0m
@@ -1065,10 +1088,19 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-sbt#sbt;0.13.0->org.scala-lang#scala-library;2.10.2 [compile->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-sbt#sbt;0.13.0->org.scala-lang#scala-library;2.10.2 [compile->master][0m
 [0m[[0mdebug[0m] [0mresolving dependencies for configuration 'runtime-internal'[0m
-[0m[[0mdebug[0m] [0m== resolving dependencies for default#scalakurs-ntnu-del1-build;0.1-SNAPSHOT [runtime-internal][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies for default#scalakurs-ntnu-del1-build;0.1-SNAPSHOT [runtime][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies for default#scalakurs-ntnu-del1-build;0.1-SNAPSHOT [compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies default#scalakurs-ntnu-del1-build;0.1-SNAPSHOT->com.typesafe.sbteclipse#sbteclipse-plugin;2.3.0 [compile->default(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies for default#del-1-build;0.1-SNAPSHOT [runtime-internal][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies for default#del-1-build;0.1-SNAPSHOT [runtime][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies for default#del-1-build;0.1-SNAPSHOT [compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#del-1-build;0.1-SNAPSHOT->default#global-plugins;0.0 [compile->default(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#global-plugins;0.0->com.github.mpeltonen#sbt-idea;1.5.1 [compile->default(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#global-plugins;0.0->com.github.mpeltonen#sbt-idea;1.5.1 [compile->runtime][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#global-plugins;0.0->com.github.mpeltonen#sbt-idea;1.5.1 [compile->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.github.mpeltonen#sbt-idea;1.5.1->commons-io#commons-io;2.0.1 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.github.mpeltonen#sbt-idea;1.5.1->commons-io#commons-io;2.0.1 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.github.mpeltonen#sbt-idea;1.5.1->commons-io#commons-io;2.0.1 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.github.mpeltonen#sbt-idea;1.5.1->commons-io#commons-io;2.0.1 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#global-plugins;0.0->com.github.mpeltonen#sbt-idea;1.5.1 [compile->master][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#del-1-build;0.1-SNAPSHOT->com.typesafe.sbteclipse#sbteclipse-plugin;2.3.0 [compile->default(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.sbteclipse#sbteclipse-plugin;2.3.0->com.typesafe.sbteclipse#sbteclipse-core;2.3.0 [compile->default(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.sbteclipse#sbteclipse-core;2.3.0->org.scalaz#scalaz-core_2.10;7.0.2 [compile->default(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.sbteclipse#sbteclipse-core;2.3.0->org.scalaz#scalaz-core_2.10;7.0.2 [compile->runtime][0m
@@ -1090,21 +1122,26 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scalaz#scalaz-effect_2.10;7.0.2->org.scala-lang#scala-library;2.10.1 [runtime->runtime(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scalaz#scalaz-effect_2.10;7.0.2->org.scala-lang#scala-library;2.10.1 [runtime->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.sbteclipse#sbteclipse-core;2.3.0->org.scalaz#scalaz-effect_2.10;7.0.2 [compile->master][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies default#scalakurs-ntnu-del1-build;0.1-SNAPSHOT->com.github.mpeltonen#sbt-idea;1.5.1 [compile->default(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies default#scalakurs-ntnu-del1-build;0.1-SNAPSHOT->com.github.mpeltonen#sbt-idea;1.5.1 [compile->runtime][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies default#scalakurs-ntnu-del1-build;0.1-SNAPSHOT->com.github.mpeltonen#sbt-idea;1.5.1 [compile->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#del-1-build;0.1-SNAPSHOT->com.github.mpeltonen#sbt-idea;1.5.1 [compile->default(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#del-1-build;0.1-SNAPSHOT->com.github.mpeltonen#sbt-idea;1.5.1 [compile->runtime][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#del-1-build;0.1-SNAPSHOT->com.github.mpeltonen#sbt-idea;1.5.1 [compile->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#del-1-build;0.1-SNAPSHOT->com.github.mpeltonen#sbt-idea;1.5.1 [compile->master][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies for default#del-1-build;0.1-SNAPSHOT [optional][0m
+[0m[[0mdebug[0m] [0mresolving dependencies for configuration 'test-internal'[0m
+[0m[[0mdebug[0m] [0m== resolving dependencies for default#del-1-build;0.1-SNAPSHOT [test-internal][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies for default#del-1-build;0.1-SNAPSHOT [test][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies for default#del-1-build;0.1-SNAPSHOT [runtime][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies for default#del-1-build;0.1-SNAPSHOT [compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#del-1-build;0.1-SNAPSHOT->default#global-plugins;0.0 [compile->default(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#global-plugins;0.0->com.github.mpeltonen#sbt-idea;1.5.1 [compile->default(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#global-plugins;0.0->com.github.mpeltonen#sbt-idea;1.5.1 [compile->runtime][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#global-plugins;0.0->com.github.mpeltonen#sbt-idea;1.5.1 [compile->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.github.mpeltonen#sbt-idea;1.5.1->commons-io#commons-io;2.0.1 [compile->master(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.github.mpeltonen#sbt-idea;1.5.1->commons-io#commons-io;2.0.1 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.github.mpeltonen#sbt-idea;1.5.1->commons-io#commons-io;2.0.1 [runtime->runtime(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.github.mpeltonen#sbt-idea;1.5.1->commons-io#commons-io;2.0.1 [runtime->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies default#scalakurs-ntnu-del1-build;0.1-SNAPSHOT->com.github.mpeltonen#sbt-idea;1.5.1 [compile->master][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies for default#scalakurs-ntnu-del1-build;0.1-SNAPSHOT [optional][0m
-[0m[[0mdebug[0m] [0mresolving dependencies for configuration 'test-internal'[0m
-[0m[[0mdebug[0m] [0m== resolving dependencies for default#scalakurs-ntnu-del1-build;0.1-SNAPSHOT [test-internal][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies for default#scalakurs-ntnu-del1-build;0.1-SNAPSHOT [test][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies for default#scalakurs-ntnu-del1-build;0.1-SNAPSHOT [runtime][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies for default#scalakurs-ntnu-del1-build;0.1-SNAPSHOT [compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies default#scalakurs-ntnu-del1-build;0.1-SNAPSHOT->com.typesafe.sbteclipse#sbteclipse-plugin;2.3.0 [compile->default(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#global-plugins;0.0->com.github.mpeltonen#sbt-idea;1.5.1 [compile->master][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#del-1-build;0.1-SNAPSHOT->com.typesafe.sbteclipse#sbteclipse-plugin;2.3.0 [compile->default(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.sbteclipse#sbteclipse-plugin;2.3.0->com.typesafe.sbteclipse#sbteclipse-core;2.3.0 [compile->default(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.sbteclipse#sbteclipse-core;2.3.0->org.scalaz#scalaz-core_2.10;7.0.2 [compile->default(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.sbteclipse#sbteclipse-core;2.3.0->org.scalaz#scalaz-core_2.10;7.0.2 [compile->runtime][0m
@@ -1132,21 +1169,17 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scalaz#scalaz-effect_2.10;7.0.2->org.scala-lang#scala-library;2.10.2 [runtime->runtime(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scalaz#scalaz-effect_2.10;7.0.2->org.scala-lang#scala-library;2.10.2 [runtime->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.sbteclipse#sbteclipse-core;2.3.0->org.scalaz#scalaz-effect_2.10;7.0.2 [compile->master][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies default#scalakurs-ntnu-del1-build;0.1-SNAPSHOT->com.github.mpeltonen#sbt-idea;1.5.1 [compile->default(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies default#scalakurs-ntnu-del1-build;0.1-SNAPSHOT->com.github.mpeltonen#sbt-idea;1.5.1 [compile->runtime][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies default#scalakurs-ntnu-del1-build;0.1-SNAPSHOT->com.github.mpeltonen#sbt-idea;1.5.1 [compile->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.github.mpeltonen#sbt-idea;1.5.1->commons-io#commons-io;2.0.1 [compile->master(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.github.mpeltonen#sbt-idea;1.5.1->commons-io#commons-io;2.0.1 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.github.mpeltonen#sbt-idea;1.5.1->commons-io#commons-io;2.0.1 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.github.mpeltonen#sbt-idea;1.5.1->commons-io#commons-io;2.0.1 [runtime->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies default#scalakurs-ntnu-del1-build;0.1-SNAPSHOT->com.github.mpeltonen#sbt-idea;1.5.1 [compile->master][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies for default#scalakurs-ntnu-del1-build;0.1-SNAPSHOT [optional][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies for default#scalakurs-ntnu-del1-build;0.1-SNAPSHOT [provided][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies default#scalakurs-ntnu-del1-build;0.1-SNAPSHOT->org.scala-lang#scala-library;2.10.2 [provided->default(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies default#scalakurs-ntnu-del1-build;0.1-SNAPSHOT->org.scala-lang#scala-library;2.10.2 [provided->runtime][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies default#scalakurs-ntnu-del1-build;0.1-SNAPSHOT->org.scala-lang#scala-library;2.10.2 [provided->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies default#scalakurs-ntnu-del1-build;0.1-SNAPSHOT->org.scala-lang#scala-library;2.10.2 [provided->master][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies default#scalakurs-ntnu-del1-build;0.1-SNAPSHOT->org.scala-sbt#sbt;0.13.0 [provided->default(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#del-1-build;0.1-SNAPSHOT->com.github.mpeltonen#sbt-idea;1.5.1 [compile->default(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#del-1-build;0.1-SNAPSHOT->com.github.mpeltonen#sbt-idea;1.5.1 [compile->runtime][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#del-1-build;0.1-SNAPSHOT->com.github.mpeltonen#sbt-idea;1.5.1 [compile->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#del-1-build;0.1-SNAPSHOT->com.github.mpeltonen#sbt-idea;1.5.1 [compile->master][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies for default#del-1-build;0.1-SNAPSHOT [optional][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies for default#del-1-build;0.1-SNAPSHOT [provided][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#del-1-build;0.1-SNAPSHOT->org.scala-lang#scala-library;2.10.2 [provided->default(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#del-1-build;0.1-SNAPSHOT->org.scala-lang#scala-library;2.10.2 [provided->runtime][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#del-1-build;0.1-SNAPSHOT->org.scala-lang#scala-library;2.10.2 [provided->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#del-1-build;0.1-SNAPSHOT->org.scala-lang#scala-library;2.10.2 [provided->master][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#del-1-build;0.1-SNAPSHOT->org.scala-sbt#sbt;0.13.0 [provided->default(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-sbt#sbt;0.13.0->org.scala-sbt#main;0.13.0 [compile->default(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-sbt#main;0.13.0->org.scala-sbt#actions;0.13.0 [compile->default(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-sbt#actions;0.13.0->org.scala-sbt#classpath;0.13.0 [compile->default(compile)][0m
@@ -1474,18 +1507,18 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-sbt#sbt;0.13.0->org.scala-lang#scala-library;2.10.2 [compile->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-sbt#sbt;0.13.0->org.scala-lang#scala-library;2.10.2 [compile->master][0m
 [0m[[0mdebug[0m] [0mresolving dependencies for configuration 'plugin'[0m
-[0m[[0mdebug[0m] [0m== resolving dependencies for default#scalakurs-ntnu-del1-build;0.1-SNAPSHOT [plugin][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies for default#del-1-build;0.1-SNAPSHOT [plugin][0m
 [0m[[0mdebug[0m] [0mresolving dependencies for configuration 'sources'[0m
-[0m[[0mdebug[0m] [0m== resolving dependencies for default#scalakurs-ntnu-del1-build;0.1-SNAPSHOT [sources][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies for default#del-1-build;0.1-SNAPSHOT [sources][0m
 [0m[[0mdebug[0m] [0mresolving dependencies for configuration 'docs'[0m
-[0m[[0mdebug[0m] [0m== resolving dependencies for default#scalakurs-ntnu-del1-build;0.1-SNAPSHOT [docs][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies for default#del-1-build;0.1-SNAPSHOT [docs][0m
 [0m[[0mdebug[0m] [0mresolving dependencies for configuration 'pom'[0m
-[0m[[0mdebug[0m] [0m== resolving dependencies for default#scalakurs-ntnu-del1-build;0.1-SNAPSHOT [pom][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies for default#del-1-build;0.1-SNAPSHOT [pom][0m
 [0m[[0mdebug[0m] [0mresolving dependencies for configuration 'scala-tool'[0m
-[0m[[0mdebug[0m] [0m== resolving dependencies for default#scalakurs-ntnu-del1-build;0.1-SNAPSHOT [scala-tool][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies default#scalakurs-ntnu-del1-build;0.1-SNAPSHOT->org.scala-lang#scala-compiler;2.10.2 [scala-tool->default][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies default#scalakurs-ntnu-del1-build;0.1-SNAPSHOT->org.scala-lang#scala-compiler;2.10.2 [scala-tool->runtime][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies default#scalakurs-ntnu-del1-build;0.1-SNAPSHOT->org.scala-lang#scala-compiler;2.10.2 [scala-tool->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies for default#del-1-build;0.1-SNAPSHOT [scala-tool][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#del-1-build;0.1-SNAPSHOT->org.scala-lang#scala-compiler;2.10.2 [scala-tool->default][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#del-1-build;0.1-SNAPSHOT->org.scala-lang#scala-compiler;2.10.2 [scala-tool->runtime][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#del-1-build;0.1-SNAPSHOT->org.scala-lang#scala-compiler;2.10.2 [scala-tool->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-compiler;2.10.2->org.scala-lang#scala-library;2.10.2 [compile->master(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-compiler;2.10.2->org.scala-lang#scala-library;2.10.2 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-compiler;2.10.2->org.scala-lang#scala-library;2.10.2 [compile->default][0m
@@ -1503,8 +1536,8 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-compiler;2.10.2->org.scala-lang#scala-reflect;2.10.2 [runtime->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-reflect;2.10.2->org.scala-lang#scala-library;2.10.2 [runtime->runtime(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-reflect;2.10.2->org.scala-lang#scala-library;2.10.2 [runtime->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies default#scalakurs-ntnu-del1-build;0.1-SNAPSHOT->org.scala-lang#scala-compiler;2.10.2 [scala-tool->master][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies default#scalakurs-ntnu-del1-build;0.1-SNAPSHOT->org.scala-lang#scala-compiler;2.10.2 [scala-tool->optional(default)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#del-1-build;0.1-SNAPSHOT->org.scala-lang#scala-compiler;2.10.2 [scala-tool->master][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#del-1-build;0.1-SNAPSHOT->org.scala-lang#scala-compiler;2.10.2 [scala-tool->optional(default)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-compiler;2.10.2->org.scala-lang#jline;2.10.2 [optional->master(*)][0m
 [0m[[0minfo[0m] [0mResolving org.scala-lang#jline;2.10.2 ...[0m
 [0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: org.scala-lang#jline;2.10.2 {optional=[compile(*), master(*)]}[0m
@@ -1519,20 +1552,20 @@
 [0m[[0mdebug[0m] [0m	typesafe-ivy-releases: revision in cache: org.fusesource.jansi#jansi;1.4[0m
 [0m[[0mdebug[0m] [0m	found org.fusesource.jansi#jansi;1.4 in sbt-chain[0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#jline;2.10.2->org.fusesource.jansi#jansi;1.4 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies default#scalakurs-ntnu-del1-build;0.1-SNAPSHOT->org.scala-lang#scala-library;2.10.2 [scala-tool->default][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies default#scalakurs-ntnu-del1-build;0.1-SNAPSHOT->org.scala-lang#scala-library;2.10.2 [scala-tool->runtime][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies default#scalakurs-ntnu-del1-build;0.1-SNAPSHOT->org.scala-lang#scala-library;2.10.2 [scala-tool->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies default#scalakurs-ntnu-del1-build;0.1-SNAPSHOT->org.scala-lang#scala-library;2.10.2 [scala-tool->master][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies default#scalakurs-ntnu-del1-build;0.1-SNAPSHOT->org.scala-lang#scala-library;2.10.2 [scala-tool->optional(default)][0m
-[0m[[0mdebug[0m] [0m	resolved ivy file produced in /Users/torbjorn/Development/scala/scalakurs-ntnu-del1/project/target/resolution-cache/default/scalakurs-ntnu-del1-build/scala_2.10/sbt_0.13/0.1-SNAPSHOT/resolved.xml.xml[0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#del-1-build;0.1-SNAPSHOT->org.scala-lang#scala-library;2.10.2 [scala-tool->default][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#del-1-build;0.1-SNAPSHOT->org.scala-lang#scala-library;2.10.2 [scala-tool->runtime][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#del-1-build;0.1-SNAPSHOT->org.scala-lang#scala-library;2.10.2 [scala-tool->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#del-1-build;0.1-SNAPSHOT->org.scala-lang#scala-library;2.10.2 [scala-tool->master][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#del-1-build;0.1-SNAPSHOT->org.scala-lang#scala-library;2.10.2 [scala-tool->optional(default)][0m
+[0m[[0mdebug[0m] [0m	resolved ivy file produced in /Users/torbjorn/Development/scala/scalakurs/oppgaver/del-1/project/target/resolution-cache/default/del-1-build/scala_2.10/sbt_0.13/0.1-SNAPSHOT/resolved.xml.xml[0m
 [0m[[0mdebug[0m] [0m:: downloading artifacts ::[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] com.typesafe.sbteclipse#sbteclipse-plugin;2.3.0!sbteclipse-plugin.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] com.github.mpeltonen#sbt-idea;1.5.1!sbt-idea.jar[0m
+[0m[[0mdebug[0m] [0m	[NOT REQUIRED] commons-io#commons-io;2.0.1!commons-io.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] com.typesafe.sbteclipse#sbteclipse-core;2.3.0!sbteclipse-core.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.scalaz#scalaz-core_2.10;7.0.2!scalaz-core_2.10.jar(bundle)[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.scalaz#scalaz-effect_2.10;7.0.2!scalaz-effect_2.10.jar(bundle)[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.scala-lang#scala-library;2.10.1!scala-library.jar[0m
-[0m[[0mdebug[0m] [0m	[NOT REQUIRED] commons-io#commons-io;2.0.1!commons-io.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.scala-lang#scala-library;2.10.2!scala-library.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.scala-sbt#sbt;0.13.0!sbt.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.scala-sbt#main;0.13.0!main.jar[0m
@@ -1580,19 +1613,19 @@
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.scala-sbt#apply-macro;0.13.0!apply-macro.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.scala-lang#jline;2.10.2!jline.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.fusesource.jansi#jansi;1.4!jansi.jar[0m
-[0m[[0mdebug[0m] [0m:: resolution report :: resolve 2967ms :: artifacts dl 69ms[0m
-[0m[[0mdebug[0m] [0m	report for default#scalakurs-ntnu-del1-build;0.1-SNAPSHOT compile produced in /Users/torbjorn/Development/scala/scalakurs-ntnu-del1/project/target/resolution-cache/reports/default-scalakurs-ntnu-del1-build-compile.xml[0m
-[0m[[0mdebug[0m] [0m	report for default#scalakurs-ntnu-del1-build;0.1-SNAPSHOT runtime produced in /Users/torbjorn/Development/scala/scalakurs-ntnu-del1/project/target/resolution-cache/reports/default-scalakurs-ntnu-del1-build-runtime.xml[0m
-[0m[[0mdebug[0m] [0m	report for default#scalakurs-ntnu-del1-build;0.1-SNAPSHOT test produced in /Users/torbjorn/Development/scala/scalakurs-ntnu-del1/project/target/resolution-cache/reports/default-scalakurs-ntnu-del1-build-test.xml[0m
-[0m[[0mdebug[0m] [0m	report for default#scalakurs-ntnu-del1-build;0.1-SNAPSHOT provided produced in /Users/torbjorn/Development/scala/scalakurs-ntnu-del1/project/target/resolution-cache/reports/default-scalakurs-ntnu-del1-build-provided.xml[0m
-[0m[[0mdebug[0m] [0m	report for default#scalakurs-ntnu-del1-build;0.1-SNAPSHOT optional produced in /Users/torbjorn/Development/scala/scalakurs-ntnu-del1/project/target/resolution-cache/reports/default-scalakurs-ntnu-del1-build-optional.xml[0m
-[0m[[0mdebug[0m] [0m	report for default#scalakurs-ntnu-del1-build;0.1-SNAPSHOT compile-internal produced in /Users/torbjorn/Development/scala/scalakurs-ntnu-del1/project/target/resolution-cache/reports/default-scalakurs-ntnu-del1-build-compile-internal.xml[0m
-[0m[[0mdebug[0m] [0m	report for default#scalakurs-ntnu-del1-build;0.1-SNAPSHOT runtime-internal produced in /Users/torbjorn/Development/scala/scalakurs-ntnu-del1/project/target/resolution-cache/reports/default-scalakurs-ntnu-del1-build-runtime-internal.xml[0m
-[0m[[0mdebug[0m] [0m	report for default#scalakurs-ntnu-del1-build;0.1-SNAPSHOT test-internal produced in /Users/torbjorn/Development/scala/scalakurs-ntnu-del1/project/target/resolution-cache/reports/default-scalakurs-ntnu-del1-build-test-internal.xml[0m
-[0m[[0mdebug[0m] [0m	report for default#scalakurs-ntnu-del1-build;0.1-SNAPSHOT plugin produced in /Users/torbjorn/Development/scala/scalakurs-ntnu-del1/project/target/resolution-cache/reports/default-scalakurs-ntnu-del1-build-plugin.xml[0m
-[0m[[0mdebug[0m] [0m	report for default#scalakurs-ntnu-del1-build;0.1-SNAPSHOT sources produced in /Users/torbjorn/Development/scala/scalakurs-ntnu-del1/project/target/resolution-cache/reports/default-scalakurs-ntnu-del1-build-sources.xml[0m
-[0m[[0mdebug[0m] [0m	report for default#scalakurs-ntnu-del1-build;0.1-SNAPSHOT docs produced in /Users/torbjorn/Development/scala/scalakurs-ntnu-del1/project/target/resolution-cache/reports/default-scalakurs-ntnu-del1-build-docs.xml[0m
-[0m[[0mdebug[0m] [0m	report for default#scalakurs-ntnu-del1-build;0.1-SNAPSHOT pom produced in /Users/torbjorn/Development/scala/scalakurs-ntnu-del1/project/target/resolution-cache/reports/default-scalakurs-ntnu-del1-build-pom.xml[0m
-[0m[[0mdebug[0m] [0m	report for default#scalakurs-ntnu-del1-build;0.1-SNAPSHOT scala-tool produced in /Users/torbjorn/Development/scala/scalakurs-ntnu-del1/project/target/resolution-cache/reports/default-scalakurs-ntnu-del1-build-scala-tool.xml[0m
-[0m[[0mdebug[0m] [0m	resolve done (2967ms resolve - 69ms download)[0m
+[0m[[0mdebug[0m] [0m:: resolution report :: resolve 1109ms :: artifacts dl 57ms[0m
+[0m[[0mdebug[0m] [0m	report for default#del-1-build;0.1-SNAPSHOT compile produced in /Users/torbjorn/Development/scala/scalakurs/oppgaver/del-1/project/target/resolution-cache/reports/default-del-1-build-compile.xml[0m
+[0m[[0mdebug[0m] [0m	report for default#del-1-build;0.1-SNAPSHOT runtime produced in /Users/torbjorn/Development/scala/scalakurs/oppgaver/del-1/project/target/resolution-cache/reports/default-del-1-build-runtime.xml[0m
+[0m[[0mdebug[0m] [0m	report for default#del-1-build;0.1-SNAPSHOT test produced in /Users/torbjorn/Development/scala/scalakurs/oppgaver/del-1/project/target/resolution-cache/reports/default-del-1-build-test.xml[0m
+[0m[[0mdebug[0m] [0m	report for default#del-1-build;0.1-SNAPSHOT provided produced in /Users/torbjorn/Development/scala/scalakurs/oppgaver/del-1/project/target/resolution-cache/reports/default-del-1-build-provided.xml[0m
+[0m[[0mdebug[0m] [0m	report for default#del-1-build;0.1-SNAPSHOT optional produced in /Users/torbjorn/Development/scala/scalakurs/oppgaver/del-1/project/target/resolution-cache/reports/default-del-1-build-optional.xml[0m
+[0m[[0mdebug[0m] [0m	report for default#del-1-build;0.1-SNAPSHOT compile-internal produced in /Users/torbjorn/Development/scala/scalakurs/oppgaver/del-1/project/target/resolution-cache/reports/default-del-1-build-compile-internal.xml[0m
+[0m[[0mdebug[0m] [0m	report for default#del-1-build;0.1-SNAPSHOT runtime-internal produced in /Users/torbjorn/Development/scala/scalakurs/oppgaver/del-1/project/target/resolution-cache/reports/default-del-1-build-runtime-internal.xml[0m
+[0m[[0mdebug[0m] [0m	report for default#del-1-build;0.1-SNAPSHOT test-internal produced in /Users/torbjorn/Development/scala/scalakurs/oppgaver/del-1/project/target/resolution-cache/reports/default-del-1-build-test-internal.xml[0m
+[0m[[0mdebug[0m] [0m	report for default#del-1-build;0.1-SNAPSHOT plugin produced in /Users/torbjorn/Development/scala/scalakurs/oppgaver/del-1/project/target/resolution-cache/reports/default-del-1-build-plugin.xml[0m
+[0m[[0mdebug[0m] [0m	report for default#del-1-build;0.1-SNAPSHOT sources produced in /Users/torbjorn/Development/scala/scalakurs/oppgaver/del-1/project/target/resolution-cache/reports/default-del-1-build-sources.xml[0m
+[0m[[0mdebug[0m] [0m	report for default#del-1-build;0.1-SNAPSHOT docs produced in /Users/torbjorn/Development/scala/scalakurs/oppgaver/del-1/project/target/resolution-cache/reports/default-del-1-build-docs.xml[0m
+[0m[[0mdebug[0m] [0m	report for default#del-1-build;0.1-SNAPSHOT pom produced in /Users/torbjorn/Development/scala/scalakurs/oppgaver/del-1/project/target/resolution-cache/reports/default-del-1-build-pom.xml[0m
+[0m[[0mdebug[0m] [0m	report for default#del-1-build;0.1-SNAPSHOT scala-tool produced in /Users/torbjorn/Development/scala/scalakurs/oppgaver/del-1/project/target/resolution-cache/reports/default-del-1-build-scala-tool.xml[0m
+[0m[[0mdebug[0m] [0m	resolve done (1109ms resolve - 57ms download)[0m
 [0m[[0minfo[0m] [0mDone updating.[0m
