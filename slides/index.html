@@ -220,21 +220,59 @@ p.age = 26
 
                 <section>
                     <h2>Constructors</h2>
-                    <!--<h4 style="text-align: left">Enkel klasse</h4>-->
                     <pre><code class="scala" data-trim contenteditable>
-class Person
+class Person(age: Int) {
+  val category = if (age < 35) "young" else "old"
 
-val p = new Person
+  def sayHi = "Hi, I'm " + category
+}
+
+new Person(30).sayHi //Hi, I'm young
 					</code></pre>
 
                     <div class="fragment">
-                        <h4>Medlemsvariabler og getters/setters</h4>
+                        <h4>Auxillery constructors</h4>
                         <pre><code class="scala" data-trim contenteditable>
-class Person(val name: String, var age: Int)
+class Date(val time: Long) {
 
-val p = new Person("Bob", 25)
-p.name // Bob
-p.age = 26
+  def this(date: Date) = this(date.time)
+}
+					    </code></pre>
+                    </div>
+
+                    <aside class="notes">
+                        <ul>
+                            <li>age: Int er default constructor</li>
+                            <li>body til constructor er hele klasse-bodyen</li>
+                            <li>category er en medlemsvariabel med public getter</li>
+                            <li>age er ikke en medlemsvariabel siden den ikke har val/var og ikke brukes annet enn i constructor</li>
+                            <li>ekstra constructors med def this()</li>
+                            <li>ekstra constructorer kan man ha så mange man vil, men må kalle default constructor</li>
+                        </ul>
+                    </aside>
+                </section>
+
+                <section>
+                    <h2>Objekter</h2>
+                    <pre><code class="scala" data-trim contenteditable>
+object Logger {
+  def log(msg: String) = println(msg)
+}
+
+Logger.log("It's all good!")
+					</code></pre>
+
+                    <div class="fragment">
+                        <h4>Companion-objekter</h4>
+                        <pre><code class="scala" data-trim contenteditable>
+class Person(val name: String, val age: Int)
+
+//I samme fil
+object Person {
+  def apply(name: String, age: Int) = new Person(name, age)
+}
+
+val p = Person("Frode", 33)
 					    </code></pre>
                     </div>
 
@@ -245,6 +283,68 @@ p.age = 26
                     </aside>
                 </section>
 
+                <section>
+                    <h2>Traits</h2>
+                    <pre><code class="scala" data-trim contenteditable>
+trait Animal {
+  def greet = "I'm an animal"
+}
+
+class Dog extends Animal
+class Fox extends Animal
+					</code></pre>
+                    <aside class="notes">
+                        <ul>
+                            <li>Traits er som interface - kan ha abstrakte metoder</li>
+                            <li>Kan ha konkret oppførsel</li>
+                            <li>Definerer en type</li>
+                        </ul>
+                    </aside>
+                </section>
+
+                <section>
+                    <h2>Traits</h2>
+                    <pre><code class="scala" data-trim contenteditable>
+trait Animal {
+  def say: String
+
+  def greet = "I'm an animal that says " + say
+}
+
+class Dog extends Animal {
+  def say = "woof"
+}
+
+class Fox extends Animal {
+  def say = ???
+}
+					</code></pre>
+                    <aside class="notes">
+                        <ul>
+                            <li></li>
+                        </ul>
+                    </aside>
+                </section>
+
+                <section>
+                    <h2>Traits</h2>
+                    <pre><code class="scala" data-trim contenteditable>
+trait Animal {
+  def say: String
+}
+
+trait Fourlegged
+
+class Dog extends Animal with Fourlegged {
+  def say = "woof"
+}
+					</code></pre>
+                    <aside class="notes">
+                        <ul>
+                            <li></li>
+                        </ul>
+                    </aside>
+                </section>
 
                 <!--
                 <section>
