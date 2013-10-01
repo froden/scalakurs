@@ -36,7 +36,8 @@ Oppgaver i [Typseafe activator](http://typesafe.com/platform/getstarted) - Torbj
 * Option
 * Try
 * Future
-* for comprehensions?
+* for comprehensions
+* Oppgaver med funksjonelle datastrukterer (se funprog) 
 
 # Dag 3: Unfiltered + js-front
 * [Unfiltered](http://unfiltered.databinder.net/Unfiltered.html)
