@@ -74,3 +74,12 @@ object ObjectOrientedOppg2 extends App {
   println(r1)
   println(r1.add(r2))
 }
+
+object OppgTrait {
+  trait Ord {
+    def < (that: Any): Boolean
+    def <=(that: Any): Boolean =  (this < that) || (this == that)
+    def > (that: Any): Boolean = !(this <= that)
+    def >=(that: Any): Boolean = !(this < that)
+  }
+}

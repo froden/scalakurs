@@ -34,3 +34,18 @@ Objektorientert
 Biblioteker og community
 
 Firmaer som bruker Scala
+
+
+Klasser og objekter notater
+===================
+Gjenstår slides
+* Flere klasser i samme fil
+* Arv mellom klasser
+* abstrakte klasser
+* private?
+
+Dokumentasjon:
+==============
+http://docs.scala-lang.org/index.html
+API-docs: http://www.scala-lang.org/api/current/#package
+Twitter scala school http://twitter.github.io/scala_school/index.html
