@@ -1,6 +1,7 @@
 package oppg2_oo
 
 import org.scalatest.FunSuite
+import Support.rationalEq
 
 class RationalTest extends FunSuite {
   test("Rational skal ha to public accessors 'numer' og 'denom'") {
@@ -25,10 +26,17 @@ class RationalTest extends FunSuite {
     assert(r.denom === 1)
   }
 
-  test("Det skal gå an å legge sammen to rationelle tall") {
+  test("Det skal gå an å legge sammen to rasjonale tall") {
     val r = Rational(1, 2).add(Rational(1, 2))
-    assert(r.numer === r.denom)
-    val r2 = Rational(11, 13).add(Rational(2, 13))
-    assert(r2.numer === r2.denom)
+    assert(r === Rational(1, 1))
+    val r2 = Rational(11, 13).add(Rational(1, 13))
+    assert(r2 === Rational(12, 13))
+  }
+
+  test("Det skal gå an å legge sammen to rasjonale tall med syntaksen r1 + r2 (operator)") {
+    throw new Exception("Remove this line. Uncommend the following lines and make them compile. Do not alter the test")
+//    val r1: Rational = null
+//    val r2: Rational = null
+//    assert((r1 + r2) === Rational(5, 4))
   }
 }
