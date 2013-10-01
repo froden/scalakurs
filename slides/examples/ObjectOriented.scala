@@ -119,8 +119,19 @@ object Ex11 {
   }
 
   trait Fourlegged
+  trait Furry
 
-  class Dog extends Animal with Fourlegged {
+  class Dog extends Animal with Fourlegged with Furry {
     def say = "woof"
+  }
+}
+
+object Ex12 {
+  class Person(val name: String) {
+
+  }
+
+  class Student(val studentId: Int, name: String) extends Person(name) {
+
   }
 }

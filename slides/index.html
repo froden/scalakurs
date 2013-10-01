@@ -332,10 +332,10 @@ class Fox extends Animal {
 trait Animal {
   def say: String
 }
-
 trait Fourlegged
+trait Furry
 
-class Dog extends Animal with Fourlegged {
+class Dog extends Animal with Fourlegged with Furry {
   def say = "woof"
 }
 					</code></pre>

@@ -23,7 +23,7 @@ Opplegg
 Oppgaver i [Typseafe activator](http://typesafe.com/platform/getstarted) - Torbjørn setter opp
 
 1. Intro til Scala - bakgrunn, utbredelse, hvorfor er det bra, hva bruker Bekk, java interop - Frode fikser
-2. Intro til syntax (sourcefiler, variabler, metoder, ekspression oriented) - Torbjørn fikser
+2. Intro til syntax (sourcefiler, variabler, metoder, ekspression oriented, looping) - Torbjørn fikser
    * Oppg: Få activator til å kjøre + løse basic oppgave om syntax
 4. Klasser, objekter, case classes, traits - Frode (evt Sjur) fikser
    * Oppgaver
