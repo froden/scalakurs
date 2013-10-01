@@ -28,7 +28,7 @@ class RationalTest extends FunSuite {
   test("Det skal gå an å legge sammen to rationelle tall") {
     val r = Rational(1, 2).add(Rational(1, 2))
     assert(r.numer === r.denom)
-    val r2 = Rational(11, 13).add(Rational(2, 45))
+    val r2 = Rational(11, 13).add(Rational(2, 13))
     assert(r2.numer === r2.denom)
   }
 }
