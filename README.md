@@ -46,3 +46,5 @@ Notater
 =======
 * [Twitter Scala school](http://twitter.github.io/scala_school/)
 * [Sjur og Arilds workshop](https://github.com/arild/scala-workshop)
+* [Community docs](http://docs.scala-lang.org/index.html)
+* [API-docs](http://www.scala-lang.org/api/current/#package)
