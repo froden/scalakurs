@@ -346,6 +346,86 @@ class Dog extends Animal with Fourlegged with Furry {
                     </aside>
                 </section>
 
+                <section>
+                <h2>scala.immutable.List</h2>
+                <ul>
+                    <li class="fragment">Implementerer isEmpty, head og tail.</li>
+                    <li class="fragment">O(n) på de fleste operasjoner</li>
+                    <li class="fragment">O(1) på prepend og head/tail-akess</li>
+                    <li class="fragment">Egnet for rekursive løsninger basert på head:tail-akess</li>
+                    <li class="fragment">Eksempler:
+                        <pre><code>scala> 4 :: List(1, 2, 3) // Prepend, O(1)
+res0: List[Int] = List(4, 1, 2, 3)</code></pre>
+                        <pre><code>scala> List(1, 2, 3) ::: List(4) // Append, O(n), foretrekk prepend
+res1: List[Int] = List(1, 2, 3, 4)</code></pre>
+                    </li>
+                </ul>
+            </section>
+
+
+            <section>
+                <h2>map()</h2>
+                <ul>
+                    <li>map() tar inn en funksjon og utfører den på alle elementer</li>
+                    <li>map() transformerer listen ihht til funksjonen gitt inn</li>
+
+                </ul>
+
+    <pre><code>scala> val numbers = List(1,2,3)
+numbers: List[Int] = List(1, 2, 3)
+
+scala> numbers.map((x: Int) => x + 1)
+res0: List[Int] = List(2, 3, 4)</code></pre>
+            </section>
+
+            <section>
+                <h2>filter()</h2>
+                <ul>
+                    <li>filter() tar inn en funksjon (predikat)</li>
+                    <li>filter() returnerer et subsett av listen hvor predikatet er sant</li>
+                </ul>
+
+    <pre><code>scala> val myList = List(1,2,3,4,5,6)
+myList: List[Int] = List(1, 2, 3, 4, 5, 6)
+
+scala> myList.filter((x: Int) => x > 3)
+res0: List[Int] = List(4, 5, 6)</code></pre>
+            </section>
+
+
+            <section>
+                <h2>scala.immutable.List API eksempler</h2>
+    <pre><code>//Adder et element til begynnelsen av listen
+def ::(x: A): List[A]
+
+//Adder en liste til begynnelsen av listen
+def :::(prefix: List[A]): List[A]
+
+//Velger det første elementet i listen
+def head: A
+
+//Velger de resterende (foruten første) elementene i listen
+def tail: A
+
+//Velger de første n elementene i en liste
+def take(n: Int): List[A]
+
+//Velger alle elementer bortsett fra de første n elementene i en liste
+def drop(n: Int): List[A]
+</code></pre>
+            </section>
+
+            <section>
+                <h2>scala.immutable.List API eksempler 2</h2>
+    <pre><code>//Adder et element til begynnelsen av listen
+//Velger de siste n elementene i en liste
+def takeRight(n: Int): List[A]
+
+//Lager en liste av liste ut fra to lister
+def zip[B](that: GenIterable[B]): List[(A, B)]
+</code></pre>
+            </section>
+
                 <!--
                 <section>
 					<h1>Reveal.js</h1>
