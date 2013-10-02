@@ -22,8 +22,7 @@ class RationalTest extends FunSuite {
 
   test("Rational skal ha en constructor med kun ett parameter for heltall") {
     val r = Rational(2)
-    assert(r.numer === 2)
-    assert(r.denom === 1)
+    assert(r === new Rational(2, 1))
   }
 
   test("Det skal gå an å legge sammen to rasjonale tall") {
@@ -34,9 +33,9 @@ class RationalTest extends FunSuite {
   }
 
   test("Det skal gå an å legge sammen to rasjonale tall med syntaksen r1 + r2 (operator)") {
-    throw new Exception("Remove this line. Uncommend the following lines and make them compile. Do not alter the test")
-//    val r1: Rational = null
-//    val r2: Rational = null
-//    assert((r1 + r2) === Rational(5, 4))
+//    throw new Exception("Remove this line. Uncommend the following lines and make them compile. Do not alter the test")
+    val r1: Rational = Rational(1, 2)
+    val r2: Rational = Rational(3, 4)
+    assert((r1 + r2) === Rational(5, 4))
   }
 }
