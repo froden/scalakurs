@@ -1,25 +1,24 @@
 package oppg1_intro
 
 import org.scalatest._
-import org.scalatest.matchers.ShouldMatchers
 
-class SyntaxSpec extends FlatSpec with ShouldMatchers {
+class SyntaxSpec extends FunSuite {
 
-  "Syntaks" should "have a value called fixed" in {
-    assert(Syntax.fixed === 42)
+  test ("SyntaxIntro should have a value called fixed") {
+    assert(SyntaxIntro.fixed === 42)
   }
 
-  it should "have a variable called reAssignable" in {
-    assert(Syntax.reAssignable === "Change me!")
+  test ("SyntaxIntro should have a variable called reAssignable") {
+    assert(SyntaxIntro.reAssignable === "Change me!")
   }
 
-  it should "have a new value assigned to reAssignable" in {
-    Syntax.reAssignable = "I feel changed!"
-    assert(Syntax.reAssignable === "I feel changed!")
+  test ("SyntaxIntro should have a new value assigned to reAssignable") {
+    SyntaxIntro.reAssignable = "I feel changed!"
+    assert(SyntaxIntro.reAssignable === "I feel changed!")
   }
 
-  it should "have a method we could call" in {
-    assert(Syntax.callMe === "Hello!")
+  test ("SyntaxIntro should have a method we could call") {
+    assert(SyntaxIntro.callMe === "Hello!")
   }
 
 
