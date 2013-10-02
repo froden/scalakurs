@@ -39,7 +39,7 @@ class RationalTest extends FunSuite {
    * f.eks: this /\/\/\ "hei" == this./\/\/\("hei")
    */
   test("Det skal gå an å legge sammen to rasjonale tall med syntaksen r1 + r2 (operator)") {
-    throw new Exception("Remove this line. Uncommend the following lines and make them compile. Do not alter the test")
+    fail("Remove this line. Uncommend the following lines and make them compile. Do not alter the test")
 //    val r1: Rational = Rational(1, 2)
 //    val r2: Rational = Rational(3, 4)
 //    assert((r1 + r2) === Rational(5, 4))
