@@ -1,118 +1,123 @@
 package lister_intro
 
 /**
- * Oversikt over scala immutable list api:
+ * Find all methods in the scala immutable list API:
  * http://www.scala-lang.org/api/current/index.html#scala.collection.immutable.List
  */
 class Lister {
 
   /**
-   * Skal snu en liste : List(1,2,3) -> List(3,2,1)
+   * Should flip a list : List(1,2,3) -> List(3,2,1)
    */
-  def reverser (minListe: List[Any]) =
-    minListe //TODO
+  def reverse (myList: List[Any]) =
+    myList //TODO
 
   /**
-   * Skal beholde kun unike, distinkte elementer i en liste :
+   * Should keep only unique, distinct elements in a list:
    * List(1,1,1,1,1,1,1,2) -> List(1,2)
    */
-  def fjernDuplikater (minListe: List[Any]) =
-    minListe //TODO
+  def removeDuplicates (myList: List[Any]) =
+    myList //TODO
 
   /**
-   * Skal returnere det første elementet i en liste (ikke som en liste) :
+   * Should return first element in a list (not as a list) :
    * List(1,2,3) -> 1
    */
-  def finneForsteElement(minListe: List[Any]) =
-    minListe //TODO
+  def findFirstElement(myList: List[Any]) =
+    myList //TODO
 
   /**
-   * Skal returnere det siste elementet i en liste (ikke som en liste)
+   * Should return last element in a list (not as a list)
    * List(1,2,3) -> 3
    */
-  def finneSisteElement(minListe: List[Any]) =
-    minListe //TODO
+  def findLastElement(myList: List[Any]) =
+    myList //TODO
 
   /**
-   * Skal returnere de to første elementene i en liste som en liste
+   * Should return two first elements in a list (as a list):
    * List(1,2,3) -> List(1,2)
    */
-  def finnToForsteElementer(minListe: List[Any]) =
-    minListe //TODO
+  def findTwoFirstElements(myList: List[Any]) =
+    myList //TODO
 
   /**
-   * Skal returnere det gjenværende av en liste som mister alle elementer foruten sitt første element
+   * Should return remaining of a list when first element is removed (as a list)
    * List(1,2,3) -> List(2,3)
    */
-  def finnBortsettFraForsteElement(minListe: List[Any]) =
-    minListe //TODO
+  def findAllButFirstElement(myList: List[Any]) =
+    myList //TODO
 
   /**
-   * Skal returnere det gjenværende av en liste som mister alle elementer foruten sine to første elementer :
+   * Should return remaining of a list when first two elements are removed (as a list)
    * List(1,2,3) -> List(3)
    */
-  def finnBortsettFraToForsteElementer(minListe: List[Any]) =
-    minListe //TODO
+  def findAllButTwoFirstElements(myList: List[Any]) =
+    myList //TODO
 
   /**
-   * Skal returnere en subliste av en Int-liste, hvor kun partallene er med :
+   * Should return a sublist of Ints with only the even numbers in it
    * List(1,2,3,4) -> List(2,4)
    */
-  def finnPartall(minListe: List[Int]) =
-    minListe //TODO
+  def findEvenNumbers(myList: List[Int]) =
+    myList //TODO
 
   /**
-   * Sett at en liste med Ints sendes inn som en liste, skal denne listen anses som en liste med sidelengder.
-   * Returverdien skal gi en liste med volumer, spent ut av disse sidene
-   * Eks : List(1,2,3) -> List(1,8,27)
-   * Hvert kubevolum beregnes ut fra denne ene verdien i listen
-   * Sidene kommer inn som en liste av Ints. Resultatet skal også returneres som en liste av Ints.
+   * Given a list of Ints, should think of these Ints as side-lengths in a cube
+   * Return value should be a list of equal length with the volume spanned out of a cube with this element as a side :
+   * List(1,2,3) -> List(1,8,27)
+   * Each cube volum is calculated from this one value in the list
+   * The sides come in as a list of Ints. The result is also a list of Ints.
    */
-  def kalkulerKubene(minListe: List[Int]) =
-    minListe //TODO
+  def calculateCubes(myList: List[Int]) =
+    myList //TODO
 
   /**
-   * Gitt et vilkårlig predikat i formen av en funksjon fra Int til boolean, og en liste av Ints, skal en ny liste av Ints returneres.
-   * Den returnerte listen skal inneholdet det subsettet av elementer hvis predikat er sant :
-   * eks List(1,2,3,4,5), (_ < 3) -> List(1,2)
+   * Given any predicate in the form of a function from Int to boolean (f: Int => Boolean), and a list of Ints, 
+   * a new List of Ints are to be returned
+   * The returned list should contain the subset of elements for which the predicate is true:
+   * List(1,2,3,4,5), (_ < 3) -> List(1,2)
    */
-  def finnSublisteFraPredikat(minListe: List[Int], predikat: Int => Boolean) =
-    minListe //TODO
+  def findSublistFromPredicate(myList: List[Int], predicate: Int => Boolean) =
+    myList //TODO
 
   /**
    * Tvinner to like lange lister til en liste av tupler
-   * Eks : List(1,2,3), List(a,b,c) -> List((1,a),(b,2),(3,c))
-   * Eks : List(a,b,c), List(1,2,3) -> List((a,1),(2,b),(c,3))
+   * Winds up two lists of equal length to a list of tuple (where index 0,2,4 .. are unchanged but index 1,3,5,.. is flipped) :
+   * List(1,2,3), List(a,b,c) -> List((1,a),(b,2),(3,c))
+   * List(a,b,c), List(1,2,3) -> List((a,1),(2,b),(c,3))
    */
-  def tvinneToLister(minListe1: List[Any], minListe2: List[Any]): List[(Any, Any)] = {
+  def windUpTwoLists(myList1: List[Any], myList2: List[Any]): List[(Any, Any)] = {
     List((1,1)) //TODO
   }
 
   /**
-   * Plukker fra venstre og høyre side av listen til listen er tom, returnerer de plukkede elementene i en liste
-   * Eks: List(1,2,3,4,5) -> List(1,5,2,4,3)
+   * chops values from left and right side of the list until the list is empty. Returns these values as a list :
+   * List(1,2,3,4,5) -> List(1,5,2,4,3)
    */
-  def plukkeFraKanteneAvListen[A](minListe: List[A]): List[A] = {
-    minListe //TODO
+  def chopFromBothsEndsAtAList[A](myList: List[A]): List[A] = {
+    myList //TODO
   }
 
   /**
-   * Summerer en liste med Ints og returnerer sum som en Int
-   * Eks: List(1,2,3) -> 6
+   * Sums a list of Ints and returns the sum as an Int :
+   * List(1,2,3) -> 6
    */
-  def summereAlleIntsIEnListe(minListe: List[Int]) =
+  def sumAllNumbersInList(myList: List[Int]) =
     1 //TODO
 
   /**
-   * Tar inn en sortert liste. Returnerer en liste med tupler, hvor første element i hvert tuppel er antall elementer av hver distinkte hverdi
-   * Eks: List("a", "b") -> List((1,"a"),(1,"b"))
-   * Eks: List("a", "a", "a") -> List((3,"a"))
-   * Eks: List("a", "b", "b") -> List((1,"a"),(2,"b"))
+   * Takes a sorted list in. Returns a list of tuples where the first element in each tuple is the number of elements of this distinct value :
+   * List("a", "b") -> List((1,"a"),(1,"b"))
+   * List("a", "a", "a") -> List((3,"a"))
+   * List("a", "b", "b") -> List((1,"a"),(2,"b"))
    *
-   * Hint: Sjekk ut funksjonen 'Span' (som er en kombinasjon av takeWhile og dropWhile),
-   * konkatenering av et element til en liste med :: samt mellomlagring i et tuppel
+   * Hint: consider
+   * - the function 'span (which is a combination of takeWhile and dropWhile),
+   * - concatenating of an element in a list with ::
+   * - buffering calculated values in a tuple
+   * - recursive calls
    */
-  def encodeSekvensLengdeIEnSortertListe(minListe: List[Any]) : List[(Int, Any)] =
+  def encodeSequenceLengthInSortedList(myList: List[Any]) : List[(Int, Any)] =
     List((1,1))//TODO
 
 }
