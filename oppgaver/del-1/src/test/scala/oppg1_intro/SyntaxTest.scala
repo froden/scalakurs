@@ -10,11 +10,13 @@ class SyntaxTest extends FunSuite {
   }
 
   test ("SyntaxIntro should have a variable called reAssignable") {
-    assert(SyntaxIntro.reAssignable === "Change me!")
+    fail("Replace me with the test below")
+//    assert(SyntaxIntro.reAssignable === "Change me!")
   }
 
   test ("SyntaxIntro should have a new value assigned to reAssignable") {
-    assert(SyntaxIntro.reAssignable === "I feel changed!")
+    fail("Replace me with the test below")
+//    assert(SyntaxIntro.reAssignable === "I feel changed!")
   }
 
   test ("SyntaxIntro should have a method we could call") {
@@ -23,21 +25,30 @@ class SyntaxTest extends FunSuite {
   }
 
   test ("SyntaxIntro should have a method with a wrong return type that we should fix") {
-    assert(SyntaxIntro.theMeaningOfLife === 42)
+    fail("Replace me with the test below")
+//    assert(SyntaxIntro.theMeaningOfLife === 42)
   }
 
   test ("SyntaxIntro should have a method for adding two numbers together") {
-    assert(SyntaxIntro.add() === 7)
+    fail("Replace me with the test below")
+//    assert(SyntaxIntro.add() === 7)
   }
 
   test ("SyntaxIntro should have a method for choosing the right language") {
-    assert(SyntaxIntro.rightLanguage("Scala") === "YES")
-    assert(SyntaxIntro.rightLanguage("Java") === "NO")
+    fail("Replace me with the test below")
+//    assert(SyntaxIntro.rightLanguage("Scala") === "YES")
+//    assert(SyntaxIntro.rightLanguage("Java") === "NO")
   }
 
   test ("SyntaxIntro should count to ten") {
-    SyntaxIntro.countToTen()
-    assert(SyntaxIntro.nr === 10)
+    fail("Replace me with the test below")
+//    SyntaxIntro.countToTen()
+//    assert(SyntaxIntro.nr === 10)
+  }
+
+  test ("SyntaxIntro should print something pretty ") {
+    fail("Replace me with the line below")
+//    SyntaxIntro.printSomething()
   }
 
 }
