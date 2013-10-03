@@ -2,6 +2,12 @@ package oppg2_oo
 
 class Rational {
 
+  /**
+   * Remember that the body of the class is the body of the primary constructor. Assignments goea here.
+   *
+   * ??? Throws a NotImplementedException and returns the type Nothing
+   * which is a subtype of every other type in Scala
+   */
   val numer: Int = ???
   val denom: Int = ???
 
@@ -9,20 +15,20 @@ class Rational {
    * Hint: 1   2   3   4
    *       - + - = - + -
    *       2   3   6   6
-   * Du trenger ikke finne minste fellesnevner i denne oppgaven
+   * You don't need to find the greatest common divisor
    */
   def add(that: Rational): Rational = ???
 }
 
 object Rational {
   /**
-   * Hint: Lag og bruk constructor på Ration-klassen
+   * Hint: Create and invoke a constructor on class Rational
    */
   def apply(n: Int, d: Int): Rational = ???
 
   /**
-   * Hint: Ikke kall den andre apply-metoden.
-   * Lag egen constructor med ett parameter på Rational klassen.
+   * Hint: Don't call the other apply method
+   * Create a separate constructor using 'this'
    */
   def apply(n: Int): Rational = ???
 }

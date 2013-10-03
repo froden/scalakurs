@@ -4,28 +4,28 @@ import org.scalatest.FunSuite
 import Support.rationalEq
 
 class RationalTest extends FunSuite {
-  test("Rational skal ha to public accessors 'numer' og 'denom'") {
+  test("Rational should have two pulic accessors: 'numer' and 'denom'") {
     val r = Rational(1, 2)
     assert(r.numer === 1)
     assert(r.denom === 2)
   }
 
-  test("Rational skal ikke godta denom = 0") {
+  test("Rational should prevent divide by zero by not accepting denom = 0") {
     intercept[IllegalArgumentException] {
       Rational(1, 0)
     }
   }
 
-  test("Rational skal ha en fornuftig toString") {
+  test("Rational should yield a meaningful output from toString()") {
     assert(Rational(1, 2).toString === "1/2")
   }
 
-  test("Rational skal ha en constructor med kun ett parameter for heltall") {
+  test("Rational should have a dedicated constructor for constructing integers") {
     val r = Rational(2)
     assert(r === Rational(2, 1))
   }
 
-  test("Det skal gå an å legge sammen to rasjonale tall") {
+  test("One should be able to add two rational numbers together") {
     val r = Rational(1, 2).add(Rational(1, 2))
     assert(r === Rational(1, 1))
     val r2 = Rational(11, 13).add(Rational(1, 13))
@@ -33,12 +33,12 @@ class RationalTest extends FunSuite {
   }
 
   /**
-   * Hint: metodenavn kan også bestå av spesialtegn
-   * f.eks: /\/\/\(str: String) er gyldig
-   * Når man bare har ett parameter kan man utelate . og () i metodekallet.
-   * f.eks: this /\/\/\ "hei" == this./\/\/\("hei")
+   * Hint: method names can consist of special characters (operators)
+   * example: def /\/\/\(str: String) is valid
+   * If the method take only one parameter you can omit the . and () in the method call.
+   * example: this /\/\/\ "hei" is equivalent to this./\/\/\("hei")
    */
-  test("Det skal gå an å legge sammen to rasjonale tall med syntaksen r1 + r2 (operator)") {
+  test("Adding two rational numbers should be possible using the syntax r1 + r2 (operators)") {
     fail("Remove this line. Uncommend the following lines and make them compile. Do not alter the test")
 //    val r1: Rational = Rational(1, 2)
 //    val r2: Rational = Rational(3, 4)

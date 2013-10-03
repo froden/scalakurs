@@ -7,13 +7,13 @@ object MyApp {
   class LoggingClient extends BasicHttpClient with Logging
 
   /**
-   * Hint: Definer en egen klasse med nødvendig funksjonalitet
+   * Hint: Define your own class that mix in the necessary functionality
    * Syntax: class MyClass extends Something with SomeTrait
    */
   val loggingClient: HttpClient = new LoggingClient
 
   /**
-   * Hint: Alternativ til å lage en egen klasse er å bruke følgende syntax:
+   * Hint: Alternatively you can use the following syntax to mix in functionality at construction time
    * new Something with SomeTrait
    */
   val filteringLoggingClient: HttpClient = new BasicHttpClient with Logging with UrlFilter {
