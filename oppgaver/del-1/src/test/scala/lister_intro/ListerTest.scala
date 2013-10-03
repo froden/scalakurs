@@ -1,9 +1,8 @@
 package lister_intro
 
-import org.scalatest.matchers.ShouldMatchers
 import org.scalatest._
 
-class ListerTest extends FunSuite with ShouldMatchers {
+class ListerTest extends FunSuite {
 
   val lister: Lister = new Lister
 
