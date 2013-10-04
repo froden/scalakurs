@@ -213,13 +213,21 @@ p.age = 26
 
                     <aside class="notes">
                         <ul>
-                            <li></li>
+                            <li>klasser deklareres med class</li>
+                            <li>instansieres med new</li>
+                            <li>paranteser er valgfritt hvis det ikke er constructor-parametre</li>
+
+                            <li>public er default</li>
+                            <li>val betyr medlemsvariabel/instansvariabel med getter, men ingen setter fordi den ikke kan reassignes (final i java)</li>
+                            <li>var betyr det samme, men med setter også</li>
+                            <li>accessors har samme syntaks som felter (ikke get/setxxx)</li>
                         </ul>
                     </aside>
                 </section>
 
                 <section>
                     <h2>Constructors</h2>
+                    <h4>Primary constructor</h4>
                     <pre><code class="scala" data-trim contenteditable>
 class Person(age: Int) {
   val category = if (age < 35) "young" else "old"
@@ -246,8 +254,9 @@ class Date(val time: Long) {
                             <li>body til constructor er hele klasse-bodyen</li>
                             <li>category er en medlemsvariabel med public getter</li>
                             <li>age er ikke en medlemsvariabel siden den ikke har val/var og ikke brukes annet enn i constructor</li>
+
                             <li>ekstra constructors med def this()</li>
-                            <li>ekstra constructorer kan man ha så mange man vil, men må kalle default constructor</li>
+                            <li>ekstra constructorer kan man ha så mange man vil, men må kalle en annen eller default constructor</li>
                         </ul>
                     </aside>
                 </section>
@@ -278,7 +287,14 @@ val p = Person("Frode", 33)
 
                     <aside class="notes">
                         <ul>
-                            <li></li>
+                            <li>objekter - singleton objekter - en klasse med bare 1 instans</li>
+                            <li>kan sammenlignes med static i Java, men er ikke helt det</li>
+                            <li>Kalles med klassenavnet</li>
+
+                            <li>Companion objekter er et objekt med samme navn som en klasse i samme fil</li>
+                            <li>Her legger man alt som tilhører klassen og ikke instansen (igjen veldig likt static i java)</li>
+                            <li>Vanlig å legge factory-metoder sånn som her</li>
+                            <li>apply metoden har spesiell betydning i Scala og bli kalt hvis vi kaller på navnet på objektet</li>
                         </ul>
                     </aside>
                 </section>
@@ -293,11 +309,17 @@ trait Animal {
 class Dog extends Animal
 class Fox extends Animal
 					</code></pre>
+                    <ul>
+                        <li>Abstrakte metoder <strong>og</strong> felter</li>
+                        <li>Konkrete metoder og felter</li>
+                        <li>Mixin composition</li>
+                    </ul>
                     <aside class="notes">
                         <ul>
                             <li>Traits er som interface - kan ha abstrakte metoder</li>
                             <li>Kan ha konkret oppførsel</li>
                             <li>Definerer en type</li>
+                            <li>Brukes til å modularisere kode</li>
                         </ul>
                     </aside>
                 </section>
@@ -321,7 +343,9 @@ class Fox extends Animal {
 					</code></pre>
                     <aside class="notes">
                         <ul>
-                            <li></li>
+                            <li>Eksempel på Trait som ligner på en abstrakt klasse</li>
+                            <li>siden den har både abstrakte og konkrete metoder</li>
+                            <li>Man kan dog arve fra så mange slike man vil</li>
                         </ul>
                     </aside>
                 </section>
@@ -341,7 +365,8 @@ class Dog extends Animal with Fourlegged with Furry {
 					</code></pre>
                     <aside class="notes">
                         <ul>
-                            <li></li>
+                            <li>Eksemepel på mixin av flere traits</li>
+                            <li>Kan anta at Fourlegged og Furry også inneholder oppførsel som beriker Dog-klassen</li>
                         </ul>
                     </aside>
                 </section>
