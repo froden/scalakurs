@@ -4,21 +4,17 @@ import scala.collection.mutable.ListBuffer
 
 object MyApp {
 
-  class LoggingClient extends BasicHttpClient with Logging
-
   /**
    * Hint: Define your own class that mix in the necessary functionality
    * Syntax: class MyClass extends Something with SomeTrait
    */
-  val loggingClient: HttpClient = new LoggingClient
+  lazy val loggingClient: HttpClient = ???
 
   /**
    * Hint: Alternatively you can use the following syntax to mix in functionality at construction time
    * new Something with SomeTrait
    */
-  val filteringLoggingClient: HttpClient = new BasicHttpClient with Logging with UrlFilter {
-    val illegalUrlPattern = ".*illegal.*"
-  }
+  lazy val filteringLoggingClient: HttpClient = ???
 }
 
 abstract class HttpClient {
@@ -41,12 +37,12 @@ trait Logging extends HttpClient {
 trait UrlFilter extends HttpClient {
   val illegalUrlPattern: String
 
-  //Oppg lag denne
-  abstract override def get(url: String): String =
-    if (url.matches(illegalUrlPattern))
-      throw new IllegalArgumentException("Suspicious url " + url)
-    else
-      super.get(url)
+  /**
+   * Hint: throw new IllegalArgumentException()
+   * You can call the original overrided method using super.xxx()
+   */
+  abstract override def get(url: String): String = ???
+
 }
 
 object Log {
