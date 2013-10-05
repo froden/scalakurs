@@ -21,16 +21,16 @@ object PatternMatching {
       case Person("Ola", 20) => true
       case _ => false
     }
+
   }
 
-  // Try to use sequence pattern matching
-  // Hint: Use _* for arbitrary many elements i sequence
-  def checkIfSecondElementIsAPersonAtAge30(persons: Seq[Person]): Boolean = {
+  // Try to use pattern matching for lists
+  // Hint: Use _* for arbitrary many elements i list
+  def checkIfSecondElementIsAPersonAtAge30(persons: List[Person]): Boolean = {
     persons match {
-      case Seq(_, Person(_, age), _*)  => age == 30
+      case List(_, Person(_, age), _*)  => age == 30
       case _ => false
     }
   }
-
 }
 

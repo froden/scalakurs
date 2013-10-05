@@ -15,6 +15,12 @@ class PatternMatchingTest extends FunSuite {
     assert(p.name === "Ola" && p.age === 20)
   }
 
+  test ("person case class should compare persons by age") {
+    //    fail("Replace me with the test below")
+    assert(Person("Hans", 30).isOlderThan(Person("Ola", 20)) === true)
+    assert(Person("Hans", 20).isOlderThan(Person("Ola", 30)) === false)
+  }
+
   test ("should check if parameter is person Ola at age 20") {
 //    fail("Replace me with the test below")
     assert(PatternMatching.checkIfParameterIsPersonOlaAtAge20(Person("Hans", 20)) === false)
@@ -22,16 +28,10 @@ class PatternMatchingTest extends FunSuite {
     assert(PatternMatching.checkIfParameterIsPersonOlaAtAge20(Person("Ola", 20)) === true)
   }
 
-  test ("should compare persons by age") {
-    //    fail("Replace me with the test below")
-    assert(PatternMatching.checkIfParameterIsPersonOlaAtAge20(Person("Hans", 30).isOlderThan(Person("Ola", 20)) === true))
-    assert(PatternMatching.checkIfParameterIsPersonOlaAtAge20(Person("Hans", 20).isOlderThan(Person("Ola", 30)) === false))
-  }
-
   test ("should check if second person is Person at age 30") {
 //    fail("Replace me with the test below")
-    assert(PatternMatching.checkIfSecondElementIsAPersonAtAge30(Seq(Person("Ola", 30), Person("Hans", 20), Person("Ola", 30), Person("Hans", 30))) === false)
-    assert(PatternMatching.checkIfSecondElementIsAPersonAtAge30(Seq(Person("Hans", 20), Person("Hans", 30), Person("Hans", 20), Person("Hans", 20))) === true)
+    assert(PatternMatching.checkIfSecondElementIsAPersonAtAge30(List(Person("Ola", 30), Person("Hans", 20), Person("Ola", 30), Person("Hans", 30))) === false)
+    assert(PatternMatching.checkIfSecondElementIsAPersonAtAge30(List(Person("Hans", 20), Person("Hans", 30), Person("Hans", 20), Person("Hans", 20))) === true)
   }
 }
 
