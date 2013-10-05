@@ -1,6 +1,10 @@
 package oppg3_pattern_matching;
 
-case class Person(name: String, age: Int)
+case class Person(name: String, age: Int) {
+  def isOlderThan(that: Person): Boolean = {
+    this.age > that.age
+  }
+}
 
 object PatternMatching {
 
@@ -12,8 +16,8 @@ object PatternMatching {
     n * n
   }
 
-  def checkIfParamIsPersonOlaAtAge20(param: Any): Boolean = {
-    param match {
+  def checkIfParameterIsPersonOlaAtAge20(parameter: Any): Boolean = {
+    parameter match {
       case Person("Ola", 20) => true
       case _ => false
     }
