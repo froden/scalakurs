@@ -449,7 +449,181 @@ def takeRight(n: Int): List[A]
 //Lager en liste av liste ut fra to lister
 def zip[B](that: GenIterable[B]): List[(A, B)]
 </code></pre>
-            </section>
+    </section>
+
+    <section>
+        <h2>Pattern Matching</h2>
+        <p>
+            En avansert versjon av <code>switch</code> i Java
+        </p>
+        <aside class="notes">
+            <ul>
+                <li></li>
+            </ul>
+        </aside>
+    </section>
+
+    </section>
+
+                <section>
+                    <h2>Java-liknende eksempel</h2>
+                    <pre><code class="scala" data-trim contenteditable>
+def toYesOrNo(choice: Int): String = choice match {
+  case 1 => "yes"
+  case 0 => "no"
+  case _ => "error"
+}
+                        </code></pre>
+                    </code></pre>
+                    <pre><code class="scala" data-trim contenteditable>
+scala> toYesOrNo(1)
+res0: String = yes
+
+scala> toYesOrNo(10)
+res1: String = error
+                        </code></pre>
+                    </code></pre>
+                    <aside class="notes">
+                        <ul>
+                            Kan brukes som switch i Java, men har mer avansert funksjonalitet
+                        </ul>
+                    </aside>
+                </section>
+
+
+                <section>
+                    <h2>Typesjekking</h2>
+                    <pre><code class="scala" data-trim contenteditable>
+def f(x: Any): String = x match {
+  case i:Int => "integer: " + i
+  case _:Double => "a double"
+  case s:String => "I want to say " + s
+}
+                    </code></pre>
+                    </code></pre>
+                    <pre><code class="scala" data-trim contenteditable>
+scala> f(2.0)
+res0: String = a double
+                    </code></pre>
+                    </code></pre>
+                    <aside class="notes">
+                        <ul>
+                        </ul>
+                    </aside>
+                </section>
+
+                <section>
+                    <h2>Verktøy for funksjonell programmering</h2>
+                    Med pattern matching:
+                    <pre><code class="scala" data-trim contenteditable>
+def fact(n: Int): Int = n match {
+  case 0 => 1
+  case n => n * fact(n - 1)
+}
+                    </code></pre>
+                    Uten pattern matching:
+                    </code></pre>
+                    <pre><code class="scala" data-trim contenteditable>
+def fact(n: Int): Int =
+  if (n == 0) 1
+  else n * fact(n - 1)
+                    </code></pre>
+                    </code></pre>
+                    <aside class="notes">
+                        <ul>
+                        </ul>
+                    </aside>
+                </section>
+
+
+    <section>
+        <h2>Case Classes</h2>
+        <p>
+            (Nesten) Klasser med god støtte for pattern matching
+        </p>
+        <aside class="notes">
+            <ul>
+                <li></li>
+            </ul>
+        </aside>
+    </section>
+
+
+    <section>
+        <h2>Eksporterer konstruktørparametere</h2>
+        <pre><code class="scala" data-trim contenteditable>
+case class Person(firstName: String, lastName: String)
+        </code></pre>
+        <pre><code class="scala" data-trim contenteditable>
+scala> val person = Person("Ola", "Nordmann")
+person: Person = Person(Ola,Nordmann)
+
+scala> person.firstName + " " + person.lastName
+res0: String = Ola Nordmann
+        </code></pre>
+        <ul>
+            <li>
+                Konstruktørparametere automatisk tilgjengelig etter instansiering
+            </li>
+            <li>
+                Reduserer boilerpalate kode
+            </li>
+        </ul>
+        <aside class="notes">
+            <ul>
+            </ul>
+        </aside>
+    </section>
+
+    <section>
+        <h2>Pattern matching direkte på Person</h2>
+<pre><code class="scala" data-trim contenteditable>
+def printPerson(person: Any) {
+  person match {
+    case Person(first, last) => println(first + " " + last)
+    case _ => println("Not a person!")
+  }
+}
+</code></pre>
+<pre><code class="scala" data-trim contenteditable>
+scala> printPerson("Ola Nordmann")
+Not a person!
+
+scala> printPerson(Person("Ola", "Nardmann"))
+Ola Nardmann
+</code></pre>
+        Scoper konstruktørparameterene i pattern match blokken
+    </section>
+
+
+    <section>
+        <h2>Pattern matching på lister</h2>
+<pre><code class="scala" data-trim contenteditable>
+def checkIfFirstPersonIsOla(persons: List[Person]): Boolean = {
+  persons match {
+    case List(Person("Ola", _), _*) => true
+    case _ => false
+  }
+}
+</code></pre>
+<pre><code class="scala" data-trim contenteditable>
+scala> val persons = List(Person("Ola", "test"),
+    | Person("test", "test"))
+persons: List[Person] = List(Person(Ola,test), Person(test,test))
+
+scala> checkIfFirstPersonIsOla(persons)
+res0: Boolean = true
+</code></pre>
+        <code>_*</code> betyr villlkårlig mange følgende elementer
+    </section>
+
+
+    <section>
+        <h2>Oppgaver</h2>
+        Fullfør oppgaver i:<br><code>PatternMatchingAndCaseClasses.scala</code>
+        <br><br>
+        Tester definert i:<br><code>PatternMatchingAndCaseClassesTest.scala</code>
+    </section>
 
                 <!--
                 <section>
