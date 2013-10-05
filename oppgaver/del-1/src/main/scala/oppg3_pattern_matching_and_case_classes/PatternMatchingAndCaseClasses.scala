@@ -1,4 +1,4 @@
-package oppg3_pattern_matching;
+package oppg3_pattern_matching_and_case_classes;
 
 case class Person(name: String, age: Int) {
   def isOlderThan(that: Person): Boolean = {
@@ -6,7 +6,7 @@ case class Person(name: String, age: Int) {
   }
 }
 
-object PatternMatching {
+object PatternMatchingAndCaseClasses {
 
   def computeSquareOfIntOrString(number: Any): Int = {
     val n = number match {
