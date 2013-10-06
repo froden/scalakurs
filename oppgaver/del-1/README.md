@@ -4,7 +4,7 @@ Oppgaver
 ## Før kurset
 * Last ned [Typesafe Activator](http://typesafe.com/platform/getstarted)
 
-### IDE-støtte (valgfritt)
+*IDE-støtte (valgfritt)*
 Hvis du ønsker å løse oppgavene i IDEA eller Eclipse trenger du en Scala-plugin:
 * [Scala IDE for Eclipse](http://scala-ide.org/)
 * IDEA: Settings -> plugins -> Install JetBrains plugin -> Scala
@@ -17,3 +17,4 @@ Hvis du ønsker å løse oppgavene i IDEA eller Eclipse trenger du en Scala-plug
 * Velg "Find Existing" nederst til høyre
 * Åpne <scalakurs>/oppgaver/del-1
 * Velg "Code view & Open in IDE"
+* (valgfritt) Velg "Open" og enten "Open project in Intellij IDEA" eller "Open project in Eclipse"
