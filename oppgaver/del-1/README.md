@@ -5,7 +5,9 @@ Oppgaver
 * Last ned [Typesafe Activator](http://typesafe.com/platform/getstarted)
 
 *IDE-støtte (valgfritt)*
+
 Hvis du ønsker å løse oppgavene i IDEA eller Eclipse trenger du en Scala-plugin:
+
 * [Scala IDE for Eclipse](http://scala-ide.org/)
 * IDEA: Settings -> plugins -> Install JetBrains plugin -> Scala
 
