@@ -1,4 +1,4 @@
-package lister_intro
+package oppg3_lister_intro
 
 /**
  * Find all methods in the scala immutable list API:

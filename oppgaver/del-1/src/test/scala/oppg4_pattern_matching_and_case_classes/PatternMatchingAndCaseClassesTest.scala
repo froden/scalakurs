@@ -1,4 +1,4 @@
-package oppg3_pattern_matching_and_case_classes
+package oppg4_pattern_matching_and_case_classes
 
 import org.scalatest.FunSuite
 

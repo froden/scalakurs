@@ -1,4 +1,4 @@
-package lister_intro
+package oppg3_lister_intro
 
 import org.scalatest._
 
