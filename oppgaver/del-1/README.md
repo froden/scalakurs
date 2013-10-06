@@ -20,3 +20,4 @@ Hvis du ønsker å løse oppgavene i IDEA eller Eclipse trenger du en Scala-plug
 * Åpne <scalakurs>/oppgaver/del-1
 * Velg "Code view & Open in IDE"
 * (valgfritt) Velg "Open" og enten "Open project in Intellij IDEA" eller "Open project in Eclipse"
+* Følg instruksjoner under "TUTORIAL"-panelet til høyre
