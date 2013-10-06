@@ -3,7 +3,7 @@ package oppg2_oo
 class Rational {
 
   /**
-   * Remember that the body of the class is the body of the primary constructor. Assignments goea here.
+   * Remember that the body of the class is the body of the primary constructor. Assignments goes here.
    *
    * ??? Throws a NotImplementedException and returns the type Nothing
    * which is a subtype of every other type in Scala
