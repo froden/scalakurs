@@ -86,7 +86,7 @@ class Lister {
    * List(1,2,3), List(a,b,c) -> List((1,a),(b,2),(3,c))
    * List(a,b,c), List(1,2,3) -> List((a,1),(2,b),(c,3))
    */
-  def windUpTwoLists(myList1: List[Any], myList2: List[Any]): List[(Any, Any)] = {
+  def windUpTwoLists(myList1: List[Any], myList2: List[Any]) = {
     List((1,1)) //TODO
   }
 
