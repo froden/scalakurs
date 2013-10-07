@@ -58,8 +58,15 @@
         Metodene på List sparer oss for mye tid og potensielle feil med å implementere traverseringslogikken for oss.
         Disse metodene tar som regel en funksjon som parameter. Se seksjonen nedenfor for syntaks for funksjoner i Scala.
     </p>
+    <p>Flere metoder i liste-api tar inn funksjoner som argument. Under er count-metoden brukt. Den tar inn en funksjon
+        som parameter. En egendefinert metode som teller partall i en liste med Int ser da slik ut:</p>
+    <code>def countEvenNumbers (myList: List[Int]) = myList.count((n: Int) => n % 2 == 0)</code><br /><br />
+    <p>Vi skal jobbe med disse filene : </p>
     <a href="#code/src/main/scala/oppg3_lister_intro/Lister.scala" class="shortcut">Lister.scala</a><br/>
-    <a href="#code/src/test/scala/oppg3_lister_intro/ListerTest.scala" class="shortcut">ListerTest.scala</a>
+    <a href="#code/src/test/scala/oppg3_lister_intro/ListerTest.scala" class="shortcut">ListerTest.scala</a><br />
+    <p>Erstatt linjen som inneholder //TODO for å få testene til å returnere det de egentlig skal (og dermed bli grønne)
+    <br />Mer informasjon kan finnes i Scala immutable List API</p>
+    <a href="http://www.scala-lang.org/api/current/index.html#scala.collection.immutable.List">Scala List API</a><br />
 
     <h3>Funksjoner</h3>
     <p>Funksjoner skiller seg fra metoder ved at de kan tilordnes til variabler og har en egen type:</p>
