@@ -189,9 +189,61 @@
                     </aside>
                 </section>
 
+                <section>
+                  <h2>Scalasyntaks 101</h2>
+                </section>
+
+                <section>
+                  <h2>Definere ting</h2>
+                  <pre><code class="scala" data-trim contenteditable>
+object SyntaksEksempler {
+  // En ikke endrebar verdi, tenk final i Java
+  val personNummer = 02017912345
+
+  // En endrebar variabel
+  var navn: String = "Torbjørn Vatn"
+
+  // En metode med returverdi
+  def beregnAlder(personNummer: String): Int = {
+    val alder = // kode som beregner alder
+    alder
+  }
+
+  // En metode uten returverdi, tenk void i Java
+  def endreNavn(nyttNavn: String) {
+    navn = nyttNavn
+  }
+
+}
+                </code></pre>
+
+                <aside class="notes">
+                  <ul>
+                    <li>Poengter at det ikke er noen typedef. på personNummer</li>
+                    <li>Man skal prøve å holde seg til val i Scala</li>
+                    <li>Metoder kan spesifisere returtype, men trenger det ikke</li>
+                  </ul>
+                </aside>
+                </section>
+                <section>
+                  <h2>Lite syntaks som er i veien</h2>
+                  <pre><code class="scala" data-trim contenteditable>
+object FlereSyntaksEksempler {
+
+if ... else ...
 
 
+for (i <- 1 to 10) {
+  
+}
+  
+val størreEnn2Funksjon: Int => Boolean = (tall: Int) => tall > 2
 
+}
+
+                  </code></pre>
+
+                </section>
 
                 <section>
                     <h2>Oppgaver</h2>
