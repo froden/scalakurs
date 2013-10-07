@@ -392,7 +392,8 @@ class Dog extends Animal with Fourlegged with Furry {
                 </section>
 
                 <section>
-                <h2>scala.immutable.List</h2>
+                <h2>List</h2>
+                <h4 style="text-transform: none">scala.immutable</h4>
                 <ul>
                     <li class="fragment">Implementerer isEmpty, head og tail.</li>
                     <li class="fragment">O(n) på de fleste operasjoner</li>
@@ -439,7 +440,7 @@ res0: List[Int] = List(4, 5, 6)</code></pre>
 
 
             <section>
-                <h2>scala.immutable.List API eksempler</h2>
+                <h2>List API eksempler</h2>
     <pre><code>//Adder et element til begynnelsen av listen
 def ::(x: A): List[A]
 
@@ -461,7 +462,7 @@ def drop(n: Int): List[A]
             </section>
 
             <section>
-                <h2>scala.immutable.List API eksempler 2</h2>
+                <h2>List API eksempler 2</h2>
     <pre><code>//Adder et element til begynnelsen av listen
 //Velger de siste n elementene i en liste
 def takeRight(n: Int): List[A]

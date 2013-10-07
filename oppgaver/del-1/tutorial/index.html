@@ -24,23 +24,66 @@
 </div>
 
 <div>
-    <h2>ಠbject ಠrientation</h2>
+    <h2>Object Orientation</h2>
 
+    <h3>Rasjonelle tall</h3>
     <p>
         I denne oppgaven skal vi først lage en klasse som representerer rasjonelle tall.
         Altså tall som kan representeres som en brøk der teller og nevner er heltall.
-        Oppgaven går ut på å få testene i <a href="#code/src/test/scala/oppg2_oo/HttpClientTest.scala" class="shortcut">HttpClientTest.scala</a>
-        til å bli grønne.
+        Oppgaven går ut på å få testene til å bli grønne.
+        OBS: Testene er ferdig implementert, men husk å fjerne "pending" fra testene.
     </p>
-    <h3>Kode:</h3>
-    <a href="#code/src/main/scala/oppg2_oo/HttpClient.scala" class="shortcut">HttpClient.scala</a><br/>
-    <a href="#code/src/main/scala/oppg2_oo/Rational.scala" class="shortcut">Rational.scala</a>
-
-    <h3>Tester:</h3>
-    <a href="#code/src/test/scala/oppg2_oo/HttpClientTest.scala" class="shortcut">HttpClientTest.scala</a><br/>
+    <a href="#code/src/main/scala/oppg2_oo/Rational.scala" class="shortcut">Rational.scala</a><br/>
     <a href="#code/src/test/scala/oppg2_oo/RationalTest.scala" class="shortcut">RationalTest.scala</a>
 
+    <h3>Mixin composition med Traits</h3>
+    <p>
+        I denne oppgaven skal vi se hvordan vi kan bruke Traits til å komponere mer avanserte objekter.
+        Oppgaven går ut på å gjøre testene grønne.
+        OBS: Testene er ferdig implementert, men husk å fjerne "pending" fra testene.
+    </p>
+    <a href="#code/src/main/scala/oppg2_oo/HttpClient.scala" class="shortcut">HttpClient.scala</a><br/>
+    <a href="#code/src/test/scala/oppg2_oo/HttpClientTest.scala" class="shortcut">HttpClientTest.scala</a><br/>
 
+    <p>Noe av koden er ferdig og noe må implementeres. Der det står <strong>???</strong> mangler det implementasjon.</p>
+</div>
+
+<div>
+    <h2>Lister</h2>
+
+    <p>
+        I denne oppgaven skal vi jobbe med Scalas meget kraftige APIer for å håndtere lister.
+        <a href="">scala.immutable.List</a> er i motsetning til List i Java immutable - den kan ikke endres.
+        Det vil si at alle metoder som endrer en liste, returnerer en ny liste med endringene.
+        Metodene på List sparer oss for mye tid og potensielle feil med å implementere traverseringslogikken for oss.
+        Disse metodene tar som regel en funksjon som parameter. Se seksjonen nedenfor for syntaks for funksjoner i Scala.
+    </p>
+    <a href="#code/src/main/scala/oppg3_lister_intro/Lister.scala" class="shortcut">Lister.scala</a><br/>
+    <a href="#code/src/test/scala/oppg3_lister_intro/ListerTest.scala" class="shortcut">ListerTest.scala</a>
+
+    <h3>Funksjoner</h3>
+    <p>Funksjoner skiller seg fra metoder ved at de kan tilordnes til variabler og har en egen type:</p>
+    <code>val myAdd = (n1: Int, n2: Int) => n1 + n2</code>
+    <p>En tilsvarende metode ville sett ut som følger:</p>
+    <code>def myAdd2(n1: Int, n2: Int) = n1 + n2</code>
+    <p>
+       myAdd over har typen <code>(Int, Int) => Int</code> altså "en funksjon som tar 2 Int som parameter og returnerer Int.
+       Hvis vi deklarerer typen til myAdd (valgfritt) vil vi få følgende syntaks:
+    </p>
+    <code>val myAdd: (Int, Int) => Int = (n1: Int, n2: Int) => n1 + n2</code>
+    <p>Andre gyldige kortformer som er nyttige når man sender funksjoner som parametre til andre fuksjoner/metoder:</p>
+    <code>val myAdd: (Int, Int) => Int = (n1, n2) => n1 + n2</code><br>
+    <code>val myAdd: (Int, Int) => Int = _ + _</code>
+</div>
+
+<div>
+    <h2>Pattern Matching</h2>
+
+    <p>
+        I denne oppgaven skal vi jobbe med følgende filer.
+    </p>
+    <a href="#code/src/main/scala/oppg4_pattern_matching_and_case_classes/PatternMatchingAndCaseClasses.scala" class="shortcut">PatternMatchingAndCaseClasses.scala</a><br/>
+    <a href="#code/src/test/scala/oppg4_pattern_matching_and_case_classes/PatternMatchingAndCaseClassesTest.scala" class="shortcut">PatternMatchingAndCaseClassesTest.scala</a>
 </div>
 
 </body>
