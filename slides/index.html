@@ -393,56 +393,56 @@ class Dog extends Animal with Fourlegged with Furry {
                 </section>
 
                 <section>
-                <h2>List</h2>
-                <h4 style="text-transform: none">scala.immutable</h4>
-                <ul>
-                    <li class="fragment">Implementerer isEmpty, head og tail.</li>
-                    <li class="fragment">O(n) på de fleste operasjoner</li>
-                    <li class="fragment">O(1) på prepend og head/tail-akess</li>
-                    <li class="fragment">Egnet for rekursive løsninger basert på head:tail-akess</li>
-                    <li class="fragment">Eksempler:
+                    <h2>List</h2>
+                    <h4 style="text-transform: none">scala.immutable</h4>
+                    <ul>
+                        <li class="fragment">Implementerer isEmpty, head og tail.</li>
+                        <li class="fragment">O(n) på de fleste operasjoner</li>
+                        <li class="fragment">O(1) på prepend og head/tail-akess</li>
+                        <li class="fragment">Egnet for rekursive løsninger basert på head:tail-akess</li>
+                        <li class="fragment">Eksempler:
                         <pre><code>scala> 4 :: List(1, 2, 3) // Prepend, O(1)
 res0: List[Int] = List(4, 1, 2, 3)</code></pre>
                         <pre><code>scala> List(1, 2, 3) ::: List(4) // Append, O(n), foretrekk prepend
 res1: List[Int] = List(1, 2, 3, 4)</code></pre>
-                    </li>
-                </ul>
-            </section>
+                        </li>
+                    </ul>
+                </section>
 
 
-            <section>
-                <h2>map()</h2>
-                <ul>
-                    <li>map() tar inn en funksjon og utfører den på alle elementer</li>
-                    <li>map() transformerer listen ihht til funksjonen gitt inn</li>
+                <section>
+                    <h2>map()</h2>
+                    <ul>
+                        <li>map() tar inn en funksjon og utfører den på alle elementer</li>
+                        <li>map() transformerer listen ihht til funksjonen gitt inn</li>
 
-                </ul>
+                    </ul>
 
-    <pre><code>scala> val numbers = List(1,2,3)
+                    <pre><code>scala> val numbers = List(1,2,3)
 numbers: List[Int] = List(1, 2, 3)
 
 scala> numbers.map((x: Int) => x + 1)
 res0: List[Int] = List(2, 3, 4)</code></pre>
-            </section>
+                </section>
 
-            <section>
-                <h2>filter()</h2>
-                <ul>
-                    <li>filter() tar inn en funksjon (predikat)</li>
-                    <li>filter() returnerer et subsett av listen hvor predikatet er sant</li>
-                </ul>
+                <section>
+                    <h2>filter()</h2>
+                    <ul>
+                        <li>filter() tar inn en funksjon (predikat)</li>
+                        <li>filter() returnerer et subsett av listen hvor predikatet er sant</li>
+                    </ul>
 
-    <pre><code>scala> val myList = List(1,2,3,4,5,6)
+                    <pre><code>scala> val myList = List(1,2,3,4,5,6)
 myList: List[Int] = List(1, 2, 3, 4, 5, 6)
 
 scala> myList.filter((x: Int) => x > 3)
 res0: List[Int] = List(4, 5, 6)</code></pre>
-            </section>
+                </section>
 
 
-            <section>
-                <h2>List API eksempler</h2>
-    <pre><code>//Adder et element til begynnelsen av listen
+                <section>
+                    <h2>List API eksempler</h2>
+                    <pre><code>//Adder et element til begynnelsen av listen
 def ::(x: A): List[A]
 
 //Adder en liste til begynnelsen av listen
@@ -459,38 +459,36 @@ def take(n: Int): List[A]
 
 //Velger alle elementer bortsett fra de første n elementene i en liste
 def drop(n: Int): List[A]
-</code></pre>
-            </section>
+                    </code></pre>
+                </section>
 
-            <section>
-                <h2>List API eksempler 2</h2>
-    <pre><code>//Adder et element til begynnelsen av listen
+                <section>
+                    <h2>List API eksempler 2</h2>
+                    <pre><code>//Adder et element til begynnelsen av listen
 //Velger de siste n elementene i en liste
 def takeRight(n: Int): List[A]
 
 //Lager en liste av liste ut fra to lister
 def zip[B](that: GenIterable[B]): List[(A, B)]
 </code></pre>
-    </section>
+                </section>
 
-    <section>
-        <h2>Pattern Matching</h2>
-        <p>
-            En avansert versjon av <code>switch</code> i Java
-        </p>
-        <aside class="notes">
-            <ul>
-                <li></li>
-            </ul>
-        </aside>
-    </section>
-
-    </section>
+                <section>
+                    <h2>Pattern Matching</h2>
+                    <p>
+                        En avansert versjon av <code>switch</code> i Java
+                    </p>
+                    <aside class="notes">
+                        <ul>
+                            <li></li>
+                        </ul>
+                    </aside>
+                </section>
 
                 <section>
                     <h2>Java-liknende eksempel</h2>
                     <pre><code class="scala" data-trim contenteditable>
-def toYesOrNo(choice: Int): String = choice match {
+def toYesOrNo(choice: Int) = choice match {
   case 1 => "yes"
   case 0 => "no"
   case _ => "error"
@@ -516,7 +514,7 @@ res1: String = error
                 <section>
                     <h2>Typesjekking</h2>
                     <pre><code class="scala" data-trim contenteditable>
-def f(x: Any): String = x match {
+def f(x: Any) = x match {
   case i:Int => "integer: " + i
   case _:Double => "a double"
   case s:String => "I want to say " + s
@@ -538,7 +536,7 @@ res0: String = a double
                     <h2>Verktøy for funksjonell programmering</h2>
                     Med pattern matching:
                     <pre><code class="scala" data-trim contenteditable>
-def fact(n: Int): Int = n match {
+def fact(n: Int) = n match {
   case 0 => 1
   case n => n * fact(n - 1)
 }
@@ -546,7 +544,7 @@ def fact(n: Int): Int = n match {
                     Uten pattern matching:
                     </code></pre>
                     <pre><code class="scala" data-trim contenteditable>
-def fact(n: Int): Int =
+def fact(n: Int) =
   if (n == 0) 1
   else n * fact(n - 1)
                     </code></pre>
@@ -558,86 +556,85 @@ def fact(n: Int): Int =
                 </section>
 
 
-    <section>
-        <h2>Case Classes</h2>
-        <p>
-            (Nesten) Klasser med god støtte for pattern matching
-        </p>
-        <aside class="notes">
-            <ul>
-                <li></li>
-            </ul>
-        </aside>
-    </section>
+                <section>
+                    <h2>Case Classes</h2>
+                    <p>
+                        (Nesten) Klasser med god støtte for pattern matching
+                    </p>
+                    <aside class="notes">
+                        <ul>
+                            <li></li>
+                        </ul>
+                    </aside>
+                </section>
 
 
-    <section>
-        <h2>Eksporterer konstruktørparametere</h2>
-        <pre><code class="scala" data-trim contenteditable>
+                <section>
+                    <h2>Eksporterer konstruktørparametere</h2>
+                    <pre><code class="scala" data-trim contenteditable>
 case class Person(firstName: String, lastName: String)
-        </code></pre>
-        <pre><code class="scala" data-trim contenteditable>
+                    </code></pre>
+                    <pre><code class="scala" data-trim contenteditable>
 scala> val person = Person("Ola", "Nordmann")
 person: Person = Person(Ola,Nordmann)
 
 scala> person.firstName + " " + person.lastName
 res0: String = Ola Nordmann
-        </code></pre>
-        <ul>
-            <li>
-                Konstruktørparametere automatisk tilgjengelig etter instansiering
-            </li>
-            <li>
-                Reduserer boilerpalate kode
-            </li>
-        </ul>
-        <aside class="notes">
-            <ul>
-            </ul>
-        </aside>
-    </section>
+                    </code></pre>
+                    <ul>
+                        <li>
+                            Konstruktørparametere automatisk tilgjengelig etter instansiering
+                        </li>
+                        <li>
+                            Reduserer boilerplate-kode
+                        </li>
+                    </ul>
+                    <aside class="notes">
+                        <ul>
+                        </ul>
+                    </aside>
+                </section>
 
-    <section>
-        <h2>Pattern matching direkte på Person</h2>
-        <pre><code class="scala" data-trim contenteditable>
+                <section>
+                    <h2>Pattern matching direkte på Person</h2>
+                    <pre><code class="scala" data-trim contenteditable>
 def printPerson(person: Any) {
   person match {
     case Person(first, last) => println(first + " " + last)
     case _ => println("Not a person!")
   }
 }
-        </code></pre>
-        <pre><code class="scala" data-trim contenteditable>
+                </code></pre>
+                <pre><code class="scala" data-trim contenteditable>
 scala> printPerson("Ola Nordmann")
 Not a person!
 
-scala> printPerson(Person("Ola", "Nardmann"))
-Ola Nardmann
-        </code></pre>
-        Scoper konstruktørparameterene i pattern match blokken
-    </section>
+scala> printPerson(Person("Ola", "Nordmann"))
+Ola Nordmann
+                </code></pre>
+                Scoper konstruktørparameterene i pattern match blokken
+            </section>
 
 
-    <section>
-        <h2>Pattern matching på lister</h2>
-        <pre><code class="scala" data-trim contenteditable>
-def checkIfFirstPersonIsOla(persons: List[Person]): Boolean = {
+            <section>
+                <h2>Pattern matching på lister</h2>
+                <pre><code class="scala" data-trim contenteditable>
+def checkIfFirstPersonIsOla(persons: List[Person]) =
   persons match {
     case List(Person("Ola", _), _*) => true
     case _ => false
   }
-}
-        </code></pre>
-        <pre><code class="scala" data-trim contenteditable>
+                </code></pre>
+                <pre><code class="scala" data-trim contenteditable>
 scala> val persons = List(Person("Ola", "test"),
     | Person("test", "test"))
 persons: List[Person] = List(Person(Ola,test), Person(test,test))
 
 scala> checkIfFirstPersonIsOla(persons)
 res0: Boolean = true
-        </code></pre>
-        <code>_*</code> betyr villlkårlig mange følgende elementer
-    </section>
+                </code></pre>
+                <code>_*</code> betyr villlkårlig mange følgende elementer
+            </section>
 
                 <!--
                 <section>
