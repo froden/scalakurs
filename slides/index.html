@@ -598,43 +598,43 @@ res0: String = Ola Nordmann
 
     <section>
         <h2>Pattern matching direkte på Person</h2>
-<pre><code class="scala" data-trim contenteditable>
+        <pre><code class="scala" data-trim contenteditable>
 def printPerson(person: Any) {
   person match {
     case Person(first, last) => println(first + " " + last)
     case _ => println("Not a person!")
   }
 }
-</code></pre>
-<pre><code class="scala" data-trim contenteditable>
+        </code></pre>
+        <pre><code class="scala" data-trim contenteditable>
 scala> printPerson("Ola Nordmann")
 Not a person!
 
 scala> printPerson(Person("Ola", "Nardmann"))
 Ola Nardmann
-</code></pre>
+        </code></pre>
         Scoper konstruktørparameterene i pattern match blokken
     </section>
 
 
     <section>
         <h2>Pattern matching på lister</h2>
-<pre><code class="scala" data-trim contenteditable>
+        <pre><code class="scala" data-trim contenteditable>
 def checkIfFirstPersonIsOla(persons: List[Person]): Boolean = {
   persons match {
     case List(Person("Ola", _), _*) => true
     case _ => false
   }
 }
-</code></pre>
-<pre><code class="scala" data-trim contenteditable>
+        </code></pre>
+        <pre><code class="scala" data-trim contenteditable>
 scala> val persons = List(Person("Ola", "test"),
     | Person("test", "test"))
 persons: List[Person] = List(Person(Ola,test), Person(test,test))
 
 scala> checkIfFirstPersonIsOla(persons)
 res0: Boolean = true
-</code></pre>
+        </code></pre>
         <code>_*</code> betyr villlkårlig mange følgende elementer
     </section>
 
