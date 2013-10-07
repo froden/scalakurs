@@ -10,56 +10,56 @@ class Lister {
    * Should flip a list : List(1,2,3) -> List(3,2,1)
    */
   def reverse (myList: List[Any]) =
-    myList //TODO
+    myList.reverse
 
   /**
    * Should keep only unique, distinct elements in a list:
    * List(1,1,1,1,1,1,1,2) -> List(1,2)
    */
   def removeDuplicates (myList: List[Any]) =
-    myList //TODO
+    myList.distinct
 
   /**
    * Should return first element in a list (not as a list) :
    * List(1,2,3) -> 1
    */
   def findFirstElement(myList: List[Any]) =
-    myList //TODO
+    myList.head
 
   /**
    * Should return last element in a list (not as a list)
    * List(1,2,3) -> 3
    */
   def findLastElement(myList: List[Any]) =
-    myList //TODO
+    myList.last
 
   /**
    * Should return two first elements in a list (as a list):
    * List(1,2,3) -> List(1,2)
    */
   def findTwoFirstElements(myList: List[Any]) =
-    myList //TODO
+    myList.take(2)
 
   /**
    * Should return remaining of a list when first element is removed (as a list)
    * List(1,2,3) -> List(2,3)
    */
   def findAllButFirstElement(myList: List[Any]) =
-    myList //TODO
+    myList.tail
 
   /**
    * Should return remaining of a list when first two elements are removed (as a list)
    * List(1,2,3) -> List(3)
    */
   def findAllButTwoFirstElements(myList: List[Any]) =
-    myList //TODO
+    myList.drop(2)
 
   /**
    * Should return a sublist of Ints with only the even numbers in it
    * List(1,2,3,4) -> List(2,4)
    */
   def findEvenNumbers(myList: List[Int]) =
-    myList //TODO
+    myList.filter( _ % 2 == 0)
 
   /**
    * Given a list of Ints, should think of these Ints as side-lengths in a cube
@@ -69,7 +69,7 @@ class Lister {
    * The sides come in as a list of Ints. The result is also a list of Ints.
    */
   def calculateCubes(myList: List[Int]) =
-    myList //TODO
+    myList.map((n: Int) => n * n * n)
 
   /**
    * Given any predicate in the form of a function from Int to boolean (f: Int => Boolean), and a list of Ints, 
@@ -78,7 +78,7 @@ class Lister {
    * List(1,2,3,4,5), (_ < 3) -> List(1,2)
    */
   def findSublistFromPredicate(myList: List[Int], predicate: Int => Boolean) =
-    myList //TODO
+    myList.filter(predicate)
 
   /**
    * Tvinner to like lange lister til en liste av tupler
@@ -86,8 +86,15 @@ class Lister {
    * List(1,2,3), List(a,b,c) -> List((1,a),(b,2),(3,c))
    * List(a,b,c), List(1,2,3) -> List((a,1),(2,b),(c,3))
    */
-  def windUpTwoLists(myList1: List[Any], myList2: List[Any]): List[(Any, Any)] = {
-    List((1,1)) //TODO
+  def windUpTwoLists(myList1: List[Any], myList2: List[Any]) = {
+    val index: List[((Any, Any), Int)] = myList1.zip(myList2).zipWithIndex
+    index.map (
+      (element: ((Any, Any), Int)) =>
+        if(element._2 % 2 == 0)
+          element._1
+        else
+          element._1.swap
+    )
   }
 
   /**
@@ -95,7 +102,10 @@ class Lister {
    * List(1,2,3,4,5) -> List(1,5,2,4,3)
    */
   def chopFromBothsEndsAtAList[A](myList: List[A]): List[A] = {
-    myList //TODO
+    if (myList.isEmpty)
+      Nil
+    else
+      myList.head :: chopFromBothsEndsAtAList(myList.tail.reverse)
   }
 
   /**
@@ -103,7 +113,7 @@ class Lister {
    * List(1,2,3) -> 6
    */
   def sumAllNumbersInList(myList: List[Int]) =
-    1 //TODO
+    myList.reduce((r,c) => r + c)
 
   /**
    * Takes a sorted list in. Returns a list of tuples where the first element in each tuple is the number of elements of this distinct value :
@@ -118,6 +128,13 @@ class Lister {
    * - recursive calls
    */
   def encodeSequenceLengthInSortedList(myList: List[Any]) : List[(Int, Any)] =
-    List((1,1))//TODO
+    if (myList.isEmpty)
+      Nil
+    else {
+      val (packed, next) = myList span {
+        _ == myList.head
+      }
+      (packed.length, packed.head) :: encodeSequenceLengthInSortedList(next)
+    }
 
 }
