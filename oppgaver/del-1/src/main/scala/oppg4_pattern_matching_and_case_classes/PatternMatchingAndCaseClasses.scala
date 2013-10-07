@@ -1,10 +1,7 @@
 package oppg4_pattern_matching_and_case_classes;
 
-case class Person(name: String, age: Int) {
-  def isOlderThan(that: Person): Boolean = {
-    this.age > that.age
-  }
-}
+// TODO: Add attributes and method (see tests)
+case class Person()
 
 object PatternMatchingAndCaseClasses {
 

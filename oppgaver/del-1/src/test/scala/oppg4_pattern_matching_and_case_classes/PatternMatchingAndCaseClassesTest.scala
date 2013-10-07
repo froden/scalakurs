@@ -12,27 +12,27 @@ class PatternMatchingAndCaseClassesTest extends FunSuite {
 
   test ("person case class should have name and age attributes") {
     pending //TODO: remove
-    val p = Person("Ola", 20)
-    assert(p.name === "Ola" && p.age === 20)
+//    val p = Person("Ola", 20)
+//    assert(p.name === "Ola" && p.age === 20)
   }
 
   test ("person case class should compare persons by age") {
     pending //TODO: remove
-    assert(Person("Hans", 30).isOlderThan(Person("Ola", 20)) === true)
-    assert(Person("Hans", 20).isOlderThan(Person("Ola", 30)) === false)
+//    assert(Person("Hans", 30).isOlderThan(Person("Ola", 20)) === true)
+//    assert(Person("Hans", 20).isOlderThan(Person("Ola", 30)) === false)
   }
 
   test ("should check if parameter is person Ola at age 20") {
     pending //TODO: remove
-    assert(PatternMatchingAndCaseClasses.checkIfParameterIsPersonOlaAtAge20(Person("Hans", 20)) === false)
-    assert(PatternMatchingAndCaseClasses.checkIfParameterIsPersonOlaAtAge20("Ola") == false)
-    assert(PatternMatchingAndCaseClasses.checkIfParameterIsPersonOlaAtAge20(Person("Ola", 20)) === true)
+//    assert(PatternMatchingAndCaseClasses.checkIfParameterIsPersonOlaAtAge20(Person("Hans", 20)) === false)
+//    assert(PatternMatchingAndCaseClasses.checkIfParameterIsPersonOlaAtAge20("Ola") == false)
+//    assert(PatternMatchingAndCaseClasses.checkIfParameterIsPersonOlaAtAge20(Person("Ola", 20)) === true)
   }
 
   test ("should check if second person is Person at age 30") {
     pending //TODO: remove
-    assert(PatternMatchingAndCaseClasses.checkIfSecondElementIsAPersonAtAge30(List(Person("Ola", 30), Person("Hans", 20), Person("Ola", 30), Person("Hans", 30))) === false)
-    assert(PatternMatchingAndCaseClasses.checkIfSecondElementIsAPersonAtAge30(List(Person("Hans", 20), Person("Hans", 30), Person("Hans", 20), Person("Hans", 20))) === true)
+//    assert(PatternMatchingAndCaseClasses.checkIfSecondElementIsAPersonAtAge30(List(Person("Ola", 30), Person("Hans", 20), Person("Ola", 30), Person("Hans", 30))) === false)
+//    assert(PatternMatchingAndCaseClasses.checkIfSecondElementIsAPersonAtAge30(List(Person("Hans", 20), Person("Hans", 30), Person("Hans", 20), Person("Hans", 20))) === true)
   }
 }
 
