@@ -516,18 +516,19 @@ def tail: A
 //Velger de første n elementene i en liste
 def take(n: Int): List[A]
 
-//Velger alle elementer bortsett fra de første n elementene i en liste
-def drop(n: Int): List[A]
+//Velger de siste n elementene i en liste
+def takeRight(n: Int): List[A]
                     </code></pre>
                 </section>
 
                 <section>
                     <h2>List API eksempler 2</h2>
-                    <pre><code class="scala" data-trim contenteditable>//Adder et element til begynnelsen av listen
-//Velger de siste n elementene i en liste
-def takeRight(n: Int): List[A]
+                    <pre><code class="scala" data-trim contenteditable>
 
-//Lager en liste av liste ut fra to lister
+//Velger alle elementer bortsett fra de første n elementene i en liste
+def drop(n: Int): List[A]
+
+//Lager en liste av par ut fra to lister
 def zip[B](that: GenIterable[B]): List[(A, B)]
 </code></pre>
                 </section>
