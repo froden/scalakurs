@@ -6,7 +6,8 @@ Oppgaver
 
 *IDE-støtte (valgfritt)*
 
-Hvis du ønsker å løse oppgavene i IDEA eller Eclipse trenger du en Scala-plugin:
+Hvis du ønsker å løse oppgavene i IDEA eller Eclipse trenger du en Scala-plugin.
+Dette er valgfritt da det er fullt mulig å løse oppgavene direkte i Activator.
 
 * [Scala IDE for Eclipse](http://scala-ide.org/)
 * IDEA: Settings -> plugins -> Install JetBrains plugin -> Scala
