@@ -22,6 +22,12 @@
     </code></pre>
 
     <p>Resten av det du trenger av instruksjoner står som kommentarer i koden</p>
+    <p>
+        Flere eksempler på basic syntaks finner dere her:<br/>
+        <a target="_blank" href="http://twitter.github.io/scala_school/basics.html">Twitter Scala Schoole - Basics</a><br>
+        <a target="_blank" href="">Slides om syntaks</a>
+    </p>
+
 </div>
 
 <div>
@@ -47,6 +53,11 @@
     <a href="#code/src/test/scala/oppg2_oo/HttpClientTest.scala" class="shortcut">HttpClientTest.scala</a><br/>
 
     <p>Noe av koden er ferdig og noe må implementeres. Der det står <strong>???</strong> mangler det implementasjon.</p>
+    <p>
+        Flere eksempler på objektorientering finner dere her:<br/>
+        <a target="_blank" href="http://twitter.github.io/scala_school/basics.html#class">Twitter Scala Schoole - Classes</a><br>
+        <a target="_blank" href="">Slides om OO</a>
+    </p>
 </div>
 
 <div>
@@ -54,7 +65,7 @@
 
     <p>
         I denne oppgaven skal vi jobbe med Scalas meget kraftige APIer for å håndtere lister.
-        <a href="">scala.immutable.List</a> er i motsetning til List i Java immutable - den kan ikke endres.
+        <a target="_blank" href="http://www.scala-lang.org/api/current/index.html#scala.collection.immutable.List">scala.immutable.List</a> er i motsetning til List i Java immutable - den kan ikke endres.
         Det vil si at alle metoder som endrer en liste, returnerer en ny liste med endringene.
         Metodene på List sparer oss for mye tid og potensielle feil med å implementere traverseringslogikken for oss.
         Disse metodene tar som regel en funksjon som parameter. Se seksjonen nedenfor for syntaks for funksjoner i Scala.
@@ -67,7 +78,7 @@
     <a href="#code/src/test/scala/oppg3_lister_intro/ListerTest.scala" class="shortcut">ListerTest.scala</a><br />
     <p>Erstatt linjen som inneholder //TODO for å få testene til å returnere det de egentlig skal (og dermed bli grønne)
     <br />Mer informasjon kan finnes i Scala immutable List API</p>
-    <a href="http://www.scala-lang.org/api/current/index.html#scala.collection.immutable.List">Scala List API</a><br />
+    <a target="_blank" href="http://www.scala-lang.org/api/current/index.html#scala.collection.immutable.List">Scala List API</a><br />
 
     <h3>Funksjoner</h3>
     <p>Funksjoner skiller seg fra metoder ved at de kan tilordnes til variabler og har en egen type:</p>
@@ -82,16 +93,26 @@
     <p>Andre gyldige kortformer som er nyttige når man sender funksjoner som parametre til andre fuksjoner/metoder:</p>
     <code>val myAdd: (Int, Int) => Int = (n1, n2) => n1 + n2</code><br>
     <code>val myAdd: (Int, Int) => Int = _ + _</code>
+    <p>
+        Flere eksempler på collections håndtering finner dere her:<br/>
+        <a target="_blank" href="http://twitter.github.io/scala_school/collections.html">Twitter Scala Schoole - Collections</a><br>
+        <a target="_blank" href="">Slides om List</a>
+    </p>
 </div>
 
 <div>
     <h2>Pattern Matching</h2>
 
     <p>
-        I denne oppgaven skal vi jobbe med følgende filer.
+        Fullfør testene og implementasjoen i følgende filer:
     </p>
     <a href="#code/src/main/scala/oppg4_pattern_matching_and_case_classes/PatternMatchingAndCaseClasses.scala" class="shortcut">PatternMatchingAndCaseClasses.scala</a><br/>
     <a href="#code/src/test/scala/oppg4_pattern_matching_and_case_classes/PatternMatchingAndCaseClassesTest.scala" class="shortcut">PatternMatchingAndCaseClassesTest.scala</a>
+    <p>
+        Flere eksempler på pattern matching og case classes finner dere her:<br/>
+        <a target="_blank" href="http://twitter.github.io/scala_school/basics2.html#match">Twitter Scala Schoole - Pattern Matching</a><br>
+        <a target="_blank" href="">Slides om pattern matching</a>
+    </p>
 </div>
 
 </body>
