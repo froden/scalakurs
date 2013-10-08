@@ -16,8 +16,8 @@ Dette er valgfritt da det er fullt mulig å løse oppgavene direkte i Activator.
 * Last ned oppgavene (2 alternativer, men anbefaler å bruke git i tilfelle det kommer endringer):
   1. `git clone git@github.com:froden/scalakurs.git`
   2. Last ned zip: https://github.com/froden/scalakurs/archive/master.zip
-* Start activator fra kommandolinjen med *activator.bat* eller *activator*
+* Start activator fra kommandolinjen med `activator.bat` eller `activator ui`
 * Velg "Find Existing" nederst til høyre
-* Åpne <scalakurs>/oppgaver/del-1
+* Åpne `<scalakurs>/oppgaver/del-1`
 * Velg "Code view & Open in IDE"
 * (valgfritt) Velg "Open" og enten "Open project in Intellij IDEA" eller "Open project in Eclipse"
