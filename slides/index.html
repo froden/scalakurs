@@ -460,9 +460,9 @@ class Dog extends Animal with Fourlegged with Furry {
                         <li class="fragment">O(1) på prepend og head/tail-akess</li>
                         <li class="fragment">Egnet for rekursive løsninger basert på head:tail-akess</li>
                         <li class="fragment">Eksempler:
-                        <pre><code>scala> 4 :: List(1, 2, 3) // Prepend, O(1)
+                        <pre><code class="scala" data-trim contenteditable>scala> 4 :: List(1, 2, 3) // Prepend, O(1)
 res0: List[Int] = List(4, 1, 2, 3)</code></pre>
-                        <pre><code>scala> List(1, 2, 3) ::: List(4) // Append, O(n), foretrekk prepend
+                        <pre><code class="scala" data-trim contenteditable>scala> List(1, 2, 3) ::: List(4) // Append, O(n), foretrekk prepend
 res1: List[Int] = List(1, 2, 3, 4)</code></pre>
                         </li>
                     </ul>
@@ -477,7 +477,7 @@ res1: List[Int] = List(1, 2, 3, 4)</code></pre>
 
                     </ul>
 
-                    <pre><code>scala> val numbers = List(1,2,3)
+                    <pre><code class="scala" data-trim contenteditable>scala> val numbers = List(1,2,3)
 numbers: List[Int] = List(1, 2, 3)
 
 scala> numbers.map((x: Int) => x + 1)
@@ -491,7 +491,7 @@ res0: List[Int] = List(2, 3, 4)</code></pre>
                         <li>filter() returnerer et subsett av listen hvor predikatet er sant</li>
                     </ul>
 
-                    <pre><code>scala> val myList = List(1,2,3,4,5,6)
+                    <pre><code class="scala" data-trim contenteditable>scala> val myList = List(1,2,3,4,5,6)
 myList: List[Int] = List(1, 2, 3, 4, 5, 6)
 
 scala> myList.filter((x: Int) => x > 3)
@@ -501,7 +501,7 @@ res0: List[Int] = List(4, 5, 6)</code></pre>
 
                 <section>
                     <h2>List API eksempler</h2>
-                    <pre><code>//Adder et element til begynnelsen av listen
+                    <pre><code class="scala" data-trim contenteditable>//Adder et element til begynnelsen av listen
 def ::(x: A): List[A]
 
 //Adder en liste til begynnelsen av listen
@@ -523,7 +523,7 @@ def drop(n: Int): List[A]
 
                 <section>
                     <h2>List API eksempler 2</h2>
-                    <pre><code>//Adder et element til begynnelsen av listen
+                    <pre><code class="scala" data-trim contenteditable>//Adder et element til begynnelsen av listen
 //Velger de siste n elementene i en liste
 def takeRight(n: Int): List[A]
 
