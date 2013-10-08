@@ -12,7 +12,7 @@ Hvis du ønsker å løse oppgavene i IDEA eller Eclipse trenger du en Scala-plug
 * IDEA: Settings -> plugins -> Install JetBrains plugin -> Scala
 
 ## Oppsett av oppgaver (kan med fordel gjøres på forhånd)
-* Last ned oppgavene (2 alternativer) (anbefaler å bruke git i tilfelle det kommer endringer):
+* Last ned oppgavene (2 alternativer, men anbefaler å bruke git i tilfelle det kommer endringer):
   1. `git clone git@github.com:froden/scalakurs.git`
   2. Last ned zip: https://github.com/froden/scalakurs/archive/master.zip
 * Start activator fra kommandolinjen med *activator.bat* eller *activator*
