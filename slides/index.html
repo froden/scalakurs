@@ -191,13 +191,6 @@
                 </section>
 
                 <section>
-                    <h2>Oppgaver</h2>
-                    <img height="100" src="images/puzzle.jpg" alt="oppgaver"><br>
-                    Oppgaver: <a href="http://git.io/0aMB8Q">http://git.io/0aMB8Q</a><br>
-                    Slides: <a href="http://froden.github.io/scalakurs">http://froden.github.io/scalakurs</a>
-                </section>
-
-                <section>
                   <h2>Scalasyntaks 101</h2>
                 </section>
 
@@ -211,8 +204,63 @@
                     </ul>
                   </aside>
                 </section>
+
                 <section>
-                    <h2>Klasser, objekter, traits</h2>
+                  <h2>Definere ting</h2>
+                  <pre><code class="scala" data-trim contenteditable>
+ // En ikke endrebar verdi, tenk final i Java
+val personNummer = 02017912345
+
+// En endrebar variabel
+var navn: String = "Torbjørn Vatn"
+                  </code></pre>
+                </section>
+
+                <section>
+                  <h2>Method Man</h2>
+                  <pre><code class="scala" data-trim contenteditable>
+// En metode med returverdi
+def beregnAlder(personNummer: String): Int = {
+  val alder = 0// kode som beregner alder
+  alder
+}
+
+// En metode uten returverdi, tenk void i Java
+def endreNavn(nyttNavn: String) {
+  navn = nyttNavn
+}
+                  </code></pre>
+                </section>
+                <section>
+                  <h2>Ifs and buts</h2>
+                  <pre><code class="scala" data-trim contenteditable>
+// En if/else er en expression, så den returnerer en verdi
+val er2StørreEnn4 = if (2 > 4) "JA" else "NEI"
+
+// En enkel for som looper over en range fra 1 til 10
+for (i <- 1 to 10) { println(i) }
+                  </code></pre>
+                </section>
+                <section>
+                  <h2>Let's get functional</h2>
+                  <pre><code class="scala" data-trim contenteditable>
+// En funksjon fra to Ints til Boolean lagres i en verdi
+val erStørreEnn = (x: Int, y: Int) => x > y
+
+// Funksjonen kalles med to argumenter
+if (erStørreEnn(2,4)) "JA" else "NEI"
+                  </code></pre>
+                </section>
+
+                <section>
+                    <h2>oppgaver</h2>
+                    <img height="100" src="images/puzzle.jpg" alt="oppgaver"><br>
+                    oppgaver: <a href="http://git.io/0amb8q">http://git.io/0amb8q</a><br>
+                    slides: <a href="http://froden.github.io/scalakurs">http://froden.github.io/scalakurs</a>
+                </section>
+
+                <section>
+                    <h2>klasser, objekter, traits</h2>
                     <p>
                         Objektorientert programmering
                     </p>
