@@ -5,32 +5,27 @@ import Support.rationalEq
 
 class RationalTest extends FunSuite {
   test("Rational should have two pulic accessors: 'numer' and 'denom'") {
-    pending //TODO: remove
     val r = Rational(1, 2)
     assert(r.numer === 1)
     assert(r.denom === 2)
   }
 
   test("Rational should prevent divide by zero by not accepting denom = 0") {
-    pending //TODO: remove
     intercept[IllegalArgumentException] {
       Rational(1, 0)
     }
   }
 
   test("Rational should yield a meaningful output from toString()") {
-    pending //TODO: remove
     assert(Rational(1, 2).toString === "1/2")
   }
 
   test("Rational should have a dedicated constructor for constructing integers") {
-    pending //TODO: remove
     val r = Rational(2)
     assert(r === Rational(2, 1))
   }
 
   test("One should be able to add two rational numbers together") {
-    pending //TODO: remove
     val r = Rational(1, 2).add(Rational(1, 2))
     assert(r === Rational(1, 1))
     val r2 = Rational(11, 13).add(Rational(1, 13))
@@ -44,10 +39,8 @@ class RationalTest extends FunSuite {
    * example: this /\/\/\ "hei" is equivalent to this./\/\/\("hei")
    */
   test("Adding two rational numbers should be possible using the syntax r1 + r2 (operators)") {
-    pending //TODO: remove
-    fail("Remove this line. Uncommend the following lines and make them compile. Do not alter the test")
-//    val r1: Rational = Rational(1, 2)
-//    val r2: Rational = Rational(3, 4)
-//    assert((r1 + r2) === Rational(5, 4))
+    val r1: Rational = Rational(1, 2)
+    val r2: Rational = Rational(3, 4)
+    assert((r1 + r2) === Rational(5, 4))
   }
 }
