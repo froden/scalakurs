@@ -39,80 +39,80 @@
 			<div class="slides">
 
                 <section>
-                    <h1>scala</h1>
-                    <h3>introduksjonskurs</h3>
+                    <h1>SCALA</h1>
+                    <h3>Introduksjonskurs</h3>
                     <p>
-                        <small>faggruppe for scala & jvm</small>
+                        <small>Faggruppe for Scala & JVM</small>
                     </p>
                     <a class="image" href="http://bekk.no" target="_blank">
-                        <img src="images/bekk-logo-small.png" alt="bekk">
+                        <img src="images/bekk-logo-small.png" alt="Bekk">
                     </a>
                     <aside class="notes">
                         <ul>
-                            <li>velkommen til scalakurs</li>
-                            <li>presentere folk</li>
+                            <li>Velkommen til Scalakurs</li>
+                            <li>Presentere folk</li>
                         </ul>
                     </aside>
                 </section>
 
                 <section>
-                    <h3><strong>9. okt: grunnleggende scala</strong></h3>
-                    <h3>30. okt: funksjonell programmering</h3>
-                    <h3>11. nov: webapp med scala</h3>
+                    <h3><strong>9. okt: Grunnleggende Scala</strong></h3>
+                    <h3>30. okt: Funksjonell programmering</h3>
+                    <h3>11. nov: Webapp med Scala</h3>
                     <aside class="notes">
                         <ul>
-                            <li>i dag skal vi lære litt grunnleggende om scala</li>
-                            <li>mer avanserte emner og mer fokus på funksjonell prog</li>
-                            <li>lage en webapp med scala rest-api som backend</li>
+                            <li>I dag skal vi lære litt grunnleggende om Scala</li>
+                            <li>Mer avanserte emner og mer fokus på funksjonell prog</li>
+                            <li>Lage en webapp med Scala REST-api som backend</li>
                         </ul>
                     </aside>
                 </section>
 
                 <section>
-                    <h2>scala</h2>
-                    <p><em>et moderne, statisk typet, objekt-funksjonelt programmeringsspråk på jvm-en</em></p>
-                    <img src="images/scala_button.jpg" alt="scala">
+                    <h2>SCALA</h2>
+                    <p><em>Et moderne, statisk typet, objekt-funksjonelt programmeringsspråk på JVM-en</em></p>
+                    <img src="images/scala_button.jpg" alt="Scala">
                     <aside class="notes">
                         <ul>
-                            <li>mer moderne språk enn java</li>
-                            <li>hybrid objektorientert og funksjonelt språk og påstår å forene det beste fra to verdener</li>
-                            <li>kompilerer til samme jvm bytekode som java</li>
-                            <li>fungerer sømløst med alt av eksisterende javabiblioteker</li>
+                            <li>Mer moderne språk enn Java</li>
+                            <li>Hybrid objektorientert og funksjonelt språk og påstår å forene det beste fra to verdener</li>
+                            <li>Kompilerer til samme JVM bytekode som Java</li>
+                            <li>Fungerer sømløst med alt av eksisterende javabiblioteker</li>
                         </ul>
                     </aside>
                 </section>
 
                 <section>
-                    <h2>martin odersky</h2>
-                    <img src="images/martind-odersky.jpg" height="450" alt="martin odersky"><br>
+                    <h2>Martin Odersky</h2>
+                    <img src="images/martind-odersky.jpg" height="450" alt="Martin Odersky"><br>
                     <aside class="notes">
                         <ul>
-                            <li>scala ble oppfunnet i 2001 av martin odersky sammen med teamet hans på epfl-universitet i lausanne i sveits</li>
-                            <li>martin odersky er professor i programmeringsspråk og er mannen bak java-kompilatoren og java generics</li>
+                            <li>Scala ble oppfunnet i 2001 av Martin Odersky sammen med teamet hans på EPFL-universitet i Lausanne i Sveits</li>
+                            <li>Martin Odersky er Professor i programmeringsspråk og er mannen bak Java-kompilatoren og Java generics</li>
                         </ul>
                     </aside>
                 </section>
 
                 <section>
-                    <h2>hvorfor scala?</h2>
+                    <h2>Hvorfor Scala?</h2>
                     <ul>
-                        <li>elegant, konsis syntaks</li>
-                        <li>funksjonelt og objektorientert</li>
-                        <li>avansert typesystem</li>
-                        <li>høy ytelse</li>
+                        <li>Elegant, konsis syntaks</li>
+                        <li>Funksjonelt og objektorientert</li>
+                        <li>Avansert typesystem</li>
+                        <li>Høy ytelse</li>
                     </ul>
                     <aside class="notes">
                         <ul>
-                            <li>syntaxen i scala gir samme uttrykkskraft som man ofte forbinder med dynamiske språk som ruby</li>
-                            <li>kjører på jvm</li>
-                            <li>for en java virtual machine så er scala-programmer bare vanlig bytekode</li>
-                            <li>mye raskere enn de dynamiske jvm-språkene jruby, groovy, clojure, jython</li>
+                            <li>Syntaxen i Scala gir samme uttrykkskraft som man ofte forbinder med dynamiske språk som Ruby</li>
+                            <li>Kjører på JVM</li>
+                            <li>For en Java virtual machine så er Scala-programmer bare vanlig bytekode</li>
+                            <li>Mye raskere enn de dynamiske JVM-språkene jruby, groovy, clojure, jython</li>
                         </ul>
                     </aside>
                 </section>
 
                 <section>
-                    <h2>community</h2>
+                    <h2>Community</h2>
                     <a class="image" href="http://scaladays.org" target="_blank">
                         <img height="100" src="images/scaladays.png" alt="scaladays.org">
                     </a>
@@ -148,119 +148,73 @@
                     </a>
                     <aside class="notes">
                         <ul>
-                            <li>scala har et stort community med mange engasjerte og meget dyktige folk</li>
-                            <li>det finnes mange bra rammeverk skrevet i og for scala. det blir stadig flere.</li>
-                            <li>akka - actor framwork for concurrent systemer</li>
-                            <li>play2 - scalas svar på rails</li>
-                            <li>lift - et view first basert web-rammeverk</li>
-                            <li>etter hvert meget god ide-støtte både for intellij og eclipse</li>
-                            <li>man finner som regel svar på det man lurer på ved å google</li>
+                            <li>Scala har et stort community med mange engasjerte og meget dyktige folk</li>
+                            <li>Det finnes mange bra rammeverk skrevet i og for Scala. Det blir stadig flere.</li>
+                            <li>AKKA - actor framwork for concurrent systemer</li>
+                            <li>Play2 - Scalas svar på Rails</li>
+                            <li>Lift - Et view first basert web-rammeverk</li>
+                            <li>Etter hvert meget god IDE-støtte både for IntelliJ og Eclipse</li>
+                            <li>Man finner som regel svar på det man lurer på ved å google</li>
                         </ul>
                     </aside>
                 </section>
 
                 <section>
-                    <h2>hvem bruker scala?</h2>
-                    <img src="images/bekk-logo-small.png" alt="bekk"><br>
-                    <img style="padding: 10px; background: white;" src="images/clients-big.png" alt="bruker scala">
+                    <h2>Hvem bruker Scala?</h2>
+                    <img src="images/bekk-logo-small.png" alt="Bekk"><br>
+                    <img style="padding: 10px; background: white;" src="images/clients-big.png" alt="Bruker scala">
                     <aside class="notes">
                         <ul>
-                            <li>men er det noen som bruker scala i produksjon?</li>
-                            <li>bekk har for tiden ett rent scala-prosjekt</li>
-                            <li>flere som bruker det til mindre ting</li>
-                            <li>flere vurderer å ta det i bruk</li>
-                            <li>linkedin</li>
-                            <li>twitter</li>
-                            <li>foursquare</li>
-                            <li>the guardian</li>
+                            <li>Men er det noen som bruker Scala i produksjon?</li>
+                            <li>Bekk har for tiden ett rent Scala-prosjekt</li>
+                            <li>Flere som bruker det til mindre ting</li>
+                            <li>Flere vurderer å ta det i bruk</li>
+                            <li>Linkedin</li>
+                            <li>Twitter</li>
+                            <li>Foursquare</li>
+                            <li>The Guardian</li>
                         </ul>
                     </aside>
                 </section>
 
                 <section>
-                    <p style="font-size: 1.5em;"><q cite="http://twitter.com/al3x"><strong>basically</strong>, it's the future</q></p>
+                    <p style="font-size: 1.5em;"><q cite="http://twitter.com/al3x"><strong>Basically</strong>, it's the future</q></p>
                     <p><a href="http://twitter.com/al3x">@al3x</a></p>
                     <aside class="notes">
                         <ul>
-                            <li>basically its the future</li>
-                            <li>alex fra twitter er enig med meg at scala er verdt å satse på</li>
-                            <li>jeg mener scala er et meget attraktivt alternativ til java</li>
-                            <li>og det er modent nok til å ta det i bruk på prosjekter i dag!</li>
+                            <li>Basically its the future</li>
+                            <li>Alex fra twitter er enig med meg at Scala er verdt å satse på</li>
+                            <li>Jeg mener Scala er et meget attraktivt alternativ til Java</li>
+                            <li>Og det er modent nok til å ta det i bruk på prosjekter i dag!</li>
                         </ul>
                     </aside>
                 </section>
 
                 <section>
-                  <h2>scalasyntaks 101</h2>
+                    <h2>Oppgaver</h2>
+                    <img height="100" src="images/puzzle.jpg" alt="oppgaver"><br>
+                    Oppgaver: <a href="http://git.io/0aMB8Q">http://git.io/0aMB8Q</a><br>
+                    Slides: <a href="http://froden.github.io/scalakurs">http://froden.github.io/scalakurs</a>
+                </section>
+
+                <section>
+                  <h2>Scalasyntaks 101</h2>
                 </section>
 
                 <section>
                   <iframe class="repl" src="http://localhost:1338"></iframe>
                   <aside class="notes">
                     <ul>
-                      <li>poengter at det ikke er noen typedef. på personnummer</li>
-                      <li>man skal prøve å holde seg til val i scala</li>
-                      <li>metoder kan spesifisere returtype, men trenger det ikke</li>
+                      <li>Poengter at det ikke er noen typedef. på personNummer</li>
+                      <li>Man skal prøve å holde seg til val i Scala</li>
+                      <li>Metoder kan spesifisere returtype, men trenger det ikke</li>
                     </ul>
                   </aside>
                 </section>
-
                 <section>
-                  <h2>Definere ting</h2>
-                  <pre><code class="scala" data-trim contenteditable>
- // En ikke endrebar verdi, tenk final i Java
-val personNummer = 02017912345
-
-// En endrebar variabel
-var navn: String = "Torbjørn Vatn"
-                  </code></pre>
-                </section>
-
-                <section>
-                  <h2>Method Man</h2>
-                  <pre><code class="scala" data-trim contenteditable>
-// En metode med returverdi
-def beregnAlder(personNummer: String): Int = {
-  val alder = 0// kode som beregner alder
-  alder
-}
-
-// En metode uten returverdi, tenk void i Java
-def endreNavn(nyttNavn: String) {
-  navn = nyttNavn
-}
-                  </code></pre>
-                </section>
-                <section>
-                  <h2>Ifs and buts</h2>
-                  <pre><code class="scala" data-trim contenteditable>
-// En if/else er en expression, så den returnerer en verdi
-val er2StørreEnn4 = if (2 > 4) "JA" else "NEI"
-
-// En enkel for som looper over en range fra 1 til 10
-for (i <- 1 to 10) { println(i) }
-                  </code></pre>
-                </section>
-                <section>
-                  <h2>Let's get functional</h2>
-                  <pre><code class="scala" data-trim contenteditable>
-// En funksjon fra to Ints til Boolean lagres i en verdi
-val erStørreEnn = (x: Int, y: Int) => x > y
-
-// Funksjonen kalles med to argumenter
-if (erStørreEnn(2,4)) "JA" else "NEI"
-                  </code></pre>
-                </section><section>
-                    <h2>oppgaver</h2>
-                    <img height="100" src="images/puzzle.jpg" alt="oppgaver"><br>
-                    oppgaver: <a href="http://git.io/0amb8q">http://git.io/0amb8q</a><br>
-                    slides: <a href="http://froden.github.io/scalakurs">http://froden.github.io/scalakurs</a>
-                </section>
-
-                <section>
-                    <h2>klasser, objekter, traits</h2>
+                    <h2>Klasser, objekter, traits</h2>
                     <p>
-                        objektorientert programmering
+                        Objektorientert programmering
                     </p>
                     <aside class="notes">
                         <ul>
@@ -270,21 +224,21 @@ if (erStørreEnn(2,4)) "JA" else "NEI"
                 </section>
 
                 <section>
-                    <h2>klasser</h2>
-                    <!--<h4 style="text-align: left">enkel klasse</h4>-->
+                    <h2>Klasser</h2>
+                    <!--<h4 style="text-align: left">Enkel klasse</h4>-->
                     <pre><code class="scala" data-trim contenteditable>
-class person
+class Person
 
-val p = new person
+val p = new Person
 					</code></pre>
 
                     <div class="fragment">
-                        <h4>medlemsvariabler og getters/setters</h4>
+                        <h4>Medlemsvariabler og getters/setters</h4>
                         <pre><code class="scala" data-trim contenteditable>
-class person(val name: string, var age: int)
+class Person(val name: String, var age: Int)
 
-val p = new person("bob", 25)
-p.name // bob
+val p = new Person("Bob", 25)
+p.name // Bob
 p.age = 26
 					    </code></pre>
                     </div>
@@ -304,31 +258,31 @@ p.age = 26
                 </section>
 
                 <section>
-                    <h2>constructors</h2>
-                    <h4>primary constructor</h4>
+                    <h2>Constructors</h2>
+                    <h4>Primary constructor</h4>
                     <pre><code class="scala" data-trim contenteditable>
-class person(age: int) {
+class Person(age: Int) {
   val category = if (age < 35) "young" else "old"
 
-  def sayhi = "hi, i'm " + category
+  def sayHi = "Hi, I'm " + category
 }
 
-new person(30).sayhi //hi, i'm young
+new Person(30).sayHi //Hi, I'm young
 					</code></pre>
 
                     <div class="fragment">
-                        <h4>auxillery constructors</h4>
+                        <h4>Auxillery constructors</h4>
                         <pre><code class="scala" data-trim contenteditable>
-class date(val time: long) {
+class Date(val time: Long) {
 
-  def this(date: date) = this(date.time)
+  def this(date: Date) = this(date.time)
 }
 					    </code></pre>
                     </div>
 
                     <aside class="notes">
                         <ul>
-                            <li>age: int er default constructor</li>
+                            <li>age: Int er default constructor</li>
                             <li>body til constructor er hele klasse-bodyen</li>
                             <li>category er en medlemsvariabel med public getter</li>
                             <li>age er ikke en medlemsvariabel siden den ikke har val/var og ikke brukes annet enn i constructor</li>
@@ -340,128 +294,128 @@ class date(val time: long) {
                 </section>
 
                 <section>
-                    <h2>objekter</h2>
+                    <h2>Objekter</h2>
                     <pre><code class="scala" data-trim contenteditable>
-object logger {
-  def log(msg: string) = println(msg)
+object Logger {
+  def log(msg: String) = println(msg)
 }
 
-logger.log("it's all good!")
+Logger.log("It's all good!")
 					</code></pre>
 
                     <div class="fragment">
-                        <h4>companion-objekter</h4>
+                        <h4>Companion-objekter</h4>
                         <pre><code class="scala" data-trim contenteditable>
-class person(val name: string, val age: int)
+class Person(val name: String, val age: Int)
 
-//i samme fil
-object person {
-  def apply(name: string, age: int) = new person(name, age)
+//I samme fil
+object Person {
+  def apply(name: String, age: Int) = new Person(name, age)
 }
 
-val p = person("frode", 33)
+val p = Person("Frode", 33)
 					    </code></pre>
                     </div>
 
                     <aside class="notes">
                         <ul>
                             <li>objekter - singleton objekter - en klasse med bare 1 instans</li>
-                            <li>kan sammenlignes med static i java, men er ikke helt det</li>
-                            <li>kalles med klassenavnet</li>
+                            <li>kan sammenlignes med static i Java, men er ikke helt det</li>
+                            <li>Kalles med klassenavnet</li>
 
-                            <li>companion objekter er et objekt med samme navn som en klasse i samme fil</li>
-                            <li>her legger man alt som tilhører klassen og ikke instansen (igjen veldig likt static i java)</li>
-                            <li>vanlig å legge factory-metoder sånn som her</li>
-                            <li>apply metoden har spesiell betydning i scala og bli kalt hvis vi kaller på navnet på objektet</li>
+                            <li>Companion objekter er et objekt med samme navn som en klasse i samme fil</li>
+                            <li>Her legger man alt som tilhører klassen og ikke instansen (igjen veldig likt static i java)</li>
+                            <li>Vanlig å legge factory-metoder sånn som her</li>
+                            <li>apply metoden har spesiell betydning i Scala og bli kalt hvis vi kaller på navnet på objektet</li>
                         </ul>
                     </aside>
                 </section>
 
                 <section>
-                    <h2>traits</h2>
+                    <h2>Traits</h2>
                     <pre><code class="scala" data-trim contenteditable>
-trait animal {
-  def greet = "i'm an animal"
+trait Animal {
+  def greet = "I'm an animal"
 }
 
-class dog extends animal
-class fox extends animal
+class Dog extends Animal
+class Fox extends Animal
 					</code></pre>
                     <ul>
-                        <li>abstrakte metoder <strong>og</strong> felter</li>
-                        <li>konkrete metoder og felter</li>
-                        <li>mixin composition</li>
+                        <li>Abstrakte metoder <strong>og</strong> felter</li>
+                        <li>Konkrete metoder og felter</li>
+                        <li>Mixin composition</li>
                     </ul>
                     <aside class="notes">
                         <ul>
-                            <li>traits er som interface - kan ha abstrakte metoder</li>
-                            <li>kan ha konkret oppførsel</li>
-                            <li>definerer en type</li>
-                            <li>brukes til å modularisere kode</li>
+                            <li>Traits er som interface - kan ha abstrakte metoder</li>
+                            <li>Kan ha konkret oppførsel</li>
+                            <li>Definerer en type</li>
+                            <li>Brukes til å modularisere kode</li>
                         </ul>
                     </aside>
                 </section>
 
                 <section>
-                    <h2>traits</h2>
+                    <h2>Traits</h2>
                     <pre><code class="scala" data-trim contenteditable>
-trait animal {
-  def say: string
+trait Animal {
+  def say: String
 
-  def greet = "i'm an animal that says " + say
+  def greet = "I'm an animal that says " + say
 }
 
-class dog extends animal {
+class Dog extends Animal {
   def say = "woof"
 }
 
-class fox extends animal {
+class Fox extends Animal {
   def say = ???
 }
 					</code></pre>
                     <aside class="notes">
                         <ul>
-                            <li>eksempel på trait som ligner på en abstrakt klasse</li>
+                            <li>Eksempel på Trait som ligner på en abstrakt klasse</li>
                             <li>siden den har både abstrakte og konkrete metoder</li>
-                            <li>man kan dog arve fra så mange slike man vil</li>
+                            <li>Man kan dog arve fra så mange slike man vil</li>
                         </ul>
                     </aside>
                 </section>
 
                 <section>
-                    <h2>traits</h2>
+                    <h2>Traits</h2>
                     <pre><code class="scala" data-trim contenteditable>
-trait animal {
-  def say: string
+trait Animal {
+  def say: String
 }
-trait fourlegged
-trait furry
+trait Fourlegged
+trait Furry
 
-class dog extends animal with fourlegged with furry {
+class Dog extends Animal with Fourlegged with Furry {
   def say = "woof"
 }
 					</code></pre>
                     <aside class="notes">
                         <ul>
-                            <li>eksemepel på mixin av flere traits</li>
-                            <li>kan anta at fourlegged og furry også inneholder oppførsel som beriker dog-klassen</li>
+                            <li>Eksemepel på mixin av flere traits</li>
+                            <li>Kan anta at Fourlegged og Furry også inneholder oppførsel som beriker Dog-klassen</li>
                         </ul>
                     </aside>
                 </section>
 
                 <section>
-                    <h2>list</h2>
+                    <h2>List</h2>
                     <h4 style="text-transform: none">scala.immutable</h4>
                     <ul>
-                        <li class="fragment">implementerer isempty, head og tail.</li>
-                        <li class="fragment">o(n) på de fleste operasjoner</li>
-                        <li class="fragment">o(1) på prepend og head/tail-akess</li>
-                        <li class="fragment">egnet for rekursive løsninger basert på head:tail-akess</li>
-                        <li class="fragment">eksempler:
-                        <pre><code>scala> 4 :: list(1, 2, 3) // prepend, o(1)
-res0: list[int] = list(4, 1, 2, 3)</code></pre>
-                        <pre><code>scala> list(1, 2, 3) ::: list(4) // append, o(n), foretrekk prepend
-res1: list[int] = list(1, 2, 3, 4)</code></pre>
+                        <li class="fragment">Implementerer isEmpty, head og tail.</li>
+                        <li class="fragment">O(n) på de fleste operasjoner</li>
+                        <li class="fragment">O(1) på prepend og head/tail-akess</li>
+                        <li class="fragment">Egnet for rekursive løsninger basert på head:tail-akess</li>
+                        <li class="fragment">Eksempler:
+                        <pre><code>scala> 4 :: List(1, 2, 3) // Prepend, O(1)
+res0: List[Int] = List(4, 1, 2, 3)</code></pre>
+                        <pre><code>scala> List(1, 2, 3) ::: List(4) // Append, O(n), foretrekk prepend
+res1: List[Int] = List(1, 2, 3, 4)</code></pre>
                         </li>
                     </ul>
                 </section>
@@ -475,11 +429,11 @@ res1: list[int] = list(1, 2, 3, 4)</code></pre>
 
                     </ul>
 
-                    <pre><code>scala> val numbers = list(1,2,3)
-numbers: list[int] = list(1, 2, 3)
+                    <pre><code>scala> val numbers = List(1,2,3)
+numbers: List[Int] = List(1, 2, 3)
 
-scala> numbers.map((x: int) => x + 1)
-res0: list[int] = list(2, 3, 4)</code></pre>
+scala> numbers.map((x: Int) => x + 1)
+res0: List[Int] = List(2, 3, 4)</code></pre>
                 </section>
 
                 <section>
@@ -489,51 +443,51 @@ res0: list[int] = list(2, 3, 4)</code></pre>
                         <li>filter() returnerer et subsett av listen hvor predikatet er sant</li>
                     </ul>
 
-                    <pre><code>scala> val mylist = list(1,2,3,4,5,6)
-mylist: list[int] = list(1, 2, 3, 4, 5, 6)
+                    <pre><code>scala> val myList = List(1,2,3,4,5,6)
+myList: List[Int] = List(1, 2, 3, 4, 5, 6)
 
-scala> mylist.filter((x: int) => x > 3)
-res0: list[int] = list(4, 5, 6)</code></pre>
+scala> myList.filter((x: Int) => x > 3)
+res0: List[Int] = List(4, 5, 6)</code></pre>
                 </section>
 
 
                 <section>
-                    <h2>list api eksempler</h2>
-                    <pre><code>//adder et element til begynnelsen av listen
-def ::(x: a): list[a]
+                    <h2>List API eksempler</h2>
+                    <pre><code>//Adder et element til begynnelsen av listen
+def ::(x: A): List[A]
 
-//adder en liste til begynnelsen av listen
-def :::(prefix: list[a]): list[a]
+//Adder en liste til begynnelsen av listen
+def :::(prefix: List[A]): List[A]
 
-//velger det første elementet i listen
-def head: a
+//Velger det første elementet i listen
+def head: A
 
-//velger de resterende (foruten første) elementene i listen
-def tail: a
+//Velger de resterende (foruten første) elementene i listen
+def tail: A
 
-//velger de første n elementene i en liste
-def take(n: int): list[a]
+//Velger de første n elementene i en liste
+def take(n: Int): List[A]
 
-//velger alle elementer bortsett fra de første n elementene i en liste
-def drop(n: int): list[a]
+//Velger alle elementer bortsett fra de første n elementene i en liste
+def drop(n: Int): List[A]
                     </code></pre>
                 </section>
 
                 <section>
-                    <h2>list api eksempler 2</h2>
-                    <pre><code>//adder et element til begynnelsen av listen
-//velger de siste n elementene i en liste
-def takeright(n: int): list[a]
+                    <h2>List API eksempler 2</h2>
+                    <pre><code>//Adder et element til begynnelsen av listen
+//Velger de siste n elementene i en liste
+def takeRight(n: Int): List[A]
 
-//lager en liste av liste ut fra to lister
-def zip[b](that: geniterable[b]): list[(a, b)]
+//Lager en liste av liste ut fra to lister
+def zip[B](that: GenIterable[B]): List[(A, B)]
 </code></pre>
                 </section>
 
                 <section>
-                    <h2>pattern matching</h2>
+                    <h2>Pattern Matching</h2>
                     <p>
-                        en avansert versjon av <code>switch</code> i java
+                        En avansert versjon av <code>switch</code> i Java
                     </p>
                     <aside class="notes">
                         <ul>
@@ -543,9 +497,9 @@ def zip[b](that: geniterable[b]): list[(a, b)]
                 </section>
 
                 <section>
-                    <h2>java-liknende eksempel</h2>
+                    <h2>Java-liknende eksempel</h2>
                     <pre><code class="scala" data-trim contenteditable>
-def toyesorno(choice: int) = choice match {
+def toYesOrNo(choice: Int) = choice match {
   case 1 => "yes"
   case 0 => "no"
   case _ => "error"
@@ -553,34 +507,34 @@ def toyesorno(choice: int) = choice match {
                         </code></pre>
                     </code></pre>
                     <pre><code class="scala" data-trim contenteditable>
-scala> toyesorno(1)
-res0: string = yes
+scala> toYesOrNo(1)
+res0: String = yes
 
-scala> toyesorno(10)
-res1: string = error
+scala> toYesOrNo(10)
+res1: String = error
                         </code></pre>
                     </code></pre>
                     <aside class="notes">
                         <ul>
-                            kan brukes som switch i java, men har mer avansert funksjonalitet
+                            Kan brukes som switch i Java, men har mer avansert funksjonalitet
                         </ul>
                     </aside>
                 </section>
 
 
                 <section>
-                    <h2>typesjekking</h2>
+                    <h2>Typesjekking</h2>
                     <pre><code class="scala" data-trim contenteditable>
-def f(x: any) = x match {
-  case i:int => "integer: " + i
-  case _:double => "a double"
-  case s:string => "i want to say " + s
+def f(x: Any) = x match {
+  case i:Int => "integer: " + i
+  case _:Double => "a double"
+  case s:String => "I want to say " + s
 }
                     </code></pre>
                     </code></pre>
                     <pre><code class="scala" data-trim contenteditable>
 scala> f(2.0)
-res0: string = a double
+res0: String = a double
                     </code></pre>
                     </code></pre>
                     <aside class="notes">
@@ -590,18 +544,18 @@ res0: string = a double
                 </section>
 
                 <section>
-                    <h2>verktøy for funksjonell programmering</h2>
-                    med pattern matching:
+                    <h2>Verktøy for funksjonell programmering</h2>
+                    Med pattern matching:
                     <pre><code class="scala" data-trim contenteditable>
-def fact(n: int) = n match {
+def fact(n: Int) = n match {
   case 0 => 1
   case n => n * fact(n - 1)
 }
                     </code></pre>
-                    uten pattern matching:
+                    Uten pattern matching:
                     </code></pre>
                     <pre><code class="scala" data-trim contenteditable>
-def fact(n: int) =
+def fact(n: Int) =
   if (n == 0) 1
   else n * fact(n - 1)
                     </code></pre>
@@ -614,9 +568,9 @@ def fact(n: int) =
 
 
                 <section>
-                    <h2>case classes</h2>
+                    <h2>Case Classes</h2>
                     <p>
-                        (nesten) klasser med god støtte for pattern matching
+                        (Nesten) Klasser med god støtte for pattern matching
                     </p>
                     <aside class="notes">
                         <ul>
@@ -627,23 +581,23 @@ def fact(n: int) =
 
 
                 <section>
-                    <h2>eksporterer konstruktørparametere</h2>
+                    <h2>Eksporterer konstruktørparametere</h2>
                     <pre><code class="scala" data-trim contenteditable>
-case class person(firstname: string, lastname: string)
+case class Person(firstName: String, lastName: String)
                     </code></pre>
                     <pre><code class="scala" data-trim contenteditable>
-scala> val person = person("ola", "nordmann")
-person: person = person(ola,nordmann)
+scala> val person = Person("Ola", "Nordmann")
+person: Person = Person(Ola,Nordmann)
 
-scala> person.firstname + " " + person.lastname
-res0: string = ola nordmann
+scala> person.firstName + " " + person.lastName
+res0: String = Ola Nordmann
                     </code></pre>
                     <ul>
                         <li>
-                            konstruktørparametere automatisk tilgjengelig etter instansiering
+                            Konstruktørparametere automatisk tilgjengelig etter instansiering
                         </li>
                         <li>
-                            reduserer boilerplate-kode
+                            Reduserer boilerplate-kode
                         </li>
                     </ul>
                     <aside class="notes">
@@ -653,42 +607,42 @@ res0: string = ola nordmann
                 </section>
 
                 <section>
-                    <h2>pattern matching direkte på person</h2>
+                    <h2>Pattern matching direkte på Person</h2>
                     <pre><code class="scala" data-trim contenteditable>
-def printperson(person: any) {
+def printPerson(person: Any) {
   person match {
-    case person(first, last) => println(first + " " + last)
-    case _ => println("not a person!")
+    case Person(first, last) => println(first + " " + last)
+    case _ => println("Not a person!")
   }
 }
                 </code></pre>
                 <pre><code class="scala" data-trim contenteditable>
-scala> printperson("ola nordmann")
-not a person!
+scala> printPerson("Ola Nordmann")
+Not a person!
 
-scala> printperson(person("ola", "nordmann"))
-ola nordmann
+scala> printPerson(Person("Ola", "Nordmann"))
+Ola Nordmann
                 </code></pre>
-                scoper konstruktørparameterene i pattern match blokken
+                Scoper konstruktørparameterene i pattern match blokken
             </section>
 
 
             <section>
-                <h2>pattern matching på lister</h2>
+                <h2>Pattern matching på lister</h2>
                 <pre><code class="scala" data-trim contenteditable>
-def checkiffirstpersonisola(persons: list[person]) =
+def checkIfFirstPersonIsOla(persons: List[Person]) =
   persons match {
-    case list(person("ola", _), _*) => true
+    case List(Person("Ola", _), _*) => true
     case _ => false
   }
                 </code></pre>
                 <pre><code class="scala" data-trim contenteditable>
-scala> val persons = list(person("ola", "test"),
-    | person("test", "test"))
-persons: list[person] = list(person(ola,test), person(test,test))
+scala> val persons = List(Person("Ola", "test"),
+    | Person("test", "test"))
+persons: List[Person] = List(Person(Ola,test), Person(test,test))
 
-scala> checkiffirstpersonisola(persons)
-res0: boolean = true
+scala> checkIfFirstPersonIsOla(persons)
+res0: Boolean = true
                 </code></pre>
                 <code>_*</code> betyr villlkårlig mange følgende elementer
             </section>
