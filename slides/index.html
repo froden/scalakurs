@@ -208,10 +208,10 @@
                 <section>
                   <h2>Definere ting</h2>
                   <pre><code class="scala" data-trim contenteditable>
- // En ikke endrebar verdi, tenk final i Java
-val personNummer = 02017912345
+ // En ikke endrbar verdi, tenk final i Java
+val fødselsnummer = 02017912345
 
-// En endrebar variabel
+// En endrbar variabel
 var navn: String = "Torbjørn Vatn"
                   </code></pre>
                 </section>
@@ -619,7 +619,7 @@ def fact(n: Int) =
                 <section>
                     <h2>Case Classes</h2>
                     <p>
-                        (Nesten) Klasser med god støtte for pattern matching
+                        Klasser med god støtte for pattern matching
                     </p>
                     <aside class="notes">
                         <ul>
@@ -656,23 +656,22 @@ res0: String = Ola Nordmann
                 </section>
 
                 <section>
-                    <h2>Pattern matching direkte på Person</h2>
+                    <h2>Pattern matching på Person</h2>
                     <pre><code class="scala" data-trim contenteditable>
-def printPerson(person: Any) {
-  person match {
-    case Person(first, last) => println(first + " " + last)
-    case _ => println("Not a person!")
-  }
+def finnOla(person: Person) = person match {
+  case Person("Ola", 32) => println("Fant Ola 32!")
+  case Person("Ola", alder) => println("Fant en annen Ola som er " + alder)
+  case Person(navn, _) if navn.startsWith("O") => println("Fant en med navn på O")
+  case Person(navn, alder) => println("Fant: " + navn + ", " + alder)
 }
                 </code></pre>
-                <pre><code class="scala" data-trim contenteditable>
-scala> printPerson("Ola Nordmann")
-Not a person!
-
-scala> printPerson(Person("Ola", "Nordmann"))
-Ola Nordmann
-                </code></pre>
-                Scoper konstruktørparameterene i pattern match blokken
+                <aside class="notes">
+                    <ul>
+                        <li>Et pattern kan dekonstruere en case class</li>
+                        <li>Konstruktørparametre bindes til variabler</li>
+                        <li>Kalles extractors og er det motsatt av constructors</li>
+                    </ul>
+                </aside>
             </section>
 
 
