@@ -9,13 +9,9 @@ class SyntaxTest extends FunSuite {
 //    assert(SyntaxIntro.fixed === 100)
   }
 
-  test ("SyntaxIntro should have a variable called reAssignable") {
+  test ("SyntaxIntro should have a variable called reAssignable that can be reassigned") {
     pending //TODO: remove this line and uncomment the line below
 //    assert(SyntaxIntro.reAssignable === "Change me!")
-  }
-
-  test ("SyntaxIntro should have a new value assigned to reAssignable") {
-    pending //TODO: remove this line and uncomment the line below
 //    assert(SyntaxIntro.reAssignable === "I feel changed!")
   }
 
@@ -31,7 +27,7 @@ class SyntaxTest extends FunSuite {
 
   test ("SyntaxIntro should have a method for adding two numbers together") {
     pending //TODO: remove this line and uncomment the line below
-//    assert(SyntaxIntro.add() === 7)
+//    assert(SyntaxIntro.add(3, 4) === 7)
   }
 
   test ("SyntaxIntro should have a method for choosing the right language") {
@@ -47,8 +43,8 @@ class SyntaxTest extends FunSuite {
   }
 
   test ("SyntaxIntro should have a method that takes a functions as parameter") {
-    pending //TODO: remove
-    SyntaxIntro.checkResultOfFunction(SyntaxIntro.isXLargerThanY)
+    pending //TODO: remove this line and uncomment the line below
+//    SyntaxIntro.checkResultOfFunction(SyntaxIntro.isXLargerThanY)
   }
 
   test ("SyntaxIntro should print something pretty ") {

@@ -6,10 +6,10 @@ object SyntaxIntro {
 
   // Values and variables are two differnt consepts and
   // they (mostly) don't specify a return type…
-  val fixed = ???
+  val fixed = null
 
   // …but they could
-  var reAssignable: String = ???
+  var reAssignable: String = ""
 
   // Methods don't need a parameterlist
   // or a return type either.
@@ -41,7 +41,7 @@ object SyntaxIntro {
     }
   }
 
-  val isXLargerThanY = ???
+  val isXLargerThanY = null
 
   def checkResultOfFunction(func: (Int, Int) => Boolean) = {
     func.apply(2, 4)

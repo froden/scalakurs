@@ -208,10 +208,10 @@
                 <section>
                   <h2>Definere ting</h2>
                   <pre><code class="scala" data-trim contenteditable>
- // En ikke endrebar verdi, tenk final i Java
-val personNummer = 02017912345
+ // En ikke endrbar verdi, tenk final i Java
+val fødselsnummer = 02017912345
 
-// En endrebar variabel
+// En endrbar variabel
 var navn: String = "Torbjørn Vatn"
                   </code></pre>
                 </section>
@@ -457,12 +457,12 @@ class Dog extends Animal with Fourlegged with Furry {
                     <ul>
                         <li class="fragment">Implementerer isEmpty, head og tail.</li>
                         <li class="fragment">O(n) på de fleste operasjoner</li>
-                        <li class="fragment">O(1) på prepend og head/tail-akess</li>
-                        <li class="fragment">Egnet for rekursive løsninger basert på head:tail-akess</li>
+                        <li class="fragment">O(1) på prepend og head/tail-aksess</li>
+                        <li class="fragment">Egnet for rekursive løsninger basert på head:tail-aksess</li>
                         <li class="fragment">Eksempler:
-                        <pre><code>scala> 4 :: List(1, 2, 3) // Prepend, O(1)
+                        <pre><code class="scala" data-trim contenteditable>scala> 4 :: List(1, 2, 3) // Prepend, O(1)
 res0: List[Int] = List(4, 1, 2, 3)</code></pre>
-                        <pre><code>scala> List(1, 2, 3) ::: List(4) // Append, O(n), foretrekk prepend
+                        <pre><code class="scala" data-trim contenteditable>scala> List(1, 2, 3) ::: List(4) // Append, O(n), foretrekk prepend
 res1: List[Int] = List(1, 2, 3, 4)</code></pre>
                         </li>
                     </ul>
@@ -477,7 +477,7 @@ res1: List[Int] = List(1, 2, 3, 4)</code></pre>
 
                     </ul>
 
-                    <pre><code>scala> val numbers = List(1,2,3)
+                    <pre><code class="scala" data-trim contenteditable>scala> val numbers = List(1,2,3)
 numbers: List[Int] = List(1, 2, 3)
 
 scala> numbers.map((x: Int) => x + 1)
@@ -491,7 +491,7 @@ res0: List[Int] = List(2, 3, 4)</code></pre>
                         <li>filter() returnerer et subsett av listen hvor predikatet er sant</li>
                     </ul>
 
-                    <pre><code>scala> val myList = List(1,2,3,4,5,6)
+                    <pre><code class="scala" data-trim contenteditable>scala> val myList = List(1, 2, 3, 4, 5, 6)
 myList: List[Int] = List(1, 2, 3, 4, 5, 6)
 
 scala> myList.filter((x: Int) => x > 3)
@@ -501,7 +501,7 @@ res0: List[Int] = List(4, 5, 6)</code></pre>
 
                 <section>
                     <h2>List API eksempler</h2>
-                    <pre><code>//Adder et element til begynnelsen av listen
+                    <pre><code class="scala" data-trim contenteditable>//Adder et element til begynnelsen av listen
 def ::(x: A): List[A]
 
 //Adder en liste til begynnelsen av listen
@@ -516,18 +516,19 @@ def tail: A
 //Velger de første n elementene i en liste
 def take(n: Int): List[A]
 
-//Velger alle elementer bortsett fra de første n elementene i en liste
-def drop(n: Int): List[A]
+//Velger de siste n elementene i en liste
+def takeRight(n: Int): List[A]
                     </code></pre>
                 </section>
 
                 <section>
                     <h2>List API eksempler 2</h2>
-                    <pre><code>//Adder et element til begynnelsen av listen
-//Velger de siste n elementene i en liste
-def takeRight(n: Int): List[A]
+                    <pre><code class="scala" data-trim contenteditable>
 
-//Lager en liste av liste ut fra to lister
+//Velger alle elementer bortsett fra de første n elementene i en liste
+def drop(n: Int): List[A]
+
+//Lager en liste av par ut fra to lister
 def zip[B](that: GenIterable[B]): List[(A, B)]
 </code></pre>
                 </section>
@@ -618,7 +619,7 @@ def fact(n: Int) =
                 <section>
                     <h2>Case Classes</h2>
                     <p>
-                        (Nesten) Klasser med god støtte for pattern matching
+                        Klasser med god støtte for pattern matching
                     </p>
                     <aside class="notes">
                         <ul>
@@ -655,23 +656,22 @@ res0: String = Ola Nordmann
                 </section>
 
                 <section>
-                    <h2>Pattern matching direkte på Person</h2>
+                    <h2>Pattern matching på Person</h2>
                     <pre><code class="scala" data-trim contenteditable>
-def printPerson(person: Any) {
-  person match {
-    case Person(first, last) => println(first + " " + last)
-    case _ => println("Not a person!")
-  }
+def finnOla(person: Person) = person match {
+  case Person("Ola", 32) => println("Fant Ola 32!")
+  case Person("Ola", alder) => println("Fant en annen Ola som er " + alder)
+  case Person(navn, _) if navn.startsWith("O") => println("Fant en med navn på O")
+  case Person(navn, alder) => println("Fant: " + navn + ", " + alder)
 }
                 </code></pre>
-                <pre><code class="scala" data-trim contenteditable>
-scala> printPerson("Ola Nordmann")
-Not a person!
-
-scala> printPerson(Person("Ola", "Nordmann"))
-Ola Nordmann
-                </code></pre>
-                Scoper konstruktørparameterene i pattern match blokken
+                <aside class="notes">
+                    <ul>
+                        <li>Et pattern kan dekonstruere en case class</li>
+                        <li>Konstruktørparametre bindes til variabler</li>
+                        <li>Kalles extractors og er det motsatt av constructors</li>
+                    </ul>
+                </aside>
             </section>
 
 
