@@ -9,49 +9,49 @@ class Lister {
   /**
    * Should flip a list : List(1,2,3) -> List(3,2,1)
    */
-  def reverse (myList: List[Any]) =
+  def reverse[A](myList: List[A]) =
     myList.reverse
 
   /**
    * Should keep only unique, distinct elements in a list:
    * List(1,1,1,1,1,1,1,2) -> List(1,2)
    */
-  def removeDuplicates (myList: List[Any]) =
+  def removeDuplicates[A](myList: List[A]) =
     myList.distinct
 
   /**
    * Should return first element in a list (not as a list) :
    * List(1,2,3) -> 1
    */
-  def findFirstElement(myList: List[Any]) =
+  def findFirstElement[A](myList: List[A]) =
     myList.head
 
   /**
    * Should return last element in a list (not as a list)
    * List(1,2,3) -> 3
    */
-  def findLastElement(myList: List[Any]) =
+  def findLastElement[A](myList: List[A]) =
     myList.last
 
   /**
    * Should return two first elements in a list (as a list):
    * List(1,2,3) -> List(1,2)
    */
-  def findTwoFirstElements(myList: List[Any]) =
+  def findTwoFirstElements[A](myList: List[A]) =
     myList.take(2)
 
   /**
    * Should return remaining of a list when first element is removed (as a list)
    * List(1,2,3) -> List(2,3)
    */
-  def findAllButFirstElement(myList: List[Any]) =
+  def findAllButFirstElement[A](myList: List[A]) =
     myList.tail
 
   /**
    * Should return remaining of a list when first two elements are removed (as a list)
    * List(1,2,3) -> List(3)
    */
-  def findAllButTwoFirstElements(myList: List[Any]) =
+  def findAllButTwoFirstElements[A](myList: List[A]) =
     myList.drop(2)
 
   /**
@@ -86,8 +86,8 @@ class Lister {
    * List(1,2,3), List(a,b,c) -> List((1,a),(b,2),(3,c))
    * List(a,b,c), List(1,2,3) -> List((a,1),(2,b),(c,3))
    */
-  def windUpTwoLists(myList1: List[Any], myList2: List[Any]) = {
-    val index: List[((Any, Any), Int)] = myList1.zip(myList2).zipWithIndex
+  def windUpTwoLists[A, B](myList1: List[A], myList2: List[B]) = {
+    val index: List[((A, B), Int)] = myList1.zip(myList2).zipWithIndex
     index.map (
       (element: ((Any, Any), Int)) =>
         if(element._2 % 2 == 0)
@@ -127,7 +127,7 @@ class Lister {
    * - buffering calculated values in a tuple
    * - recursive calls
    */
-  def encodeSequenceLengthInSortedList(myList: List[Any]) : List[(Int, Any)] =
+  def encodeSequenceLengthInSortedList[A](myList: List[A]) : List[(Int, A)] =
     if (myList.isEmpty)
       Nil
     else {
