@@ -1,11 +1,10 @@
-package oppg4_futures.futures
+package oppg4_futures
 
 import scala.concurrent.Future
 import scala.concurrent.future
 import scala.concurrent.Await
 import scala.concurrent.duration._
 import scala.concurrent.ExecutionContext.Implicits.global
-import oppg4_futures.work.{SumSequence, FactorNumber}
 
 object MyFutures {
 
@@ -19,6 +18,10 @@ object MyFutures {
       f.map((n:Int) => n * n)
   }
 
+  /**
+   * Hint: Look at the perform method in the Work class
+   * (and it's two subclasses FactorNumber and SumSequence)
+   */
   def findMaxFactor(work: FactorNumber): Future[Long] = {
     future {
       work.perform.max

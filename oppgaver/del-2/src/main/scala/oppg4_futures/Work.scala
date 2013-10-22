@@ -1,4 +1,4 @@
-package oppg4_futures.work
+package oppg4_futures
 
 abstract class Work {
   def perform(): Any
