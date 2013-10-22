@@ -739,8 +739,13 @@ res0: List[Int] = List(0, 2, 4, 6, 8, 10, 12, 14, 16, 18)
 
                 <section>
                     <h2>Flere generatorer</h2>
-                    scala> for(  x <- (1 to 3 );  y <- (1 to 3)  ) yield (x,y)
-                    res3: scala.collection.immutable.IndexedSeq[(Int, Int)] = Vector((1,1), (1,2), (1,3), (2,1), (2,2), (2,3), (3,1), (3,2), (3,3))
+                                        <pre><code class="scala" data-trim contenteditable>
+scala> for(  x <- (1 to 3 );  y <- (1 to 3)  ) yield (x,y)
+
+res3: scala.collection.immutable.IndexedSeq[(Int, Int)] = \
+  Vector((1,1), (1,2), (1,3), (2,1), (2,2), (2,3), (3,1), (3,2), (3,3))
+                                        </code></pre>
+
                 </section>
 
                 <section>
@@ -749,13 +754,13 @@ res0: List[Int] = List(0, 2, 4, 6, 8, 10, 12, 14, 16, 18)
 
                 <section>
                     <h2>Case Classes</h2>
-                    Sql liknende eksempler: http://gleichmann.wordpress.com/2010/11/21/functional-scala-comprehending-comprehensions/
+                    Sql liknende eksempler: <a href="http://gleichmann.wordpress.com/2010/11/21/functional-scala-comprehending-comprehensions/">link</a>
                 </section>
 
 
                 <section>
                     <h2>For comprehensions</h2>
-                    Sukker: http://tataryn.net/2011/10/whats-in-a-scala-for-comprehension/
+                    Sukker: <a href="http://tataryn.net/2011/10/whats-in-a-scala-for-comprehension/">link</a>
                 </section>
 
                 <section>
