@@ -695,11 +695,256 @@ res0: Boolean = true
                 <code>_*</code> betyr villlkårlig mange følgende elementer
             </section>
 
-			</div>
+                <section>
+                    <h1>SCALA</h1>
+                    <h3>FUNKSJONELL PROGRAMMERING</h3>
+                    <p>
+                        <small>Faggruppe for Scala & JVM</small>
+                    </p>
+                    <a class="image" href="http://bekk.no" target="_blank">
+                        <img src="images/bekk-logo-small.png" alt="Bekk">
+                    </a>
+                    <aside class="notes">
+                        <ul>
+                            <li>Velkommen til Scalakurs</li>
+                            <li>Presentere folk</li>
+                        </ul>
+                    </aside>
+                </section>
+
+                <section>
+                    <h3>9. okt: Grunnleggende Scala</h3>
+                    <h3><strong>30. okt: Funksjonell programmering</strong></h3>
+                    <h3>11. nov: Webapp med Scala</h3>
+                    <aside class="notes">
+                        <ul>
+                            <li>I dag skal vi lære litt grunnleggende om Scala</li>
+                            <li>Mer avanserte emner og mer fokus på funksjonell prog</li>
+                            <li>Lage en webapp med Scala REST-api som backend</li>
+                        </ul>
+                    </aside>
+                </section>
+
+                <section>
+                    <h2>For comprehensions</h2>
+                    <pre><code class="scala" data-trim contenteditable>
+def even(from: Int, to: Int): List[Int] =
+  for (i <- List.range(from, to) if i % 2 == 0) yield i
+                    </code></pre>
+                    <pre><code class="scala" data-trim contenteditable>
+scala> even(0, 20)
+res0: List[Int] = List(0, 2, 4, 6, 8, 10, 12, 14, 16, 18)
+                    </code></pre>
+                </section>
+
+                <section>
+                    <h2>Flere generatorer</h2>
+                    scala> for(  x <- (1 to 3 );  y <- (1 to 3)  ) yield (x,y)
+                    res3: scala.collection.immutable.IndexedSeq[(Int, Int)] = Vector((1,1), (1,2), (1,3), (2,1), (2,2), (2,3), (3,1), (3,2), (3,3))
+                </section>
+
+                <section>
+                    <h2>Guards</h2>
+                </section>
+
+                <section>
+                    <h2>Case Classes</h2>
+                    Sql liknende eksempler: http://gleichmann.wordpress.com/2010/11/21/functional-scala-comprehending-comprehensions/
+                </section>
+
+
+                <section>
+                    <h2>For comprehensions</h2>
+                    Sukker: http://tataryn.net/2011/10/whats-in-a-scala-for-comprehension/
+                </section>
+
+                <section>
+                    <h2>For comprehensions</h2>
+                    Mer sukker
+                </section>
+
+
+                <section>
+                    <h2>Oppgaver</h2>
+                    <img height="100" src="images/puzzle.jpg" alt="oppgaver"><br>
+                    Oppgaver: <a href="https://github.com/froden/scalakurs/tree/master/oppgaver/del-2">https://github.com/froden/scalakurs/tree/master/oppgaver/del-2</a><br>
+                    Slides: <a href="http://froden.github.io/scalakurs/#/35">http://froden.github.io/scalakurs</a>
+                </section>
+
+                <section>
+                    <h2>Futures and Promises</h2>
+                    <ul>
+                        <li class="fragment">SIP-14 - redesign of scala.concurrent</li>
+                        <li class="fragment">Introduced in Scala 2.10</li>
+                        <li class="fragment">Placeholder object for a result that does not yet exist</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>SIP-14 definition</h2>
+
+                    <div class="fragment">
+                        <blockquote width="900" cite="http://skillsmatter.com/podcast/scala/the-future-i-was-promised">A Future
+                            is a read-handle to a single value (read-many) that may be available within a specific time-frame
+                        </blockquote>
+                    </div>
+                    <div class="fragment">
+                        <blockquote width="900" cite="http://skillsmatter.com/podcast/scala/the-future-i-was-promised">A Promise
+                            is a write-handle to a single value (write-once) that should be made available within a specific
+                            time-frame
+                        </blockquote>
+                    </div>
+                </section>
+
+                <section>
+                    <h2>Hello Future</h2>
+
+                    <div class="fragment">
+        <pre><code>println("Test print before future")
+            val s = "hello"
+
+            val f = future {
+            Thread.sleep(10)
+            s + " future!"
+            }
+
+            println("Test print after future")
+
+            // Completely asynchronous
+            f.onSuccess { case s => println(s) }
+
+            // Blocks until the future is ready
+            Await.ready(f, Duration.Inf)</code></pre>
+                    </div>
+                    <div class="fragment">Output: <br/><pre><code>Test print before future
+                        Test print after future
+                        hello future!</code></pre>
+                    </div>
+                </section>
+
+                <section>
+                    <h2>Basic Operations on Futures</h2>
+
+                    <div class="fragment">
+            <pre><code>//Asynchronously processes the value in
+                //the future once the value becomes available.
+                def foreach[U](f: T => U): Unit
+
+                //Creates a new future by applying a function to the successful
+                //result of this future.
+                def map[S](f: T => S): Future[S]
+
+                //Creates a new future by applying a function to the successful
+                //result of this future, and returns the result of the function
+                //as the new future.
+                def flatMap[S](f: T => Future[S]): Future[S]
+
+                //Creates a new future by filtering the value of the current future
+                //with a predicate.
+                def filter(p: T => Boolean): Future[T]</code></pre>
+                    </div>
+                </section>
+
+                <section>
+                    <h2>Error handling</h2>
+
+                    <div class="fragment">
+<pre><code>val riskyRes = future { riskyWork() }
+    val safeRes = future { safeWork() }
+
+    val finalRes = riskyRes recoverWith {
+    case e: IllegalArgumentException => safeRes
+    }</code></pre>
+                    </div>
+                </section>
+
+                <section>
+                    <h2>Futures are composeable</h2>
+                    <div class="fragment">
+    <pre><code>val keys = future { readFile("keys.txt") }
+        val values = future { readFile("values.txt") }
+
+        val data = keys.zip(values)
+
+        val hashMap = data.map((ls: (List[String], List[String])) => {
+        ls._1.zip(ls._2).toMap
+        })
+
+        hashMap.recover {
+        case e: FileNotFoundException => {
+        Map[String, String]()
+        }
+        }.onSuccess {
+        case map => {
+        println(map)
+        }
+        }
+
+        Await.result(hashMap, Duration.Inf)</code></pre>
+                    </div>
+                </section>
+
+                <section>
+                    <h2>Do exersices</h2>
+                    <ul>
+                        <li class="fragment">git clone https://github.com/arild/scala-workshop.git</li>
+                        <li class="fragment">Complete predefined tests for MyFutures</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>"Futures" vs. "Promises"</h2>
+                    <ul>
+                        <li class="fragment">"Future", "promise", "delay" and "deferred" used interchangeably</li>
+                        <li class="fragment">Complementary primitives</li>
+                        <li class="fragment">"Promise" exclusively used in the JavaScript world</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>Producer Consumer Example</h2>
+
+                    <div class="fragment">
+<pre><code>val p = promise[T]
+    val f = p.future
+
+    val producer = future {
+    val result = produceSomething()
+    p success result
+    continueDoingSomethingUnrelated()
+    }
+
+    val consumer = future {
+    startDoingSomething()
+    f onSuccess {
+    case res => doSomething(res)
+    }
+    }</code></pre>
+                    </div>
+                </section>
+
+                <section>
+                    <h2>Resources</h2>
+                    <ul>
+                        <li><a href="http://docs.scala-lang.org/overviews/core/futures.html">Scala Documentation - Futures and Promises</a></li>
+                        <li><a href="http://skillsmatter.com/podcast/scala/the-future-i-was-promised">Scala Days 2012 - The Future I was Promised</a></li>
+                        <li><a href="http://domenic.me/2012/10/14/youre-missing-the-point-of-promises/">You're Missing the Point of Promises</a></li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>Questions?</h2>
+                    <span>Slides: <a href="http://arild.github.io/scala-workshop">http://arild.github.io/scala-workshop</a></span><br>
+                    <span>Code: <a href="https://github.com/arild/scala-workshop">https://github.com/arild/scala-workshop</a></span>
+                </section>
+
+
+            </div>
 
 		</div>
 
-		<script src="lib/js/head.min.js"></script>
+
+        <script src="lib/js/head.min.js"></script>
 		<script src="js/reveal.min.js"></script>
 
 		<script>
