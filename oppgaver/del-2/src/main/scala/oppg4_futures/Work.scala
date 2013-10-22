@@ -20,6 +20,8 @@ class FactorNumber(n: Long, delay: Long = 0) extends Work {
 
   /**
    * Naive approach to number factorization
+   * THIS VERSION DOES NOT RETURNS 1 AS A FACTOR
+   * THIS VERSION DOES NOT RETURNS N AS A FACTOR
    */
   def factor(n: Long): List[Long] = {
 
