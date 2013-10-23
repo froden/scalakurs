@@ -731,6 +731,92 @@ res0: Boolean = true
                 </section>
 
                 <section>
+                    <h2>SBT</h2>
+                    <h3><a href="http://www.scala-sbt.org/">Simple Build Tool</a></h3>
+                    <h4>Byggeverktøy for Scala og Java</h4>
+                </section>
+
+                <section>
+                    <h3>SBT</h3>
+                    <ul>
+                        <li>Enkel konfig for enkle prosjekter</li>
+                        <li>Fleksibel konfig i Scalakode for avanserte prosjekter</li>
+                        <li>Dependency-management ala Maven</li>
+                        <li>Kontinuerlig kompilering/testing/app-restart ved kodeendringer</li>
+                        <li>... og mye mer</li>
+                    </ul>
+                    <aside class="notes">
+                        <ul>
+                            <li></li>
+                        </ul>
+                    </aside>
+                </section>
+
+                <section>
+                    <h3>Kom i gang med SBT</h3>
+                    <h4 style="text-align: left;">Start SBT interaktivt</h4>
+                    <pre><code class="bash" data-trim contenteditable>
+$ cd scalakurs/oppgaver/del-2
+$ ./sbt
+[info] Loading project definition from /Users/frode/dev/scalaogjvm/scalakurs/oppgaver/del-2/project
+[info] Set current project to scalakurs-ntnu-del2 (in build file:/Users/frode/dev/scalaogjvm/scalakurs/oppgaver/del-2/)
+>
+                    </code></pre>
+
+                    <h4 style="text-align: left;">Kjør testene kontinuerlig</h4>
+                    <pre><code class="bash" data-trim contenteditable>
+> ~test
+                    </code></pre>
+                    <h4 style="text-align: left;">Stop kjøring av tester</h4>
+                    <pre><code class="bash" data-trim contenteditable>
+> &lt;enter&gt;
+                    </code></pre>
+                    <h4 style="text-align: left;">Andre nyttige kommandoer</h4>
+                    <pre><code class="bash" data-trim contenteditable>
+> clean
+> compile
+> run
+                    </code></pre>
+                    <aside class="notes">
+                        <ul>
+                            <li></li>
+                        </ul>
+                    </aside>
+                </section>
+
+                <section>
+                    <h3>Eclipse og IntelliJ</h3>
+                    <h4 style="text-align: left;">Generer prosjektfiler for Eclipse</h4>
+                    <pre><code class="bash" data-trim contenteditable>
+> eclipse
+                    </code></pre>
+
+                    <h4 style="text-align: left;">Generer prosjektfiler for IntelliJ</h4>
+                    <pre><code class="bash" data-trim contenteditable>
+> gen-idea
+                    </code></pre>
+                    <p>Deretter kan du velge File -> Open -> scalakurs/oppgaver/del-2</p>
+                    <aside class="notes">
+                        <ul>
+                            <li></li>
+                        </ul>
+                    </aside>
+                </section>
+
+                <section>
+                    <h3>Hvordan løse oppgavene</h3>
+                    <ul>
+                        <li>Les <a href="https://github.com/froden/scalakurs/tree/master/oppgaver/del-2">scalakurs/oppgaver/del-2/README.md</a></li>
+                    </ul>
+                    <aside class="notes">
+                        <ul>
+                            <li></li>
+                        </ul>
+                    </aside>
+                </section>
+
+
+                <section>
                     <h2>For comprehensions</h2>
                     <pre><code class="scala" data-trim contenteditable>
 def even(from: Int, to: Int): List[Int] =
