@@ -4,7 +4,7 @@ package oppg2_forcomprehensions
 object ForComprehensions {
 
   def incrementAllNumbers(numbers: List[Int]) : List[Int] =
-    for (n <- numbers) yield (n + 1)
+    for (n <- numbers) yield n + 1
 
   def keepAllEvenNumbersInAList(numbers: List[Int]) : List[Int] =
     for (n <- numbers if n % 2 == 0) yield n

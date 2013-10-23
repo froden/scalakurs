@@ -24,17 +24,17 @@ object MyFutures {
    */
   def findMaxFactor(work: FactorNumber): Future[Long] = {
     future {
-      work.perform.max
+      work.perform().max
     }
   }
 
   def findMaxFactor(work: Future[FactorNumber]): Future[Long] = {
-    work.map(w => w.perform.max)
+    work.map(w => w.perform().max)
   }
 
   def computeRiskySumFallbackOnSafeSum(riskyWork: SumSequence, safeWork: SumSequence): Future[Int] = {
-    val riskyRes = future { riskyWork.perform }
-    val safeRes = future { safeWork.perform }
+    val riskyRes = future { riskyWork.perform() }
+    val safeRes = future { safeWork.perform() }
     riskyRes recoverWith {
       case e: IllegalArgumentException => safeRes
     }
@@ -42,12 +42,12 @@ object MyFutures {
 
   def findSumOfAllMaxFactors(work: Seq[FactorNumber]): Future[Long] = {
     future {
-      work.map(w => w.perform.max).sum
+      work.map(w => w.perform().max).sum
     }
   }
 
   def findMaxFactorOfAllMaxFactorsInParallel(work: Seq[FactorNumber]): Future[Long] = {
-    val futureFactors: Seq[Future[Long]] = work.map(w => future { w.perform.max })
+    val futureFactors: Seq[Future[Long]] = work.map(w => future { w.perform().max })
     val result: Future[Seq[Long]] = Future.sequence(futureFactors)
     result.map(s => s.max)
     //Future.fold(futureFactors)(0L)((r, c) => Math.max(r, c))
@@ -58,10 +58,10 @@ object Examples extends App {
 
   def futureHelloWorld() = {
     println("Test print before future")
-    val s = "hello"
+    val hello = "hello"
     val f = future {
       Thread.sleep(10)
-      s + " future!"
+      hello + " future!"
     }
     println("Test print after future")
     f onSuccess { case s => println(s) } //Completely asynchronous
@@ -85,6 +85,6 @@ object Examples extends App {
     Await.ready(f2, Duration.Inf)
   }
 
-  futureHelloWorld
+  futureHelloWorld()
 //  simpleTransformation
 }

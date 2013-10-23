@@ -7,7 +7,6 @@ import scala.concurrent.future
 import scala.concurrent.Await
 import scala.concurrent.duration._
 import scala.concurrent.ExecutionContext.Implicits.global
-import oppg4_futures.{FactorNumber, SumSequence, MyFutures}
 
 class MyFuturesTest extends FunSuite {
 
