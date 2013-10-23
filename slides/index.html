@@ -39,6 +39,11 @@
 			<div class="slides">
 
                 <section>
+                    <h3><a href="http://typesafe.com/platform/getstarted">http://typesafe.com/platform/getstarted</a></h3>
+                    <h4><a href="https://github.com/froden/scalakurs/tree/master/oppgaver/del-1">https://github.com/froden/scalakurs/tree/master/oppgaver/del-1</a></h4>
+                </section>
+
+                <section>
                     <h1>SCALA</h1>
                     <h3>Introduksjonskurs</h3>
                     <p>
@@ -178,7 +183,7 @@
                 </section>
 
                 <section>
-                    <p style="font-size: 1.5em;"><q cite="http://twitter.com/al3x"><strong>Basically</strong>, it's the future</q></p>
+                    <p style="font-size: 1.5em;"><q cite="http://twitter.com/al3x"><strong>Basically</strong>, it’s the future</q></p>
                     <p><a href="http://twitter.com/al3x">@al3x</a></p>
                     <aside class="notes">
                         <ul>
@@ -209,7 +214,7 @@
                   <h2>Definere ting</h2>
                   <pre><code class="scala" data-trim contenteditable>
  // En ikke endrbar verdi, tenk final i Java
-val fødselsnummer = 02017912345
+val fødselsnummer = "02017912345"
 
 // En endrbar variabel
 var navn: String = "Torbjørn Vatn"
@@ -312,10 +317,10 @@ p.age = 26
 class Person(age: Int) {
   val category = if (age < 35) "young" else "old"
 
-  def sayHi = "Hi, I'm " + category
+  def sayHi = "Hi, I’m " + category
 }
 
-new Person(30).sayHi //Hi, I'm young
+new Person(30).sayHi //Hi, I’m young
 					</code></pre>
 
                     <div class="fragment">
@@ -348,7 +353,7 @@ object Logger {
   def log(msg: String) = println(msg)
 }
 
-Logger.log("It's all good!")
+Logger.log("It’s all good!")
 					</code></pre>
 
                     <div class="fragment">
@@ -383,7 +388,7 @@ val p = Person("Frode", 33)
                     <h2>Traits</h2>
                     <pre><code class="scala" data-trim contenteditable>
 trait Animal {
-  def greet = "I'm an animal"
+  def greet = "I’m an animal"
 }
 
 class Dog extends Animal
@@ -410,7 +415,7 @@ class Fox extends Animal
 trait Animal {
   def say: String
 
-  def greet = "I'm an animal that says " + say
+  def greet = "I’m an animal that says " + say
 }
 
 class Dog extends Animal {
@@ -455,10 +460,10 @@ class Dog extends Animal with Fourlegged with Furry {
                     <h2>List</h2>
                     <h4 style="text-transform: none">scala.immutable</h4>
                     <ul>
-                        <li class="fragment">Implementerer isEmpty, head og tail.</li>
+                        <li class="fragment">Implementerer isEmpty, head og tail</li>
                         <li class="fragment">O(n) på de fleste operasjoner</li>
                         <li class="fragment">O(1) på prepend og head/tail-aksess</li>
-                        <li class="fragment">Egnet for rekursive løsninger basert på head:tail-aksess</li>
+                        <li class="fragment">Egnet for rekursive løsninger basert på head/tail-aksess</li>
                         <li class="fragment">Eksempler:
                         <pre><code class="scala" data-trim contenteditable>scala> 4 :: List(1, 2, 3) // Prepend, O(1)
 res0: List[Int] = List(4, 1, 2, 3)</code></pre>
@@ -473,7 +478,7 @@ res1: List[Int] = List(1, 2, 3, 4)</code></pre>
                     <h2>map()</h2>
                     <ul>
                         <li>map() tar inn en funksjon og utfører den på alle elementer</li>
-                        <li>map() transformerer listen ihht til funksjonen gitt inn</li>
+                        <li>map() transformerer listen i henhold til funksjonen gitt inn</li>
 
                     </ul>
 
