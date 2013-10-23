@@ -33,7 +33,7 @@ Oppgaver i [Typseafe activator](http://typesafe.com/platform/getstarted) - Torbj
    * Oppgaver
 
 # Dag 2: Funksjonell prog
-* litt repetisjon av syntaks
+* litt repetisjon av syntaks + intro til SBT
 * for comprehensions
 * Option
 * Try
