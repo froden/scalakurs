@@ -1,4 +1,13 @@
-# Oppgaver
+# Oppgaver del-2
+
+## Før kurset
+
+### Installer Scala-plugin til Eclipse eller IntelliJ
+
+For Eclipse er det enklest å gå for [http://scala-ide.org/download/sdk.html](Scala IDE Bundle)
+Scala IDE er også tilgjengelig som [http://scala-ide.org/download/current.html](plugin)
+For å kunne kjøre testene direkte i Eclipse må man installere [https://github.com/scalatest/scalatest-eclipse-plugin](ScalaTest plugin) for Eclipse
+
 
 ## Komme i gang med SBT
 
