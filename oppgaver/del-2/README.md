@@ -33,3 +33,19 @@ IntelliJ
     > gen-idea
 
 Prosjektet kan deretter åpnes fra File -> Open -> scalakurs/oppgaver/del-2
+
+## Hvordan løse oppgavene
+
+* Les oppgaveteksten nedenfor
+* Kjør testene kontinuerlig i sbt `~test`
+* Fullfør tester og implementasjon der dette kreves for å få testene grønne
+
+## Oppgave 1 - Repetisjon av basic syntaks
+
+## Oppgave 2 - for comprehensions
+
+## Oppgave 3 - Option
+
+## Oppgave 4 - Try
+
+## Oppgave 5 - Future
