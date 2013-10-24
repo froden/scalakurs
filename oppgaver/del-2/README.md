@@ -2,12 +2,33 @@
 
 ## Før kurset
 
-### Installer Scala-plugin til Eclipse eller IntelliJ
+### Installér Scala-plugin til Eclipse eller IntelliJ
 
-For Eclipse er det enklest å gå for [http://scala-ide.org/download/sdk.html](Scala IDE Bundle)
-Scala IDE er også tilgjengelig som [http://scala-ide.org/download/current.html](plugin)
-For å kunne kjøre testene direkte i Eclipse må man installere [https://github.com/scalatest/scalatest-eclipse-plugin](ScalaTest plugin) for Eclipse
+#### Eclipse
 
+* [Scala IDE for Eclipse bundle](http://scala-ide.org/download/sdk.html) (anbefales)
+* [Scala IDE for Eclipse plugin](http://scala-ide.org/download/current.html)
+* [ScalaTest plugin](https://github.com/scalatest/scalatest-eclipse-plugin)
+
+#### IntelliJ
+
+* `Settings --> Plugins --> Install JetBrains plugin... --> Scala`
+
+#### Annen valgfri editor
+
+Siden compilering og kjøring av tester kan gjøres med SBT er det ingenting i veien for å bruke en annen editor.
+
+### Last ned kildekoden og sbt-avhengigheter
+
+    git clone git@github.com:froden/scalakurs.git
+    cd scalakurs/oppgaver/del-2
+    ./sbt test
+    
+    sbt.bat test (for windows)
+
+Sbt vil starte, laste ned nødvendige avhengigheter og kjøre alle tester. Mange av testene vil være røde eller gule (pending). Det er greit :)
+
+*slutt på forberedelser*
 
 ## Komme i gang med SBT
 
