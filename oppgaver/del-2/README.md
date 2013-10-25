@@ -66,16 +66,18 @@ Prosjektet kan deretter åpnes fra File -> Open -> scalakurs/oppgaver/del-2
 
 ## Hvordan løse oppgavene
 
-* Les oppgaveteksten nedenfor
 * Kjør testene kontinuerlig i sbt `~test`
-* Fullfør tester og implementasjon der dette kreves for å få testene grønne
+* Alle tester som vises som pending (gule) eller feilet (røde) må fikses
+* Åpne testklassen du vil jobbe med (f.eks. oppg1_intro/IntroTest.scala)
+* Ta for deg èn og èn test og les kommentarene og testbeskrivelsen
+* Fullfør testen og implementasjon der dette kreves for å få testen grønn (sjekk sbt-consolet)
+* Fortsett med neste test
+* Fullfør så mange tester som mulig til hvert emne, men gå videre når noe nytt blir gjennomgått slik at du får prøvd deg på litt av alt.
 
-## Oppgave 1 - Repetisjon av basic syntaks
+### Testklassene finner du her:
 
-## Oppgave 2 - for comprehensions
-
-## Oppgave 3 - Option
-
-## Oppgave 4 - Try
-
-## Oppgave 5 - Future
+* src/test/scala/oppg1_intro
+* src/test/scala/oppg2_forcomprehensions
+* src/test/scala/oppg3_option
+* src/test/scala/oppg4_try
+* src/test/scala/oppg5_futures
