@@ -914,7 +914,6 @@ trait Tree
 case class Node(left: Tree, right: Tree) extends Tree
 case class Leaf(value: String) extends Tree
 
-//object
 Node(Leaf("left"), Leaf("right")) match {
   case Node(_, Leaf(value)) => "right tree was leaf with value " + value
   case Node(_, right) => "right was " + right

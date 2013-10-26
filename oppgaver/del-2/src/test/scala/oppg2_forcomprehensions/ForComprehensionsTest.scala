@@ -9,8 +9,7 @@ class ForComprehensionsTest extends FunSuite {
   }
 
   test("keep even numbers in a list") {
-    assert(ForComprehensions.keepAllEvenNumbersInAList(List(1,2,3,4,5,6,7,8,9,10)) === List(2,4,6,8,10)
-    )
+    assert(ForComprehensions.keepAllEvenNumbersInAList(List(1,2,3,4,5,6,7,8,9,10)) === List(2,4,6,8,10))
   }
 
   test("find all pairs in two lists as a list of pairs (list of tuples)") {
