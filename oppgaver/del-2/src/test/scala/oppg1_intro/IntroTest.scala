@@ -103,17 +103,11 @@ class IntroTest extends FunSuite with ShouldMatchers with ScalakursSupport {
         Node(Leaf("Sjur"), Node(Leaf("Frode"), Node(Leaf("Arild"), Leaf("Torbjørn")))), (
         Node(Leaf("Gry"), Node(Leaf("Lene"), Node(Leaf("Ida"), Leaf("Linn"))))))
 
+    /**
+     * Complete the implementation of this method
+     */
     def findPath(name: String, tree: Tree): List[String] = tree match {
-      case Node(left, right) => {
-        findPath(name, left) match {
-          case Nil => findPath(name, right) match {
-            case Nil => Nil
-            case res => "right" :: res
-          }
-          case res => "left" :: res
-        }
-      }
-      case Leaf(found) => if (found == name) List(found) else Nil
+      case _ => replaceWithImplementation
     }
 
     findPath("Frode", tree1) should be(List("left", "right", "Frode"))

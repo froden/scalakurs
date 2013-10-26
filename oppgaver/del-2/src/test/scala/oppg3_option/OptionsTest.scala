@@ -56,6 +56,14 @@ class OptionsTest extends FunSuite with ShouldMatchers with ScalakursSupport {
    * Complete the implementation of Options.getTimeout()
    */
   test("getTimeout should return the supplied timeout") {
+
+    /**
+     * You can get a value out of an option if you supply a default value.
+     *
+     * What happens if you try to get a value - from a None?
+     */
+    def getTimeout(timeoutInSeconds: Option[Int]): Int = replaceWithImplementation
+
     assert(getTimeout(Some(10)) === 10)
     assert(getTimeout(None) === 30)
   }
@@ -64,16 +72,16 @@ class OptionsTest extends FunSuite with ShouldMatchers with ScalakursSupport {
    * Complete this test by replacing all __ with actual values
    */
   test("Option is more than just a replacement of null, its also a collection") {
-    Some(10) map { _ + 10} should be(__)
-    Some(10) filter { _ == 20} should be(__)
-    Some(Some(10)) flatMap { _ map { _ + 5}} should be(__)
+    Some(10) map (_ + 10) should be(__)
+    Some(10) filter (_ == 20) should be(__)
+    Some(Some(10)) flatMap (_ map (_ + 5)) should be(__)
 
     var newValue1 = 0
-    Some(20) foreach { newValue1 = _}
+    Some(20) foreach (newValue1 = _)
     newValue1 should be(__)
 
     var newValue2 = 0
-    None foreach { newValue2 = _}
+    None foreach (newValue2 = _)
     newValue2 should be(__)
   }
 
@@ -95,6 +103,7 @@ class OptionsTest extends FunSuite with ShouldMatchers with ScalakursSupport {
    * Complete the implementation of Options.warmest()
    */
   test("warmest should indicate the place with the highest temperature") {
+    pending //remove
     warmest("Oslo", "Trondheim") should be(Some("Oslo"))
     warmest("Trondheim", "Tromsø") should be(Some("Trondheim"))
     warmest("Trondheim", "Bergen") should be(None)
@@ -104,6 +113,7 @@ class OptionsTest extends FunSuite with ShouldMatchers with ScalakursSupport {
    * Complete the implemetation of Options.warmest2()
    */
   test("warmest2 should indicate the warmest location given a list of locations") {
+    pending //remove
     warmest2(List("Trondheim", "Oslo", "Tromsø")) should be(Some("Oslo"))
     warmest2(List("Trondheim", "Tromsø")) should be(Some("Trondheim"))
     warmest2(List("Tromsø", "Bergen", "Harstad")) should be(Some("Tromsø"))

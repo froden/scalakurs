@@ -14,4 +14,6 @@ trait ScalakursSupport {
     override def toString = "___"
   }
 
+  def replaceWithImplementation = throw new TestPendingException
+
 }
