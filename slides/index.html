@@ -1001,6 +1001,176 @@ res3: scala.collection.immutable.IndexedSeq[(Int, Int)] = \
                 </section>
 
                 <section>
+                    <h2>Option</h2>
+                    <h3>For å representere "noe" eller "ingenting"</h3>
+                </section>
+
+                <section>
+                    <h3 style="text-transform: none;"><code>Option[A]</code></h3>
+                    <h3 style="text-transform: none;"><code>Some[A]&nbsp;&nbsp;&nbsp;None</code></h3>
+                    <aside class="notes">
+                        <ul>
+                            <li>Option er en abstrakt type med 2 subtyper:</li>
+                            <li>Some - som representerer en verdi av en bestemt type (f.eks. String)</li>
+                            <li>None - som representerer ingen verdi</li>
+                        </ul>
+                    </aside>
+                </section>
+
+                <section>
+                    <h3>Eksempel</h3>
+                    <pre><code class="scala" data-trim contenteditable>
+val something: Option[String] = Some("A string")
+val nothing: Option[String] = None
+
+something.isEmpty
+//res4: Boolean = false
+nothing.isEmpty
+//res5: Boolean = true
+
+something.getOrElse("")
+//res6: String = A string
+nothing.getOrElse("")
+//res7: String = ""
+                    </code></pre>
+                    <aside class="notes">
+                        <ul>
+                            <li></li>
+                        </ul>
+                    </aside>
+                </section>
+
+                <section>
+                    <p><q cite="http://qconlondon.com/london-2009/presentation/Null+References:+The+Billion+Dollar+Mistake">«Null References: The Billion Dollar Mistake»</q></p>
+                    <p style="position: relative;"><small>Sir Tony Hoare</small></p>
+                </section>
+
+                <section>
+                    <h3>Problemet med null</h3>
+                    <pre><code class="scala" data-trim contenteditable>
+val name: String = request.getParameter("name")
+
+val upperCaseName = if (name != null) {
+  val trimmed = name.trim
+  if (!trimmed.isEmpty) {
+    trimmed.toUpperCase
+  } else {
+    null
+  }
+} else {
+  null
+}
+                    </code></pre>
+                    <aside class="notes">
+                        <ul>
+                            <li>request.getParameter returnerer null hvis parametret ikke finnes</li>
+                            <li>For det første må vi HUSKE å sjekke for null. Det er ingen indikasjon på at vi ikke alltid får en String ut</li>
+                            <li>For det andre må vi som regel sjekke for null flere ganger.</li>
+                            <li>For det tredje så må den som kalte oss, eller den vi kaller også sjekke for null, osv...</li>
+                        </ul>
+                    </aside>
+                </section>
+
+                <section>
+                    <h3>Option løser problemet</h3>
+                    <pre><code class="scala" data-trim contenteditable>
+val name: Option[String] = request.getParameter("name")
+
+val upprCaseName = name map (_.trim) filter (!_.isEmpty) map (_.toUpperCase)
+                    </code></pre>
+                    <aside class="notes">
+                        <ul>
+                            <li>request.getParameter returnerer Option av String</li>
+                            <li>Vi må forholde oss til at parametret ikke finnes (ellers kompileringsfeil)</li>
+                            <li>Hvis vi sender upperCaseName til en annen metode må enten den ta inn Option[String] eller vi må kunne gi en defaultverdi</li>
+                            <li>Hvis vi returnerer upperCaseName vil det være tydelig for mottaker at det kan hende vi returnerer ingenting</li>
+                        </ul>
+                    </aside>
+                </section>
+
+                <section>
+                    <h3>Option er en collection med 0 eller 1 element</h3>
+                    <pre><code class="scala" data-trim contenteditable>
+val myOptional: Option[String] = Some("Hello")
+
+myOptional.foreach(println)
+// Hello
+myOptional.exists(_.startsWith("H"))
+//res0: Boolean = true
+myOptional.map(_.toLowerCase)
+//res2: Option[String] = Some(hello)
+myOptional.flatMap(s => Some(s + " Frode"))
+//res3: Option[String] = Some(Hello Frode)
+myOptional.getOrElse("!!")
+//res4: String = Hello
+                    </code></pre>
+                    <aside class="notes">
+                        <ul>
+                            <li></li>
+                        </ul>
+                    </aside>
+                </section>
+
+                <section>
+                    <h3>Option er en collection med 0 eller 1 element</h3>
+                    <pre><code class="scala" data-trim contenteditable>
+val myOptional: Option[String] = None
+
+myOptional.foreach(println)
+// println is never invoked
+myOptional.exists(_.startsWith("H"))
+//res0: Boolean = false
+myOptional.map(_.toLowerCase)
+//res2: Option[String] = None
+myOptional.flatMap(s => Some(s + " Frode"))
+//res3: Option[String] = None
+myOptional.getOrElse("!!")
+//res4: String = !!
+                    </code></pre>
+                    <aside class="notes">
+                        <ul>
+                            <li></li>
+                        </ul>
+                    </aside>
+                </section>
+
+                <section>
+                    <h3>Kan pattern matches</h3>
+                    <pre><code class="scala" data-trim contenteditable>
+val optionalPerson: Option[Person] = Some(Person("Frode"))
+
+optionalPerson match {
+  case Some(Person("Frode")) => println("Fant Frode")
+  case Some(_) => println("Fant noen andre")
+  case None => println("Ikke en person")
+}
+                    </code></pre>
+                    <aside class="notes">
+                        <ul>
+                            <li></li>
+                        </ul>
+                    </aside>
+                </section>
+
+                <section>
+                    <h3>Kan brukes i for-comprehensions</h3>
+                    <pre><code class="scala" data-trim contenteditable>
+val firstName: Option[String] = Some("Arild")
+val lastName: Option[String] = Some("Nilsen")
+
+val fullName = for {
+  first <- firstName
+  last <- lastName
+} yield first + " " last
+                    </code></pre>
+                    <aside class="notes">
+                        <ul>
+                            <li></li>
+                        </ul>
+                    </aside>
+                </section>
+
+                <section>
                     <h2>Futures and Promises</h2>
                     <ul>
                         <li class="fragment">SIP-14 - redesign of scala.concurrent</li>
