@@ -958,7 +958,7 @@ map("Frode".toList)(lastElement)
                 </section>
 
                 <section>
-                    <h2>For comprehensions</h2>
+                    <h1>For comprehensions</h1>
                     <pre><code class="scala" data-trim contenteditable>
 def even(from: Int, to: Int): List[Int] =
   for (i <- List.range(from, to) if i % 2 == 0) yield i
@@ -1001,7 +1001,7 @@ res3: scala.collection.immutable.IndexedSeq[(Int, Int)] = \
                 </section>
 
                 <section>
-                    <h2>Option</h2>
+                    <h1>Option</h1>
                     <h3>For å representere "noe" eller "ingenting"</h3>
                 </section>
 
@@ -1171,7 +1171,80 @@ val fullName = for {
                 </section>
 
                 <section>
-                    <h2>Futures and Promises</h2>
+                  <h1>Try</h1>
+                  Funksjonell feilhåndtering
+                </section>
+
+                <section>
+                  <h2>Minner mye om Option</h2>
+                  Representerer enn kalkulering med resultat av type A
+                  <ul><li>Kan resultere i en Success[A] hvis det går bra</li>
+                      <li>eller en Failure[A] som wrapper en Throwable</li></ul>
+                  <pre><code class="scala" data-trim contenteditable>
+class Try[A]
+class Success[A] extends Try[A]
+class Failure[A] extends Try[A]
+                  </code></pre>
+                </section>
+
+                <section>
+                  <h3>Kaste og fange exceptions</h3>
+                  <pre><code class="scala" data-trim contenteditable>
+case class Kunde(alder: Int)
+class Sigaretter
+case class ForUngException(melding: String) extends Exception(melding)
+
+def kjøpSigg(kunde: Kunde): Sigaretter =
+  if (kunde.alder < 18)
+    throw ForUngException(s"Kunden må være over 18, men er ${kunde.alder}")
+  else new Sigaretter
+                  </code></pre>
+                  <div class="fragment"><pre><code class="scala" data-trim contenteditable>
+val ungKunde = Kunde(15)
+val melding = try {
+  val røyken = kjøpSigg(ungKunde)
+  s"Her har du $røyken din!"
+} catch { 
+  case ForUngException(mld) => mld
+}
+println(s"ERRR: $melding")
+                    </code></pre>
+                  </div>
+                </section>
+
+                <section>
+                  <h3>Prøve og feile</h3>
+                  <pre><code class="scala" data-trim contenteditable>
+case class Kunde(alder: Int)
+class Sigaretter
+case class ForUngException(melding: String) extends Exception(melding)
+
+def kjøpSigg(kunde: Kunde): Try[Sigaretter] =
+  Try(if (kunde.alder < 18)
+    throw ForUngException(s"Kunden må være over 18, men er ${kunde.alder}")
+  else new Sigaretter)
+                  </code></pre>
+                  <div class="fragment"><pre><code class="scala" data-trim contenteditable>
+val ungKunde = Kunde(15)
+val melding = kjøpSigg(ungKunde) match {
+  case Success(røyken) => s"Her har du $røyken din!"
+  case Failure(e) => e.getMessage
+}
+println(s"ERRR: $melding")
+                    </code></pre>
+                  </div>
+                </section>
+                <section>
+                  <h2>Jobbe med en Try</h2>
+                    <ul>
+                      <li><code>getOrElse</code></li>
+                      <li><code>map / flatMap</code></li>
+                      <li><code>filter / foreach</code></li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h1>Futures and Promises</h1>
                     <ul>
                         <li class="fragment">SIP-14 - redesign of scala.concurrent</li>
                         <li class="fragment">Introduced in Scala 2.10</li>
