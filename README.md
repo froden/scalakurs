@@ -32,14 +32,14 @@ Oppgaver i [Typseafe activator](http://typesafe.com/platform/getstarted) - Torbj
 6. Pattern matching og case classes
    * Oppgaver
 
-# [Del 2](oppgaver/del-2): Funksjonell prog
+## [Del 2](oppgaver/del-2): Funksjonell prog
 * litt repetisjon av syntaks + intro til SBT
 * for comprehensions
 * Option
 * Try
 * Future
 
-# Dag 3: Unfiltered/scalatra + js-front
+## Del 3: Unfiltered/scalatra + js-front
 * [Unfiltered](http://unfiltered.databinder.net/Unfiltered.html)
 * [Scalatra](http://www.scalatra.org/)
 * Single page JS-app med ulike sider for hver oppgave. Oppgaven blir å implementere backend.
