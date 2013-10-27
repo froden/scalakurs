@@ -81,3 +81,5 @@ Prosjektet kan deretter åpnes fra File -> Open -> scalakurs/oppgaver/del-2
 * src/test/scala/oppg3_option
 * src/test/scala/oppg4_try
 * src/test/scala/oppg5_futures
+
+### Slides finner du [her](http://froden.github.io/scalakurs/#/35)
