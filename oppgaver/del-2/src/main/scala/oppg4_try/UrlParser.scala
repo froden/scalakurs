@@ -1,6 +1,6 @@
 package oppg4_try
 
-import scala.util.Try
+import scala.util.{Failure, Try}
 import java.net.URL
 import java.io.InputStream
 
@@ -19,5 +19,14 @@ object UrlParser {
   def parseHttpUrl(url: String): Try[URL] = {
     parseURL(url)
   }
+
+  import scala.io.Source
+  def getURLContent(url: String): Try[Iterator[String]] =
+    for {
+      url <- parseURL(url)
+      connection <- Try(url.openConnection())
+      is <- new Failure(new Throwable) /** this Failure needs to be replaced by a Try wrapping something*/
+      source = Source.fromInputStream(is)
+    } yield source.getLines()
 
 }
