@@ -2,7 +2,7 @@ package oppg2_forcomprehensions
 
 class FactorNumber(val n: Long) {
 
-  def perform(): List[Long] = {println("factors of " + n + " is " + factor(n)); factor(n)}
+  def perform(): List[Long] = factor(n)
 
   /**
    * Naive approach to number factorization
