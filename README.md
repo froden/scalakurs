@@ -11,7 +11,7 @@ Tidspunkt:
 Opplegg
 =======
   
-## Dag 1: Basic
+## [Del 1](oppgaver/del-1): Basic
 
 ### Gjennomføring
 1. Introdusere konspet med 2 slides
@@ -32,7 +32,7 @@ Oppgaver i [Typseafe activator](http://typesafe.com/platform/getstarted) - Torbj
 6. Pattern matching og case classes
    * Oppgaver
 
-# Dag 2: Funksjonell prog
+# [Del 2](oppgaver/del-2): Funksjonell prog
 * litt repetisjon av syntaks + intro til SBT
 * for comprehensions
 * Option
