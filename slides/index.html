@@ -958,7 +958,7 @@ map("Frode".toList)(lastElement)
                 </section>
 
                 <section>
-                    <h1>For comprehensions</h1>
+                    <h2>For comprehensions</h2>
                     <pre><code class="scala" data-trim contenteditable>
 def even(from: Int, to: Int): List[Int] =
   for (i <- List.range(from, to) if i % 2 == 0) yield i
@@ -974,7 +974,7 @@ res0: List[Int] = List(0, 2, 4, 6, 8, 10, 12, 14, 16, 18)
                                         <pre><code class="scala" data-trim contenteditable>
 scala> for(  x <- (1 to 3 );  y <- (1 to 3)  ) yield (x,y)
 
-res3: scala.collection.immutable.IndexedSeq[(Int, Int)] = \
+res0: scala.collection.immutable.IndexedSeq[(Int, Int)] = \
   Vector((1,1), (1,2), (1,3), (2,1), (2,2), (2,3), (3,1), (3,2), (3,3))
                                         </code></pre>
 
@@ -982,6 +982,15 @@ res3: scala.collection.immutable.IndexedSeq[(Int, Int)] = \
 
                 <section>
                     <h2>Guards</h2>
+                    <pre><code class="scala" data-trim contenteditable>
+def getFactors(n: Long) =
+  for (x <- ( 1 to n ); if n % x == 0) yield x
+                    </code></pre>
+                    <pre><code class="scala" data-trim contenteditable>
+scala> getFactors(20)
+res0: scala.collection.immutable.IndexedSeq[Int] = \
+  Vector(1, 2, 4, 5, 10, 20)
+                    </code></pre>
                 </section>
 
                 <section>
@@ -991,13 +1000,30 @@ res3: scala.collection.immutable.IndexedSeq[(Int, Int)] = \
 
 
                 <section>
-                    <h2>For comprehensions</h2>
-                    Sukker: <a href="http://tataryn.net/2011/10/whats-in-a-scala-for-comprehension/">link</a>
-                </section>
-
-                <section>
-                    <h2>For comprehensions</h2>
-                    Mer sukker
+                    <h2>Syntaktisk sukker</h2>
+                    <ul>
+                        <li>
+                            For comprehensions er syntaktisk sukker for map, flatMap and filter og foreach
+                        </li>
+                        <li>
+                            Eksempler hentet fra: <a href="http://stackoverflow.com/a/1059501">http://stackoverflow.com/a/1059501</a>
+                        </li>
+                    </ul>
+                    <pre class="fragment"><code class="scala" data-trim contenteditable>
+for(x <- c1; y <- c2; z <-c3) {...}
+// compiles to
+c1.foreach(x => c2.foreach(y => c3.foreach(z => {...})))
+                    </code></pre>
+                    <pre class="fragment"><code class="scala" data-trim contenteditable>
+for(x <- c1; y <- c2; z <- c3) yield {...}
+// compiles to
+c1.flatMap(x => c2.flatMap(y => c3.map(z => {...})))
+                    </code></pre>
+                    <pre class="fragment"><code class="scala" data-trim contenteditable>
+for(x <- c; if cond) yield {...}
+// compiles to (in Scala 2.8+)
+c.withFilter(x => cond).map(x => {...})
+                    </code></pre>
                 </section>
 
                 <section>
