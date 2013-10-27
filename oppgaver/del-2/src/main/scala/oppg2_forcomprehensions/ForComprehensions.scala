@@ -20,10 +20,12 @@ object ForComprehensions {
    * Hint : FactorNumber has a method perform()
    * Hint : FactorNumber stores a number accessible with the 'n'
    */
-  def findAllPrimes(factorNumbers: List[Long]) : List[Long] =
-    for (f <- factorNumbers;
-         fn = new FactorNumber(f)
-         if fn.perform().length == 2
-         if fn.perform()(0) == 1) yield f
+  def findAllPrimes(numbers: List[Long]) : List[Long] =
+    for (n <- numbers;
+         factors = new FactorNumber(n).perform();
+         if factors.length == 2;
+         if factors(0) == 1;
+         if factors(1) == n
+    ) yield n
 
 }

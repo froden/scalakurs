@@ -20,7 +20,7 @@ class ForComprehensionsTest extends FunSuite {
     assert(ForComprehensions.findAllPairsWhereFirstElementIsEven(List(1,2), List(1,2)) === List((2,1),(2,2)))
   }
 
-  test("find all primes in a list of FactorNumbers") {
+  test("find all primes in a list of numbers") {
     assert(ForComprehensions.findAllPrimes(List(3L)) === List(3L))
     assert(ForComprehensions.findAllPrimes(List(4L)) === List())
   }
