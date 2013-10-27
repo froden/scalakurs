@@ -45,4 +45,21 @@ class TryTest extends FunSuite with ShouldMatchers with ScalakursSupport {
       case _ => __
     }
   }
+
+  /** parseHttpUrl needs to be smarter so it failes if the protocol is something other than http */
+  test("filter out the correct protocol") {
+    parseHttpUrl("http://www.ntnu.no") match {
+      case Success(url) => url.getProtocol should be === "http"
+      case Failure(_) => __
+    }
+
+    parseHttpUrl("ftp://www.ntnu.no") match {
+      case Success(_) => __
+      case Failure(e) => e.getMessage should be === "Predicate does not hold for ftp://www.ntnu.no"
+    }
+  }
+
+  test("chaining Try´s in a for comprehension") {
+
+  }
 }
