@@ -16,9 +16,8 @@ object ForComprehensions {
     for (a <- firstList; b <- secondList if a % 2 == 0) yield (a,b)
 
   /**
-   * Hint : use new FactorNumber on the elements of the list
+   * Hint : use new FactorNumber on elements in list
    * Hint : FactorNumber has a method perform()
-   * Hint : FactorNumber stores a number accessible with the 'n'
    */
   def findAllPrimes(numbers: List[Long]) : List[Long] =
     for (n <- numbers;
