@@ -23,6 +23,7 @@ class ForComprehensionsTest extends FunSuite {
   test("find all primes in a list of numbers") {
     assert(ForComprehensions.findAllPrimes(List(3L)) === List(3L))
     assert(ForComprehensions.findAllPrimes(List(4L)) === List())
+    assert(ForComprehensions.findAllPrimes(List(1L, 4L, 13L, 21L, 23L)) === List(1L, 13L, 23L))
   }
 
 }
