@@ -28,6 +28,18 @@ Siden compilering og kjøring av tester kan gjøres med SBT er det ingenting i v
 
 Sbt vil starte, laste ned nødvendige avhengigheter og kjøre alle tester. Mange av testene vil være røde eller gule (pending). Det er greit :)
 
+### Generere prosjektfiler for Eclipse og IntelliJ
+
+Eclipse
+
+    > eclipse
+
+IntelliJ
+
+    > gen-idea
+
+Prosjektet kan deretter åpnes fra File -> Open -> scalakurs/oppgaver/del-2
+
 *slutt på forberedelser*
 
 ## På kurset
@@ -53,18 +65,6 @@ Stopp ved å trykke &lt;enter&gt;
     > clean
     > compile
     > run
-
-#### Generere prosjektfiler for Eclipse og IntelliJ
-
-Eclipse
-
-    > eclipse
-
-IntelliJ
-
-    > gen-idea
-
-Prosjektet kan deretter åpnes fra File -> Open -> scalakurs/oppgaver/del-2
 
 ### Hvordan løse oppgavene
 
