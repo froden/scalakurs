@@ -30,9 +30,11 @@ Sbt vil starte, laste ned nødvendige avhengigheter og kjøre alle tester. Mange
 
 *slutt på forberedelser*
 
-## Komme i gang med SBT
+## På kurset
 
-### Start SBT interaktivt
+### Komme i gang med SBT
+
+#### Start SBT interaktivt
 
     $ cd scalakurs/oppgaver/del-2
     $ ./sbt
@@ -40,19 +42,19 @@ Sbt vil starte, laste ned nødvendige avhengigheter og kjøre alle tester. Mange
     [info] Set current project to scalakurs-ntnu-del2 (in build file:/Users/frode/dev/scalaogjvm/scalakurs/oppgaver/del-2/)
     >
 
-### Kjør testene kontinuerlig
+#### Kjør testene kontinuerlig
 
     > ~test
 
 Stopp ved å trykke &lt;enter&gt;
 
-### Andre nyttige kommandoer
+#### Andre nyttige kommandoer
 
     > clean
     > compile
     > run
 
-### Generere prosjektfiler for Eclipse og IntelliJ
+#### Generere prosjektfiler for Eclipse og IntelliJ
 
 Eclipse
 
@@ -64,7 +66,7 @@ IntelliJ
 
 Prosjektet kan deretter åpnes fra File -> Open -> scalakurs/oppgaver/del-2
 
-## Hvordan løse oppgavene
+### Hvordan løse oppgavene
 
 * Kjør testene kontinuerlig i sbt `~test`
 * Alle tester som vises som pending (gule) eller feilet (røde) må fikses
@@ -74,7 +76,7 @@ Prosjektet kan deretter åpnes fra File -> Open -> scalakurs/oppgaver/del-2
 * Fortsett med neste test
 * Fullfør så mange tester som mulig til hvert emne, men gå videre når noe nytt blir gjennomgått slik at du får prøvd deg på litt av alt.
 
-### Testklassene finner du her:
+#### Testklassene finner du her:
 
 * src/test/scala/oppg1_intro
 * src/test/scala/oppg2_forcomprehensions
@@ -82,4 +84,4 @@ Prosjektet kan deretter åpnes fra File -> Open -> scalakurs/oppgaver/del-2
 * src/test/scala/oppg4_try
 * src/test/scala/oppg5_futures
 
-### Slides finner du [her](http://froden.github.io/scalakurs/#/35)
+#### Slides finner du [her](http://froden.github.io/scalakurs/#/35)
