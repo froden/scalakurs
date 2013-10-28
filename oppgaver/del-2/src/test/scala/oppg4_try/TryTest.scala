@@ -3,26 +3,26 @@ package oppg4_try
 import org.scalatest._
 import oppg4_try.UrlParser._
 import support.ScalakursSupport
-import scala.util.{Failure, Success}
+import scala.util.{Try, Failure, Success}
 import java.net.URL
 import java.io.InputStream
 
 class TryTest extends FunSuite with ShouldMatchers with ScalakursSupport {
 
-  /* Complete these tests by replacing ____ with Try(_something_) */
+  /* Complete these test by replacing ____ with Try(_something_) and ??? with a MalformURLException */
   test("parse an URL") {
     parseURL("http://www.ntnu.no") should be(____)
-    parseURL("oooops") should be(____)
+    parseURL("xxx://oooops.com") should beFailureWithException(???)
   }
 
   /** replace the ____ in this test with the correct alternative URL */
   test("visit an alternative URL if the first one fails") {
-    parseURL("oooops").getOrElse(____) should be(new URL("www.vg.no"))
+    parseURL("oooops").getOrElse(____) should be(new URL("http://www.vg.no"))
   }
 
   /** replace ____ inside map() with the correct function */
   test("get the URL´s protocol with map") {
-    parseURL("http://www.ntnu.no").map(____) should beSuccess("http")
+    parseURL("http://www.ntnu.no").map(____) should be(Try("http"))
   }
 
   /** You have to rewrite inputStreamForURL() using flatMap to avoid the stacking up of Trys */
@@ -66,11 +66,7 @@ class TryTest extends FunSuite with ShouldMatchers with ScalakursSupport {
 
 
 
-  def beSuccess[T](t: T) = {
-    be(new Success(t))
-  }
-
-  def beFailure(t: Throwable) = {
+  def beFailureWithException(t: Throwable) = {
     hasSameExceptionMessage(new Failure[URL](t))
   }
 }
