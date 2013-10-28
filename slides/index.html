@@ -994,12 +994,6 @@ res0: scala.collection.immutable.IndexedSeq[Int] = \
                 </section>
 
                 <section>
-                    <h2>Case Classes</h2>
-                    Sql liknende eksempler: <a href="http://gleichmann.wordpress.com/2010/11/21/functional-scala-comprehending-comprehensions/">link</a>
-                </section>
-
-
-                <section>
                     <h2>Syntaktisk sukker</h2>
                     <ul>
                         <li>
@@ -1137,28 +1131,7 @@ myOptional.getOrElse("!!")
                     </aside>
                 </section>
 
-                <section>
-                    <h3>Option er en collection med 0 eller 1 element</h3>
-                    <pre><code class="scala" data-trim contenteditable>
-val myOptional: Option[String] = None
-
-myOptional.foreach(println)
-// println is never invoked
-myOptional.exists(_.startsWith("H"))
-//res0: Boolean = false
-myOptional.map(_.toLowerCase)
-//res2: Option[String] = None
-myOptional.flatMap(s => Some(s + " Frode"))
-//res3: Option[String] = None
-myOptional.getOrElse("!!")
-//res4: String = !!
-                    </code></pre>
-                    <aside class="notes">
-                        <ul>
-                            <li></li>
-                        </ul>
-                    </aside>
-                </section>
+      
 
                 <section>
                     <h3>Kan pattern matches</h3>
