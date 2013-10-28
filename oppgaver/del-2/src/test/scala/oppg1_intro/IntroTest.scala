@@ -15,14 +15,14 @@ class IntroTest extends FunSuite with ShouldMatchers with ScalakursSupport {
     } catch {
       case _: NumberFormatException => 0
     }
-    parsed should be(__)
+    parsed should be(____)
 
     val parsed2 = try {
       "hello".toInt
     } catch {
       case _: NumberFormatException => 0
     }
-    parsed2 should be(__)
+    parsed2 should be(____)
   }
 
   /*
@@ -33,13 +33,13 @@ class IntroTest extends FunSuite with ShouldMatchers with ScalakursSupport {
       val greeting = "Hi there " + name
       greeting
     }
-    sayHi("Sjur") should be(__)
+    sayHi("Sjur") should be(____)
 
     def sayHi2(name: String) = {
       val greeting = "Hi there " + name
       println(greeting)
     }
-    sayHi2("Frode") should be(__)
+    sayHi2("Frode") should be(____)
   }
 
   /*
@@ -61,11 +61,11 @@ class IntroTest extends FunSuite with ShouldMatchers with ScalakursSupport {
     //closure
     val add4 = (y: Int) => x + y
 
-    add1(1, 2) should be(__)
-    add2(1, 2) should be(__)
-    add3(1, 2) should be(__)
-    add3.apply(1, 2) should be (__)
-    add4(2) should be(__)
+    add1(1, 2) should be(____)
+    add2(1, 2) should be(____)
+    add3(1, 2) should be(____)
+    add3.apply(1, 2) should be (____)
+    add4(2) should be(____)
   }
 
   /*
@@ -77,10 +77,10 @@ class IntroTest extends FunSuite with ShouldMatchers with ScalakursSupport {
 
     val addTwo = addOneMore(addOne)
 
-    addTwo(2) should be(__)
+    addTwo(2) should be(____)
 
     val addTwoMore = addOneMore andThen addOneMore
-    addTwoMore(addOne)(1) should be(__)
+    addTwoMore(addOne)(1) should be(____)
   }
 
 
