@@ -28,12 +28,6 @@ trait ScalakursSupport extends FunSuiteLike {
     }
   }
 
-  def *** : Try[URL] = {
-    new Failure(new Throwable)
-  }
-
-  def _t_ = new Throwable
-
   class URLFailureMatcher(right: Failure[URL]) extends Matcher[Try[URL]] {
 
     def apply(left: Try[URL]) = {

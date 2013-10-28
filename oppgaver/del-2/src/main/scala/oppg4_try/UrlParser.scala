@@ -15,7 +15,8 @@ object UrlParser {
     Try(u.openConnection()).map(conn => Try(conn.getInputStream))
   }
 
-  /** this method should be returing an error if the protocol of the URL is something other than http */
+  /** this method should be returing an error if the protocol of the URL is something other than http
+    * HINT: read the name of the test testing this method */
   def parseHttpUrl(url: String): Try[URL] = {
     parseURL(url)
   }
@@ -25,7 +26,7 @@ object UrlParser {
     for {
       url <- parseURL(url)
       connection <- Try(url.openConnection())
-      is <- new Failure(new Throwable) /** this Failure needs to be replaced by a Try wrapping something*/
+      is <- new Failure(new Throwable) /** this Failure needs to be replaced by a Try(_something_) */
       source = Source.fromInputStream(is)
     } yield source.getLines()
 
