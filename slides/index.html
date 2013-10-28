@@ -874,7 +874,7 @@ replaceAll("e", "3")
 //functions as arguments
 def combine(a: Int, b: Int, func: (Int, Int) => Int) = func(a, b)
 //short form for functions
-combine(2, 3, _ * _)
+combine(2, 3, (x, y) => x * y))
 //res1: Int = 6
 					</code></pre>
                     <aside class="notes">
