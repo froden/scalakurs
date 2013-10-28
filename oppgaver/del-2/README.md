@@ -32,11 +32,11 @@ Sbt vil starte, laste ned nødvendige avhengigheter og kjøre alle tester. Mange
 
 Eclipse
 
-    > eclipse
+    ./sbt eclipse
 
 IntelliJ
 
-    > gen-idea
+    ./sbt gen-idea
 
 Prosjektet kan deretter åpnes fra File -> Open -> scalakurs/oppgaver/del-2
 
