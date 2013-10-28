@@ -1,12 +1,12 @@
 package oppg3_option
 
 import org.scalatest._
-import oppg3_option.Options._
 import support.ScalakursSupport
+import oppg3_option.Options.Person
 
 class OptionsTest extends FunSuite with ShouldMatchers with ScalakursSupport {
 
-  /**
+  /*
    * Complete this test by replacing all __ with actual implementation
    */
   test("Options can be either Some(value) or None") {
@@ -20,7 +20,7 @@ class OptionsTest extends FunSuite with ShouldMatchers with ScalakursSupport {
     noValue2 should be(__)
   }
 
-  /**
+  /*
    * Complete the test by replacing ___ with implementation
    */
   test("You can get the value from Some but not from None") {
@@ -33,7 +33,7 @@ class OptionsTest extends FunSuite with ShouldMatchers with ScalakursSupport {
     }
   }
 
-  /**
+  /*
    * Complete this test by replacing all __ with actual values
    */
   test("Option can also be used with pattern matching") {
@@ -52,24 +52,16 @@ class OptionsTest extends FunSuite with ShouldMatchers with ScalakursSupport {
     value1 should be(__)
   }
 
-  /**
-   * Complete the implementation of Options.getTimeout()
+  /*
+   * Complete the implementation of Options.getGender()
    */
-  test("getTimeout should return the supplied timeout") {
-
-    /**
-     * You can get a value out of an option if you supply a default value.
-     *
-     * What happens if you try to get a value - from a None?
-     */
-    def getTimeout(timeoutInSeconds: Option[Int]): Int = replaceWithImplementation
-
-    assert(getTimeout(Some(10)) === 10)
-    assert(getTimeout(None) === 30)
+  test("getGender should return a person's gender or a default value") {
+    assert(Options.getGender(Person("Frode", Some("male"))) === "male")
+    assert(Options.getGender(Person("Sjur", None)) === "not specified")
   }
 
-  /**
-   * Complete this test by replacing all __ with actual values
+  /*
+   * Complete this test by replacing all ___ with actual values
    */
   test("Option is more than just a replacement of null, its also a collection") {
     Some(10) map (_ + 10) should be(__)
@@ -85,7 +77,7 @@ class OptionsTest extends FunSuite with ShouldMatchers with ScalakursSupport {
     newValue2 should be(__)
   }
 
-  /**
+  /*
    * Complete this test by replacing all __ with actual values
    */
   test("Option can be mixed with other collection types") {
@@ -99,28 +91,28 @@ class OptionsTest extends FunSuite with ShouldMatchers with ScalakursSupport {
     withoutNulls should be(__)
   }
 
-  /**
+  /*
    * Complete the implementation of Options.warmest()
    */
   test("warmest should indicate the place with the highest temperature") {
     pending //remove
-    warmest("Oslo", "Trondheim") should be(Some("Oslo"))
-    warmest("Trondheim", "Tromsø") should be(Some("Trondheim"))
-    warmest("Trondheim", "Bergen") should be(None)
+    Options.warmest("Oslo", "Trondheim") should be(Some("Oslo"))
+    Options.warmest("Trondheim", "Tromsø") should be(Some("Trondheim"))
+    Options.warmest("Trondheim", "Bergen") should be(None)
   }
 
-  /**
+  /*
    * Complete the implemetation of Options.warmest2()
    */
   test("warmest2 should indicate the warmest location given a list of locations") {
     pending //remove
-    warmest2(List("Trondheim", "Oslo", "Tromsø")) should be(Some("Oslo"))
-    warmest2(List("Trondheim", "Tromsø")) should be(Some("Trondheim"))
-    warmest2(List("Tromsø", "Bergen", "Harstad")) should be(Some("Tromsø"))
-    warmest2(List("Kristiansand", "Bergen", "Harstad")) should be(None)
+    Options.warmest2(List("Trondheim", "Oslo", "Tromsø")) should be(Some("Oslo"))
+    Options.warmest2(List("Trondheim", "Tromsø")) should be(Some("Trondheim"))
+    Options.warmest2(List("Tromsø", "Bergen", "Harstad")) should be(Some("Tromsø"))
+    Options.warmest2(List("Kristiansand", "Bergen", "Harstad")) should be(None)
   }
 
-  /**
+  /*
    * Complete this test by replacing all __ with actual values
    */
   test("Using in for comprehension") {

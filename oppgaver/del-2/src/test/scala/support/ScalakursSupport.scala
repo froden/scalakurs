@@ -12,6 +12,10 @@ trait ScalakursSupport {
     throw new TestPendingException
   }
 
+  def ???? : Matcher[Any] = {
+    throw new TestPendingException
+  }
+
   protected class ___ extends Exception {
     override def toString = "___"
   }
@@ -48,6 +52,5 @@ trait ScalakursSupport {
   }
 
   def hasSameExceptionMessage(right: Failure[URL]) = new URLFailureMatcher(right)
-  def replaceWithImplementation = throw new TestPendingException
 
 }

@@ -3,6 +3,19 @@ package oppg3_option
 object Options {
 
   /**
+   * No need to edit this class.
+   */
+  case class Person(name: String, gender: Option[String])
+
+  /**
+   * You can get a value out of an option if you supply a default value.
+   * In the Person class above, gender i optional.
+   * This method should take person and return its gender or the string "not specified"
+   * if it's a None
+   */
+  def getGender(person: Person): String = ???
+
+  /**
    * Compare the temp from two locations using the predefined getTemp method below.
    * The warmest place is only defined when the temp from both locations are known.
    */

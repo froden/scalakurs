@@ -2,10 +2,11 @@ package oppg1_intro
 
 import org.scalatest._
 import support.ScalakursSupport
+import oppg1_intro.Intro.{Node, Leaf}
 
 class IntroTest extends FunSuite with ShouldMatchers with ScalakursSupport {
 
-  /**
+  /*
    * Complete this test by replacing all __ with actual implementation
    */
   test("Everything is expressions") {
@@ -24,7 +25,7 @@ class IntroTest extends FunSuite with ShouldMatchers with ScalakursSupport {
     parsed2 should be(__)
   }
 
-  /**
+  /*
    * Complete this test by replacing all __ with actual implementation
    */
   test("Last expression is always returned") {
@@ -41,7 +42,7 @@ class IntroTest extends FunSuite with ShouldMatchers with ScalakursSupport {
     sayHi2("Frode") should be(__)
   }
 
-  /**
+  /*
    * Complete this test by replacing all __ with actual implementation
    */
   test("Functions are values too") {
@@ -67,7 +68,7 @@ class IntroTest extends FunSuite with ShouldMatchers with ScalakursSupport {
     add4(2) should be(__)
   }
 
-  /**
+  /*
    * Complete this test by replacing all __ with actual implementation
    */
   test("Higher order functions and composition") {
@@ -83,7 +84,7 @@ class IntroTest extends FunSuite with ShouldMatchers with ScalakursSupport {
   }
 
 
-  /**
+  /*
    * Complete the implementation of findPath
    * The following tree would yield the result List(left, right, Frode) for input "Frode"
    *                  root
@@ -92,26 +93,14 @@ class IntroTest extends FunSuite with ShouldMatchers with ScalakursSupport {
    *        Sjur Frode Arild Torbjørn
    */
   test("Pattern matching") {
-    sealed trait Tree
-
-    case class Node(left: Tree, right: Tree) extends Tree
-    case class Leaf(value: String) extends Tree
-
     val tree1 = Node(Node(Leaf("Sjur"), Leaf("Frode")), Node(Leaf("Arild"), Leaf("Trobjørn")))
     val tree2 =
       Node(
         Node(Leaf("Sjur"), Node(Leaf("Frode"), Node(Leaf("Arild"), Leaf("Torbjørn")))), (
-        Node(Leaf("Gry"), Node(Leaf("Lene"), Node(Leaf("Ida"), Leaf("Linn"))))))
+          Node(Leaf("Gry"), Node(Leaf("Lene"), Node(Leaf("Ida"), Leaf("Linn"))))))
 
-    /**
-     * Complete the implementation of this method
-     */
-    def findPath(name: String, tree: Tree): List[String] = tree match {
-      case _ => replaceWithImplementation
-    }
-
-    findPath("Frode", tree1) should be(List("left", "right", "Frode"))
-    findPath("Torbjørn", tree2) should be(List("left", "right", "right", "right", "Torbjørn"))
+    Intro.findPath("Frode", tree1) should be(List("left", "right", "Frode"))
+    Intro.findPath("Torbjørn", tree2) should be(List("left", "right", "right", "right", "Torbjørn"))
   }
 
   /**
