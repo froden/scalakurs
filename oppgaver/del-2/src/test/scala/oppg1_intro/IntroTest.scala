@@ -96,8 +96,8 @@ class IntroTest extends FunSuite with ShouldMatchers with ScalakursSupport {
     val tree1 = Node(Node(Leaf("Sjur"), Leaf("Frode")), Node(Leaf("Arild"), Leaf("Trobjørn")))
     val tree2 =
       Node(
-        Node(Leaf("Sjur"), Node(Leaf("Frode"), Node(Leaf("Arild"), Leaf("Torbjørn")))), (
-          Node(Leaf("Gry"), Node(Leaf("Lene"), Node(Leaf("Ida"), Leaf("Linn"))))))
+        Node(Leaf("Sjur"), Node(Leaf("Frode"), Node(Leaf("Arild"), Leaf("Torbjørn")))),
+        Node(Leaf("Gry"), Node(Leaf("Lene"), Node(Leaf("Ida"), Leaf("Linn")))))
 
     Intro.findPath("Frode", tree1) should be(List("left", "right", "Frode"))
     Intro.findPath("Torbjørn", tree2) should be(List("left", "right", "right", "right", "Torbjørn"))
@@ -106,8 +106,10 @@ class IntroTest extends FunSuite with ShouldMatchers with ScalakursSupport {
   /**
    * Make the method applyFunction generic so that it can
    * apply any function from any type to any other type
+   * Hint: This involves adding type parameters like myMethod[X]
    **/
   test("Type signatures (generics)") {
+    // make thid method generic
     def applyFunction[A, B](value: A, f: (A => B)): B = f(value)
 
     val lengthOfString: String => Int = _.length

@@ -18,7 +18,7 @@ trait ScalakursSupport extends FunSuiteLike {
     try {
       block
     } catch {
-      case e : scala.NotImplementedError => throw new TestPendingException
+      case e : scala.NotImplementedError => fail(e)
     }
   }
 
