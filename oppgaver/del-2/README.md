@@ -84,4 +84,4 @@ Stopp ved å trykke &lt;enter&gt;
 * src/test/scala/oppg4_try
 * src/test/scala/oppg5_futures
 
-#### Slides finner du [her](http://froden.github.io/scalakurs/#/35)
+#### Slides finner du [her](http://froden.github.io/scalakurs/#/36)
