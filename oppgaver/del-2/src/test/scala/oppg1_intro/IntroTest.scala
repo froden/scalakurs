@@ -7,7 +7,7 @@ import oppg1_intro.Intro.{Node, Leaf}
 class IntroTest extends FunSuite with ShouldMatchers with ScalakursSupport {
 
   /*
-   * Complete this test by replacing all __ with actual implementation
+   * Complete this test by replacing all ____ with actual implementation
    */
   test("Everything is expressions") {
     val parsed = try {
@@ -15,14 +15,14 @@ class IntroTest extends FunSuite with ShouldMatchers with ScalakursSupport {
     } catch {
       case _: NumberFormatException => 0
     }
-    parsed should be(23)
+    parsed should be(____)
 
     val parsed2 = try {
       "23.5".toInt
     } catch {
       case _: NumberFormatException => 0
     }
-    parsed2 should be(0)
+    parsed2 should be(____)
   }
 
   /*
@@ -33,13 +33,13 @@ class IntroTest extends FunSuite with ShouldMatchers with ScalakursSupport {
       val greeting = "Hi there " + name
       greeting
     }
-    sayHi("Sjur") should be("Hi there Sjur")
+    sayHi("Sjur") should be(____)
 
     def sayHi2(name: String) = {
       val greeting = "Hi there " + name
       println(greeting)
     }
-    sayHi2("Frode") should be()
+    sayHi2("Frode") should be(____)
   }
 
   /*
@@ -61,11 +61,11 @@ class IntroTest extends FunSuite with ShouldMatchers with ScalakursSupport {
     //closure
     val closure = (y: Int) => x + y
 
-    lambda1(1, 2) should be(3)
-    lambda2(2, 2) should be(4)
-    lambda3(1, 3) should be(4)
-    lambda3.apply(1, 2) should be (3)
-    closure(2) should be(4)
+    lambda1(1, 2) should be(____)
+    lambda2(2, 2) should be(____)
+    lambda3(1, 3) should be(____)
+    lambda3.apply(1, 2) should be (____)
+    closure(2) should be(____)
   }
 
   /*
@@ -77,10 +77,10 @@ class IntroTest extends FunSuite with ShouldMatchers with ScalakursSupport {
 
     val addTwo = addOneMore(addOne)
 
-    addTwo(2) should be(4)
+    addTwo(2) should be(____)
 
     val addTwoMore = addOneMore andThen addOneMore
-    addTwoMore(addOne)(2) should be(5)
+    addTwoMore(addOne)(2) should be(____)
   }
 
 

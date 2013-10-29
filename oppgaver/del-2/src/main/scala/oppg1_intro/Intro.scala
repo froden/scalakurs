@@ -16,16 +16,7 @@ object Intro {
    *        Sjur Frode Arild Torbjørn
    */
   def findPath(name: String, tree: Tree): List[String] = tree match {
-    case Node(left, right) =>
-      findPath(name, left) match {
-        case Nil =>
-          findPath(name, right) match {
-            case Nil => Nil
-            case list => "right" :: list
-          }
-        case list => "left" :: list
-      }
-    case Leaf(found) => if (found == name) found :: Nil else Nil
+    case _ => ???
   }
 
 }
