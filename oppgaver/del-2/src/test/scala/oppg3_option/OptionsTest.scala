@@ -11,7 +11,7 @@ class OptionsTest extends FunSuite with ShouldMatchers with ScalakursSupport {
    */
   test("Options can be either Some(value) or None") {
     val someValue = Some("A string")
-    someValue.get should be("A string")
+    someValue.get should be(____)
 
     val noValue1 = None
     // calling get on a None will yield a NoSuchElementException
@@ -21,7 +21,7 @@ class OptionsTest extends FunSuite with ShouldMatchers with ScalakursSupport {
 
     // tha Option object has a convenience method fro creating Option from a nullable object
     val noValue2 = Option(null)
-    noValue2 should be(None)
+    noValue2 should be(____)
   }
 
   /*
@@ -33,14 +33,14 @@ class OptionsTest extends FunSuite with ShouldMatchers with ScalakursSupport {
       case Some(v) => v
       case None => 0.0
     }
-    value should be(20.0)
+    value should be(____)
 
     val noValue: Option[Double] = None
     val value1 = noValue match {
       case Some(v) => v
       case None => 0.0
     }
-    value1 should be(0.0)
+    value1 should be(____)
   }
 
   /*
@@ -55,17 +55,17 @@ class OptionsTest extends FunSuite with ShouldMatchers with ScalakursSupport {
    * Complete this test by replacing all ____ with actual values
    */
   test("Option is more than just a replacement of null, its also a collection") {
-    Some(10) map (_ + 10) should be(Some(20))
-    Some(10) filter (_ == 20) should be(None)
-    Some(Some(10)) flatMap (_ map (_ + 5)) should be(Some(15))
+    Some(10) map (_ + 10) should be(____)
+    Some(10) filter (_ == 20) should be(____)
+    Some(Some(10)) flatMap (_ map (_ + 5)) should be(____)
 
     var newValue1 = 0
     Some(20) foreach (newValue1 = _)
-    newValue1 should be(20)
+    newValue1 should be(____)
 
     var newValue2 = 0
     None foreach (newValue2 = _)
-    newValue2 should be(0)
+    newValue2 should be(____)
   }
 
   /*
@@ -77,7 +77,7 @@ class OptionsTest extends FunSuite with ShouldMatchers with ScalakursSupport {
     //filter all nullvalues
     val withoutNulls = withNulls.map(n => Option(n)).flatten
 
-    withoutNulls should be(List("Sjur", "Arild", "Torbjørn"))
+    withoutNulls should be(____)
   }
 
   /*
@@ -108,6 +108,6 @@ class OptionsTest extends FunSuite with ShouldMatchers with ScalakursSupport {
       someValue <- values
       value <- someValue
     } yield value
-    newValues should be(List(10, 20, 15))
+    newValues should be(____)
   }
 }
