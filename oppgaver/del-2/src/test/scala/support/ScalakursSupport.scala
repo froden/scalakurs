@@ -1,26 +1,32 @@
 package support
 
 import org.scalatest.matchers.{MatchResult, Matcher}
-import org.scalatest.exceptions.TestPendingException
+import org.scalatest.exceptions.{TestFailedException, TestPendingException}
 import java.net.URL
 import scala.util.{Success, Try, Failure}
+import org.scalatest.{FunSuiteLike, FunSuite, Transformer, Tag}
+import org.scalatest.events.TestPending
 
 
-trait ScalakursSupport {
+trait ScalakursSupport extends FunSuiteLike {
 
-  def __ : Matcher[Any] = {
+  def ____ : Matcher[Any] = {
     throw new TestPendingException
   }
 
-  protected class ___ extends Exception {
-    override def toString = "___"
+  def checkImplemented[R](block: => R): R = {
+    try {
+      block
+    } catch {
+      case e : scala.NotImplementedError => fail(e)
+    }
   }
 
-  def *** : Try[URL] = {
-    new Failure(new Throwable)
+  protected override def test(testName: String, testTags: Tag*)(testFun: => Unit) {
+    super.test(testName, testTags: _*) {
+      checkImplemented(testFun)
+    }
   }
-
-  def _t_ = new Throwable
 
   class URLFailureMatcher(right: Failure[URL]) extends Matcher[Try[URL]] {
 
@@ -48,6 +54,5 @@ trait ScalakursSupport {
   }
 
   def hasSameExceptionMessage(right: Failure[URL]) = new URLFailureMatcher(right)
-  def replaceWithImplementation = throw new TestPendingException
 
 }

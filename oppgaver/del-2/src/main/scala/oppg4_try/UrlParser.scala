@@ -10,12 +10,15 @@ object UrlParser {
     Try(new URL(url))
   }
 
-  def inputStreamForURL(url: String): Try[InputStream] = parseURL(url).flatMap { u =>
-    Try(u.openConnection()).flatMap(conn => Try(conn.getInputStream))
+  /** this method needs to have Try[InputStream] as return type. Hint: flatMap can help us with that */
+  def inputStreamForURL(url: String): Try[Try[Try[InputStream]]] = parseURL(url).map { u =>
+    Try(u.openConnection()).map(conn => Try(conn.getInputStream))
   }
 
+  /** this method should be returing an error if the protocol of the URL is something other than http
+    * HINT: read the name of the test testing this method */
   def parseHttpUrl(url: String): Try[URL] = {
-    parseURL(url).filter(_.getProtocol == "http")
+    parseURL(url)
   }
 
   import scala.io.Source
@@ -23,7 +26,7 @@ object UrlParser {
     for {
       url <- parseURL(url)
       connection <- Try(url.openConnection())
-      is <- Try(connection.getInputStream)
+      is <- new Failure(new Throwable) /** this Failure needs to be replaced by a Try(_something_) */
       source = Source.fromInputStream(is)
     } yield source.getLines()
 
