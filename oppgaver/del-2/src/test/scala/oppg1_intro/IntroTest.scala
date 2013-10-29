@@ -46,26 +46,26 @@ class IntroTest extends FunSuite with ShouldMatchers with ScalakursSupport {
    * Complete this test by replacing all __ with actual implementation
    */
   test("Functions are values too") {
-    //inferred type for add1, explicit types for parameters
-    val add1 = (x: Int, y: Int) => x + y
+    //inferred type for lambda1 and explicit types for parameters
+    val lambda1 = (x: Int, y: Int) => x + y
 
-    //explicit type for add2, shorthand syntax for function body
-    val add2: (Int, Int) => Int = _ + _
+    //explicit type for lambda2, shorthand syntax for function body
+    val lambda2: (Int, Int) => Int = _ + _
 
     //the underlying representation of a function with 2 args
-    val add3 = new Function2[Int, Int, Int] {
+    val lambda3 = new Function2[Int, Int, Int] {
       def apply(x: Int, y: Int) = x + y
     }
 
     val x = 2
     //closure
-    val add4 = (y: Int) => x + y
+    val closure = (y: Int) => x + y
 
-    add1(1, 2) should be(3)
-    add2(2, 2) should be(4)
-    add3(1, 3) should be(4)
-    add3.apply(1, 2) should be (3)
-    add4(2) should be(4)
+    lambda1(1, 2) should be(3)
+    lambda2(2, 2) should be(4)
+    lambda3(1, 3) should be(4)
+    lambda3.apply(1, 2) should be (3)
+    closure(2) should be(4)
   }
 
   /*
@@ -85,12 +85,15 @@ class IntroTest extends FunSuite with ShouldMatchers with ScalakursSupport {
 
 
   /*
-   * Complete the implementation of findPath
+   * Complete the implementation of Intro.findPath()
+   * The method should return a list of paths through the tree to a given name
    * The following tree would yield the result List(left, right, Frode) for input "Frode"
+   *
    *                  root
    *               /       \
    *            /    \   /    \
    *        Sjur Frode Arild Torbjørn
+   *
    */
   test("Pattern matching") {
     val tree1 = Node(Node(Leaf("Sjur"), Leaf("Frode")), Node(Leaf("Arild"), Leaf("Trobjørn")))
