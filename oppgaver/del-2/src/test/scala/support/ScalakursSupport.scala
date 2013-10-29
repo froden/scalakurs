@@ -1,11 +1,10 @@
 package support
 
 import org.scalatest.matchers.{MatchResult, Matcher}
-import org.scalatest.exceptions.{TestFailedException, TestPendingException}
+import org.scalatest.exceptions.TestPendingException
 import java.net.URL
 import scala.util.{Success, Try, Failure}
-import org.scalatest.{FunSuiteLike, FunSuite, Transformer, Tag}
-import org.scalatest.events.TestPending
+import org.scalatest.{FunSuiteLike, Tag}
 
 
 trait ScalakursSupport extends FunSuiteLike {

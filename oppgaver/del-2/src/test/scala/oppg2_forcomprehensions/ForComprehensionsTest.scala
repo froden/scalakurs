@@ -1,8 +1,9 @@
 package oppg2_forcomprehensions
 
 import org.scalatest.FunSuite
+import support.ScalakursSupport
 
-class ForComprehensionsTest extends FunSuite {
+class ForComprehensionsTest extends FunSuite with ScalakursSupport {
 
   test("increment numbers in a list") {
     assert(ForComprehensions.incrementAllNumbers(List(1,2,3)) === List(2,3,4))
