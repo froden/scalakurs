@@ -29,18 +29,18 @@ class TryTest extends FunSuite with ShouldMatchers with ScalakursSupport {
     inputStream match {
       case Success(stream: InputStream) => stream.read() should be > 0
       case Failure(_) => fail("This test should be successful")
-      case _ => __
+      case _ => ____
     }
   }
 
   test("filter out the correct protocol") {
     parseHttpUrl("http://www.ntnu.no") match {
       case Success(url) => url.getProtocol shouldEqual "http"
-      case Failure(_) => __
+      case Failure(_) => ____
     }
 
     parseHttpUrl("ftp://www.ntnu.no") match {
-      case Success(_) => __
+      case Success(_) => ____
       case Failure(e) => e.getMessage shouldEqual "Predicate does not hold for ftp://www.ntnu.no"
     }
   }
@@ -48,7 +48,7 @@ class TryTest extends FunSuite with ShouldMatchers with ScalakursSupport {
   test("chaining Trys in a for comprehension") {
     getURLContent("http://www.ntnu.no") match {
       case Success(iterator) => iterator.size should be > 0
-      case Failure(_) => __
+      case Failure(_) => ____
     }
   }
 

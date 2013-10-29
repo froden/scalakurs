@@ -112,7 +112,7 @@ class IntroTest extends FunSuite with ShouldMatchers with ScalakursSupport {
    * Hint: This involves adding type parameters like myMethod[X]
    **/
   test("Type signatures (generics)") {
-    // make thid method generic
+    // make this method generic
     def applyFunction[A, B](value: A, f: (A => B)): B = f(value)
 
     val lengthOfString: String => Int = _.length
