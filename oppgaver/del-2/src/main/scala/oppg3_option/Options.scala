@@ -18,6 +18,7 @@ object Options {
   /**
    * Compare the temperature from two locations using the predefined getTemp method below.
    * The warmest place is only defined when the temp from both locations are known.
+   * Hint: for-comprehension
    */
   def warmest(location1: String, location2: String): Option[String] = ???
 
@@ -25,6 +26,7 @@ object Options {
   /**
    * Find the warmest location given a list of locations by calling the predefined getTemp method below.
    * The result should be defined if at least one of the locations return a temperature.
+   * Hint: to sort a list use sortBy(elem => elem.fieldToSortBy)
    */
   def warmest2(locations: List[String]): Option[String] = ???
 
