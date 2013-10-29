@@ -1297,24 +1297,24 @@ println(s"Hurra jeg fikk kjøpt ${produkt.get}")
 
                     <div class="fragment">
         <pre><code>println("Test print before future")
-            val s = "hello"
+val s = "hello"
 
-            val f = future {
-            Thread.sleep(10)
-            s + " future!"
-            }
+val f = future {
+  Thread.sleep(10)
+  s + " future!"
+}
 
-            println("Test print after future")
+println("Test print after future")
 
-            // Completely asynchronous
-            f.onSuccess { case s => println(s) }
+// Completely asynchronous
+f.onSuccess { case s => println(s) }
 
-            // Blocks until the future is ready
-            Await.ready(f, Duration.Inf)</code></pre>
-                    </div>
+// Blocks until the future is ready
+Await.ready(f, Duration.Inf)</code></pre>
+		</div>
                     <div class="fragment">Output: <br/><pre><code>Test print before future
-                        Test print after future
-                        hello future!</code></pre>
+Test print after future
+hello future!</code></pre>
                     </div>
                 </section>
 
@@ -1323,21 +1323,21 @@ println(s"Hurra jeg fikk kjøpt ${produkt.get}")
 
                     <div class="fragment">
             <pre><code>//Asynchronously processes the value in
-                //the future once the value becomes available.
-                def foreach[U](f: T => U): Unit
+//the future once the value becomes available.
+def foreach[U](f: T => U): Unit
 
-                //Creates a new future by applying a function to the successful
-                //result of this future.
-                def map[S](f: T => S): Future[S]
+//Creates a new future by applying a function to the successful
+//result of this future.
+def map[S](f: T => S): Future[S]
 
-                //Creates a new future by applying a function to the successful
-                //result of this future, and returns the result of the function
-                //as the new future.
-                def flatMap[S](f: T => Future[S]): Future[S]
+//Creates a new future by applying a function to the successful
+//result of this future, and returns the result of the function
+//as the new future.
+def flatMap[S](f: T => Future[S]): Future[S]
 
-                //Creates a new future by filtering the value of the current future
-                //with a predicate.
-                def filter(p: T => Boolean): Future[T]</code></pre>
+//Creates a new future by filtering the value of the current future
+//with a predicate.
+def filter(p: T => Boolean): Future[T]</code></pre>
                     </div>
                 </section>
 
@@ -1346,11 +1346,11 @@ println(s"Hurra jeg fikk kjøpt ${produkt.get}")
 
                     <div class="fragment">
 <pre><code>val riskyRes = future { riskyWork() }
-    val safeRes = future { safeWork() }
+val safeRes = future { safeWork() }
 
-    val finalRes = riskyRes recoverWith {
-    case e: IllegalArgumentException => safeRes
-    }</code></pre>
+val finalRes = riskyRes recoverWith {
+  case e: IllegalArgumentException => safeRes
+}</code></pre>
                     </div>
                 </section>
 
@@ -1358,25 +1358,25 @@ println(s"Hurra jeg fikk kjøpt ${produkt.get}")
                     <h2>Futures are composeable</h2>
                     <div class="fragment">
     <pre><code>val keys = future { readFile("keys.txt") }
-        val values = future { readFile("values.txt") }
+val values = future { readFile("values.txt") }
 
-        val data = keys.zip(values)
+val data = keys.zip(values)
 
-        val hashMap = data.map((ls: (List[String], List[String])) => {
-        ls._1.zip(ls._2).toMap
-        })
+val hashMap = data.map((ls: (List[String], List[String])) => {
+  ls._1.zip(ls._2).toMap
+})
 
-        hashMap.recover {
-        case e: FileNotFoundException => {
-        Map[String, String]()
-        }
-        }.onSuccess {
-        case map => {
-        println(map)
-        }
-        }
+hashMap.recover {
+  case e: FileNotFoundException => {
+    Map[String, String]()
+  }
+}.onSuccess {
+  case map => {
+    println(map)
+  }
+}
 
-        Await.result(hashMap, Duration.Inf)</code></pre>
+Await.result(hashMap, Duration.Inf)</code></pre>
                     </div>
                 </section>
 
@@ -1402,20 +1402,20 @@ println(s"Hurra jeg fikk kjøpt ${produkt.get}")
 
                     <div class="fragment">
 <pre><code>val p = promise[T]
-    val f = p.future
+val f = p.future
 
-    val producer = future {
-    val result = produceSomething()
-    p success result
-    continueDoingSomethingUnrelated()
-    }
+val producer = future {
+  val result = produceSomething()
+  p success result
+  continueDoingSomethingUnrelated()
+}
 
-    val consumer = future {
-    startDoingSomething()
-    f onSuccess {
+val consumer = future {
+  startDoingSomething()
+  f onSuccess {
     case res => doSomething(res)
-    }
-    }</code></pre>
+  }
+}</code></pre>
                     </div>
                 </section>
 
