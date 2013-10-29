@@ -113,13 +113,14 @@ class IntroTest extends FunSuite with ShouldMatchers with ScalakursSupport {
    **/
   test("Type signatures (generics)") {
     // make thid method generic
-    def applyFunction[A, B](value: A, f: (A => B)): B = f(value)
+    def applyFunction(value: String, f: (String => Int)): Int = f(value)
 
     val lengthOfString: String => Int = _.length
     val equalTo5: Int => Boolean = _ == 5
 
     applyFunction("Hi", lengthOfString) should be(2)
 
-    applyFunction(5, equalTo5) should be(true)
+    pending //remove thid line and uncomment the next. Then make it compile!
+    //applyFunction(5, equalTo5) should be(true)
   }
 }
