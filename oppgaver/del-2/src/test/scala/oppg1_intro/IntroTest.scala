@@ -26,7 +26,7 @@ class IntroTest extends FunSuite with ShouldMatchers with ScalakursSupport {
   }
 
   /*
-   * Complete this test by replacing all __ with actual implementation
+   * Complete this test by replacing all ____ with actual implementation
    */
   test("Last expression is always returned") {
     def sayHi(name: String) = {
@@ -43,7 +43,7 @@ class IntroTest extends FunSuite with ShouldMatchers with ScalakursSupport {
   }
 
   /*
-   * Complete this test by replacing all __ with actual implementation
+   * Complete this test by replacing all ____ with actual implementation
    */
   test("Functions are values too") {
     //inferred type for lambda1 and explicit types for parameters
@@ -69,7 +69,7 @@ class IntroTest extends FunSuite with ShouldMatchers with ScalakursSupport {
   }
 
   /*
-   * Complete this test by replacing all __ with actual implementation
+   * Complete this test by replacing all ____ with actual implementation
    */
   test("Higher order functions and composition") {
     val addOne = (x: Int) => x + 1
@@ -112,7 +112,7 @@ class IntroTest extends FunSuite with ShouldMatchers with ScalakursSupport {
    * Hint: This involves adding type parameters like myMethod[X]
    **/
   test("Type signatures (generics)") {
-    // make thid method generic
+    // make this method generic
     def applyFunction(value: String, f: (String => Int)): Int = f(value)
 
     val lengthOfString: String => Int = _.length
@@ -120,7 +120,7 @@ class IntroTest extends FunSuite with ShouldMatchers with ScalakursSupport {
 
     applyFunction("Hi", lengthOfString) should be(2)
 
-    pending //remove thid line and uncomment the next. Then make it compile!
+    pending //remove this line and uncomment the next. Then make it compile!
     //applyFunction(5, equalTo5) should be(true)
   }
 }
