@@ -9,13 +9,11 @@ import scala.concurrent.ExecutionContext.Implicits.global
 object MyFutures {
 
   def computeSquare(n: Int): Future[Int] = {
-    future {
-      n * n
-    }
+    ???
   }
 
   def computeSquare(f: Future[Int]): Future[Int] = {
-      f.map((n:Int) => n * n)
+    ???
   }
 
   /**
@@ -23,34 +21,23 @@ object MyFutures {
    * (and it's two subclasses FactorNumber and SumSequence)
    */
   def findMaxFactor(work: FactorNumber): Future[Long] = {
-    future {
-      work.perform().max
-    }
+    ???
   }
 
   def findMaxFactor(work: Future[FactorNumber]): Future[Long] = {
-    work.map(w => w.perform().max)
+    ???
   }
 
   def computeRiskySumFallbackOnSafeSum(riskyWork: SumSequence, safeWork: SumSequence): Future[Int] = {
-    val riskyRes = future { riskyWork.perform() }
-    val safeRes = future { safeWork.perform() }
-    riskyRes recoverWith {
-      case e: IllegalArgumentException => safeRes
-    }
+    ???
   }
 
   def findSumOfAllMaxFactors(work: Seq[FactorNumber]): Future[Long] = {
-    future {
-      work.map(w => w.perform().max).sum
-    }
+    ???
   }
 
   def findMaxFactorOfAllMaxFactorsInParallel(work: Seq[FactorNumber]): Future[Long] = {
-    val futureFactors: Seq[Future[Long]] = work.map(w => future { w.perform().max })
-    val result: Future[Seq[Long]] = Future.sequence(futureFactors)
-    result.map(s => s.max)
-    //Future.fold(futureFactors)(0L)((r, c) => Math.max(r, c))
+    ???
   }
 }
 
