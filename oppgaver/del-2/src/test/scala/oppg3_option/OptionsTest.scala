@@ -11,7 +11,7 @@ class OptionsTest extends FunSuite with ShouldMatchers with ScalakursSupport {
    */
   test("Options can be either Some(value) or None") {
     val someValue = Some("A string")
-    someValue.get should be(____)
+    someValue.get should be("A string")
 
     val noValue1 = None
     // calling get on a None will yield a NoSuchElementException
@@ -21,7 +21,7 @@ class OptionsTest extends FunSuite with ShouldMatchers with ScalakursSupport {
 
     // tha Option object has a convenience method fro creating Option from a nullable object
     val noValue2 = Option(null)
-    noValue2 should be(____)
+    noValue2 should be(None)
   }
 
   /*
@@ -33,14 +33,14 @@ class OptionsTest extends FunSuite with ShouldMatchers with ScalakursSupport {
       case Some(v) => v
       case None => 0.0
     }
-    value should be(____)
+    value should be(20.0)
 
     val noValue: Option[Double] = None
     val value1 = noValue match {
       case Some(v) => v
       case None => 0.0
     }
-    value1 should be(____)
+    value1 should be(0.0)
   }
 
   /*
@@ -55,31 +55,29 @@ class OptionsTest extends FunSuite with ShouldMatchers with ScalakursSupport {
    * Complete this test by replacing all ____ with actual values
    */
   test("Option is more than just a replacement of null, its also a collection") {
-    Some(10) map (_ + 10) should be(____)
-    Some(10) filter (_ == 20) should be(____)
-    Some(Some(10)) flatMap (_ map (_ + 5)) should be(____)
+    Some(10) map (_ + 10) should be(Some(20))
+    Some(10) filter (_ == 20) should be(None)
+    Some(Some(10)) flatMap (_ map (_ + 5)) should be(Some(15))
 
     var newValue1 = 0
     Some(20) foreach (newValue1 = _)
-    newValue1 should be(____)
+    newValue1 should be(20)
 
     var newValue2 = 0
     None foreach (newValue2 = _)
-    newValue2 should be(____)
+    newValue2 should be(0)
   }
 
   /*
    * Complete this test by replacing all ____ with actual values
    */
   test("Option can be mixed with other collection types") {
-    //casting null to Int
-    val intNull = null.asInstanceOf[Int]
     //List containing null
-    val withNulls = List(intNull, 1, 2, intNull, 3, intNull)
+    val withNulls = List(null, "Sjur", "Arild", null, "Torbjørn", null)
     //filter all nullvalues
     val withoutNulls = withNulls.map(n => Option(n)).flatten
 
-    withoutNulls should be(____)
+    withoutNulls should be(List("Sjur", "Arild", "Torbjørn"))
   }
 
   /*
@@ -97,7 +95,7 @@ class OptionsTest extends FunSuite with ShouldMatchers with ScalakursSupport {
   test("warmest2 should indicate the warmest location given a list of locations") {
     Options.warmest2(List("Trondheim", "Oslo", "Tromsø")) should be(Some("Oslo"))
     Options.warmest2(List("Trondheim", "Tromsø")) should be(Some("Trondheim"))
-    Options.warmest2(List("Tromsø", "Bergen", "Harstad")) should be(Some("Tromsø"))
+    Options.warmest2(List("Bergen", "Tromsø", "Harstad")) should be(Some("Tromsø"))
     Options.warmest2(List("Kristiansand", "Bergen", "Harstad")) should be(None)
   }
 
@@ -110,6 +108,6 @@ class OptionsTest extends FunSuite with ShouldMatchers with ScalakursSupport {
       someValue <- values
       value <- someValue
     } yield value
-    newValues should be(List(____, ____, ____))
+    newValues should be(List(10, 20, 15))
   }
 }

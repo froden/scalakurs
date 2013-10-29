@@ -15,14 +15,14 @@ class IntroTest extends FunSuite with ShouldMatchers with ScalakursSupport {
     } catch {
       case _: NumberFormatException => 0
     }
-    parsed should be(____)
+    parsed should be(23)
 
     val parsed2 = try {
-      "hello".toInt
+      "23.5".toInt
     } catch {
       case _: NumberFormatException => 0
     }
-    parsed2 should be(____)
+    parsed2 should be(0)
   }
 
   /*
@@ -33,13 +33,13 @@ class IntroTest extends FunSuite with ShouldMatchers with ScalakursSupport {
       val greeting = "Hi there " + name
       greeting
     }
-    sayHi("Sjur") should be(____)
+    sayHi("Sjur") should be("Hi there Sjur")
 
     def sayHi2(name: String) = {
       val greeting = "Hi there " + name
       println(greeting)
     }
-    sayHi2("Frode") should be(____)
+    sayHi2("Frode") should be()
   }
 
   /*
@@ -61,11 +61,11 @@ class IntroTest extends FunSuite with ShouldMatchers with ScalakursSupport {
     //closure
     val add4 = (y: Int) => x + y
 
-    add1(1, 2) should be(____)
-    add2(1, 2) should be(____)
-    add3(1, 2) should be(____)
-    add3.apply(1, 2) should be (____)
-    add4(2) should be(____)
+    add1(1, 2) should be(3)
+    add2(2, 2) should be(4)
+    add3(1, 3) should be(4)
+    add3.apply(1, 2) should be (3)
+    add4(2) should be(4)
   }
 
   /*
@@ -77,10 +77,10 @@ class IntroTest extends FunSuite with ShouldMatchers with ScalakursSupport {
 
     val addTwo = addOneMore(addOne)
 
-    addTwo(2) should be(____)
+    addTwo(2) should be(4)
 
     val addTwoMore = addOneMore andThen addOneMore
-    addTwoMore(addOne)(2) should be(____)
+    addTwoMore(addOne)(2) should be(5)
   }
 
 
@@ -108,14 +108,13 @@ class IntroTest extends FunSuite with ShouldMatchers with ScalakursSupport {
    * apply any function from any type to any other type
    **/
   test("Type signatures (generics)") {
-    def applyFunction(value: String, f: (String => Int)): Int = f(value)
+    def applyFunction[A, B](value: A, f: (A => B)): B = f(value)
 
     val lengthOfString: String => Int = _.length
     val equalTo5: Int => Boolean = _ == 5
 
     applyFunction("Hi", lengthOfString) should be(2)
 
-    pending //remove this line and uncomment the next
-//    applyFunction(5, equalTo5) should be(true)
+    applyFunction(5, equalTo5) should be(true)
   }
 }
