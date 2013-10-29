@@ -7,7 +7,7 @@ import oppg1_intro.Intro.{Node, Leaf}
 class IntroTest extends FunSuite with ShouldMatchers with ScalakursSupport {
 
   /*
-   * Complete this test by replacing all __ with actual implementation
+   * Complete this test by replacing all ____ with actual implementation
    */
   test("Everything is expressions") {
     val parsed = try {
@@ -26,7 +26,7 @@ class IntroTest extends FunSuite with ShouldMatchers with ScalakursSupport {
   }
 
   /*
-   * Complete this test by replacing all __ with actual implementation
+   * Complete this test by replacing all ____ with actual implementation
    */
   test("Last expression is always returned") {
     def sayHi(name: String) = {
@@ -43,7 +43,7 @@ class IntroTest extends FunSuite with ShouldMatchers with ScalakursSupport {
   }
 
   /*
-   * Complete this test by replacing all __ with actual implementation
+   * Complete this test by replacing all ____ with actual implementation
    */
   test("Functions are values too") {
     //inferred type for lambda1 and explicit types for parameters
@@ -69,7 +69,7 @@ class IntroTest extends FunSuite with ShouldMatchers with ScalakursSupport {
   }
 
   /*
-   * Complete this test by replacing all __ with actual implementation
+   * Complete this test by replacing all ____ with actual implementation
    */
   test("Higher order functions and composition") {
     val addOne = (x: Int) => x + 1
