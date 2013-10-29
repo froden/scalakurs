@@ -939,6 +939,7 @@ def lastElement[A](list: List[A]) = list.last
 
 //generic mapping function with two type parameters
 def map[A, B](value: A)(func: A => B): B = func(value)
+
 map("Frode".toList)(lastElement)
 //res4: Char = e
 					</code></pre>
