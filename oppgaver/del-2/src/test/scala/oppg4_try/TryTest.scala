@@ -4,7 +4,7 @@ import org.scalatest._
 import oppg4_try.UrlParser._
 import support.ScalakursSupport
 import scala.util.{Try, Failure, Success}
-import java.net.{MalformedURLException, URL}
+import java.net.URL
 import java.io.InputStream
 
 class TryTest extends FunSuite with ShouldMatchers with ScalakursSupport {
@@ -45,10 +45,5 @@ class TryTest extends FunSuite with ShouldMatchers with ScalakursSupport {
       case Success(iterator) => iterator.size should be > 0
       case Failure(_) => ____
     }
-  }
-
-
-  def beFailureWithException(t: Throwable) = {
-    hasSameExceptionMessage(new Failure[URL](t))
   }
 }
