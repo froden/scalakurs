@@ -1172,7 +1172,19 @@ val fullName = for {
 
                 <section>
                   <h1>Try</h1>
-                  Funksjonell feilhåndtering
+                  <h3>Funksjonell feilhåndtering</h3>
+                </section>
+
+                <section>
+                    <h3 style="text-transform: none;"><code>Try[A]</code></h3>
+                    <h3 style="text-transform: none;"><code>Succes[A]&nbsp;&nbsp;&nbsp;Failure[A]</code></h3>
+                    <aside class="notes">
+                        <ul>
+                            <li>Try er en abstrakt type med 2 subtyper:</li>
+                            <li>Success - en Try som inneholder det du er på jakt etter </li>
+                            <li>Failure - en Try som inneholder en evt. Throwable</li>
+                        </ul>
+                    </aside>
                 </section>
 
                 <section>
@@ -1180,11 +1192,6 @@ val fullName = for {
                   Representerer enn kalkulering med resultat av type A
                   <ul><li>Kan resultere i en Success[A] hvis det går bra</li>
                       <li>eller en Failure[A] som wrapper en Throwable</li></ul>
-                  <pre><code class="scala" data-trim contenteditable>
-class Try[A]
-class Success[A] extends Try[A]
-class Failure[A] extends Try[A]
-                  </code></pre>
                 </section>
 
                 <section>
