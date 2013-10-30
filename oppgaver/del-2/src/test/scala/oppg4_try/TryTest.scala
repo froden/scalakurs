@@ -9,11 +9,6 @@ import java.io.InputStream
 
 class TryTest extends FunSuite with ShouldMatchers with ScalakursSupport {
 
-  test("parse an URL") {
-    parseURL("http://www.ntnu.no") should be(Try(new URL("http://www.ntnu.no")))
-    parseURL("xxx://oooops.com") should beFailureWithException(new MalformedURLException("unknown protocol: xxx"))
-  }
-
   test("visit an alternative URL if the first one fails") {
     parseURL("oooops").getOrElse(new URL("http://www.vg.no")) should be(new URL("http://www.vg.no"))
   }
