@@ -9,12 +9,6 @@ import java.io.InputStream
 
 class TryTest extends FunSuite with ShouldMatchers with ScalakursSupport {
 
-  /* Complete these test by replacing ____ with Try(_something_) and ??? with a MalformURLException */
-  test("parse an URL") {
-    parseURL("http://www.ntnu.no") should be(____)
-    parseURL("xxx://oooops.com") should beFailureWithException(???)
-  }
-
   /** replace the ____ in this test with the correct alternative URL */
   test("visit an alternative URL if the first one fails") {
     parseURL("oooops").getOrElse(____) should be(new URL("http://www.vg.no"))
@@ -64,9 +58,4 @@ class TryTest extends FunSuite with ShouldMatchers with ScalakursSupport {
     }
   }
 
-
-
-  def beFailureWithException(t: Throwable) = {
-    hasSameExceptionMessage(new Failure[URL](t))
-  }
 }
