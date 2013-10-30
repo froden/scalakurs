@@ -46,7 +46,7 @@ class OptionsTest extends FunSuite with ShouldMatchers with ScalakursSupport {
   /*
    * Complete the implementation of Options.getGender()
    */
-  test("getGender should return a person's gender or a default value") {
+  test("getGender should return a persons gender or a default value") {
     assert(Options.getGender(Person("Frode", Some("male"))) === "male")
     assert(Options.getGender(Person("Sjur", None)) === "not specified")
   }
