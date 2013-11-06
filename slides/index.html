@@ -1436,6 +1436,95 @@ val consumer = future {
                     </ul>
                 </section>
 
+        <section>
+            <h3>9. okt: Grunnleggende Scala</h3>
+            <h3>30. okt: Funksjonell programmering</h3>
+            <h3><strong>11. nov: Webapp med Scala</strong></h3>
+            <aside class="notes">
+                <ul>
+                    <li>I dag skal vi lage en egen Single Page JS-App</li>
+                    <li>angular.js i front</li>
+                    <li>scala, scalatra og mongoDB backend</li>
+                </ul>
+            </aside>
+        </section>
+
+        <section>
+            <h2>Intro til Scalatra</h2>
+            <p><img src="images/scalatra.png" alt="Scalatra"></p>
+            <ul>
+                <li>Web micro-framework</li>
+                <li>Router HTTP-requests til koden din</li>
+                <li>http://www.scalatra.org/guides/</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Routes</h2>
+            <ul>
+                <li>En scalatra-route er en HTTP-methode </li>
+                <li>(dvs GET,PUT,POST eller DELETE) </li>
+                <li>koblet sammen med en URL-matcher</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Routes eksempel</h2>
+        <pre><code class="scala" data-trim contenteditable>class Articles extends ScalatraServlet {
+
+  get("/articles/:id") {  //  <= dette er en route-matcher
+    // dette er en action
+    // som henter en artikkel med den spesifiserte :id
+  }
+  post("/articles") {
+    // submit/lage en artikkel
+  }
+  put("/articles/:id") {
+    // oppdatere en artikkel med en spesifikk :id
+  }
+  delete("/articles/:id") {
+    // slette en artikkel med en spesifikk :id
+  }
+
+}</code></pre>
+        </section>
+
+        <section>
+            <h2>Action eksempel</h2>
+        <pre><code class="scala" data-trim contenteditable>class Articles extends ScalatraServlet {
+
+  get("/articles/:id") {
+    &lt;html&gt;
+      &lt;body&gt;
+        &lt;p&gt;Ah, article with id {params("id")} is a classic!&lt;/p&gt;
+      &lt;/body&gt;
+    &lt;/html&gt;
+  }
+
+}
+        </code></pre>
+        </section>
+
+        <section>
+            <h2>MongoDB</h2>
+            <p><img src="images/mongodb.jpg" alt="mongoDB"></p>
+            <ul>
+                <li>open source, NoSQL database</li>
+                <li>lagrer JSON-aktige dokumenter</li>
+                <li>kan indeksere på ønsket atributt</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>MongoDB dokument</h2>
+            <pre><code class="json" data-trim contenteditable>{
+    name: "sue",
+    age: 26,
+    status: "A",
+    groups: [ "news", "sports"]
+}
+        </code></pre>
+        </section>
 
             </div>
 
