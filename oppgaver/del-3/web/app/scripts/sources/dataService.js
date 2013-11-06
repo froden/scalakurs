@@ -20,8 +20,8 @@ app.factory('dataService', function($http) {
 
         },
         storeArticle: function(article) {
-            return $http.post('article', article).then(function(res) {
-                return res;
+            return $http.post('article', article).then(function(resp) {
+                return resp.data;
             });
         }
     }
