@@ -1,0 +1,66 @@
+body {
+    background: #fafafa;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: #333;
+}
+
+.title a {
+    text-decoration: none;
+    -webkit-transition: color 0.2s;
+    -moz-transition: color 0.2s;
+    -o-transition: color 0.2s;
+    transition: color 0.2s;
+    color: #4eaacc;
+}
+
+.title a:hover {
+    color: #397b98;
+}
+
+.author {
+    font-weight: 300;
+    color: #788991;
+}
+
+.meta {
+    display: inline-block;
+    border-bottom: 1px solid #ccd3d6;
+}
+
+.fancy {
+    font-family: 'Sentinel SSm A', 'Sentinel SSm B';
+    font-weight: 400;
+    font-style: italic;
+    padding: 0 4px;
+    color: #ccd3d6;
+}
+
+.title {
+    padding: 0;
+    margin: 0;
+}
+
+article ul {
+    list-style-type: none;
+}
+
+article ul li {
+    padding-bottom: 2em;
+}
+
+form {
+    width: 30em;
+    float: left;
+}
+
+article form input, article form textarea {
+    width: 100%
+}
+
+form input {
+    margin-bottom: 0.5em;
+}
+
+form textarea {
+    margin-top: 0.5em;
+}
