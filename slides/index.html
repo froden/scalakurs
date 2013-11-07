@@ -730,13 +730,161 @@ res0: Boolean = true
                 </section>
 
                 <section>
-                    <h2>SBT</h2>
+                    <h1>Repetisjon</h1>
+                    <h3>(og litt nytt)</h3>
+                    <aside class="notes">
+                        <ul>
+                            <li></li>
+                        </ul>
+                    </aside>
+                </section>
+
+                <section>
+                    <h2>Variabler og metoder</h2>
+                    <pre><code class="scala" data-trim contenteditable>
+//immutable value, type inferred
+val name = "Frode"
+
+//immutable value with type
+val name2: String = "Frode"
+
+//method
+def sayHiTo(name: String) = s"Hi $name"
+
+//method with explicit return type
+def add(a: Int, b:Int): Int = a + b
+					</code></pre>
+                    <aside class="notes">
+                        <ul>
+                            <li></li>
+                        </ul>
+                    </aside>
+                </section>
+
+                <section>
+                    <h2>Alt er expressions</h2>
+                    <pre><code class="scala" data-trim contenteditable>
+//result of last expression is returned
+val date = {
+  println("getting the date")
+  new Date()
+}
+
+//if is an expression
+def checkLength(str: String) = if (str.length < 50) "ok" else "too long"
+
+//try catch is an expression
+val head = try {
+  Source.fromFile("app.log").getLines().take(10)
+} catch {
+  case _: IOException => List()
+}
+					</code></pre>
+                    <aside class="notes">
+                        <ul>
+                            <li></li>
+                        </ul>
+                    </aside>
+                </section>
+
+                <section>
+                    <h2>Funksjoner er verdier</h2>
+                    <pre><code class="scala" data-trim contenteditable>
+//function value
+val add = (a: Int, b: Int) => a + b
+
+//convert method to function
+val replaceAll = "Frode".replaceAll _
+replaceAll("e", "3")
+//res0: String = Frod3
+
+//functions as arguments
+def combine(a: Int, b: Int, func: (Int, Int) => Int) = func(a, b)
+
+combine(2, 3, (x, y) => x * y))
+//res1: Int = 6
+					</code></pre>
+                    <aside class="notes">
+                        <ul>
+                            <li></li>
+                        </ul>
+                    </aside>
+                </section>
+
+                <section>
+                    <h2>Klasser og objekter</h2>
+                    <pre><code class="scala" data-trim contenteditable>
+class Person(val name: String, val age: Int) {
+  override def toString = name + " " + age
+}
+
+//object with apply factory method
+object Person {
+  def apply(name: String, age: Int) = new Person(name, age)
+}
+
+Person("Frode", 33)
+//res2: Person = Frode 33
+					</code></pre>
+                    <aside class="notes">
+                        <ul>
+                            <li></li>
+                        </ul>
+                    </aside>
+                </section>
+
+                <section>
+                    <h2>case class og pattern matching</h2>
+                    <pre><code class="scala" data-trim contenteditable>
+trait Tree
+
+case class Node(left: Tree, right: Tree) extends Tree
+case class Leaf(value: String) extends Tree
+
+Node(Leaf("left"), Leaf("right")) match {
+  case Node(_, Leaf(value)) => "right tree was leaf with value " + value
+  case Node(_, right) => "right was " + right
+}
+//res3: String = right tree was leaf with value right
+					</code></pre>
+                    <aside class="notes">
+                        <ul>
+                            <li></li>
+                        </ul>
+                    </aside>
+                </section>
+
+                <section>
+                    <h2>Generics</h2>
+                    <p>Som i Java, men med [T] i stedet for &lt;T&gt;</p>
+                    <pre><code class="scala" data-trim contenteditable>
+//value of generic type List with type argument String
+val names: List[String] = List("Arild", "Sjur", "Frode")
+
+//generic method with one type parameter
+def lastElement[A](list: List[A]) = list.last
+
+//generic mapping function with two type parameters
+def map[A, B](value: A)(func: A => B): B = func(value)
+
+map("Frode".toList)(lastElement)
+//res4: Char = e
+					</code></pre>
+                    <aside class="notes">
+                        <ul>
+                            <li></li>
+                        </ul>
+                    </aside>
+                </section>
+
+                <section>
+                    <h1>SBT</h1>
                     <h3><a href="http://www.scala-sbt.org/">Simple Build Tool</a></h3>
                     <h4>Byggeverktøy for Scala og Java</h4>
                 </section>
 
                 <section>
-                    <h3>SBT</h3>
+                    <h2>SBT</h2>
                     <ul>
                         <li>Enkel konfig for enkle prosjekter</li>
                         <li>Fleksibel konfig i Scalakode for avanserte prosjekter</li>
@@ -752,7 +900,7 @@ res0: Boolean = true
                 </section>
 
                 <section>
-                    <h3>Kom i gang med SBT</h3>
+                    <h2>Kom i gang med SBT</h2>
                     <h4 style="text-align: left;">Start SBT interaktivt</h4>
                     <pre><code class="bash" data-trim contenteditable>
 $ cd scalakurs/oppgaver/del-2
@@ -784,7 +932,7 @@ $ ./sbt
                 </section>
 
                 <section>
-                    <h3>Eclipse og IntelliJ</h3>
+                    <h2>Eclipse og IntelliJ</h2>
                     <h4 style="text-align: left;">Generer prosjektfiler for Eclipse</h4>
                     <pre><code class="bash" data-trim contenteditable>
 > eclipse
@@ -803,163 +951,18 @@ $ ./sbt
                 </section>
 
                 <section>
-                    <h2>Repetisjon</h2>
-                    <h3>(og litt nytt)</h3>
-                    <aside class="notes">
-                        <ul>
-                            <li></li>
-                        </ul>
-                    </aside>
-                </section>
-
-                <section>
-                    <h3>Variabler og metoder</h3>
-                    <pre><code class="scala" data-trim contenteditable>
-//immutable value, type inferred
-val name = "Frode"
-
-//immutable value with type
-val name2: String = "Frode"
-
-//method
-def sayHiTo(name: String) = s"Hi $name"
-
-//method with explicit return type
-def add(a: Int, b:Int): Int = a + b
-					</code></pre>
-                    <aside class="notes">
-                        <ul>
-                            <li></li>
-                        </ul>
-                    </aside>
-                </section>
-
-                <section>
-                    <h3>Alt er expressions</h3>
-                    <pre><code class="scala" data-trim contenteditable>
-//result of last expression is returned
-val date = {
-  println("getting the date")
-  new Date()
-}
-
-//if is an expression
-def checkLength(str: String) = if (str.length < 50) "ok" else "too long"
-
-//try catch is an expression
-val head = try {
-  Source.fromFile("app.log").getLines().take(10)
-} catch {
-  case _: IOException => List()
-}
-					</code></pre>
-                    <aside class="notes">
-                        <ul>
-                            <li></li>
-                        </ul>
-                    </aside>
-                </section>
-
-                <section>
-                    <h3>Funksjoner er verdier</h3>
-                    <pre><code class="scala" data-trim contenteditable>
-//function value
-val add = (a: Int, b: Int) => a + b
-
-//convert method to function
-val replaceAll = "Frode".replaceAll _
-replaceAll("e", "3")
-//res0: String = Frod3
-
-//functions as arguments
-def combine(a: Int, b: Int, func: (Int, Int) => Int) = func(a, b)
-
-combine(2, 3, (x, y) => x * y))
-//res1: Int = 6
-					</code></pre>
-                    <aside class="notes">
-                        <ul>
-                            <li></li>
-                        </ul>
-                    </aside>
-                </section>
-
-                <section>
-                    <h3>Klasser og objekter</h3>
-                    <pre><code class="scala" data-trim contenteditable>
-class Person(val name: String, val age: Int) {
-  override def toString = name + " " + age
-}
-
-//object with apply factory method
-object Person {
-  def apply(name: String, age: Int) = new Person(name, age)
-}
-
-Person("Frode", 33)
-//res2: Person = Frode 33
-					</code></pre>
-                    <aside class="notes">
-                        <ul>
-                            <li></li>
-                        </ul>
-                    </aside>
-                </section>
-
-                <section>
-                    <h3>case class og pattern matching</h3>
-                    <pre><code class="scala" data-trim contenteditable>
-trait Tree
-
-case class Node(left: Tree, right: Tree) extends Tree
-case class Leaf(value: String) extends Tree
-
-Node(Leaf("left"), Leaf("right")) match {
-  case Node(_, Leaf(value)) => "right tree was leaf with value " + value
-  case Node(_, right) => "right was " + right
-}
-//res3: String = right tree was leaf with value right
-					</code></pre>
-                    <aside class="notes">
-                        <ul>
-                            <li></li>
-                        </ul>
-                    </aside>
-                </section>
-
-                <section>
-                    <h3>Generics</h3>
-                    <p>Som i Java, men med [T] i stedet for &lt;T&gt;</p>
-                    <pre><code class="scala" data-trim contenteditable>
-//value of generic type List with type argument String
-val names: List[String] = List("Arild", "Sjur", "Frode")
-
-//generic method with one type parameter
-def lastElement[A](list: List[A]) = list.last
-
-//generic mapping function with two type parameters
-def map[A, B](value: A)(func: A => B): B = func(value)
-
-map("Frode".toList)(lastElement)
-//res4: Char = e
-					</code></pre>
-                    <aside class="notes">
-                        <ul>
-                            <li></li>
-                        </ul>
-                    </aside>
-                </section>
-
-
-                <section>
                     <h2>Oppgaver</h2>
                     <img height="100" src="images/puzzle.jpg" alt="oppgaver"><br>
                     Oppgaver: <a href="http://git.io/zLhs5Q">http://git.io/zLhs5Q</a><br>
-                    Slides: <a href="http://froden.github.io/scalakurs/#/35">http://froden.github.io/scalakurs</a>
+                    Slides: <a href="http://froden.github.io/scalakurs/#/36">http://froden.github.io/scalakurs</a>
                 </section>
 
                 <section>
                     <h1>For comprehensions</h1>
+                </section>
+
+                <section>
+                    <h2>For comprehensions</h2>
                     <pre><code class="scala" data-trim contenteditable>
 def even(from: Int, to: Int): List[Int] =
   for (i <- List.range(from, to) if i % 2 == 0) yield i
