@@ -20,7 +20,7 @@ Siden compilering og kjøring av tester kan gjøres med SBT er det ingenting i v
 
 ### Last ned kildekoden og sbt-avhengigheter
 
-    git clone git@github.com:froden/scalakurs.git
+    git clone https://github.com/froden/scalakurs.git
     cd scalakurs/oppgaver/del-2
     ./sbt test
     
