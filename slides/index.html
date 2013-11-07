@@ -1276,16 +1276,16 @@ println(s"Hurra jeg fikk kjøpt ${produkt.get}")
                 </section>
 
                 <section>
-                    <h1>Futures and Promises</h1>
+                    <h1>Futures og Promises</h1>
                     <ul>
-                        <li class="fragment">SIP-14 - redesign of scala.concurrent</li>
-                        <li class="fragment">Introduced in Scala 2.10</li>
-                        <li class="fragment">Placeholder object for a result that does not yet exist</li>
+                        <li class="fragment">SIP-14 - redesign av scala.concurrent</li>
+                        <li class="fragment">Introdusert i Scala 2.10</li>
+                        <li class="fragment">Placeholder objekt for et resultat som ennå ikke eksisterer</li>
                     </ul>
                 </section>
 
                 <section>
-                    <h2>SIP-14 definition</h2>
+                    <h2>SIP-14 definisjon</h2>
 
                     <div class="fragment">
                         <blockquote width="900" cite="http://skillsmatter.com/podcast/scala/the-future-i-was-promised">A Future
@@ -1327,7 +1327,7 @@ hello future!</code></pre>
                 </section>
 
                 <section>
-                    <h2>Basic Operations on Futures</h2>
+                    <h2>Grunnleggende operasjoner på Futures</h2>
 
                     <div class="fragment">
             <pre><code>//Asynchronously processes the value in
@@ -1350,7 +1350,7 @@ def filter(p: T => Boolean): Future[T]</code></pre>
                 </section>
 
                 <section>
-                    <h2>Error handling</h2>
+                    <h2>Feilhåndtering</h2>
 
                     <div class="fragment">
 <pre><code>val riskyRes = future { riskyWork() }
@@ -1363,7 +1363,7 @@ val finalRes = riskyRes recoverWith {
                 </section>
 
                 <section>
-                    <h2>Futures are composeable</h2>
+                    <h2>Futures er composeable</h2>
                     <div class="fragment">
     <pre><code>val keys = future { readFile("keys.txt") }
 val values = future { readFile("values.txt") }
@@ -1399,14 +1399,14 @@ Await.result(hashMap, Duration.Inf)</code></pre>
                 <section>
                     <h2>"Futures" vs. "Promises"</h2>
                     <ul>
-                        <li class="fragment">"Future", "promise", "delay" and "deferred" used interchangeably</li>
-                        <li class="fragment">Complementary primitives</li>
-                        <li class="fragment">"Promise" exclusively used in the JavaScript world</li>
+                        <li class="fragment">"Future", "promise", "delay" og "deferred" brukes om hverandre</li>
+                        <li class="fragment">Komplementære primitiver</li>
+                        <li class="fragment">JavaScript-verden bruker kun "Promise"</li>
                     </ul>
                 </section>
 
                 <section>
-                    <h2>Producer Consumer Example</h2>
+                    <h2>Producer Consumer Eksempel</h2>
 
                     <div class="fragment">
 <pre><code>val p = promise[T]
@@ -1428,13 +1428,17 @@ val consumer = future {
                 </section>
 
                 <section>
-                    <h2>Resources</h2>
+                    <h2>Ressurser</h2>
                     <ul>
                         <li><a href="http://docs.scala-lang.org/overviews/core/futures.html">Scala Documentation - Futures and Promises</a></li>
                         <li><a href="http://skillsmatter.com/podcast/scala/the-future-i-was-promised">Scala Days 2012 - The Future I was Promised</a></li>
                         <li><a href="http://domenic.me/2012/10/14/youre-missing-the-point-of-promises/">You're Missing the Point of Promises</a></li>
                     </ul>
                 </section>
+
+		<section>
+                    <h2>Takk for innsatsen, folkens!</h2>
+               </section>
 
         <section>
             <h3>9. okt: Grunnleggende Scala</h3>
