@@ -1,15 +1,22 @@
 package scalakurs
 
+import org.slf4j.LoggerFactory
+
 
 class ArticlesController extends ScalakursbloggStack {
 
+  val log = LoggerFactory.getLogger(getClass)
+
+  /**
+   * ArticlesController is mounted under /articles so the root path here will be /articles/
+   */
   get("/") {
-    <html>
-      <body>
-        <h1>Hello, world!</h1>
-        Say <a href="hello-scalate">hello to Scalate</a>.
-      </body>
-    </html>
+
   }
-  
+
+  post("/echo") {
+    val message = parsedBody.extract[Echo]
+    log.info("Got message: " + message)
+    message
+  }
 }
