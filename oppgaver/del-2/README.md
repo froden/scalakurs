@@ -6,7 +6,7 @@
 
 #### Eclipse
 
-* [Scala IDE for Eclipse bundle](http://scala-ide.org/download/sdk.html) (anbefales)
+* [Scala IDE for Eclipse bundle](http://scala-ide.org/download/sdk.html)
 * [Scala IDE for Eclipse plugin](http://scala-ide.org/download/current.html)
 * [ScalaTest plugin](https://github.com/scalatest/scalatest-eclipse-plugin)
 
