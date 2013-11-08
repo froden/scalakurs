@@ -18,14 +18,14 @@ class ArticlesControllerTest extends ScalatraFlatSpec with ShouldMatchers{
   val db = mongoClient("blog-test")
   val articles = db("articles")
 
-  addServlet(new ArticlesController(articles), "/*")
+  addFilter(new ArticlesController(articles), "/articles/*")
 
   val jsonContentType = "Content-Type" -> "application/json"
 
   "ArticlesController" should "have an echo path that responds to a echo json message" in {
     val message = Echo("Looking good!")
 
-    post("/echo", body = write(message).getBytes, headers = Map(jsonContentType)) {
+    post("/articles/echo", body = write(message).getBytes, headers = Map(jsonContentType)) {
       status must be(200)
       fromJson[Echo](body) must equal(message)
     }

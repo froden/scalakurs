@@ -4,7 +4,7 @@ import org.scalatra._
 import org.scalatra.json.JacksonJsonSupport
 import org.json4s.{DefaultFormats, Formats}
 
-trait ScalakursbloggStack extends ScalatraServlet with JacksonJsonSupport {
+trait ScalakursbloggStack extends ScalatraFilter with JacksonJsonSupport {
 
   protected implicit val jsonFormats: Formats = DefaultFormats
 
@@ -13,7 +13,6 @@ trait ScalakursbloggStack extends ScalatraServlet with JacksonJsonSupport {
   }
 
   notFound {
-    contentType = null
-    NotFound
+    status = 404
   }
 }

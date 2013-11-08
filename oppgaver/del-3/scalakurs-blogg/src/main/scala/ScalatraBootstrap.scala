@@ -10,6 +10,6 @@ class ScalatraBootstrap extends LifeCycle {
     val db = mongoClient("blog")
     val articles = db("articles")
 
-    context.mount(new ArticlesController(articles), "/*")
+    context.mount(new ArticlesController(articles), "/articles/*")
   }
 }

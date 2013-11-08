@@ -26,16 +26,14 @@ class ArticlesController(articles: MongoCollection) extends ScalakursbloggStack 
       case None => BadRequest
       case Some(article) => Created(article)
     }
-
   }
 
-  post("/echo") {
+  post("/articles/echo") {
     val message = parsedBody.extract[Echo]
     log.info("Got message: " + message)
     message
   }
 
-  def toArticle(obj: DBObject) = mongoToJs(obj).extractOpt[Article]
   def jsToMongo(value: JValue): DBObject = JObjectParser.parse(value)
   def mongoToJs(obj: Any): JValue = JObjectParser.serialize(obj)
 }
