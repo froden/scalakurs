@@ -15,7 +15,7 @@ function MainController($scope, dataService) {
                 $scope.articles.push(article);
             },
             function() {
-                showError('failed storing article');
+                showError('feil ved lagring av artikkel');
             }
         );
     }

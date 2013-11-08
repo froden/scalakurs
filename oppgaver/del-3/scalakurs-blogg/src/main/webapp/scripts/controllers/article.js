@@ -3,19 +3,36 @@
 function ArticleController($scope, $routeParams, dataService) {
     $scope.showError = false;
     $scope.article = dataService.getArticle(0);
+    $scope.comments = dataService.getComments(0);
 
     function showError(message) {
         $scope.showError = true;
         $scope.errorMessage = message;
     }
 
-    $scope.deleteArticle = function(article) {
-        dataService.storeArticle(article).then(
+    $scope.showArticleEdit = false;
+    $scope.toggleShowArticleEdit = function() {
+        $scope.showArticleEdit = !$scope.showArticleEdit;
+    }
+
+    $scope.delete = function(article) {
+        dataService.deleteArticle(article.id).then(
             function() {
-                $scope.articles.push(article);
+
             },
             function() {
-                showError('failed storing article');
+                showError('feil ved sletting av artikkel');
+            }
+        );
+    }
+
+    $scope.update = function(article) {
+        dataService.updateArticle(article).then(
+            function() {
+
+            },
+            function() {
+                showError('feil ved oppdatering av artikkel');
             }
         );
     }

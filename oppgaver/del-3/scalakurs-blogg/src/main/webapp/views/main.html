@@ -4,6 +4,10 @@
         <a href="#" class="close" data-dismiss="alert">&times;</a>
         <strong>{{errorMessage}}</strong>
     </div>
+    <div class="alert alert-warning" ng-show="showError">
+        <a href="#" class="close" data-dismiss="alert">&times;</a>
+        <strong>{{errorMessage}}</strong>
+    </div>
 
     <ul>
         <li ng-repeat="article in articles">
@@ -18,11 +22,11 @@
     </ul>
 
     <form class="navbar-form navbar-left" role="search">
+        <button type="submit" class="btn btn-default" ng-click="submitArticle(article)">Legg til artikkel</button>
         <div class="form-group">
             <input type="text" class="form-control" placeholder="Forfatter" ng-model="article.author">
             <input type="text" class="form-control" placeholder="Tittel" ng-model="article.title">
             <textarea class="form-control" rows="3" placeholder="Innhold" ng-model="article.content"/>
         </div>
-        <button type="submit" class="btn btn-default" ng-click="submitArticle(article)">Legg til artikkel</button>
     </form>
 </article>

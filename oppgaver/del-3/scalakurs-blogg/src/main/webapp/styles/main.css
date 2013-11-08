@@ -18,7 +18,7 @@ header h3 {
     line-height: 2.5em;
 }
 
-.alert-danger, .alert-error {
+.alert {
     overflow: hidden;
 }
 
@@ -97,11 +97,63 @@ form textarea {
 }
 
 article .content {
-    font-size: 13px;
+    font-size: 14px;
     line-height: 1.65em;
     font-weight: 400;
+    padding-top: 1em;
 }
 
-article.article .meta {
-    margin: 0.5em 0 1.5em 0;
+article .article {
+    padding-bottom: 2.5em;
+    border-bottom: 1px solid #ccd3d6;
 }
+
+article .article .meta {
+    margin: 0.5em 0 0 0;
+}
+
+textarea {
+    height: 200px;
+}
+
+article .article .buttons {
+    padding-top: .5em;
+}
+
+.buttons {
+    width: 100%;
+    overflow: hidden;
+}
+
+.article button {
+    float: right;
+}
+
+.comments {
+    padding-top: 2em;
+    font-size: 12px !important;
+}
+
+.comments .content {
+    padding: 0;
+    margin: 0;
+    border-bottom: none;
+}
+
+.comments h4 {
+    margin: 0 0 10px 25px;
+    font-weight: 300;
+    color: #788991
+}
+
+.comments li {
+    padding: 0;
+    margin: 0;
+    width: 90%;
+}
+
+.comments li .meta {
+    margin: 0 0 2em 0;
+    border-bottom: none;
+}
+

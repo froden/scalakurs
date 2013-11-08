@@ -1,30 +1,55 @@
 
-<article class="article">
+<article>
     <div class="alert alert-error" ng-show="showError">
         <a href="#" class="close" data-dismiss="alert">&times;</a>
         <strong>{{errorMessage}}</strong>
     </div>
-
-    <h2 class="title">
-        {{article.title}}
-    </h2>
-    <div class="meta">
-        <span class="fancy">av</span>
-        <span class="author">{{article.author}}</span>
+    <div class="alert alert-warning" ng-show="showWarning">
+        <a href="#" class="close" data-dismiss="alert">&times;</a>
+        <strong>{{warningMessage}}</strong>
     </div>
-    <p class="content">
-        {{article.content}}
-    </p>
 
-    <!--<ul>-->
-        <!--<li ng-repeat="article in articles">-->
-            <!--<h3 class="title">-->
-                <!--<a href="#" class="linkColor">{{article.title}}</a>-->
-            <!--</h3>-->
-            <!--<div class="meta">-->
-                <!--<span class="fancy">by</span>-->
-                <!--<span class="author">{{article.author}}</span>-->
-            <!--</div>-->
-        <!--</li>-->
-    <!--</ul>-->
+    <div class="article">
+        <h2 class="title">
+            {{article.title}}
+        </h2>
+        <div class="meta">
+            <span class="fancy">av</span>
+            <span class="author">{{article.author}}</span>
+        </div>
+        <p class="content">
+            {{article.content}}
+        </p>
+
+        <div class="buttons" class="btn-group">
+            <button class="btn" ng-click="delete(article)">Slett artikkel</button>
+            <button class="btn" ng-click="toggleShowArticleEdit()" >Editer artikkel</button>
+        </div>
+
+        <div class="buttons" class="btn-group" ng-show="showArticleEdit">
+            <form class="navbar-form navbar-left" role="search">
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Forfatter" ng-model="article.author">
+                    <input type="text" class="form-control" placeholder="Tittel" ng-model="article.title">
+                    <textarea class="form-control" rows="3" placeholder="Innhold" ng-model="article.content"/>
+                </div>
+                <button type="submit" class="btn btn-default" ng-click="update(article)">Oppdater</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="comments">
+        <h4>Kommentarer</h4>
+        <ul>
+            <li ng-repeat="comment in comments">
+                <p class="content">
+                    {{comment.content}}
+                </p>
+                <div class="meta">
+                    <span class="fancy">by</span>
+                    <span class="author">{{comment.author}}</span>
+                </div>
+            </li>
+        </ul>
+    </div>
 </article>

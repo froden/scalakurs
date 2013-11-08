@@ -47,8 +47,18 @@ app.factory('dataService', function($http) {
                 }
             }
         },
-        getComments: function(article) {
-            if (article.id == 0) {
+        deleteArticle: function(id) {
+            return $http.delete('/articles/' + id).then(function(resp) {
+                return resp.data;
+            })
+        },
+        updateArticle: function(article) {
+            return $http.put('/articles/' + article.id, article).then(function(resp) {
+                return resp.data;
+            })
+        },
+        getComments: function(articleId) {
+            if (articleId == 0) {
                 return [
                     {
                         content: 'Snekkeren børstet servitøren rett. De så aspiranten som ropte sjokkert bak en statue. En sjørøver gjenopplivde en helt rett. Da felte tyskeren ei jente høflig. 500 bjørner filosoferte en mørkegrønn propell på syv dager.',
@@ -60,7 +70,7 @@ app.factory('dataService', function($http) {
                     }
                 ];
             }
-            else if (article.id == 1) {
+            else if (articleId == 1) {
                 return [
                     {
                         content: 'De så tanta som kjørte treffsikkert ganske nært en gradestokk. Da børstet tjukkasen en sjørøver fint. Sjefstyskeren spant fisken, laksen og brasilianerene.',
@@ -69,7 +79,7 @@ app.factory('dataService', function($http) {
                 ];
             }
 
-            return $http.get('/articles/' + article.id  + '/comments').then(function(resp) {
+            return $http.get('/articles/' + articleId  + '/comments').then(function(resp) {
                 return resp.data;
             })
         }
