@@ -6,7 +6,7 @@ import org.json4s.jackson.Serialization._
 import org.json4s._
 import org.json4s.jackson.JsonMethods._
 import org.slf4j.LoggerFactory
-
+import com.mongodb.casbah.Imports._
 
 class ArticlesControllerTest extends ScalatraFlatSpec with ShouldMatchers{
 
@@ -14,7 +14,11 @@ class ArticlesControllerTest extends ScalatraFlatSpec with ShouldMatchers{
 
   implicit val jsonFormats = DefaultFormats
 
-  addServlet(new ArticlesController, "/articles/*")
+  val mongoClient = MongoClient()
+  val db = mongoClient("blog-test")
+  val articles = db("articles")
+
+  addFilter(new ArticlesController(articles), "/articles/*")
 
   val jsonContentType = "Content-Type" -> "application/json"
 
@@ -24,6 +28,31 @@ class ArticlesControllerTest extends ScalatraFlatSpec with ShouldMatchers{
     post("/articles/echo", body = write(message).getBytes, headers = Map(jsonContentType)) {
       status must be(200)
       fromJson[Echo](body) must equal(message)
+    }
+  }
+
+  it should "store a new article" in {
+    articles.drop()
+    val article = Article("Cool article")
+
+    post("/articles", body = write(article).getBytes, headers = Map(jsonContentType)) {
+      status must be(201)
+      fromJson[Article](body) must equal(Article("Cool article"))
+    }
+  }
+
+  it should "list all articles" in {
+    articles.drop()
+    val article = Article("Cool article")
+
+    post("/articles", body = write(article).getBytes, headers = Map(jsonContentType)) {
+      status must be(201)
+      fromJson[Article](body) must equal(Article("Cool article"))
+    }
+
+    get("/articles") {
+      status must be(200)
+      fromJson[List[Article]](body) must equal(List(Article("Cool article")))
     }
   }
 
