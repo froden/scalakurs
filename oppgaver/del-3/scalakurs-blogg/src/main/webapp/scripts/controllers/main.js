@@ -2,7 +2,15 @@
 
 function MainController($scope, dataService) {
     $scope.showError = false;
-    $scope.articles = dataService.geArticles();
+
+    dataService.getAllArticles().then(
+        function(articles) {
+            $scope.articles = articles;
+        },
+        function() {
+            showError('feil ved henting av artikler');
+        }
+    );;
 
     function showError(message) {
         $scope.showError = true;
@@ -10,7 +18,7 @@ function MainController($scope, dataService) {
     }
 
     $scope.submitArticle = function(article) {
-        dataService.storeArticle(article).then(
+        dataService.addArticle(article).then(
             function() {
                 $scope.articles.push(article);
             },

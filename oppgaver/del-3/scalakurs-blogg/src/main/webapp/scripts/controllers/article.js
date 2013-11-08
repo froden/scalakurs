@@ -5,6 +5,10 @@ function ArticleController($scope, $routeParams, dataService) {
     $scope.article = dataService.getArticle(0);
     $scope.comments = dataService.getComments(0);
 
+    $scope.hideError = function() {
+        $scope.showError = false;
+    }
+
     function showError(message) {
         $scope.showError = true;
         $scope.errorMessage = message;
@@ -15,7 +19,7 @@ function ArticleController($scope, $routeParams, dataService) {
         $scope.showArticleEdit = !$scope.showArticleEdit;
     }
 
-    $scope.delete = function(article) {
+    $scope.deleteArticle = function(article) {
         dataService.deleteArticle(article.id).then(
             function() {
 
@@ -26,13 +30,39 @@ function ArticleController($scope, $routeParams, dataService) {
         );
     }
 
-    $scope.update = function(article) {
+    $scope.updateArticle = function(article) {
         dataService.updateArticle(article).then(
             function() {
-
+//                _.find($scope.articles, function(current) {
+//                    return current.id == article.id;
+//                })
             },
             function() {
                 showError('feil ved oppdatering av artikkel');
+            }
+        );
+}
+
+    $scope.deleteAllComments = function(article) {
+        dataService.deleteAllComments(article.id).then(
+            function() {
+                $scope.comments = [];
+            },
+            function() {
+                showError('feil ved sletting av alle kommentarer');
+                $(window).scrollTop(0);
+            }
+        );
+    }
+
+    $scope.addComment = function(comment) {
+        dataService.addComment(comment).then(
+            function(commentWithId) {
+                $scope.comments.push(commentWithId);
+                $(window).scrollTop(0);
+            },
+            function() {
+                showError('feil ved lagring av kommentar');
             }
         );
     }
