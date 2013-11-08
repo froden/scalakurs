@@ -4,3 +4,17 @@ object ForComp extends App {
 
   println(even(0, 20))
 }
+
+object ForComp2 {
+
+  val firstName: Option[String] = Some("Frode")
+  val lastName: Option[String] = Some("Nerbråten")
+
+  val fullName = firstName.flatMap(first => lastName.map(last => first + " " + last))
+
+  val fullName2 = for {
+    first <- firstName
+    last <- lastName
+  } yield first + " " + last
+
+}
