@@ -1,3 +1,4 @@
+import scala.io.Source
 import scala.util.{Success, Failure, Try}
 
 object TryEx extends App {
@@ -38,4 +39,13 @@ val produkt = kjøpSigg(ungKunde) recover {
 }
 println(s"Hurra jeg fikk kjøpt ${produkt.get}")
 
+}
+
+object TryEx3 extends App {
+val keyValues = for {
+  keys <- Try(Source.fromFile("keys.txt").getLines())
+  values <- Try(Source.fromFile("values.txt").getLines())
+} yield keys zip values toMap
+
+val result: Map[String, String] = keyValues.getOrElse(Map())
 }

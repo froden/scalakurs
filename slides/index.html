@@ -1183,16 +1183,14 @@ val fullName = for {
                         <ul>
                             <li>Try er en abstrakt type med 2 subtyper:</li>
                             <li>Success - en Try som inneholder det du er på jakt etter </li>
-                            <li>Failure - en Try som inneholder en evt. Throwable</li>
+                            <li>Failure - en Try som inneholder en Throwable</li>
+                            <li>Ligner på Option</li>
+                            <li>Brukes når du også vil si hvorfor noe feilet</li>
+                            <li>Samme som en right biased Either der left er satt til Throwable</li>
+                            <li>Option er en monad dvs vi kan mappe og flatmappe over den</li>
+                            <li>Og den er exception safe. Ingen operasjoner på en try vil resultere i at en exception lekker ut - Failure</li>
                         </ul>
                     </aside>
-                </section>
-
-                <section>
-                  <h2>Minner mye om Option</h2>
-                  Representerer enn kalkulering med resultat av type A
-                  <ul><li>Kan resultere i en Success[A] hvis det går bra</li>
-                      <li>eller en Failure[A] som wrapper en Throwable</li></ul>
                 </section>
 
                 <section>
@@ -1265,6 +1263,25 @@ val produkt = kjøpSigg(ungKunde) recover {
 println(s"Hurra jeg fikk kjøpt ${produkt.get}")
                   </code></pre></div>
                   </section>
+
+                <section>
+                  <h2>Success biased</h2>
+                  <pre><code class="scala" data-trim contenteditable>
+val keyValues = for {
+  keys <- Try(Source.fromFile("keys.txt").getLines())
+  values <- Try(Source.fromFile("values.txt").getLines())
+} yield keys zip values toMap
+
+val result: Map[String, String] = keyValues.getOrElse(Map())
+                  </code></pre>
+                    <aside class="notes">
+                        <ul>
+                            <li>map, flatmap jobber med sucess-delen</li>
+                            <li>Feilures propageres automatisk</li>
+                            <li>Fail-fast</li>
+                        </ul>
+                    </aside>
+                </section>
 
                 <section>
                   <h2>Jobbe med Try</h2>
