@@ -51,11 +51,21 @@ class ArticlesControllerTest extends ScalatraFlatSpec with ShouldMatchers{
   it should "get a single article" in {
     articles.drop()
     val created = createArticle(newArticle)
-    println(created._id)
 
     get("/articles/" + created._id.get) {
       status must be(200)
       fromJson[Article](body) must equal(created)
+    }
+  }
+
+  it should "comment on an article" in {
+    articles.drop()
+    val created = createArticle(newArticle)
+
+    val comment = Comment("frode", "my comment")
+    post("/articles/" + created._id.get + "/comments", body = write(comment).getBytes, headers = Map(jsonContentType)) {
+      status must be(200)
+      fromJson[Article](body) must equal(created.copy(comments = List(comment)))
     }
   }
 

@@ -15,12 +15,22 @@ class ArticlesController(articles: MongoCollection) extends ScalakursbloggStack 
    * ArticlesController is mounted under /articles so the root path here will be /articles/
    */
   get("/articles") {
-    articles.find() map toArticle toList
+    articles.find().map(toArticle).toList
   }
 
   get("/articles/:id") {
     val query = MongoDBObject("_id" -> new ObjectId(params("id")))
     articles.findOne(query) map toArticle
+  }
+
+  post("/articles/:id/comments") {
+    parsedBody.extractOpt[Comment].flatMap { comment =>
+      val doc = jsToMongo(Extraction.decompose(comment))
+      val query = MongoDBObject("_id" -> new ObjectId(params("id")))
+      val update = $addToSet("comments" -> doc)
+      articles.update(query, update)
+      articles.findOne(query) map toArticle
+    }
   }
 
   post("/articles") {
