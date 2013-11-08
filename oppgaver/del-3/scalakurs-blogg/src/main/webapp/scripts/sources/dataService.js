@@ -20,7 +20,7 @@ app.factory('dataService', function($http) {
 //            ];
 
             return $http.get('/articles').then(function(res) {
-                return res;
+                return res.data;
             });
 
         },

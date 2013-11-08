@@ -22,6 +22,8 @@ class ArticlesControllerTest extends ScalatraFlatSpec with ShouldMatchers{
 
   val jsonContentType = "Content-Type" -> "application/json"
 
+  val validArticle = Article("Frode", "Cool article", "Hei på deg")
+
   "ArticlesController" should "have an echo path that responds to a echo json message" in {
     val message = Echo("Looking good!")
 
@@ -33,26 +35,22 @@ class ArticlesControllerTest extends ScalatraFlatSpec with ShouldMatchers{
 
   it should "store a new article" in {
     articles.drop()
-    val article = Article("Cool article")
-
-    post("/articles", body = write(article).getBytes, headers = Map(jsonContentType)) {
+    post("/articles", body = write(validArticle).getBytes, headers = Map(jsonContentType)) {
       status must be(201)
-      fromJson[Article](body) must equal(Article("Cool article"))
+      fromJson[Article](body) must equal(validArticle)
     }
   }
 
   it should "list all articles" in {
     articles.drop()
-    val article = Article("Cool article")
-
-    post("/articles", body = write(article).getBytes, headers = Map(jsonContentType)) {
+    post("/articles", body = write(validArticle).getBytes, headers = Map(jsonContentType)) {
       status must be(201)
-      fromJson[Article](body) must equal(Article("Cool article"))
+      fromJson[Article](body) must equal(validArticle)
     }
 
     get("/articles") {
       status must be(200)
-      fromJson[List[Article]](body) must equal(List(Article("Cool article")))
+      fromJson[List[Article]](body) must equal(List(validArticle))
     }
   }
 
