@@ -1,15 +1,15 @@
 'use strict';
 
-function MainController($scope, dataService) {
+function ArticleController($scope, $routeParams, dataService) {
     $scope.showError = false;
-    $scope.articles = dataService.geArticles();
+    $scope.article = dataService.getArticle(0);
 
     function showError(message) {
         $scope.showError = true;
         $scope.errorMessage = message;
     }
 
-    $scope.submitArticle = function(article) {
+    $scope.deleteArticle = function(article) {
         dataService.storeArticle(article).then(
             function() {
                 $scope.articles.push(article);

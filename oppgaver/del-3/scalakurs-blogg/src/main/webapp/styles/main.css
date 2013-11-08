@@ -1,7 +1,38 @@
-body {
+
+body, header {
+    font-family: 'Gotham Rounded A', 'Gotham Rounded B';
     background: #fafafa;
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-    color: #333;
+    color: #3e474c;
+}
+
+header {
+    height: 5em;
+    float: left;
+    width: 100%;
+    border-bottom: 1px solid #dadfe1;
+    background: #f6f8f8;
+    margin-bottom: 2em;
+}
+
+header h3 {
+    line-height: 2.5em;
+}
+
+.alert-danger, .alert-error {
+    overflow: hidden;
+}
+
+header h3 a:hover,
+header h3 a:visited,
+header h3 a:link,
+header h3 a:active
+{
+    text-decoration: none;
+    color: #3e474c;
+}
+
+header h3, body > .content {
+    margin: 0 100px;
 }
 
 .title a {
@@ -63,4 +94,14 @@ form input {
 
 form textarea {
     margin-top: 0.5em;
+}
+
+article .content {
+    font-size: 13px;
+    line-height: 1.65em;
+    font-weight: 400;
+}
+
+article.article .meta {
+    margin: 0.5em 0 1.5em 0;
 }

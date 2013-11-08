@@ -1,9 +1,5 @@
 
-<div class="page-header">
-    <h1>Simple Blog</h1>
-</div>
-
-<article>
+<article class="main">
     <div class="alert alert-error" ng-show="showError">
         <a href="#" class="close" data-dismiss="alert">&times;</a>
         <strong>{{errorMessage}}</strong>
@@ -12,10 +8,10 @@
     <ul>
         <li ng-repeat="article in articles">
             <h3 class="title">
-                <a href="#" class="linkColor">{{article.title}}</a>
+                <a href="#/article/{{article.id}}" class="linkColor">{{article.title}}</a>
             </h3>
             <div class="meta">
-                <span class="fancy">by</span>
+                <span class="fancy">av</span>
                 <span class="author">{{article.author}}</span>
             </div>
         </li>
@@ -23,10 +19,10 @@
 
     <form class="navbar-form navbar-left" role="search">
         <div class="form-group">
-            <input type="text" class="form-control" placeholder="Author" ng-model="article.author">
-            <input type="text" class="form-control" placeholder="Title" ng-model="article.title">
-            <textarea class="form-control" rows="3" placeholder="Content" ng-model="article.content"/>
+            <input type="text" class="form-control" placeholder="Forfatter" ng-model="article.author">
+            <input type="text" class="form-control" placeholder="Tittel" ng-model="article.title">
+            <textarea class="form-control" rows="3" placeholder="Innhold" ng-model="article.content"/>
         </div>
-        <button type="submit" class="btn btn-default" ng-click="submitArticle(article)">Add new article</button>
+        <button type="submit" class="btn btn-default" ng-click="submitArticle(article)">Legg til artikkel</button>
     </form>
 </article>

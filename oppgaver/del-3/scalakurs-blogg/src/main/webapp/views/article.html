@@ -1,0 +1,30 @@
+
+<article class="article">
+    <div class="alert alert-error" ng-show="showError">
+        <a href="#" class="close" data-dismiss="alert">&times;</a>
+        <strong>{{errorMessage}}</strong>
+    </div>
+
+    <h2 class="title">
+        {{article.title}}
+    </h2>
+    <div class="meta">
+        <span class="fancy">av</span>
+        <span class="author">{{article.author}}</span>
+    </div>
+    <p class="content">
+        {{article.content}}
+    </p>
+
+    <!--<ul>-->
+        <!--<li ng-repeat="article in articles">-->
+            <!--<h3 class="title">-->
+                <!--<a href="#" class="linkColor">{{article.title}}</a>-->
+            <!--</h3>-->
+            <!--<div class="meta">-->
+                <!--<span class="fancy">by</span>-->
+                <!--<span class="author">{{article.author}}</span>-->
+            <!--</div>-->
+        <!--</li>-->
+    <!--</ul>-->
+</article>
