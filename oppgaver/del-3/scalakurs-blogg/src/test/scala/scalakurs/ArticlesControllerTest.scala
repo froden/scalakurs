@@ -22,7 +22,7 @@ class ArticlesControllerTest extends ScalatraFlatSpec with ShouldMatchers{
 
   val jsonContentType = "Content-Type" -> "application/json"
 
-  val validArticle = Article("Frode", "Cool article", "Hei på deg")
+  val newArticle = Article(None, "Frode", "Cool article", "Hei på deg")
 
   "ArticlesController" should "have an echo path that responds to a echo json message" in {
     val message = Echo("Looking good!")
@@ -35,24 +35,37 @@ class ArticlesControllerTest extends ScalatraFlatSpec with ShouldMatchers{
 
   it should "store a new article" in {
     articles.drop()
-    post("/articles", body = write(validArticle).getBytes, headers = Map(jsonContentType)) {
-      status must be(201)
-      fromJson[Article](body) must equal(validArticle)
-    }
+    createArticle(newArticle)
   }
 
   it should "list all articles" in {
     articles.drop()
-    post("/articles", body = write(validArticle).getBytes, headers = Map(jsonContentType)) {
-      status must be(201)
-      fromJson[Article](body) must equal(validArticle)
-    }
+    createArticle(newArticle)
 
     get("/articles") {
       status must be(200)
-      fromJson[List[Article]](body) must equal(List(validArticle))
+      fromJson[List[Article]](body).map(_.copy(_id = None)) must equal(List(newArticle))
     }
   }
+
+  it should "get a single article" in {
+    articles.drop()
+    val created = createArticle(newArticle)
+    println(created._id)
+
+    get("/articles/" + created._id.get) {
+      status must be(200)
+      fromJson[Article](body) must equal(created)
+    }
+  }
+
+  def createArticle(article: Article) =
+    post("/articles", body = write(article).getBytes, headers = Map(jsonContentType)) {
+      status must be(201)
+      val created = fromJson[Article](body)
+      created.copy(_id = None) must equal(article)
+      created
+    }
 
   def fromJson[T: Manifest](body: String) = parse(body).extract[T]
 }

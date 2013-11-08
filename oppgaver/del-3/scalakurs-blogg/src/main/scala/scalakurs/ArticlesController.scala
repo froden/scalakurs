@@ -15,13 +15,19 @@ class ArticlesController(articles: MongoCollection) extends ScalakursbloggStack 
    * ArticlesController is mounted under /articles so the root path here will be /articles/
    */
   get("/articles") {
-    articles.find().flatMap(m => mongoToJs(m).extractOpt[Article]).toList
+    articles.find() map toArticle toList
+  }
+
+  get("/articles/:id") {
+    val query = MongoDBObject("_id" -> new ObjectId(params("id")))
+    articles.findOne(query) map toArticle
   }
 
   post("/articles") {
     parsedBody.extractOpt[Article].map { article =>
-      articles.insert(jsToMongo(Extraction.decompose(article)))
-      article
+      val doc = jsToMongo(Extraction.decompose(article))
+      articles.insert(doc)
+      toArticle(doc)
     } match {
       case None => BadRequest
       case Some(article) => Created(article)
@@ -34,6 +40,7 @@ class ArticlesController(articles: MongoCollection) extends ScalakursbloggStack 
     message
   }
 
+  def toArticle(obj: DBObject) = mongoToJs(obj).extract[Article]
   def jsToMongo(value: JValue): DBObject = JObjectParser.parse(value)
   def mongoToJs(obj: Any): JValue = JObjectParser.serialize(obj)
 }

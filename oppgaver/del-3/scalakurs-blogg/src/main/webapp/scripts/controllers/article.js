@@ -2,7 +2,7 @@
 
 function ArticleController($scope, $routeParams, dataService) {
     $scope.showError = false;
-    $scope.article = dataService.getArticle(0);
+    $scope.article = dataService.getArticle($routeParams.id);
     $scope.comments = dataService.getComments(0);
 
     $scope.hideError = function() {
@@ -20,7 +20,7 @@ function ArticleController($scope, $routeParams, dataService) {
     }
 
     $scope.deleteArticle = function(article) {
-        dataService.deleteArticle(article.id).then(
+        dataService.deleteArticle(article._id).then(
             function() {
 
             },
@@ -44,7 +44,7 @@ function ArticleController($scope, $routeParams, dataService) {
 }
 
     $scope.deleteAllComments = function(article) {
-        dataService.deleteAllComments(article.id).then(
+        dataService.deleteAllComments(article._id).then(
             function() {
                 $scope.comments = [];
             },
