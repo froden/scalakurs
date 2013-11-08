@@ -14,13 +14,13 @@ app.factory('dataService', function($http) {
                 }
             ];
 
-            return $http.get('article').then(function(res) {
+            return $http.get('articles').then(function(res) {
                 return res;
             });
 
         },
         storeArticle: function(article) {
-            return $http.post('article', article).then(function(resp) {
+            return $http.post('articles', article).then(function(resp) {
                 return resp.data;
             });
         }
