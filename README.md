@@ -49,12 +49,16 @@ Oppgaver i [Typseafe activator](http://typesafe.com/platform/getstarted) - Torbj
 2. Pakk ut : 
 ```sh
 $ tar zxvf mongodb-linux-x86_64-2.4.8.tgz
-``` (eller unzip i windows)
+```
+
+(eller unzip i windows)
 
 3. Lag katalog til databasen: 
 ```sh
 $ mkdir -p /home/sjur/mongodbdata
-``` (fks)
+```
+
+(fks)
 
 4. Start mongodb slik: 
 ```sh

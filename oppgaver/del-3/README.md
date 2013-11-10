@@ -7,12 +7,14 @@
 ```sh
 $ tar zxvf mongodb-linux-x86_64-2.4.8.tgz
 ```
+
 (eller unzip i windows)
 
 3. Lag katalog til databasen: 
 ```sh
 $ mkdir -p /home/sjur/mongodbdata
 ```
+
 (fks)
 
 4. Start mongodb slik: 
