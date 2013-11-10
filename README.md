@@ -42,6 +42,7 @@ Oppgaver i [Typseafe activator](http://typesafe.com/platform/getstarted) - Torbj
 ## [Del 3](oppgaver/del-3): Scalatra + js-front
 * [Scalatra](http://www.scalatra.org/)
 * [mongoDB](http://http://www.mongodb.org/)
+
 ## Installere mongoDB
 1. Last ned [mongoDB](http://http://www.mongodb.org/downloads)
 2. Pakk ut : tar zxvf mongodb-linux-x86_64-2.4.8.tgz (eller unzip i windows)
@@ -59,8 +60,8 @@ $ ./sbt
 
 Hvis `browse` ikke starter en browser automatisk, åpne [http://localhost:8080/](http://localhost:8080/) manuelt.
 
+## Oppgave
 * Implementer scalakurs.ArticlesController slik at artikler kan addes og editeres, og kommentarer legges på artikler
-
 * Single page JS-app med ulike sider for hver oppgave. Oppgaven blir å implementere backend.
 
 Notater
