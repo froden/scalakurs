@@ -63,9 +63,22 @@ class ArticlesControllerTest extends ScalatraFlatSpec with ShouldMatchers{
     val created = createArticle(newArticle)
 
     val changed = created.copy(author = "new author", content = "new content")
-    post("/articles/" + created._id.get, body = write(changed).getBytes, headers = Map(jsonContentType)) {
+    put("/articles/" + created._id.get, body = write(changed).getBytes, headers = Map(jsonContentType)) {
       status must be(200)
       fromJson[Article](body) must equal(changed)
+    }
+  }
+
+  it should "delete a single article" in {
+    articles.drop()
+    val created = createArticle(newArticle)
+
+    delete("/articles/" + created._id.get) {
+      status must be(200)
+    }
+
+    get("/articles/" + created._id.get) {
+      status must be(404)
     }
   }
 
