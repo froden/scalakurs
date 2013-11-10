@@ -28,19 +28,28 @@ $ cd ~/scalakurs/oppgaver/del-3/
 ```
 
 
-## Build & Run ##
-
+## Kjøre tester kontinuerlig ##
 
 ```sh
 $ ./sbt
-> container:start
-> browse
+> ~test
 ```
 
+## Kjøre appen med autorestart ved kodeendringer ##
 
-Hvis `browse` ikke starter en browser automatisk, åpne [http://localhost:8080/](http://localhost:8080/) manuelt.
+```sh
+$ ./sbt
+> ~re-start
+```
+
+Åpne [http://localhost:8080/](http://localhost:8080/) i nettleseren
+
+### Stoppe appen
+
+```sh
+> re-stop
+```
 
 ## Oppgave
-* Implementer scalakurs.ArticlesController slik at artikler kan addes og editeres, og kommentarer legges på artikler
-* Single page JS-app med ulike sider for hver oppgave. Oppgaven blir å implementere backend.
+* Implementer scalakurs.ArticlesController slik at testene blir grønne og artikler kan addes og editeres, og kommentarer legges på artikler
 
