@@ -6,12 +6,14 @@
 2. Pakk ut : 
 ```sh
 $ tar zxvf mongodb-linux-x86_64-2.4.8.tgz
-``` (eller unzip i windows)
+```
+(eller unzip i windows)
 
 3. Lag katalog til databasen: 
 ```sh
 $ mkdir -p /home/sjur/mongodbdata
-``` (fks)
+```
+(fks)
 
 4. Start mongodb slik: 
 ```sh
@@ -32,6 +34,7 @@ $ ./sbt
 > container:start
 > browse
 ```
+
 
 Hvis `browse` ikke starter en browser automatisk, åpne [http://localhost:8080/](http://localhost:8080/) manuelt.
 
