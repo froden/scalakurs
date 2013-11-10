@@ -53,12 +53,19 @@ class ArticlesController(articles: MongoCollection) extends ScalakursbloggStack 
 
   post("/articles/:id/comments") {
     parsedBody.extractOpt[Comment].flatMap { comment =>
-      val doc = jsToMongo(Extraction.decompose(comment))
+      val doc = caseClassToMongoObj(comment)
       val query = MongoDBObject("_id" -> new ObjectId(params("id")))
       val update = $addToSet("comments" -> doc)
       articles.update(query, update)
-      articles.findOne(query) map mongoObjToCaseClass[Article]
+      articles.findOne(query).map(mongoObjToCaseClass[Article])
     }
+  }
+
+  delete("/articles/:id/comments") {
+    val query = MongoDBObject("_id" -> new ObjectId(params("id")))
+    val update = $set("comments" -> Nil)
+    articles.update(query, update)
+    articles.findOne(query).map(mongoObjToCaseClass[Article])
   }
 
   post("/articles/echo") {

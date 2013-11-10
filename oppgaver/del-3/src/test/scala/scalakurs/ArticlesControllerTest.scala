@@ -7,6 +7,7 @@ import org.json4s._
 import org.json4s.jackson.JsonMethods._
 import org.slf4j.LoggerFactory
 import com.mongodb.casbah.Imports._
+import scala.collection.immutable.Nil
 
 class ArticlesControllerTest extends ScalatraFlatSpec with ShouldMatchers{
 
@@ -87,6 +88,23 @@ class ArticlesControllerTest extends ScalatraFlatSpec with ShouldMatchers{
     val created = createArticle(newArticle)
 
     val comment = Comment("frode", "my comment")
+    createComment(created, comment)
+  }
+
+  it should "delete all comments on an article" in {
+    articles.drop()
+    val created = createArticle(newArticle)
+
+    val comment = Comment("frode", "my comment")
+    createComment(created, comment)
+
+    delete("/articles/" + created._id.get + "/comments") {
+      status must be(200)
+      fromJson[Article](body).comments must be(Nil)
+    }
+  }
+
+  def createComment(created: Article, comment: Comment) {
     post("/articles/" + created._id.get + "/comments", body = write(comment).getBytes, headers = Map(jsonContentType)) {
       status must be(200)
       fromJson[Article](body) must equal(created.copy(comments = List(comment)))
