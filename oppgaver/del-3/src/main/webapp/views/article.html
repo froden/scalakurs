@@ -1,0 +1,65 @@
+
+<article>
+    <div class="custom-alert" ng-show="showError">
+        <a class="close" ng-click="hideError()">&times;</a>
+        <strong>{{errorMessage}}</strong>
+    </div>
+
+
+    <div class="article">
+        <h2 class="title">
+            {{article.title}}
+        </h2>
+        <div class="meta">
+            <span class="fancy">av</span>
+            <span class="author">{{article.author}}</span>
+        </div>
+        <p class="content">
+            {{article.content}}
+        </p>
+
+        <div class="buttons" class="btn-group">
+            <button class="btn" ng-click="deleteArticle(article)">Slett artikkel</button>
+            <button class="btn" ng-click="toggleShowArticleEdit()" >Editer artikkel</button>
+        </div>
+
+        <div class="buttons" class="btn-group" ng-show="showArticleEdit">
+            <form class="navbar-form navbar-left" role="search">
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Forfatter" ng-model="article.author">
+                    <input type="text" class="form-control" placeholder="Tittel" ng-model="article.title">
+                    <textarea class="form-control" rows="3" placeholder="Innhold" ng-model="article.content"/>
+                </div>
+                <button type="submit" class="btn btn-default" ng-click="updateArticle(article)">Oppdater</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="comments">
+        <h4>Kommentarer</h4>
+        <ul>
+            <li ng-repeat="comment in comments">
+                <p class="content">
+                    {{comment.content}}
+                </p>
+                <div class="meta">
+                    <span class="fancy">by</span>
+                    <span class="author">{{comment.author}}</span>
+                </div>
+            </li>
+        </ul>
+
+        <div class="buttons" class="btn-group">
+            <div class="delete">
+                <button class="btn" ng-click="deleteAllComments(article)">Slett alle kommentarer</button>
+            </div>
+            <form class="navbar-form navbar-left" role="search">
+                <button type="submit" class="btn btn-default" ng-click="addComment(article, comment)">Legg til kommentar</button>
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Forfatter" ng-model="comment.author">
+                    <textarea class="form-control" rows="3" placeholder="Innhold" ng-model="comment.content"/>
+                </div>
+            </form>
+        </div>
+    </div>
+</article>
