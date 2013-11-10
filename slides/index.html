@@ -1,42 +1,42 @@
 <!doctype html>
 <html lang="en">
 
-	<head>
-		<meta charset="utf-8">
+    <head>
+        <meta charset="utf-8">
 
-		<title>Scalakurs</title>
+        <title>Scalakurs</title>
 
-		<meta name="description" content="Introduksjonskurs til Scala">
-		<meta name="author" content="Bekk">
+        <meta name="description" content="Introduksjonskurs til Scala">
+        <meta name="author" content="Bekk">
 
-		<meta name="apple-mobile-web-app-capable" content="yes" />
-		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
 
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<link rel="stylesheet" href="css/reveal.min.css">
-		<link rel="stylesheet" href="css/custom.css">
-		<link rel="stylesheet" href="css/theme/solarized.css" id="theme">
+        <link rel="stylesheet" href="css/reveal.min.css">
+        <link rel="stylesheet" href="css/custom.css">
+        <link rel="stylesheet" href="css/theme/solarized.css" id="theme">
 
-		<!-- For syntax highlighting -->
-		<link rel="stylesheet" href="lib/css/github.css">
+        <!-- For syntax highlighting -->
+        <link rel="stylesheet" href="lib/css/github.css">
 
-		<!-- If the query includes 'print-pdf', use the PDF print sheet -->
-		<script>
-			document.write( '<link rel="stylesheet" href="css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
-		</script>
+        <!-- If the query includes 'print-pdf', use the PDF print sheet -->
+        <script>
+            document.write( '<link rel="stylesheet" href="css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+        </script>
 
-		<!--[if lt IE 9]>
-		<script src="lib/js/html5shiv.js"></script>
-		<![endif]-->
-	</head>
+        <!--[if lt IE 9]>
+        <script src="lib/js/html5shiv.js"></script>
+        <![endif]-->
+    </head>
 
-	<body>
+    <body>
 
-		<div class="reveal">
+        <div class="reveal">
 
-			<!-- Any section element inside of this container is displayed as a slide -->
-			<div class="slides">
+            <!-- Any section element inside of this container is displayed as a slide -->
+            <div class="slides">
 
                 <section>
                     <h3><a href="http://typesafe.com/platform/getstarted">http://typesafe.com/platform/getstarted</a></h3>
@@ -283,7 +283,7 @@ if (erStørreEnn(2,4)) "JA" else "NEI"
 class Person
 
 val p = new Person
-					</code></pre>
+                    </code></pre>
 
                     <div class="fragment">
                         <h4>Medlemsvariabler og getters/setters</h4>
@@ -293,7 +293,7 @@ class Person(val name: String, var age: Int)
 val p = new Person("Bob", 25)
 p.name // Bob
 p.age = 26
-					    </code></pre>
+                        </code></pre>
                     </div>
 
                     <aside class="notes">
@@ -321,7 +321,7 @@ class Person(age: Int) {
 }
 
 new Person(30).sayHi //Hi, I’m young
-					</code></pre>
+                    </code></pre>
 
                     <div class="fragment">
                         <h4>Auxillery constructors</h4>
@@ -330,7 +330,7 @@ class Date(val time: Long) {
 
   def this(date: Date) = this(date.time)
 }
-					    </code></pre>
+                        </code></pre>
                     </div>
 
                     <aside class="notes">
@@ -354,7 +354,7 @@ object Logger {
 }
 
 Logger.log("It’s all good!")
-					</code></pre>
+                    </code></pre>
 
                     <div class="fragment">
                         <h4>Companion-objekter</h4>
@@ -367,7 +367,7 @@ object Person {
 }
 
 val p = Person("Frode", 33)
-					    </code></pre>
+                        </code></pre>
                     </div>
 
                     <aside class="notes">
@@ -393,7 +393,7 @@ trait Animal {
 
 class Dog extends Animal
 class Fox extends Animal
-					</code></pre>
+                    </code></pre>
                     <ul>
                         <li>Abstrakte metoder <strong>og</strong> felter</li>
                         <li>Konkrete metoder og felter</li>
@@ -425,7 +425,7 @@ class Dog extends Animal {
 class Fox extends Animal {
   def say = ???
 }
-					</code></pre>
+                    </code></pre>
                     <aside class="notes">
                         <ul>
                             <li>Eksempel på Trait som ligner på en abstrakt klasse</li>
@@ -447,7 +447,7 @@ trait Furry
 class Dog extends Animal with Fourlegged with Furry {
   def say = "woof"
 }
-					</code></pre>
+                    </code></pre>
                     <aside class="notes">
                         <ul>
                             <li>Eksemepel på mixin av flere traits</li>
@@ -748,7 +748,7 @@ def sayHiTo(name: String) = s"Hi $name"
 
 //method with explicit return type
 def add(a: Int, b:Int): Int = a + b
-					</code></pre>
+                    </code></pre>
                     <aside class="notes">
                         <ul>
                             <li>Eneste måten å definere en variabel som vi er interessert i :)</li>
@@ -775,7 +775,7 @@ val head = try {
 } catch {
   case _: IOException => List()
 }
-					</code></pre>
+                    </code></pre>
                     <aside class="notes">
                         <ul>
                             <li>Alt er expressions</li>
@@ -800,7 +800,7 @@ def combine(a: Int, b: Int, func: (Int, Int) => Int) = func(a, b)
 
 combine(2, 3, _ * _)
 //res1: Int = 6
-					</code></pre>
+                    </code></pre>
                     <aside class="notes">
                         <ul>
                             <li>Verdi som er en funksjon som tar to ints og returnerer int</li>
@@ -823,7 +823,7 @@ object Person {
 
 Person("Frode", 33)
 //res2: Person = Frode 33
-					</code></pre>
+                    </code></pre>
                     <aside class="notes">
                         <ul>
                             <li></li>
@@ -844,7 +844,7 @@ Node(Leaf("left"), Leaf("right")) match {
   case Node(_, right) => "right was " + right
 }
 //res3: String = right tree was leaf with value right
-					</code></pre>
+                    </code></pre>
                     <aside class="notes">
                         <ul>
                             <li>case classes er spesielle value-klasser som egner seg godt til pattern matching</li>
@@ -868,7 +868,7 @@ def map[A, B](value: A)(func: A => B): B = func(value)
 
 map("Frode".toList)(lastElement)
 //res4: Char = e
-					</code></pre>
+                    </code></pre>
                     <p class="fragment">... men mye mer avansert!</p>
                     <aside class="notes">
                         <ul>
@@ -1338,7 +1338,7 @@ f.onSuccess { case s => println(s) }
 
 // Blocks until the future is ready
 Await.ready(f, Duration.Inf)</code></pre>
-		</div>
+        </div>
                     <div class="fragment">Output: <br/><pre><code>Test print before future
 Test print after future
 hello future!</code></pre>
@@ -1411,7 +1411,7 @@ Await.result(hashMap, Duration.Inf)</code></pre>
                     <h2>Gjør oppgaver</h2>
                     <ul>
                         <li>oppg5_futures (Få testene grønne)</li>
-			<li>Kikk på Work-klassen (og perform() metoden)</li>
+            <li>Kikk på Work-klassen (og perform() metoden)</li>
                     </ul>
                 </section>
 
@@ -1455,7 +1455,7 @@ val consumer = future {
                     </ul>
                 </section>
 
-		<section>
+        <section>
                     <h2>Takk for innsatsen, folkens!</h2>
                </section>
 
@@ -1549,90 +1549,187 @@ val consumer = future {
         </code></pre>
         </section>
 
-	<section>
-		<h2>MongoDB oppsett</h2>
-		<ul>
-			<li>http://www.mongodb.org/downloads</li>
-			<li><strong>tar zxvf mongodb-linux-x86_64-2.4.8.tgz</strong></li>
-			<li><strong>mkdir -p /home/sjur/mongodbdata</strong></li>
-			<li><strong>mongodb --dbpath /home/sjur/mongodbdata</strong></li>
-			<li>... [initandlisten] waiting for connections on port 27017</li>
-		</ul>
-	</section>
+    <section>
+        <h2>MongoDB oppsett</h2>
+        <ul>
+            <li>http://www.mongodb.org/downloads</li>
+            <li><code class="bash">tar zxvf mongodb-linux-x86_64-2.4.8.tgz</code></li>
+            <li><code class="bash">mkdir -p /home/sjur/mongodbdata</code></li>
+            <li><code class="bash">mongodb --dbpath /home/sjur/mongodbdata</code></li>
+            <li>... [initandlisten] waiting for connections on port 27017</li>
+        </ul>
+    </section>
 
-	<section>
-		<h2>MongoDB add data</h2>
-		<ul>
-			<li><strong>mongo</strong></li>
-			<li><strong>help</strong></li>
-			<li><strong>db.inventory.insert( { _id: 10, type: "misc", item: "card", qty: 15 } )</strong></li>
-			<li><strong>db.inventory.update({ type: "book", item : "journal" }, { $set : { qty: 10 } }, { upsert : true })</strong></li>
-			<li><strong>db.inventory.save( { type: "book", item: "notebook", qty: 40 } )</strong></li>			
-		</ul>
-		<aside class="notes">
-		        <ul>
-		            <li>starter query-console</li>
-		            <li>gir hjelp i query-console</li>
-			    <li>insert med provided _id</li>
-			    <li>insert og la mongo autogenerere id (_id) (upsert = update or insert)</li>
-			    <li>insert med save() og la mongo autogenerere id (_id)</li>
-		        </ul>
-		    </aside>
-	</section>
-	<section>
-		<h2>MongoDB query</h2>
-		<ul>
-			<li><strong>db.inventory.find( {} )</strong></li>
-			<li><strong>db.inventory.find( { type: "snacks" } )</strong></li>
-			<li><strong>db.inventory.find( { type: { $in: [ 'food', 'snacks' ] } } )</strong></li>
-			<li><strong>db.inventory.find( { type: 'food', price: { $lt: 9.95 } } )</strong></li>
-			<li><strong>db.inventory.find( { $or: [{ qty: { $gt: 100 } }, { price: { $lt: 9.95 } } ] } )</strong></li>
-		</ul>
-		<aside class="notes">
-		        <ul>
-		            <li>tomt kriterie = alle dokumenter find()</li>
-		            <li>equals kriterie</li>
-			    <li>or kriterie på samme felt ('type')</li>
-			    <li>and kriterie</li>
-			    <li>or kriterie</li>
-		        </ul>
-		    </aside>
-	</section>
+    <section>
+        <h2>MongoDB add data</h2>
+        <p><pre><code>mongo
+help
+db.x.insert({_id: 10, type: "misc", item: "card", qty: 15})
+db.x.update({type:"book", item:"journal"},{$set:{qty:9}}, {upsert:true})
+db.x.save({type: "book", item: "notebook", qty: 40})
+</code></pre></p>
+        
+        <aside class="notes">
+                <ul>
+                <li>starter query-console</li>
+                <li>gir hjelp i query-console</li>
+                <li>insert med provided _id</li>
+                <li>insert og la mongo autogenerere id (_id) (upsert = update or insert)</li>
+                <li>insert med save() og la mongo autogenerere id (_id)</li>
+                </ul>
+            </aside>
+    </section>
+    <section>
+        <h2>MongoDB query</h2>
+        <p><pre><code>db.inventory.find({})
+db.x.find({type: "snacks"})
+db.x.find({type: {$in: ['food', 'snacks']}})
+db.x.find({type: 'food', price: {$lt: 9.95}})
+db.x.find({$or: [{ qty: {$gt: 100}}, {price: {$lt: 9.95}}]})
+</code></pre></p>        
+        <aside class="notes">
+                <ul>
+                <li>tomt kriterie = alle dokumenter find()</li>
+                <li>equals kriterie</li>
+                <li>or kriterie på samme felt ('type')</li>
+                <li>and kriterie</li>
+                <li>or kriterie</li>
+                </ul>
+            </aside>
+    </section>
+
+    <section>
+        <h2 style="text-transform: none">AngularJS</h2>
+        <p><img src="images/angularjs-logo.png" width="30%" alt="angularJS"></p>
+        <p>JavaScript rammeverk for utvikling<br>av single-page applikasjoner</p>
+    </section>
+
+    <section>
+        <h2><em><a href="http://net.tutsplus.com/tutorials/javascript-ajax/5-awesome-angularjs-features/">5 Awesome AngularJS Features</a></em></h2>
+        <ol>
+            <li>Two Way Data-Binding</li>
+            <li>Templates</li>
+            <li>MVC</li>
+            <li>Dependency Injection</li>
+            <li>Directives</li>
+        </ol>
+    </section>
+
+    <section>
+    <h2>Example view</h2>
+    <pre><code class="html" data-trim contenteditable>
+
+<article ng-controller="MainController">
+    <div class="custom-alert" ng-show="showError">
+        <a href="#" class="close" data-dismiss="alert">&times;</a>
+        <strong>{{errorMessage}}</strong>
+    </div>
+    <ul>
+        <li ng-repeat="article in articles">
+            <h3 class="title">
+                <a href="#/article/{{article._id}}">{{article.title}}</a>
+            </h3>
+            <div class="meta">
+                <span class="fancy">av</span>
+                <span class="author">{{article.author}}</span>
+            </div>
+        </li>
+    </ul>
+</article>
+    </code></pre>
+    </section>
+
+    <section>
+                    <h2>Example Controller</h2>
+    <pre><code style="font-size: 16px; line-height: 1.3em" class="js" data-trim contenteditable>
+function MainController($scope, dataService) {
+    $scope.showError = false;
+
+    dataService.getAllArticles().then(
+        function(articles) { $scope.articles = articles; },
+        function() { showError('feil ved henting av artikler'); }
+    );
+
+    function showError(message) {
+        $scope.showError = true;
+        $scope.errorMessage = message;
+    }
+
+    $scope.submitArticle = function(article) {
+        dataService.addArticle(article).then(
+            function() { $scope.articles.push(article); },
+            function() { showError('feil ved lagring av artikkel'); }
+        );
+    }
+};
+    </code></pre>
+    </section>
+
+   <section>
+                    <h2>Example Model</h2>
+    <pre><code style="font-size: 16px; line-height: 1.3em" class="js" data-trim contenteditable>
+app.factory('dataService', function($http) {
+    return {
+        getAllArticles: function() {
+            return $http.get('/articles').then(function(resp) {
+                return resp.data;
+            });
+        },
+        addArticle: function(article) {
+            return $http.post('/articles', article).then(function(resp) {
+                return resp.data;
+            });
+        }
+    }
+});
+    </code></pre>
+    </section>
+
+    <section>
+            <h2>Lag blog!</h2>
+            <ul>
+                <li>Les readme på <a href="https://github.com/froden/scalakurs">https://github.com/froden/scalakurs</a></li>
+            </ul>
+    </section>
+
+        <section>
+            <h2>Takk for innsatsen alle sammen!</h2>
+    </section>
 
 
             </div>
 
-		</div>
+        </div>
 
 
         <script src="lib/js/head.min.js"></script>
-		<script src="js/reveal.min.js"></script>
+        <script src="js/reveal.min.js"></script>
 
-		<script>
+        <script>
 
-			// Full list of configuration options available here:
-			// https://github.com/hakimel/reveal.js#configuration
-			Reveal.initialize({
-				controls: false,
-				progress: true,
-				history: true,
-				center: true,
+            // Full list of configuration options available here:
+            // https://github.com/hakimel/reveal.js#configuration
+            Reveal.initialize({
+                controls: false,
+                progress: true,
+                history: true,
+                center: true,
 
-				theme: 'solarized', // available themes are in /css/theme
-				transition: 'linear', // default/cube/page/concave/zoom/linear/fade/none
+                theme: 'solarized', // available themes are in /css/theme
+                transition: 'linear', // default/cube/page/concave/zoom/linear/fade/none
 
-				// Optional libraries used to extend on reveal.js
-				dependencies: [
-					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
-					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
-					{ src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
-					{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
-				]
-			});
+                // Optional libraries used to extend on reveal.js
+                dependencies: [
+                    { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+                    { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                    { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                    { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+                    { src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+                    { src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+                ]
+            });
 
-		</script>
+        </script>
 
-	</body>
+    </body>
 </html>
