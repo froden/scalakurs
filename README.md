@@ -55,8 +55,9 @@ $ ./sbt
 > browse
 ```
 
-If `browse` doesn't launch your browser, manually open [http://localhost:8080/](http://localhost:8080/) in your browser.
-8. Implementer scalakurs.ArticlesController slik at artikler kan addes og editeres, og kommentarer legges på artikler
+Hvis `browse` ikke starter en browser automatisk, åpne [http://localhost:8080/](http://localhost:8080/) manuelt.
+
+* Implementer scalakurs.ArticlesController slik at artikler kan addes og editeres, og kommentarer legges på artikler
 
 * Single page JS-app med ulike sider for hver oppgave. Oppgaven blir å implementere backend.
 
