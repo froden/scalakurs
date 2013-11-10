@@ -2,8 +2,15 @@
 
 function ArticleController($scope, $routeParams, dataService) {
     $scope.showError = false;
-    $scope.article = dataService.getArticle($routeParams.id);
-    $scope.comments = dataService.getComments(0);
+    $scope.article = dataService.getArticle($routeParams.id).then(
+        function(article) {
+            $scope.article = article;
+            $scope.comments = article.comments;
+        },
+        function() {
+            showError('feil ved henting av artikkel');
+        }
+    );
 
     $scope.hideError = function() {
         $scope.showError = false;
@@ -55,10 +62,10 @@ function ArticleController($scope, $routeParams, dataService) {
         );
     }
 
-    $scope.addComment = function(comment) {
-        dataService.addComment(comment).then(
-            function(commentWithId) {
-                $scope.comments.push(commentWithId);
+    $scope.addComment = function(article, comment) {
+        dataService.addComment(article._id, comment).then(
+            function(article) {
+                $scope.comments = article.comments;
                 $(window).scrollTop(0);
             },
             function() {

@@ -51,13 +51,13 @@
 
         <div class="buttons" class="btn-group">
             <div class="delete">
-                <button class="btn" ng-click="deleteArticle(article)">Slett alle kommentarer</button>
+                <button class="btn" ng-click="deleteAllComments(article)">Slett alle kommentarer</button>
             </div>
             <form class="navbar-form navbar-left" role="search">
-                <button type="submit" class="btn btn-default" ng-click="updateArticle(article)">Legg til kommentar</button>
+                <button type="submit" class="btn btn-default" ng-click="addComment(article, comment)">Legg til kommentar</button>
                 <div class="form-group">
-                    <input type="text" class="form-control" placeholder="Forfatter" ng-model="article.author">
-                    <textarea class="form-control" rows="3" placeholder="Innhold" ng-model="article.content"/>
+                    <input type="text" class="form-control" placeholder="Forfatter" ng-model="comment.author">
+                    <textarea class="form-control" rows="3" placeholder="Innhold" ng-model="comment.content"/>
                 </div>
             </form>
         </div>

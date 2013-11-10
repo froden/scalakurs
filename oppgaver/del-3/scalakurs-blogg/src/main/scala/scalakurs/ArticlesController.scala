@@ -15,6 +15,7 @@ class ArticlesController(articles: MongoCollection) extends ScalakursbloggStack 
    * ArticlesController is mounted under /articles so the root path here will be /articles/
    */
   get("/articles") {
+    println("** /articles");
     articles.find().map(toArticle).toList
   }
 
