@@ -39,9 +39,18 @@ Oppgaver i [Typseafe activator](http://typesafe.com/platform/getstarted) - Torbj
 * Try
 * Future
 
-## Del 3: Unfiltered/scalatra + js-front
-* [Unfiltered](http://unfiltered.databinder.net/Unfiltered.html)
+## [Del 3](oppgaver/del-3): Scalatra + js-front
 * [Scalatra](http://www.scalatra.org/)
+* [mongoDB](http://http://www.mongodb.org/)
+1. Last ned [mongoDB](http://http://www.mongodb.org/downloads)
+2. Pakk ut : tar zxvf mongodb-linux-x86_64-2.4.8.tgz (eller unzip i windows)
+3. Lag katalog til databasen: mkdir -p /home/sjur/mongodbdata (fks)
+4. Start mongodb slik: /home/sjur/mongo_installed_here/bin/mongodb --dbpath /home/sjur/mongodbdata
+5. cd ~/scalakurs/oppgaver/del-3/
+6. ./sbt run
+7. Åpne http://localhost:7002 i en browser
+8. Implementer scalakurs.ArticlesController slik at artikler kan addes og editeres, og kommentarer legges på artikler
+
 * Single page JS-app med ulike sider for hver oppgave. Oppgaven blir å implementere backend.
 
 Notater
@@ -50,3 +59,5 @@ Notater
 * [Sjur og Arilds workshop](https://github.com/arild/scala-workshop)
 * [Community docs](http://docs.scala-lang.org/index.html)
 * [API-docs](http://www.scala-lang.org/api/current/#package)
+* [Scalatra](http://www.scalatra.org/)
+* [MongoDB](http://http://www.mongodb.org/)
