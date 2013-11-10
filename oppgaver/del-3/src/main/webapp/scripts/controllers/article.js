@@ -29,7 +29,7 @@ function ArticleController($scope, $routeParams, dataService) {
     $scope.deleteArticle = function(article) {
         dataService.deleteArticle(article._id).then(
             function() {
-
+                window.location = "#/"
             },
             function() {
                 showError('feil ved sletting av artikkel');
