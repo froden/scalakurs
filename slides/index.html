@@ -1600,6 +1600,93 @@ val consumer = future {
 	</section>
 
     <section>
+        <h2 style="text-transform: none">AngularJS</h2>
+        <p><img src="images/angularjs-logo.png" width="30%" alt="angularJS"></p>
+        <p>JavaScript rammeverk for utvikling<br>av single-page applikasjoner</p>
+    </section>
+
+    <section>
+        <h2><em><a href="http://net.tutsplus.com/tutorials/javascript-ajax/5-awesome-angularjs-features/">5 Awesome AngularJS Features</a></em></h2>
+        <ol>
+            <li>Two Way Data-Binding</li>
+            <li>Templates</li>
+            <li>MVC</li>
+            <li>Dependency Injection</li>
+            <li>Directives</li>
+        </ol>
+    </section>
+
+    <section>
+    <h2>Example view</h2>
+    <pre><code class="html" data-trim contenteditable>
+
+<article ng-controller="MainController">
+    <div class="custom-alert" ng-show="showError">
+        <a href="#" class="close" data-dismiss="alert">&times;</a>
+        <strong>{{errorMessage}}</strong>
+    </div>
+    <ul>
+        <li ng-repeat="article in articles">
+            <h3 class="title">
+                <a href="#/article/{{article._id}}">{{article.title}}</a>
+            </h3>
+            <div class="meta">
+                <span class="fancy">av</span>
+                <span class="author">{{article.author}}</span>
+            </div>
+        </li>
+    </ul>
+</article>
+    </code></pre>
+    </section>
+
+    <section>
+                    <h2>Example Controller</h2>
+    <pre><code style="font-size: 16px; line-height: 1.3em" class="js" data-trim contenteditable>
+function MainController($scope, dataService) {
+    $scope.showError = false;
+
+    dataService.getAllArticles().then(
+        function(articles) { $scope.articles = articles; },
+        function() { showError('feil ved henting av artikler'); }
+    );
+
+    function showError(message) {
+        $scope.showError = true;
+        $scope.errorMessage = message;
+    }
+
+    $scope.submitArticle = function(article) {
+        dataService.addArticle(article).then(
+            function() { $scope.articles.push(article); },
+            function() { showError('feil ved lagring av artikkel'); }
+        );
+    }
+};
+    </code></pre>
+    </section>
+
+   <section>
+                    <h2>Example Model</h2>
+    <pre><code style="font-size: 16px; line-height: 1.3em" class="js" data-trim contenteditable>
+app.factory('dataService', function($http) {
+    return {
+        getAllArticles: function() {
+            return $http.get('/articles').then(function(resp) {
+                return resp.data;
+            });
+        },
+        addArticle: function(article) {
+            return $http.post('/articles', article).then(function(resp) {
+                return resp.data;
+            });
+        }
+    }
+});
+    </code></pre>
+    </section>
+
+    <section>
             <h2>Lag blog!</h2>
             <ul>
                 <li>Les readme på https://github.com/froden/scalakurs</li>
