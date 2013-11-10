@@ -47,8 +47,15 @@ Oppgaver i [Typseafe activator](http://typesafe.com/platform/getstarted) - Torbj
 3. Lag katalog til databasen: mkdir -p /home/sjur/mongodbdata (fks)
 4. Start mongodb slik: /home/sjur/mongo_installed_here/bin/mongodb --dbpath /home/sjur/mongodbdata
 5. cd ~/scalakurs/oppgaver/del-3/
-6. ./sbt run
-7. Åpne http://localhost:7002 i en browser
+## Build & Run ##
+
+```sh
+$ ./sbt
+> container:start
+> browse
+```
+
+If `browse` doesn't launch your browser, manually open [http://localhost:8080/](http://localhost:8080/) in your browser.
 8. Implementer scalakurs.ArticlesController slik at artikler kan addes og editeres, og kommentarer legges på artikler
 
 * Single page JS-app med ulike sider for hver oppgave. Oppgaven blir å implementere backend.
