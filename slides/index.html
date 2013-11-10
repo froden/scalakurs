@@ -1553,22 +1553,22 @@ val consumer = future {
 		<h2>MongoDB oppsett</h2>
 		<ul>
 			<li>http://www.mongodb.org/downloads</li>
-			<li><strong>tar zxvf mongodb-linux-x86_64-2.4.8.tgz</strong></li>
-			<li><strong>mkdir -p /home/sjur/mongodbdata</strong></li>
-			<li><strong>mongodb --dbpath /home/sjur/mongodbdata</strong></li>
+			<li><code class="bash">tar zxvf mongodb-linux-x86_64-2.4.8.tgz</code></li>
+			<li><code class="bash">mkdir -p /home/sjur/mongodbdata</code></li>
+			<li><code class="bash">mongodb --dbpath /home/sjur/mongodbdata</code></li>
 			<li>... [initandlisten] waiting for connections on port 27017</li>
 		</ul>
 	</section>
 
 	<section>
 		<h2>MongoDB add data</h2>
-		<ul>
-			<li><strong>mongo</strong></li>
-			<li><strong>help</strong></li>
-			<li><strong>db.inventory.insert( { _id: 10, type: "misc", item: "card", qty: 15 } )</strong></li>
-			<li><strong>db.inventory.update({ type: "book", item : "journal" }, { $set : { qty: 10 } }, { upsert : true })</strong></li>
-			<li><strong>db.inventory.save( { type: "book", item: "notebook", qty: 40 } )</strong></li>			
-		</ul>
+		<p><pre><code>mongo
+help
+db.x.insert({_id: 10, type: "misc", item: "card", qty: 15})
+db.x.update({type:"book", item:"journal"},{$set:{qty:9}}, {upsert:true})
+db.x.save({type: "book", item: "notebook", qty: 40})
+</code></pre></p>
+		
 		<aside class="notes">
 		        <ul>
 		            <li>starter query-console</li>
@@ -1581,13 +1581,12 @@ val consumer = future {
 	</section>
 	<section>
 		<h2>MongoDB query</h2>
-		<ul>
-			<li><strong>db.inventory.find( {} )</strong></li>
-			<li><strong>db.inventory.find( { type: "snacks" } )</strong></li>
-			<li><strong>db.inventory.find( { type: { $in: [ 'food', 'snacks' ] } } )</strong></li>
-			<li><strong>db.inventory.find( { type: 'food', price: { $lt: 9.95 } } )</strong></li>
-			<li><strong>db.inventory.find( { $or: [{ qty: { $gt: 100 } }, { price: { $lt: 9.95 } } ] } )</strong></li>
-		</ul>
+        <p><pre><code>db.inventory.find({})
+db.x.find({type: "snacks"})
+db.x.find({type: {$in: ['food', 'snacks']}})
+db.x.find({type: 'food', price: {$lt: 9.95}})
+db.x.find({$or: [{ qty: {$gt: 100}}, {price: {$lt: 9.95}}]})
+</code></pre></p>        
 		<aside class="notes">
 		        <ul>
 		            <li>tomt kriterie = alle dokumenter find()</li>
