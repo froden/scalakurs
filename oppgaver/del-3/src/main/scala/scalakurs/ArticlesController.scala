@@ -7,6 +7,10 @@ import org.json4s._
 import org.scalatra.{NotFound, Ok, Created, BadRequest}
 
 
+/**
+ * Hint: use the predefined methods at the bottom to convert between
+ * case classes and MongoDb Json-objects
+ */
 class ArticlesController(articles: MongoCollection) extends ScalakursbloggStack {
 
   val log = LoggerFactory.getLogger(getClass)
