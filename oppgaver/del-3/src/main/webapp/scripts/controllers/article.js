@@ -29,7 +29,7 @@ function ArticleController($scope, $routeParams, dataService) {
     $scope.deleteArticle = function(article) {
         dataService.deleteArticle(article._id).then(
             function() {
-
+                window.location = "#/"
             },
             function() {
                 showError('feil ved sletting av artikkel');
@@ -65,6 +65,8 @@ function ArticleController($scope, $routeParams, dataService) {
     $scope.addComment = function(article, comment) {
         dataService.addComment(article._id, comment).then(
             function(article) {
+                comment.author = '';
+                comment.content = '';
                 $scope.comments = article.comments;
                 $(window).scrollTop(0);
             },

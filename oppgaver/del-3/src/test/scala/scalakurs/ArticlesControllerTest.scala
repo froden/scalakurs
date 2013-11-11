@@ -7,6 +7,7 @@ import org.json4s._
 import org.json4s.jackson.JsonMethods._
 import org.slf4j.LoggerFactory
 import com.mongodb.casbah.Imports._
+import scala.collection.immutable.Nil
 
 class ArticlesControllerTest extends ScalatraFlatSpec with ShouldMatchers{
 
@@ -24,11 +25,11 @@ class ArticlesControllerTest extends ScalatraFlatSpec with ShouldMatchers{
 
   val newArticle = Article(None, "Frode", "Cool article", "Hei på deg")
 
-  "ArticlesController" should "have an echo path that responds to a echo json message" in {
+  "ArticlesController" should "have an echo path that stores and responds to an echo json message" in {
     val message = Echo("Looking good!")
 
     post("/articles/echo", body = write(message).getBytes, headers = Map(jsonContentType)) {
-      status must be(200)
+      status must be(201)
       fromJson[Echo](body) must equal(message)
     }
   }
@@ -58,11 +59,52 @@ class ArticlesControllerTest extends ScalatraFlatSpec with ShouldMatchers{
     }
   }
 
+  it should "update a single article" in {
+    articles.drop()
+    val created = createArticle(newArticle)
+
+    val changed = created.copy(author = "new author", content = "new content")
+    put("/articles/" + created._id.get, body = write(changed).getBytes, headers = Map(jsonContentType)) {
+      status must be(200)
+      fromJson[Article](body) must equal(changed)
+    }
+  }
+
+  it should "delete a single article" in {
+    articles.drop()
+    val created = createArticle(newArticle)
+
+    delete("/articles/" + created._id.get) {
+      status must be(200)
+    }
+
+    get("/articles/" + created._id.get) {
+      status must be(404)
+    }
+  }
+
   it should "comment on an article" in {
     articles.drop()
     val created = createArticle(newArticle)
 
     val comment = Comment("frode", "my comment")
+    createComment(created, comment)
+  }
+
+  it should "delete all comments on an article" in {
+    articles.drop()
+    val created = createArticle(newArticle)
+
+    val comment = Comment("frode", "my comment")
+    createComment(created, comment)
+
+    delete("/articles/" + created._id.get + "/comments") {
+      status must be(200)
+      fromJson[Article](body).comments must be(Nil)
+    }
+  }
+
+  def createComment(created: Article, comment: Comment) {
     post("/articles/" + created._id.get + "/comments", body = write(comment).getBytes, headers = Map(jsonContentType)) {
       status must be(200)
       fromJson[Article](body) must equal(created.copy(comments = List(comment)))

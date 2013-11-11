@@ -33,9 +33,8 @@ app.factory('dataService', function($http) {
             })
         },
         addComment: function(articleId, comment) {
-            console.log('addComment: ', articleId, comment);
             return $http.post('/articles/' + articleId + '/comments', comment).then(function(resp) {
-                return resp;
+                return resp.data;
             });
         },
         deleteAllComments: function(articleId) {

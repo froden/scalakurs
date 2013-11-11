@@ -10,7 +10,7 @@ function MainController($scope, dataService) {
         function() {
             showError('feil ved henting av artikler');
         }
-    );;
+    );
 
     function showError(message) {
         $scope.showError = true;
@@ -19,7 +19,7 @@ function MainController($scope, dataService) {
 
     $scope.submitArticle = function(article) {
         dataService.addArticle(article).then(
-            function() {
+            function(article) {
                 $scope.articles.push(article);
             },
             function() {
@@ -27,4 +27,4 @@ function MainController($scope, dataService) {
             }
         );
     }
-};
+}
