@@ -94,6 +94,7 @@ DELETE /articles/:id/comments  #delete all comments from article
 ### Nyttige linker
 
 * [MongoDB Scala tutorial](http://mongodb.github.io/casbah/tutorial.html)
+* [MongoDB $addToSet](http://docs.mongodb.org/manual/reference/operator/update/addToSet/)
 * [Json4S](https://github.com/json4s/json4s)
 * [Scalatra Routes](http://scalatra.org/2.2/guides/http/routes.html)
 * [Slides](http://froden.github.io/scalakurs/#/81)
