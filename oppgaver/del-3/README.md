@@ -44,14 +44,6 @@ $ /home/sjur/mongo_installed_here/bin/mongodb --dbpath /home/sjur/mongodbdata
 $ cd ~/scalakurs/oppgaver/del-3/
 ```
 
-
-## Kjøre tester kontinuerlig ##
-
-```sh
-$ ./sbt
-> ~test
-```
-
 ## Kjøre appen med autorestart ved kodeendringer ##
 
 ```sh
