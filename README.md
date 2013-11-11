@@ -95,3 +95,5 @@ Notater
 * [API-docs](http://www.scala-lang.org/api/current/#package)
 * [Scalatra](http://www.scalatra.org/)
 * [MongoDB](http://http://www.mongodb.org/)
+
+* [Oppsummering av Casbah med eksempler](http://janxspirit.blogspot.no/2011/11/introduction-to-casbah-scala-mongodb.html)
