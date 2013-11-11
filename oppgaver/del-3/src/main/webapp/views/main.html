@@ -1,28 +1,31 @@
 
-<article class="main">
-    <div class="custom-alert" ng-show="showError">
+<article>
+    <div class="alert alert-dismissable alert-warning" ng-show="showError">
         <a href="#" class="close" data-dismiss="alert">&times;</a>
         <strong>{{errorMessage}}</strong>
     </div>
 
-    <ul>
-        <li ng-repeat="article in articles">
-            <h3 class="title">
-                <a href="#/article/{{article._id}}" class="linkColor">{{article.title}}</a>
-            </h3>
-            <div class="meta">
-                <span class="fancy">av</span>
-                <span class="author">{{article.author}}</span>
-            </div>
-        </li>
-    </ul>
-
-    <form class="navbar-form navbar-left" role="search">
-        <button type="submit" class="btn btn-default" ng-click="submitArticle(article)">Legg til artikkel</button>
-        <div class="form-group">
-            <input type="text" class="form-control" placeholder="Forfatter" ng-model="article.author">
-            <input type="text" class="form-control" placeholder="Tittel" ng-model="article.title">
-            <textarea class="form-control" rows="3" placeholder="Innhold" ng-model="article.content"/>
+    <div ng-repeat="article in articles">
+        <h2>
+            <a href="#/article/{{article._id}}" class="linkColor">{{article.title}}</a>
+        </h2>
+        <div>
+            <span class="fancy">av</span>
+            <span class="author">{{article.author}}</span>
         </div>
-    </form>
+    </div>
+
+    <div class="well">
+        <form class="bs-example form-horizontal">
+            <fieldset>
+                <legend>Ny artikkel</legend>
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Forfatter" ng-model="article.author">
+                    <input type="text" class="form-control" placeholder="Tittel" ng-model="article.title">
+                    <textarea class="form-control" rows="3" placeholder="Innhold" ng-model="article.content"/>
+                </div>
+                <button type="submit" class="btn btn-primary" ng-click="submitArticle(article)">Legg til artikkel</button>
+            </fieldset>
+        </form>
+    </div>
 </article>

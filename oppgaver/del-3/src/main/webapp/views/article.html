@@ -36,30 +36,30 @@
     </div>
 
     <div class="comments">
-        <h4>Kommentarer</h4>
-        <ul>
-            <li ng-repeat="comment in comments">
-                <p class="content">
+        <h3 class="page-header">Kommentarer</h3>
+
+        <div ng-repeat="comment in comments">
+            <blockquote>
+                <p>
                     {{comment.content}}
                 </p>
-                <div class="meta">
-                    <span class="fancy">by</span>
-                    <span class="author">{{comment.author}}</span>
-                </div>
-            </li>
-        </ul>
+                <small>{{comment.author}}</small>
+            </blockquote>
+        </div>
 
-        <div class="buttons" class="btn-group">
-            <div class="delete">
-                <button class="btn" ng-click="deleteAllComments(article)">Slett alle kommentarer</button>
+        <div class="well" class="btn-group">
+            <div>
+                <button class="btn btn-default" ng-click="deleteAllComments(article)">Slett alle kommentarer</button>
             </div>
-            <form class="navbar-form navbar-left" role="search">
-                <button type="submit" class="btn btn-default" ng-click="addComment(article, comment)">Legg til kommentar</button>
-                <div class="form-group">
-                    <input type="text" class="form-control" placeholder="Forfatter" ng-model="comment.author">
-                    <textarea class="form-control" rows="3" placeholder="Innhold" ng-model="comment.content"/>
-                </div>
-            </form>
+            <div>
+                <form class="bs-example form-horizontal">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Forfatter" ng-model="comment.author">
+                        <textarea class="form-control" rows="3" placeholder="Innhold" ng-model="comment.content"/>
+                    </div>
+                    <button type="submit" class="btn btn-primary" ng-click="addComment(article, comment)">Legg til kommentar</button>
+                </form>
+            </div>
         </div>
     </div>
 </article>
