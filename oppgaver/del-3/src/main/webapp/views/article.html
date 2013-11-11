@@ -1,26 +1,25 @@
-<article>
+<article class="container">
     <div class="custom-alert" ng-show="showError">
         <a class="close" ng-click="hideError()">&times;</a>
         <strong>{{errorMessage}}</strong>
     </div>
 
 
-    <div class="article">
+    <div>
         <h2 class="title">
             {{article.title}}
         </h2>
 
-        <div class="meta">
-            <span class="fancy">av</span>
-            <span class="author">{{article.author}}</span>
-        </div>
+        <h4>av {{article.author}}</h4>
+
         <p class="content">
             {{article.content}}
         </p>
-
-        <div class="buttons" class="btn-group">
-            <button class="btn" ng-click="deleteArticle(article)">Slett artikkel</button>
-            <button class="btn" ng-click="toggleShowArticleEdit()">Editer artikkel</button>
+    </div>
+    <div>
+        <div class="well">
+            <button class="btn btn-default" ng-click="deleteArticle(article)">Slett artikkel</button>
+            <button class="btn btn-default" ng-click="toggleShowArticleEdit()">Editer artikkel</button>
         </div>
 
         <div class="well" ng-show="showArticleEdit">
@@ -28,7 +27,7 @@
                 <div class="form-group">
                     <input type="text" class="form-control" placeholder="Forfatter" ng-model="article.author">
                     <input type="text" class="form-control" placeholder="Tittel" ng-model="article.title">
-                    <textarea class="form-control" rows="3" placeholder="Innhold" ng-model="article.content"/>
+                    <textarea class="form-control" rows="4" placeholder="Innhold" ng-model="article.content"/>
                 </div>
                 <button type="submit" class="btn btn-primary" ng-click="updateArticle(article)">Oppdater</button>
             </form>

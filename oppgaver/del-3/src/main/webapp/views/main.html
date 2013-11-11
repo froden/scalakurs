@@ -9,10 +9,7 @@
         <h2>
             <a href="#/article/{{article._id}}" class="linkColor">{{article.title}}</a>
         </h2>
-        <div>
-            <span class="fancy">av</span>
-            <span class="author">{{article.author}}</span>
-        </div>
+        <h4>Skrevet av {{article.author}}</h4>
     </div>
 
     <div class="well">
@@ -22,7 +19,7 @@
                 <div class="form-group">
                     <input type="text" class="form-control" placeholder="Forfatter" ng-model="article.author">
                     <input type="text" class="form-control" placeholder="Tittel" ng-model="article.title">
-                    <textarea class="form-control" rows="3" placeholder="Innhold" ng-model="article.content"/>
+                    <textarea class="form-control" rows="4" placeholder="Innhold" ng-model="article.content"/>
                 </div>
                 <button type="submit" class="btn btn-primary" ng-click="submitArticle(article)">Legg til artikkel</button>
             </fieldset>
