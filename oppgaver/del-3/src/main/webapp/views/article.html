@@ -47,17 +47,22 @@
             </blockquote>
         </div>
 
-        <div class="well" class="btn-group">
+        <div class="well">
             <div>
                 <button class="btn btn-default" ng-click="deleteAllComments(article)">Slett alle kommentarer</button>
             </div>
+        </div>
+        <div class="well">
             <div>
                 <form class="bs-example form-horizontal">
+                    <legend>Ny kommentar</legend>
                     <div class="form-group">
                         <input type="text" class="form-control" placeholder="Forfatter" ng-model="comment.author">
                         <textarea class="form-control" rows="3" placeholder="Innhold" ng-model="comment.content"/>
                     </div>
-                    <button type="submit" class="btn btn-primary" ng-click="addComment(article, comment)">Legg til kommentar</button>
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-primary" ng-click="addComment(article, comment)">Legg til kommentar</button>
+                    </div>
                 </form>
             </div>
         </div>
