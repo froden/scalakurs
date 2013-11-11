@@ -1620,18 +1620,18 @@ db.x.find({$or: [{ qty: {$gt: 100}}, {price: {$lt: 9.95}}]})
     <pre><code class="html" data-trim contenteditable>
 
 <article ng-controller="MainController">
-    <div class="custom-alert" ng-show="showError">
-        <a href="#" class="close" data-dismiss="alert">&times;</a>
+    <div class="alert" ng-show="showError">
+        <a href="#" >&times;</a>
         <strong>{{errorMessage}}</strong>
     </div>
     <ul>
         <li ng-repeat="article in articles">
-            <h3 class="title">
+            <h3>
                 <a href="#/article/{{article._id}}">{{article.title}}</a>
             </h3>
-            <div class="meta">
-                <span class="fancy">av</span>
-                <span class="author">{{article.author}}</span>
+            <div>
+                <span>av</span>
+                <span>{{article.author}}</span>
             </div>
         </li>
     </ul>
@@ -1693,7 +1693,7 @@ GET    /articles               #get all articles
 POST   /articles               #create new article
 GET    /articles/:id           #get single article
 PUT    /articles/:id           #update existing article
-DELETE /articles/:id           #remoeve article
+DELETE /articles/:id           #remove article
 POST   /articles/:id/comments  #create new comment on article
 DELETE /articles/:id/comments  #delete all comments from article
             </code></pre>
