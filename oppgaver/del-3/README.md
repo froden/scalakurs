@@ -70,7 +70,14 @@ DELETE /articles/:id/comments  #delete all comments from article
     "title": "A blogpost",
     "content": "Loong and informative post"
     "comments": [
-        {"author": "Sjur", "content": "Nice post!", "author": "Arild", "content": "Could be shorter."}
+        {
+            "author": "Sjur",
+            "content": "Nice post!",
+        },
+        {
+            "author": "Arild",
+            "content": "Could be shorter."
+        }
     ]
 }
 ```
