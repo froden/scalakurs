@@ -1,4 +1,3 @@
-
 <article>
     <div class="custom-alert" ng-show="showError">
         <a class="close" ng-click="hideError()">&times;</a>
@@ -10,6 +9,7 @@
         <h2 class="title">
             {{article.title}}
         </h2>
+
         <div class="meta">
             <span class="fancy">av</span>
             <span class="author">{{article.author}}</span>
@@ -20,17 +20,17 @@
 
         <div class="buttons" class="btn-group">
             <button class="btn" ng-click="deleteArticle(article)">Slett artikkel</button>
-            <button class="btn" ng-click="toggleShowArticleEdit()" >Editer artikkel</button>
+            <button class="btn" ng-click="toggleShowArticleEdit()">Editer artikkel</button>
         </div>
 
-        <div class="buttons" class="btn-group" ng-show="showArticleEdit">
-            <form class="navbar-form navbar-left" role="search">
+        <div class="well" ng-show="showArticleEdit">
+            <form class="bs-example form-horizontal">
                 <div class="form-group">
                     <input type="text" class="form-control" placeholder="Forfatter" ng-model="article.author">
                     <input type="text" class="form-control" placeholder="Tittel" ng-model="article.title">
                     <textarea class="form-control" rows="3" placeholder="Innhold" ng-model="article.content"/>
                 </div>
-                <button type="submit" class="btn btn-default" ng-click="updateArticle(article)">Oppdater</button>
+                <button type="submit" class="btn btn-primary" ng-click="updateArticle(article)">Oppdater</button>
             </form>
         </div>
     </div>
@@ -53,18 +53,18 @@
             </div>
         </div>
         <div class="well">
-            <div>
-                <form class="bs-example form-horizontal">
-                    <legend>Ny kommentar</legend>
-                    <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Forfatter" ng-model="comment.author">
-                        <textarea class="form-control" rows="3" placeholder="Innhold" ng-model="comment.content"/>
-                    </div>
-                    <div class="form-group">
-                        <button type="submit" class="btn btn-primary" ng-click="addComment(article, comment)">Legg til kommentar</button>
-                    </div>
-                </form>
-            </div>
+            <form class="bs-example form-horizontal">
+                <legend>Ny kommentar</legend>
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Forfatter" ng-model="comment.author">
+                    <textarea class="form-control" rows="3" placeholder="Innhold" ng-model="comment.content"/>
+                </div>
+                <div class="form-group">
+                    <button type="submit" class="btn btn-primary" ng-click="addComment(article, comment)">Legg til
+                        kommentar
+                    </button>
+                </div>
+            </form>
         </div>
     </div>
 </article>
