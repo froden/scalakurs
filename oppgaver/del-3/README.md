@@ -1,5 +1,22 @@
 # scalakurs-blogg #
 
+## Forberedelser
+
+### Oppdatere kildekode for kurset med git
+
+```sh
+$ cd scalakurs
+$ git pull
+$ cd oppgaver/del-3
+```
+
+### Eller sjekke ut på nytt med git
+
+```sh
+$ git clone https://github.com/froden/scalakurs.git
+$ cd scalakurs/oppgaver/del-3
+```
+
 ## Installere mongoDB
 1. Last ned [mongoDB](http://http://www.mongodb.org/downloads)
 
