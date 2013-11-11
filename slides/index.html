@@ -1667,7 +1667,7 @@ function MainController($scope, dataService) {
 
    <section>
                     <h2>Example Model</h2>
-    <pre><code style="font-size: 16px; line-height: 1.3em" class="js" data-trim contenteditable>
+    <pre><code style="font-size: 16px; line-height: 1." class="js" data-trim contenteditable>
 app.factory('dataService', function($http) {
     return {
         getAllArticles: function() {
@@ -1686,15 +1686,55 @@ app.factory('dataService', function($http) {
     </section>
 
     <section>
-            <h2>Lag blog!</h2>
-            <ul>
-                <li>Les readme på <a href="https://github.com/froden/scalakurs">https://github.com/froden/scalakurs</a></li>
-            </ul>
+            <h2>Blog API</h2>
+            <pre><code data-trim contenteditable>
+#ArticlesController
+GET    /articles               #get all articles
+POST   /articles               #create new article
+GET    /articles/:id           #get single article
+PUT    /articles/:id           #update existing article
+DELETE /articles/:id           #remoeve article
+POST   /articles/:id/comments  #create new comment on article
+DELETE /articles/:id/comments  #delete all comments from article
+            </code></pre>
+    </section>
+
+    <section>
+            <h2>Blog API</h2>
+            <pre><code data-trim contenteditable>
+#article with comments
+{
+    "_id": "1234zxcvdas",
+    "author": "Frode",
+    "title": "A blogpost",
+    "content": "Loong and informative post"
+    "comments": [
+        {
+            "author": "Sjur",
+            "content": "Nice post!",
+        },
+        {
+            "author": "Arild",
+            "content": "Could be shorter."
+        }
+    ]
+}
+            </code></pre>
     </section>
 
         <section>
+            <h2>Nyttige lenker</h2>
+            <ul>
+                <li><a href="http://mongodb.github.io/casbah/tutorial.html">MongoDB Scala tutorial</a></li>
+                <li><a href="https://github.com/json4s/json4s">Json4S</a></li>
+                <li><a href="http://scalatra.org/2.2/guides/http/routes.html">Scalatra routing guide</a></li>
+                <li>Les readme på <a href="https://github.com/froden/scalakurs">https://github.com/froden/scalakurs</a></li>
+            </ul>
+        </section>
+
+        <section>
             <h2>Takk for innsatsen alle sammen!</h2>
-    </section>
+        </section>
 
 
             </div>

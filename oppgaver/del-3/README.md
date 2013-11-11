@@ -75,3 +75,9 @@ DELETE /articles/:id/comments  #delete all comments from article
 }
 ```
 
+### Nyttige linker
+[MongoDB Scala tutorial](http://mongodb.github.io/casbah/tutorial.html)
+[Json4S](https://github.com/json4s/json4s)
+[Scalatra Routes](http://scalatra.org/2.2/guides/http/routes.html)
+
+
