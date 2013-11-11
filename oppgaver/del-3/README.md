@@ -51,5 +51,27 @@ $ ./sbt
 ```
 
 ## Oppgave
-* Implementer scalakurs.ArticlesController slik at testene blir grønne og artikler kan addes og editeres, og kommentarer legges på artikler
+* Implementer scalakurs.ArticlesController slik at artikler kan addes og editeres, og kommentarer legges på artikler
+
+### Følgende API i backend forventes av front-end appen:
+```
+GET    /articles               #get all articles
+POST   /articles               #create new article
+GET    /articles/:id           #get single article
+PUT    /articles/:id           #update existing article
+DELETE /articles/:id           #remoeve article
+POST   /articles/:id/comments  #create new comment on article
+DELETE /articles/:id/comments  #delete all comments from article
+
+#article with comments
+{
+    "_id": "1234zxcvdas",
+    "author": "Frode",
+    "title": "A blogpost",
+    "content": "Loong and informative post"
+    "comments": [
+        {"author": "Sjur", "content": "Nice post!", "author": "Arild", "content": "Could be shorter."}
+    ]
+}
+```
 
