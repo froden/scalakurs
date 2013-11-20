@@ -6,18 +6,16 @@ Tidspunkter NTNU:
 * 30. oktober
 * 11. november
 
-Opplegg
-=======
-  
-## [Del 1](oppgaver/del-1): Basic
-
-### Gjennomføring
+## Gjennomføring
 1. Introdusere konsepter i plenum
 2. Oppgaver til emnet
 3. Eventuelt gjennomgå i plenum
 4. GOTO 1
+  
+## [Slides](http://froden.github.io/scalakurs/#/1)  
+  
+## [Del 1](oppgaver/del-1): Basic
 
-### Temaer
 Oppgaver i [Typseafe activator](http://typesafe.com/platform/getstarted)
 
 1. Intro til Scala - bakgrunn, utbredelse, hvorfor er det bra, hva bruker Bekk, java interop
@@ -47,8 +45,8 @@ Oppgavene går ut på å implementere backend.
 * [Angular js](http://angularjs.org/)
 
 
-Notater
-=======
+## Notater
+
 * [Twitter Scala school](http://twitter.github.io/scala_school/)
 * [Sjur og Arilds workshop](https://github.com/arild/scala-workshop)
 * [Community docs](http://docs.scala-lang.org/index.html)
