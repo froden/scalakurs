@@ -1,12 +1,10 @@
 Scalakurs
 =========
 
-Tidspunkt:
-* 9.  oktober - 17.00 - 20.00
+Tidspunkter NTNU:
+* 9.  oktober
 * 30. oktober
 * 11. november
-
-16.00 - 19.00 + bespisning
 
 Opplegg
 =======
@@ -14,16 +12,16 @@ Opplegg
 ## [Del 1](oppgaver/del-1): Basic
 
 ### Gjennomføring
-1. Introdusere konspet med 2 slides
-2. Korte oppgaver 10 min
+1. Introdusere konsepter i plenum
+2. Oppgaver til emnet
 3. Eventuelt gjennomgå i plenum
 4. GOTO 1
 
 ### Temaer
-Oppgaver i [Typseafe activator](http://typesafe.com/platform/getstarted) - Torbjørn setter opp
+Oppgaver i [Typseafe activator](http://typesafe.com/platform/getstarted)
 
 1. Intro til Scala - bakgrunn, utbredelse, hvorfor er det bra, hva bruker Bekk, java interop
-2. Intro til syntax (sourcefiler, variabler, metoder, ekspression oriented, looping)
+2. Intro til syntax (sourcefiler, variabler, metoder, ekspression oriented, loops)
    * Oppg: Få activator til å kjøre + løse basic oppgave om syntax
 4. Klasser, objekter, case classes, traits
    * Oppgaver
@@ -33,58 +31,16 @@ Oppgaver i [Typseafe activator](http://typesafe.com/platform/getstarted) - Torbj
    * Oppgaver
 
 ## [Del 2](oppgaver/del-2): Funksjonell prog
-* litt repetisjon av syntaks + intro til SBT
-* for comprehensions
+* Litt repetisjon av syntaks + intro til SBT
+* For comprehensions
 * Option
 * Try
 * Future
 
-## [Del 3](oppgaver/del-3): Scalatra + js-front
+## [Del 3](oppgaver/del-3): Scalatra + MongoDB + Angular.js-front
 * [Scalatra](http://www.scalatra.org/)
-* [mongoDB](http://http://www.mongodb.org/)
-
-## Installere mongoDB
-1. Last ned [mongoDB](http://http://www.mongodb.org/downloads)
-
-2. Pakk ut : 
-```sh
-$ tar zxvf mongodb-linux-x86_64-2.4.8.tgz
-```
-
-(eller unzip i windows)
-
-3. Lag katalog til databasen: 
-```sh
-$ mkdir -p /home/sjur/mongodbdata
-```
-
-(fks)
-
-4. Start mongodb slik: 
-```sh
-$ /home/sjur/mongo_installed_here/bin/mongodb --dbpath /home/sjur/mongodbdata
-```
-
-5. 
-```sh
-$ cd ~/scalakurs/oppgaver/del-3/
-```
-
-
-## Build & Run ##
-
-
-```sh
-$ ./sbt
-> container:start
-> browse
-```
-
-Hvis `browse` ikke starter en browser automatisk, åpne [http://localhost:8080/](http://localhost:8080/) manuelt.
-
-## Oppgave
-* Implementer scalakurs.ArticlesController slik at artikler kan addes og editeres, og kommentarer legges på artikler
-* Single page JS-app med ulike sider for hver oppgave. Oppgaven blir å implementere backend.
+* [MongoDB](http://http://www.mongodb.org/)
+* [Angular js](http://angularjs.org/)
 
 
 Notater
