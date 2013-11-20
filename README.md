@@ -37,7 +37,7 @@ Oppgaver i [Typseafe activator](http://typesafe.com/platform/getstarted)
 * Try
 * Future
 
-## [Del 3](oppgaver/del-3): Scalatra + MongoDB + Angular.js-front
+## [Del 3](oppgaver/del-3): Scalatra + MongoDB + Angular.js
 * [Scalatra](http://www.scalatra.org/)
 * [MongoDB](http://http://www.mongodb.org/)
 * [Angular js](http://angularjs.org/)
